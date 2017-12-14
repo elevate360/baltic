@@ -1,0 +1,84 @@
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	display: inline-block;
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+/** SVG icon */
+.icon {
+	display: inline-block;
+	fill: currentColor;
+	height: 1rem;
+	position: relative; /* Align more nicely with capital letters */
+	top: -0.0625rem;
+	vertical-align: middle;
+	width: 1rem;
+	transition: opacity ease-in-out .25s;
+}
+
+.icon-stroke {
+	display: inline-block;
+	fill: none;
+	height: 1rem;
+	position: relative; /* Align more nicely with capital letters */
+	vertical-align: middle;
+	top: -0.05em;
+	width: 1rem;
+    stroke-width: 6.25%;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+	stroke: currentColor;
+	transition: opacity ease-in-out .25s;
+}
+
+svg, svg symbol {
+    overflow: visible;
+}
+
+.svg-fallback {
+	display: none;
+}
+
+.no-svg .svg-fallback {
+	display: inline-block;
+}
+
+@-webkit-keyframes spin {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+@import "captions";
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+@import "galleries";

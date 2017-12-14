@@ -1,0 +1,74 @@
+@import "header";
+
+@import "footer";
+
+.container {
+	width: 100%;
+	padding-right: $gutter__width;
+	padding-left: $gutter__width;
+	margin-right: auto;
+	margin-left: auto;
+	@include respond-to( large ) {
+		max-width: 960px;
+	}
+	@include respond-to( extra-large ){
+		max-width: 1140px;
+	}
+}
+
+.columns {
+	margin-right: -$gutter__width;
+	margin-left: -$gutter__width;
+}
+
+.column-item {
+	float: left;
+	width: 100%;
+	padding-left: $gutter__width;
+	padding-right: $gutter__width;
+}
+
+#primary,
+#secondary {
+	padding-left: $gutter__width;
+	padding-right: $gutter__width;
+	width: 100%;
+}
+
+@include respond-to( medium ){
+
+	.content-sidebar {
+		#primary {
+			float: left;
+			width: 100%;
+			padding-right: 330px;
+		}
+		#secondary {
+			float: right;
+			width: 300px;
+			margin-left: -330px;
+		}
+	}
+
+	.sidebar-content {
+		#primary {
+			float: right;
+			width: 100%;
+			padding-left: 330px;
+		}
+		#secondary {
+			float: left;
+			width: 300px;
+			margin-right: -330px;
+			margin-left: 0;
+		}
+	}
+
+	@for $i from 2 through 6 {
+		.columns-#{$i} {
+			.column-item {
+				@include column-width( $i );
+			}
+		}
+	}
+}

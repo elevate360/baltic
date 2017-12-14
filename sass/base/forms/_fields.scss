@@ -1,0 +1,86 @@
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	background-color: rgba( 255,255,255,.5 );
+	color: $color__text-input;
+	border: 1px solid $color__border-input;
+	padding: .5rem;
+	position: relative;
+	width: 100%;
+	transition-property: background, color, opacity, transform, box-shadow;
+	transition-duration: 0.25s;
+	transition-timing-function: ease-in-out;
+
+	&:focus {
+		background-color: rgba( 255,255,255,1 );
+		color: $color__text-input-focus;
+		box-shadow: 0 0 0 3px rgba( 0, 0, 0, .05 );
+		outline: none;
+		z-index: 1;
+	}
+}
+
+::-webkit-input-placeholder {
+	color: $color__text-input;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+	color: $color__text-input;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+	color: $color__text-input;
+}
+
+:-ms-input-placeholder {
+	color: $color__text-input;
+}
+
+select {
+	background-image:
+		linear-gradient(45deg, transparent 50%, gray 50%),
+		linear-gradient(135deg, gray 50%, transparent 50%);
+	background-position:
+		calc(100% - 15px) calc(1em + 3px),
+		calc(100% - 10px) calc(1em + 3px);
+	background-size:
+		5px 5px,
+		5px 5px;
+	background-repeat: no-repeat;
+	background-color: rgba( 255,255,255,.75 );
+	border: 1px solid $color__border-input;
+	padding: .5rem;
+	width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+textarea {
+	width: 100%;
+}
+
+label {
+	color: $color__text-label;
+	display: block;
+	@include font-size(0.875);
+	margin-bottom: .5rem;
+}

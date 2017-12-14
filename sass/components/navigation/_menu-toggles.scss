@@ -1,0 +1,80 @@
+.menu-toggle {
+	background-color: $color__white;
+	border: $color__white;
+	color: $color__text-main;
+	@include font-size(1);
+	font-weight: bold;
+	width: 100%;
+	height: 50px;
+	text-transform: uppercase;
+	position: relative;
+	text-align: left;
+	border-radius: 0;
+    box-shadow: 0 0 0 0;
+    .toggled &,
+	&:hover,
+	&:focus {
+		background-color: $color__white;
+		border-color: $color__white;
+		color: $color__text-main;
+		box-shadow: none;
+	}
+	.icon-stroke {
+		margin-right: 1rem;
+		position: relative;
+		top: -.1rem;
+		.toggled &.icon-close {
+			display: inline-block;
+		}
+
+		.toggled &.icon-menu,
+		&.icon-close {
+			display: none;
+		}
+	}
+}
+
+.sub-menu-toggle {
+	background-color: transparent;
+	border: none;
+	width: 48px;
+	height: 48px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 0;
+	border-radius: 0;
+	box-shadow: 0 0 0 rgba(0,0,0,0);
+	.icon-stroke {
+		display: inline-block;
+		width: 1rem;
+		height: 1rem;
+		stroke: $color__white;
+		margin: 0!important;
+	}
+
+	.icon-chevron-top,
+	&.toggled .icon-chevron-bottom {
+		display: none;
+	}
+
+	&.toggled .icon-chevron-top {
+		display: inline-block;
+	}
+
+	&:active,
+	&:hover,
+	&:focus {
+		background-color: transparent;
+		border: none;
+		box-shadow: none;
+	}
+
+}
+
+@include respond-to( medium ){
+	.menu-toggle,
+	.sub-menu-toggle {
+		display: none;
+	}
+}

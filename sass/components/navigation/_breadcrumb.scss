@@ -1,0 +1,18 @@
+.breadcrumb {
+	background-color: $color__white;
+	border-top: 1px solid $color__alpha-dark;
+	border-bottom: 1px solid $color__alpha-dark;
+	@include font-size( 0.875 );
+	padding-top: $gutter__width;
+	padding-bottom: $gutter__width;
+	.separator {
+		color: $color__text-secondary;
+	}
+	a {
+		color: $color__text-secondary;
+		&:hover,
+		&:focus {
+			color: $color__link;
+		}
+	}
+}

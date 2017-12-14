@@ -1,0 +1,14 @@
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: $color__text-main;
+}
+
+@import "headings";
+
+@import "copy";
+
+@import "links";

@@ -1,0 +1,45 @@
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+	position: relative;
+	clear: both;
+	margin: 0 0 1.5rem;
+	overflow: hidden;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 100%;
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+
+	a {
+		color: $color__text-main;
+		display: inline-block;
+		@include font-size(0.875);
+		font-weight: bold;
+		padding: 1rem 0;
+		text-transform: uppercase;
+		span {
+			color: $color__text-secondary;
+			display: block;
+			text-transform: lowercase;
+		}
+		&:hover,
+		&:focus {
+			color: $color__link-hover;
+			span {
+				color: $color__text-secondary;
+				opacity: 0.75;
+			}
+		}
+	}
+
+}

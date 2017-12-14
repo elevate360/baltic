@@ -1,0 +1,16 @@
+body {
+	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+}
+
+@import "lists";
+
+@import "tables";
+
+::selection {
+	background: $color__link;
+	color: #fff;
+}
+::-moz-selection {
+	background: $color__link;
+	color: #fff;
+}

@@ -1,0 +1,85 @@
+/*!
+Theme Name: Baltic
+Theme URI: http://underscores.me/
+Author: Elevate360
+Author URI: https://elevate360.com.au
+Description: Baltic WooCommerce Theme
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: baltic
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Baltic is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Bootstrap Reboot
+--------------------------------------------------------------*/
+@import "variables";
+@import "mixins";
+
+/*--------------------------------------------------------------
+# Bootstrap reboot
+--------------------------------------------------------------*/
+@import "base/bootstrap-reboot";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "base/elements/elements";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "base/typography/typography";
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+@import "base/forms/forms";
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+@import "base/modules/accessibility";
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+@import "base/modules/alignments";
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+@import "base/modules/clearings";
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "components/media/media";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "components/navigation/navigation";
+
+/*--------------------------------------------------------------
+# Site
+--------------------------------------------------------------*/
+@import "components/site/site";
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+@import "components/layout/layout";
+
+/*--------------------------------------------------------------
+# Media Queries
+--------------------------------------------------------------*/
