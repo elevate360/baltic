@@ -42,6 +42,15 @@
 	vertical-align: baseline;
 }
 
+.baltic-plugin-card {
+	.button-hero.updating-message:before,
+	.button-hero.updated-message:before {
+		color: $color__white;
+		margin-top: 13px;
+	}
+}
+
+
 .baltic-wrap {
 	margin-right: $gutter__width;
 	@include respond-to( medium ){

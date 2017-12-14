@@ -5,11 +5,13 @@
 		return;
 	}
 
+	var $installed_btn =
+
 	$( function() {
 
 		$( document ).ready( function() {
 
-			$( document ).on( 'click', '.baltic-admin-card-footer a.button.baltic-install-now', function( e ) {
+			$( document ).on( 'click', 'a.button.baltic-install-now', function( e ) {
 				var $button = $( e.target );
 
 				e.preventDefault();
@@ -37,8 +39,10 @@
 				}
 
 				wp.updates.installPlugin( {
-					slug: $button.data( 'slug' )
+					slug: $button.data( 'slug' ),
+					success: ''
 				} );
+
 			});
 
 		});
@@ -87,6 +91,10 @@
 		   		plugin 	= el.data( 'slug' );
 
 		   	e.preventDefault();
+
+		   	if( el.hasClass( 'baltic-install-now' ) ) {
+		   		return;
+		   	}
 
 		   	if ( ! el.hasClass( 'disabled' ) ) {
 

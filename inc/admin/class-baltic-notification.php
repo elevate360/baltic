@@ -43,7 +43,12 @@ class Baltic_Notification {
 	public function admin_notices(){
 
 		global $pagenow;
+
 		if ( true === (bool) get_option( 'baltic_notice_dismissed' ) ) {
+			return;
+		}
+
+		if( defined( 'WC_PLUGIN_FILE' ) && defined( 'KIRKI_VERSION' ) && defined( 'ELEMENTOR_VERSION' ) ) {
 			return;
 		}
 
@@ -51,13 +56,20 @@ class Baltic_Notification {
 		if ( $screen->parent_base == 'edit' ) {
     		return;
 		}
+
 		?>
 			<div class="notice baltic-notice is-dismissible">
 				<?php if( current_user_can( 'install_plugins' ) && current_user_can( 'activate_plugins' ) ) : ?>
 				<div class="baltic-notice-content">
-					<h2><?php echo sprintf( esc_attr__( '%s theme successfully installed.', 'baltic' ), BALTIC_THEME_NAME ); ?></h2>
-					<p><?php echo sprintf( esc_attr__( 'Thank you for choosing %s theme! To take full advantage of our theme can offer, please make sure you visit our welcome page.', 'baltic' ), BALTIC_THEME_NAME ); ?></p>
-					<p><a href="<?php echo self_admin_url( 'themes.php?page=baltic' ) ;?>" class="button button-primary button-hero"><?php esc_attr_e( 'Get Started with Baltic', 'baltic' );?></a></p>
+					<?php if ( ! class_exists( 'WooCommerce' ) ) : ?>
+						<h2><?php echo sprintf( esc_attr__( 'Thank you for choosing %s theme!.', 'baltic' ), BALTIC_THEME_NAME ); ?></h2>
+						<p><?php echo sprintf( esc_attr__( '%s theme is designed to be an ecommerce. To enable eCommerce features you need to install and activate the WooCommerce plugin.', 'baltic' ), BALTIC_THEME_NAME ); ?></p>
+						<p><?php Baltic_Plugin_Installer::install_plugin_button( 'woocommerce', 'WooCommerce', array( 'button-primary', 'button-hero' ), '', '', __( 'Install WooCommerce', 'baltic' ) );?></p>
+					<?php elseif( ! class_exists( 'Kirki' ) || ! class_exists( 'Elementor' ) ) : ?>
+						<h2><?php echo esc_attr__( 'Your site is almost ready.', 'baltic' ); ?></h2>
+						<p><?php echo sprintf( esc_attr__( 'In order to enable additional features of %s theme, you can navigate to the theme setup. Otherwise you can close this notification.', 'baltic' ), BALTIC_THEME_NAME ); ?></p>
+						<p><a href="<?php echo self_admin_url( 'themes.php?page=baltic' ) ;?>" class="button button-primary button-hero"><?php esc_attr_e( 'Complete Setup', 'baltic' );?></a></p>
+					<?php endif;?>
 				</div>
 				<?php endif;?>
 			</div>

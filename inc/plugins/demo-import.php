@@ -46,3 +46,6 @@ function baltic_demo_import() {
 
 }
 add_filter( 'pt-ocdi/import_files', 'baltic_demo_import' );
+
+add_filter( 'pt-ocdi/plugin_page_title', '__return_false' );
+add_filter( 'pt-ocdi/plugin_intro_text', '__return_false' );

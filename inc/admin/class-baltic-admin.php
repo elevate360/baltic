@@ -72,7 +72,6 @@ class Baltic_Admin {
 
 			<nav class="baltic-admin-navigation wp-filter">
 				<ul class="filter-links">
-					<li><a href="<?php echo esc_url( admin_url( 'themes.php?page=baltic&tab=getting_started' ) ); ?>" class="<?php echo 'getting_started' == $active_tab ? 'current' : ''; ?>"><?php esc_attr_e( 'Getting Started', 'baltic' ); ?></a></li>
 					<li><a href="<?php echo esc_url( admin_url( 'themes.php?page=baltic&tab=recommended_actions' ) ); ?>" class="<?php echo 'recommended_actions' == $active_tab ? 'current' : ''; ?>"><?php esc_attr_e( 'Recommended Actions', 'baltic' ); ?></a></li>
 					<li><a href="<?php echo esc_url( admin_url( 'themes.php?page=baltic&tab=recommended_plugins' ) ); ?>" class="<?php echo 'recommended_plugins' == $active_tab ? 'current' : ''; ?>"><?php esc_attr_e( 'Recommended Plugins', 'baltic' ); ?></a></li>
 					<li><a href="<?php echo esc_url( admin_url( 'themes.php?page=baltic&tab=add_ons' ) ); ?>" class="<?php echo 'add_ons' == $active_tab ? 'current' : ''; ?>"><?php esc_attr_e( 'Add-Ons', 'baltic' ); ?></a></li>
@@ -82,9 +81,6 @@ class Baltic_Admin {
 
 		<?php
 			switch ( $active_tab ) {
-				case 'getting_started':
-					require get_parent_theme_file_path( '/inc/admin/sections/getting-started.php' );
-					break;
 				case 'recommended_actions':
 					require get_parent_theme_file_path( '/inc/admin/sections/recommended-actions.php' );
 					break;
@@ -98,7 +94,7 @@ class Baltic_Admin {
 					require get_parent_theme_file_path( '/inc/admin/sections/support.php' );
 					break;
 				default:
-					require get_parent_theme_file_path( '/inc/admin/sections/getting-started.php' );
+					require get_parent_theme_file_path( '/inc/admin/sections/recommended-actions.php' );
 					break;
 			}
 

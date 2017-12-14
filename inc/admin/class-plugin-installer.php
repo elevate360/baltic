@@ -28,11 +28,7 @@ class Baltic_Plugin_Installer {
 	 * @param  string $hook [description]
 	 * @return [type]       [description]
 	 */
-	public function enqueue_scripts( $hook = '' ){
-
-		if ( 'appearance_page_baltic' !== $hook ) {
-			return;
-		}
+	public function enqueue_scripts(){
 
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
