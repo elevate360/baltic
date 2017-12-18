@@ -20,7 +20,7 @@
  */
 function baltic_attr( $slug, $context = '', $attr = array()  ) {
 
-	echo baltic_get_attr( $slug, $context, $attr );
+	echo baltic_get_attr( esc_attr( $slug ), esc_attr( $context ), $attr );
 
 }
 

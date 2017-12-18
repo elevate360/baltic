@@ -7,7 +7,7 @@
 ?>
 <div class="author-info">
 
-	<h2 class="about-author"><?php _e( 'About The Author', 'caspian' );?></h2>
+	<h2 class="about-author"><?php esc_attr_e( 'About The Author', 'baltic' );?></h2>
 
 	<figure class="author-avatar">
 		<?php

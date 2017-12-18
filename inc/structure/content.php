@@ -12,7 +12,7 @@
  * @return string
  */
 function baltic_inner_markup_open(){
-	echo sprintf( '<div %s>', baltic_get_attr( 'site-content' ) );
+	echo sprintf( '<div %s>', baltic_get_attr( esc_attr( 'site-content' ) ) );
 }
 add_action( 'baltic_inner_before', 'baltic_inner_markup_open', 10 );
 

@@ -97,6 +97,8 @@ class Baltic_Init {
 		 */
 		add_theme_support( 'post-thumbnails' );
 
+		set_post_thumbnail_size( 810, 466, array( 'center', 'top' ) );
+
 		/** Set the default content width */
 		$GLOBALS['content_width'] = 800;
 
@@ -141,6 +143,10 @@ class Baltic_Init {
 	 */
 	public function content_width(){
 		$content_width = $GLOBALS['content_width'];
+
+		if ( baltic_get_layout() == 'full-width' ) {
+			$content_width = 1120;
+		}
 
 		$GLOBALS['content_width'] = apply_filters( 'baltic_content_width', $content_width );
 	}

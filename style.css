@@ -1215,7 +1215,10 @@ svg, svg symbol {
   background-color: #fff;
   padding: 10px;
   margin-bottom: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); }
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border-radius: .25rem;
+  transition: all .25s ease-in-out; }
   .sticky .entry-inner {
     background-color: #673ab7;
     color: rgba(255, 255, 255, 0.5); }
@@ -1224,7 +1227,7 @@ svg, svg symbol {
       margin-bottom: 20px; } }
   @media (min-width: 992px) {
     .entry-inner {
-      padding: 40px;
+      padding: 30px;
       padding-bottom: 20px; } }
 
 .updated:not(.published) {
@@ -1269,9 +1272,9 @@ svg, svg symbol {
         max-width: 100%; } }
   @media (min-width: 992px) {
     .entry-thumbnail {
-      margin-top: -40px;
-      margin-left: -40px;
-      margin-right: -40px; } }
+      margin-top: -30px;
+      margin-left: -30px;
+      margin-right: -30px; } }
 
 .entry-title {
   color: #505050;
@@ -1704,7 +1707,7 @@ a.custom-logo-link {
   .page-header-thumbnail img {
     position: absolute;
     left: 50%;
-    top: 0;
+    bottom: 0;
     min-width: 100%;
     min-height: 100%;
     max-width: inherit;
@@ -1712,8 +1715,6 @@ a.custom-logo-link {
     transform: translate3d(0, 0, 0);
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%); }
-  .page-header-thumbnail.parallax img {
-    top: -50%; }
   .page-header-thumbnail:after {
     position: absolute;
     top: 0;

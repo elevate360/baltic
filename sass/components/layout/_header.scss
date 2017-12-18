@@ -155,7 +155,7 @@ a.custom-logo-link {
 	img {
 		position: absolute;
 		left: 50%;
-		top: 0;
+		bottom: 0;
 		min-width: 100%;
 		min-height: 100%;
 		max-width: inherit;
@@ -163,9 +163,6 @@ a.custom-logo-link {
 		transform: translate3d(0, 0, 0);
 		-webkit-transform: translateX(-50%);
 		transform: translateX(-50%);
-	}
-	&.parallax img {
-		top: -50%;
 	}
 	&:after {
 	    position: absolute;

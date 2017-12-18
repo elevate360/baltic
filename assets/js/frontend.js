@@ -160,7 +160,7 @@
 
 			if ( $hasPostThumbnail.length !== 0 ) {
 				$this.addClass( 'has-archive-thumbnail' );
-				$this.css('height', 'calc( 100vh - '+ headerHeight +'px )');
+				$this.css('min-height', 'calc( 100vh - '+ headerHeight +'px )');
 			}
 
 			$hasPostThumbnail.parallax();
@@ -169,7 +169,7 @@
 
 		$(window).scroll(function () {
 
-		    if ($(this).scrollTop() > 500) {
+		    if ($(this).scrollTop() > 250) {
 		        $returnTop.removeClass('off').addClass('on');
 		    }
 		    else {

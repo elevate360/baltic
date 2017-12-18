@@ -5,6 +5,14 @@
  * @package Baltic
  */
 
+/**
+ * [baltic_sidebar_footer description]
+ * @return [type] [description]
+ */
+function baltic_sidebar_footer(){
+	get_sidebar( 'footer' );
+}
+add_action( 'baltic_footer_before', 'baltic_sidebar_footer', 10 );
 
 /**
  * Baltic footer copyright

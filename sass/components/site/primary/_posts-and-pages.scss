@@ -7,6 +7,9 @@
 	padding: $gutter__width;
 	margin-bottom: $gutter__width;
 	box-shadow: 0 8px 16px rgba( 0,0,0,.1 );
+	position: relative;
+	border-radius: .25rem;
+	transition: all .25s ease-in-out;
 	.sticky &{
 		background-color: #673ab7;
 		color: rgba( 255,255,255,.5 );
@@ -17,7 +20,7 @@
 	}
 
 	@include respond-to( large ){
-		padding: $gutter__width*4;
+		padding: $gutter__width*3;
 		padding-bottom: $gutter__width*2;
 	}
 }
@@ -74,9 +77,9 @@
 		}
 	}
 	@include respond-to( large ){
-		margin-top: -$gutter__width*4;
-		margin-left: -$gutter__width*4;
-		margin-right: -$gutter__width*4;
+		margin-top: -$gutter__width*3;
+		margin-left: -$gutter__width*3;
+		margin-right: -$gutter__width*3;
 	}
 }
 

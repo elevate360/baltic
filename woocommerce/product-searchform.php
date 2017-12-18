@@ -22,12 +22,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <form role="search" method="get" class="woocommerce-product-search search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<label for="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>">
-		<span class="screen-reader-text"><?php _e( 'Search for:', 'baltic' ); ?></span>
+		<span class="screen-reader-text"><?php esc_html_e( 'Search for:', 'baltic' ); ?></span>
 	</label>
 	<input type="search" id="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>" class="search-field" placeholder="<?php echo esc_attr__( 'Search products&hellip;', 'baltic' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
 	<input type="hidden" name="post_type" value="product" />
 	<button type="submit" class="search-submit">
 		<?php echo baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'search' ) ); ?>
-		<span class="screen-reader-text"><?php echo _x( 'Search', 'submit button', 'baltic' ); ?></span>
+		<span class="screen-reader-text"><?php esc_html_e( 'Search', 'submit button', 'baltic' ); ?></span>
 	</button>
 </form>

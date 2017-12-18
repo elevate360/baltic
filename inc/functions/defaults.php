@@ -25,7 +25,7 @@ function baltic_setting_default(){
 		'secondary_color'		=> '#ff8a65',
 
 		'archive_layout'		=> 'full-width',
-		'singular_layout'		=> 'full-width',
+		'singular_layout'		=> 'content-sidebar',
 
 		'meta_date'				=> true,
 		'meta_author'			=> true,

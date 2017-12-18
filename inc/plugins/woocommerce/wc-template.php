@@ -96,7 +96,7 @@ function baltic_wc_archive_thumbnail(){
 	    global $wp_query;
 	    $cat 		= $wp_query->get_queried_object();
 	    $image_id 	= get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
-	    $image 		= wp_get_attachment_image( $image_id, 'post-thumbnail' );
+	    $image 		= wp_get_attachment_image( $image_id, 'full' );
 
 	    if ( $image ) {
 	    	echo sprintf( '<figure class="page-header-thumbnail">%s</figure>', $image );
@@ -104,7 +104,7 @@ function baltic_wc_archive_thumbnail(){
 
 	} elseif ( is_shop() || ( is_post_type_archive( 'product' ) && is_search() ) ) {
 
-		$image 		= get_the_post_thumbnail( $shop_id, 'post-thumbnail' );
+		$image 		= get_the_post_thumbnail( $shop_id, 'full' );
 
 		if ( $image ) {
 			echo sprintf( '<figure class="page-header-thumbnail">%s</figure>', $image );
