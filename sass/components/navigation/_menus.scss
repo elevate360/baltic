@@ -59,7 +59,7 @@
 		padding: .75rem;
 		text-decoration: none;
 		position: relative;
-		opacity: 0.75;
+		opacity: 0.65;
 	}
 
 	.icon {
@@ -226,6 +226,7 @@
 				transition: opacity ease-in-out .25s, transform ease-in-out .35s;
 				transform: scale(0.5) rotateY(180deg);
 				opacity: 0;
+				box-shadow: 0 8px 16px $color__alpha-dark;
 
 				a {
 					color: $color__white;

@@ -15,6 +15,21 @@
 	}
 }
 
+.widget-title {
+	padding-bottom: $gutter__width*2;
+	margin-bottom: $gutter__width*2;
+	position: relative;
+	&:after {
+		background-color: $color__text-main;
+		content: " ";
+		width: $gutter__width*2;
+		height: 2px;
+		position: absolute;
+		bottom: -1px;
+		left: 0;
+	}
+}
+
 .search-form,
 .woocommerce-product-search {
 	position: relative;
@@ -90,31 +105,4 @@
 		margin-top: .5rem;
 		padding-left: 1rem;
 	}
-
-	ul > li:before {
-		vertical-align: middle;
-		margin-right: .5rem;
-	}
-}
-
-
-.widget_recent_entries > ul > li:before,
-.widget_pages > ul > li::before {
-    content: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 32 32' width='16' height='16' fill='none' stroke='currentcolor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'><path d='M6 2 L6 30 26 30 26 10 18 2 Z M18 2 L18 10 26 10' /></svg>");
-}
-
-.widget_archive > ul > li:before {
-	content: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 32 32' width='16' height='16' fill='none' stroke='currentcolor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'><path d='M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9' /></svg>");
-}
-
-.widget_recent_comments > ul > li::before {
- 	content: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 32 32' width='16' height='16' fill='none' stroke='currentcolor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'><path d='M2 4 L30 4 30 22 16 22 8 29 8 22 2 22 Z' /></svg>");
-}
-
-.widget_categories > ul > li::before {
-    content: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 32 32' width='16' height='16' fill='none' stroke='currentcolor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'><path d='M4 28 L28 28 30 12 14 12 10 8 2 8 Z M28 12 L28 4 4 4 4 8' /></svg>");
-}
-
-.widget_product_categories > ul > li::before {
-    content: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 32 32' width='16' height='16' fill='none' stroke='currentcolor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'><path d='M2 18 L18 2 30 2 30 14 14 30 Z' /></svg>");
 }

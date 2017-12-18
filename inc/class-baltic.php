@@ -218,6 +218,11 @@ class Baltic_Init {
 		require get_parent_theme_file_path( '/inc/functions/widgets.php' );
 		require get_parent_theme_file_path( '/inc/functions/defaults.php' );
 		require get_parent_theme_file_path( '/inc/functions/utility.php' );
+		require get_parent_theme_file_path( '/inc/functions/templates.php' );
+
+		if ( class_exists( 'Kirki' ) ) {
+			require get_parent_theme_file_path( '/inc/customizer/kirki.php' );
+		}
 
 	}
 

@@ -2,6 +2,8 @@
 .site-header {
 	background-color: $color__site-header;
 	position: relative;
+	z-index: 5;
+	box-shadow: 0 16px 32px $color__alpha-dark;
 	> .container {
 		position: relative;
 	}
@@ -129,36 +131,55 @@ a.custom-logo-link {
 	position: relative;
 	overflow: hidden;
 	z-index: 0;
+	transition: all ease-in-out .25s;
+	&.has-archive-thumbnail {
+		color: $color__white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		text-shadow: 0 4px 8px rgba( 0,0,0,.5 );
+	}
 }
 
-.page-header-image {
+.page-header-thumbnail {
 	position: absolute;
 	top: 0;
 	left: 0;
-	right: 0;
 	bottom: 0;
-	width: 100%;
+	right: 0;
 	z-index: -1;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
 	img {
-	    position: absolute;
-	    top: 0;
-	    left: 50%;
-	    min-width: 100%;
-	    max-width: inherit;
-	    min-height: 100%;
-	    transform: translateX(-50%);
+		position: absolute;
+		left: 50%;
+		top: 0;
+		min-width: 100%;
+		min-height: 100%;
+		max-width: inherit;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+	}
+	&.parallax img {
+		top: -50%;
 	}
 	&:after {
-		content: " ";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.9)),to(rgba(0,0,0,.3)));
-		background: linear-gradient(to right,rgba(0,0,0,.9) 0,rgba(0,0,0,.3) 100%);
-		-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.25);
-		box-shadow: inset 0 1px 0 rgba(255,255,255,.25);
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    content: " ";
+	    box-shadow: inset 0 1px 0 rgba( 255,255,255,.25 );
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.9+0,0.3+100 */
+		background: -moz-linear-gradient(left, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(left, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.3) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to right, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6000000', endColorstr='#4d000000',GradientType=1 ); /* IE6-9 */
 	}
 }
 
@@ -168,9 +189,14 @@ a.custom-logo-link {
 	margin-bottom: .5rem;
 }
 
-.page-header-title,
-.page-header-description {
+.page-title,
+.page-description,
+.term-description {
 	@include respond-to( medium ){
-		max-width: 50%;
+		max-width: 60%;
+		.page-header.has-archive-thumbnail &{
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 }

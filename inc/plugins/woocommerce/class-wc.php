@@ -94,6 +94,14 @@ class Baltic_WooCommerce {
 	 */
 	public function body_classes( $classes ) {
 
+		if ( is_post_type_archive( 'product' ) && is_search() ) {
+			$classes[] = esc_attr( baltic_get_option( 'products_layout' ) );
+		}elseif ( is_shop() || is_product_category() || is_product_tag() ) {
+			$classes[] = esc_attr( baltic_get_option( 'products_layout' ) );
+		} elseif( is_product() ) {
+			$classes[] = esc_attr( baltic_get_option( 'product_layout' ) );
+		}
+
 		return $classes;
 	}
 
@@ -118,7 +126,16 @@ class Baltic_WooCommerce {
 	 * @return integer number of products.
 	 */
 	public function products_per_page(){
-		return absint( baltic_get_option( 'wc_products_per_page' ) );
+		return absint( baltic_get_option( 'products_per_page' ) );
+	}
+
+	/**
+	 * Default loop columns on product archives.
+	 *
+	 * @return integer products per row.
+	 */
+	public function loop_columns() {
+		return absint( baltic_get_option( 'products_columns' ) );
 	}
 
 	/**
@@ -131,23 +148,6 @@ class Baltic_WooCommerce {
 	}
 
 	/**
-	 * Default loop columns on product archives.
-	 *
-	 * @return integer products per row.
-	 */
-	public function loop_columns() {
-
-		$layout = baltic_get_layout();
-
-		if ( $layout = 'content-sidebar' || $layout == 'sidebar-content' ) {
-			return 3;
-		} else {
-			return 4;
-		}
-
-	}
-
-	/**
 	 * Related Products Args.
 	 *
 	 * @param array $args related products args.
@@ -155,9 +155,9 @@ class Baltic_WooCommerce {
 	 */
 	public function related_products_args( $args ) {
 
-		$layout = baltic_get_layout();
+		$layout = baltic_get_option( 'product_layout' );
 
-		if ( $layout = 'content-sidebar' || $layout == 'sidebar-content' ) {
+		if ( ( $layout == 'content-sidebar' ) || ( $layout == 'sidebar-content' ) ) {
 			$num = 3;
 		} else {
 			$num = 4;

@@ -54,3 +54,12 @@ function baltic_loop_index(){
 	get_template_part( 'components/loop', 'index' );
 }
 add_action( 'baltic_loop', 'baltic_loop_index', 10 );
+
+/**
+ * Baltic Loop
+ * @return [type] [description]
+ */
+function baltic_posts_navigation(){
+	get_template_part( 'components/posts', 'navigation' );
+}
+add_action( 'baltic_loop_after', 'baltic_posts_navigation', 20 );

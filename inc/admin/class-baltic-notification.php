@@ -68,7 +68,7 @@ class Baltic_Notification {
 					<?php elseif( ! class_exists( 'Kirki' ) || ! class_exists( 'Elementor' ) ) : ?>
 						<h2><?php echo esc_attr__( 'Your site is almost ready.', 'baltic' ); ?></h2>
 						<p><?php echo sprintf( esc_attr__( 'In order to enable additional features of %s theme, you can navigate to the theme setup. Otherwise you can close this notification.', 'baltic' ), BALTIC_THEME_NAME ); ?></p>
-						<p><a href="<?php echo self_admin_url( 'themes.php?page=baltic' ) ;?>" class="button button-primary button-hero"><?php esc_attr_e( 'Complete Setup', 'baltic' );?></a></p>
+						<p><a href="<?php echo self_admin_url( 'themes.php?page=baltic&tab=actions' ) ;?>" class="button button-primary button-hero"><?php esc_attr_e( 'Complete Setup', 'baltic' );?></a></p>
 					<?php endif;?>
 				</div>
 				<?php endif;?>

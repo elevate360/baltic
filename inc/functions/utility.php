@@ -190,10 +190,13 @@ function baltic_get_breadcrumb_link( $url, $title, $content, $sep = '' ) {
 endif;
 
 if ( ! function_exists( 'baltic_get_layout' ) ) :
-
+/**
+ * [baltic_get_layout description]
+ * @return [type] [description]
+ */
 function baltic_get_layout(){
 
-	$layout = 'content-sidebar';
+	$layout = '';
 
 	if ( baltic_is_blog() ) {
 		$layout = baltic_get_option( 'archive_layout' );
@@ -202,6 +205,28 @@ function baltic_get_layout(){
 	}
 
 	return apply_filters( 'baltic_site_layout', $layout );
+
+}
+endif;
+
+if ( ! function_exists( 'baltic_get_products_layout' ) ) :
+/**
+ * [baltic_get_products_layout description]
+ * @return [type] [description]
+ */
+function baltic_get_products_layout(){
+
+	$layout = '';
+
+	if ( is_post_type_archive( 'product' ) && is_search() ) {
+		$layout = esc_attr( baltic_get_option( 'products_layout' ) );
+	}elseif ( is_shop() || is_product_category() || is_product_tag() ) {
+		$layout = esc_attr( baltic_get_option( 'products_layout' ) );
+	} elseif( is_product() ) {
+		$layout = esc_attr( baltic_get_option( 'product_layout' ) );
+	}
+
+	return apply_filters( 'baltic_products_layout', $layout );
 
 }
 endif;

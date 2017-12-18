@@ -1,60 +1,34 @@
-.woocommerce-archive-thumbnail {
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	z-index: -1;
-	overflow: hidden;
-	img {
-		position: absolute;
-		left: 50%;
-		top: 0;
-		min-width: 100%;
-		min-height: 100%;
-		max-width: inherit;
-		-webkit-transform: translate3d(0, 0, 0);
-		transform: translate3d(0, 0, 0);
-		-webkit-transform: translateX(-50%);
-		transform: translateX(-50%);
-	}
-	&:after {
-	    position: absolute;
-	    top: 0;
-	    left: 0;
-	    width: 100%;
-	    height: 100%;
-	    content: " ";
-	    box-shadow: inset 0 1px 0 rgba( 255,255,255,.25 );
-		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.9+0,0.3+100 */
-		background: -moz-linear-gradient(left, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 100%); /* FF3.6-15 */
-		background: -webkit-linear-gradient(left, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.3) 100%); /* Chrome10-25,Safari5.1-6 */
-		background: linear-gradient(to right, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6000000', endColorstr='#4d000000',GradientType=1 ); /* IE6-9 */
+.result-count-wrap {
+	background-color: $color__white;
+	padding: $gutter__width;
+	border-radius: .25rem;
+	margin-bottom: $gutter__width;
+	box-shadow: 0 8px 16px rgba( 0,0,0,.1 );
+	@include respond-to( small ){
+		margin-bottom: $gutter__width*2;
 	}
 }
 
 .woocommerce-result-count {
 	@include font-size(0.875);
 	margin-bottom: $gutter__width/2;
-	width: 100%;
-	text-align: center;
-	@include respond-to( small ){
-		float :left;
-		text-align: left;
-		width: auto;
-		margin-top: $gutter__width;
-	}
+	float :left;
+	text-align: left;
+	width: 50%;
+	margin-top: 6px;
 }
 
 .woocommerce-ordering {
-	width: 100%;
+	float: right;
+	width: 50%;
+	select {
+		padding: .25rem;
+		background-position:
+			calc(100% - 15px) calc(1em - 1px),
+			calc(100% - 10px) calc(1em - 1px);
+	}
 	@include respond-to( small ) {
-		float: right;
 		width: auto;
-		select {
-			width:  auto;
-		}
 	}
 }
 
@@ -64,11 +38,11 @@
 ul.products {
 	margin: 0;
 	padding: 0;
-	padding-left: $gutter__width/2;
-	padding-right: $gutter__width/2;
+	margin-left: -$gutter__width/2;
+	margin-right: -$gutter__width/2;
 	@include respond-to( small ){
-		padding-left: 0;
-		padding-right: 0;
+		margin-left: -$gutter__width;
+		margin-right: -$gutter__width;
 	}
 
 	li.product {
@@ -95,10 +69,10 @@ ul.products {
 		}
 
 		.star-rating {
-			position: absolute;
-			top: $gutter__width;
-			right: $gutter__width*2;
 			@include font-size(0.875);
+			position: absolute;
+			top: 15px;
+			right: 10px;
 		}
 
 		.button {
@@ -106,30 +80,28 @@ ul.products {
 			border-color: $color__text-secondary;
 			color: $color__text-secondary;
 			display: block;
-			@include radius-shadow();
+			border-radius: $site__border-radius;
 			&:hover,
 			&:focus {
 				background-color: $color__button;
 				border-color: $color__button;
 				color: $color__white;
-				@include radius-shadow-hover();
+				box-shadow: 0 8px 8px -4px rgba( 0,0,0,.25 );
 			}
 		}
 	}
 
-	.entry-inner {
-		background-color: $color__white;
-		border: 1px solid $color__alpha-dark;
-    	position: relative;
-	}
 }
 
 .entry-product {
 	background-color: $color__white;
+	position: relative;
 	padding: $gutter__width;
-	@include radius-shadow();
+	transition: all ease-in-out 0.25s;
+	border-radius: .5rem;
+	box-shadow: 0 8px 16px rgba( 0,0,0,.1 );
 	&:hover {
-		@include radius-shadow-hover();
+		box-shadow: 0 8px 32px rgba( 0,0,0,.25 );
 	}
 }
 
@@ -155,14 +127,14 @@ ul.products {
 	}
 	&,
 	img {
-		border-top-left-radius: .25rem;
-		border-top-right-radius: .25rem;
+		border-top-left-radius: .5rem;
+		border-top-right-radius: .5rem;
 	}
 }
 
 .woocommerce-loop-product__link {
 	display: block;
-	margin-bottom: $gutter__width;
+	margin-bottom: $gutter__width*2;
 	&,
 	&:hover,
 	&:focus {
@@ -170,8 +142,31 @@ ul.products {
 	}
 	.price {
 		color: $woocommerce__color-success;
-		margin-bottom: $gutter__width;
 		display: inline-block;
+	}
+}
+
+a.added_to_cart.wc-forward {
+	background-color: $woocommerce__color-success;
+	color: $color__white;
+	display: block;
+	overflow: hidden;
+	text-align: center;
+	position: absolute;
+	top: -$gutter__width/2;
+	right: -$gutter__width/2;
+	line-height: 32px;
+	width: 32px;
+	height: 32px;
+	border-radius: 32px;
+	box-shadow: 0 4px 8px rgba(0,0,0,.25);
+	&:before {
+		content: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 32 32' width='16' height='16' fill='none' stroke='#ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'><path d='M2 20 L12 28 30 4' /></svg>");
+		vertical-align: middle;
+	}
+	@include respond-to( medium ){
+		top: -$gutter__width;
+		right: -$gutter__width;
 	}
 }
 
@@ -217,14 +212,17 @@ ul.products {
 
 	.sidebar-content,
 	.content-sidebar {
-		.related,
-		.upsells {
-			ul.products {
-				margin-left: -$gutter__width;
-				margin-right: -$gutter__width;
-				li.product {
-					@include column-width( 3 );
-				}
+		ul.products {
+			li.product {
+				@include column-width( 3 );
+			}
+		}
+	}
+
+	.full-width {
+		ul.products {
+			.li.products {
+				@include column-width( 4 );
 			}
 		}
 	}

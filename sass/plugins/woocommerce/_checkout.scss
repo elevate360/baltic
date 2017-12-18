@@ -1,3 +1,31 @@
+.woocommerce {
+	p.cart-empty,
+	p.return-to-shop {
+		text-align: center;
+	}
+
+	p.cart-empty {
+		padding-top: 15vh;
+	}
+	p.return-to-shop {
+		padding-bottom: 15vh;
+	}
+}
+
+.woocommerce-billing-fields h3,
+#order_review_heading {
+	@include font-size(1.125);
+	margin-bottom: $gutter__width*2;
+}
+
+.woocommerce .woocommerce-checkout {
+	padding-top: $gutter__width*2;
+}
+
+.place-order {
+	margin-top: $gutter__width;
+}
+
 .woocommerce-cart-form {
 
 	.woocommerce & .qty {

@@ -14,10 +14,10 @@ input[type="submit"] {
     text-align: center;
     vertical-align: middle;
     user-select: none;
-	padding: .75rem;
+	padding: .75rem 1rem;
 	position: relative;
 	vertical-align: top;
-	transition-property: background, color, opacity, transform;
+	transition-property: background, color, opacity, transform, box-shadow;
 	transition-duration: 0.25s;
 	transition-timing-function: ease-in-out;
 

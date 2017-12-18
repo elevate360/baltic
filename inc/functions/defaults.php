@@ -24,8 +24,8 @@ function baltic_setting_default(){
 		'primary_color'			=> '#ff5722',
 		'secondary_color'		=> '#ff8a65',
 
-		'archive_layout'		=> 'content-sidebar',
-		'singular_layout'		=> 'content-sidebar',
+		'archive_layout'		=> 'full-width',
+		'singular_layout'		=> 'full-width',
 
 		'meta_date'				=> true,
 		'meta_author'			=> true,
@@ -46,14 +46,10 @@ function baltic_setting_default(){
 		'sale_color'			=> '#f44336',
 		'stars_color'			=> '#fc0',
 		'wc_quick_view'			=> true,
-		'loop_columns'			=> 2,
-		'wc_loop_columns'		=> 4,
-		'wc_products_per_page'	=> 12,
-		'shop_layout'			=> 'grid-layout',
-		'shop_terms_layout'		=> 'grid-layout',
-		'shop_search_layout'	=> 'content-sidebar',
-		'custom_checkout'		=> false,
-		'custom_login'			=> false,
+		'products_per_page'		=> 12,
+		'products_columns'		=> 4,
+		'products_layout'		=> 'content-sidebar',
+		'product_layout'		=> 'content-sidebar',
 
 	);
 

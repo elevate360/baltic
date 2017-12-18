@@ -64,7 +64,7 @@ add_action( 'baltic_entry_header', 'baltic_entry_meta', 20 );
  */
 function baltic_entry_content(){
 
-	if ( is_singular() ) {
+	if ( is_singular() || post_password_required() ) {
 		get_template_part( 'components/post/entry', 'content' );
 	} else {
 		the_excerpt();

@@ -32,15 +32,16 @@
 			.woocommerce-product-gallery__trigger {
 			    position: absolute;
 			    cursor: pointer;
-			    top: .25rem;
-			    right: 19px;
+			    top: $gutter__width;
+			    right: $gutter__width*2;
 			    font-size: 2rem;
 			    z-index: 1;
 			    width: 36px;
 			    height: 36px;
-			    background-color: $color__alpha-dark05;
+			    background-color: $color__alpha-dark;
 			    text-indent: -9999px;
 			    box-sizing: content-box;
+			    border-radius: 36px;
 				&:before {
 					content: "";
 					display: block;
@@ -68,7 +69,7 @@
 				}
 				&:hover,
 				&:focus {
-					background-color: $color__alpha-dark;
+					background-color: $color__text-main;
 				}
 			}
 
@@ -183,5 +184,31 @@ p.stars {
 	float: right;
 	.count {
 		float: none;
+	}
+}
+
+.upsells.products,
+.related.products {
+	> h2 {
+		@include font-size(1.125);
+		padding-bottom: $gutter__width*2;
+		margin-bottom: $gutter__width*2;
+		position: relative;
+		&:after {
+			background-color: $color__text-main;
+			content: " ";
+			width: $gutter__width*2;
+			height: 2px;
+			position: absolute;
+			bottom: -1px;
+			left: 0;
+		}
+	}
+	.entry-product {
+		border: 1px solid $color__alpha-dark;
+		box-shadow: none;
+	}
+	ul.products li.product .button {
+		box-shadow: none;
 	}
 }

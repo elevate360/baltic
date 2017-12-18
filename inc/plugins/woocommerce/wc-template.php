@@ -5,13 +5,60 @@
  * @package Baltic
  */
 
-if( ! function_exists( 'baltic_woocommerce_page_header' ) ) :
 /**
- * [baltic_woocommerce_page_header description]
+ * Baltic WooCommerce Markup
  * @return [type] [description]
  */
-function baltic_woocommerce_page_header(){
-	if( ! is_shop() ) {
+function baltic_wc_markup(){
+
+	/** Add archive page header */
+	add_action( 'baltic_inner_before', 'baltic_wc_page_header', 20 );
+	add_action( 'woocommerce_archive_description', 'baltic_wc_archive_thumbnail', 20 );
+
+	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+
+	/** Wrap #primary and #secondary within container class */
+	add_action( 'woocommerce_before_main_content', 'baltic_wc_container_open', 5 );
+	add_action( 'woocommerce_sidebar', 'baltic_wc_container_close', 15 );
+
+	/** Add primary main wrapper */
+	remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+	remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+	add_action( 'woocommerce_before_main_content', 'baltic_wc_wrapper_before' );
+	add_action( 'woocommerce_after_main_content', 'baltic_wc_wrapper_after' );
+
+	/** Wrap result and sort within a div */
+	add_action( 'woocommerce_before_shop_loop', 'baltic_wc_result_wrap_open', 19 );
+	add_action( 'woocommerce_before_shop_loop', 'baltic_wc_result_wrap_close', 31 );
+
+	/** Add WooCommerce columns count */
+	add_action( 'woocommerce_before_shop_loop', 'baltic_wc_product_columns_wrapper', 40 );
+	add_action( 'woocommerce_after_shop_loop', 'baltic_wc_product_columns_wrapper_close', 40 );
+
+	/** Add pagination within primary and main class */
+	remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
+
+	/** Add entry-inner inside li.product */
+	add_action( 'woocommerce_before_shop_loop_item', 'baltic_wc_entry_inner_open', 5 );
+	add_action( 'woocommerce_after_shop_loop_item', 'baltic_wc_entry_inner_close', 99 );
+
+	/** Reposition rating */
+	remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+	add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+
+	/** Remove sidebar if full-width layout is selected */
+	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+	add_action( 'woocommerce_sidebar', 'baltic_wc_sidebar', 10 );
+
+}
+add_action( 'baltic_init', 'baltic_wc_markup', 15 );
+
+/**
+ * [baltic_wc_page_header description]
+ * @return [type] [description]
+ */
+function baltic_wc_page_header(){
+	if( ! is_woocommerce() ) {
 		return;
 	}
 ?>
@@ -36,79 +83,125 @@ function baltic_woocommerce_page_header(){
     </header><!-- .page-header -->
 <?php
 }
-endif;
-add_action( 'baltic_inner_before', 'baltic_woocommerce_page_header', 20 );
 
-if ( ! function_exists( 'baltic_woocommerce_product_columns_wrapper' ) ) :
+/**
+ * [baltic_wc_archive_thumbnail description]
+ * @return [type] [description]
+ */
+function baltic_wc_archive_thumbnail(){
+
+	$shop_id 	= wc_get_page_id( 'shop' );
+
+    if ( is_product_category() ){
+	    global $wp_query;
+	    $cat 		= $wp_query->get_queried_object();
+	    $image_id 	= get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
+	    $image 		= wp_get_attachment_image( $image_id, 'post-thumbnail' );
+
+	    if ( $image ) {
+	    	echo sprintf( '<figure class="page-header-thumbnail">%s</figure>', $image );
+		}
+
+	} elseif ( is_shop() || ( is_post_type_archive( 'product' ) && is_search() ) ) {
+
+		$image 		= get_the_post_thumbnail( $shop_id, 'post-thumbnail' );
+
+		if ( $image ) {
+			echo sprintf( '<figure class="page-header-thumbnail">%s</figure>', $image );
+		}
+
+	}
+
+}
+
+/**
+ * [baltic_wc_container_open description]
+ * @return [type] [description]
+ */
+function baltic_wc_container_open(){
+	?>
+		<div class="container">
+			<div class="columns">
+	<?php
+}
+
+/**
+ * [baltic_wc_container_close description]
+ * @return [type] [description]
+ */
+function baltic_wc_container_close(){
+	?>
+			</div><!-- .columns -->
+		</div><!-- .container -->
+	<?php
+}
+
+/**
+ * Before Content.
+ *
+ * Wraps all WooCommerce content in wrappers which match the theme markup.
+ *
+ * @return void
+ */
+function baltic_wc_wrapper_before() {
+	?>
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+	<?php
+}
+
+
+/**
+ * After Content.
+ *
+ * Closes the wrapping divs.
+ *
+ * @return void
+ */
+function baltic_wc_wrapper_after() {
+	?>
+		</main><!-- #main -->
+		<?php baltic_wc_pagination();?>
+	</div><!-- #primary -->
+	<?php
+}
+
+
+/**
+ * [baltic_wc_result_wrap_open description]
+ * @return [type] [description]
+ */
+function baltic_wc_result_wrap_open(){
+	echo '<div class="result-count-wrap clear">';
+}
+
+/**
+ * [baltic_wc_result_wrap_close description]
+ * @return [type] [description]
+ */
+function baltic_wc_result_wrap_close(){
+	echo '</div>';
+}
+
 /**
  * Product columns wrapper.
  *
  * @return  void
  */
-function baltic_woocommerce_product_columns_wrapper() {
+function baltic_wc_product_columns_wrapper() {
 
-	$layout = baltic_get_layout();
-	if ( $layout = 'content-sidebar' || $layout == 'sidebar-content' ) {
-		$columns = 3;
-	} else {
-		$columns = 4;
-	}
-	echo '<div class="columns columns-' . absint( $columns ) . '">';
+	echo '<div class="columns-' . absint( baltic_get_option( 'products_columns' ) ) .'">';
+
 }
-endif;
-add_action( 'woocommerce_before_shop_loop', 'baltic_woocommerce_product_columns_wrapper', 40 );
 
-if ( ! function_exists( 'baltic_woocommerce_product_columns_wrapper_close' ) ) :
 /**
  * Product columns wrapper close.
  *
  * @return  void
  */
-function baltic_woocommerce_product_columns_wrapper_close() {
+function baltic_wc_product_columns_wrapper_close() {
 	echo '</div>';
 }
-endif;
-add_action( 'woocommerce_after_shop_loop', 'baltic_woocommerce_product_columns_wrapper_close', 40 );
-
-/**
- * Remove default WooCommerce wrapper.
- */
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
-
-if ( ! function_exists( 'baltic_woocommerce_wrapper_before' ) ) {
-	/**
-	 * Before Content.
-	 *
-	 * Wraps all WooCommerce content in wrappers which match the theme markup.
-	 *
-	 * @return void
-	 */
-	function baltic_woocommerce_wrapper_before() {
-		?>
-		<div id="primary" class="content-area">
-			<main id="main" class="site-main" role="main">
-		<?php
-	}
-}
-add_action( 'woocommerce_before_main_content', 'baltic_woocommerce_wrapper_before' );
-
-if ( ! function_exists( 'baltic_woocommerce_wrapper_after' ) ) {
-	/**
-	 * After Content.
-	 *
-	 * Closes the wrapping divs.
-	 *
-	 * @return void
-	 */
-	function baltic_woocommerce_wrapper_after() {
-		?>
-			</main><!-- #main -->
-		</div><!-- #primary -->
-		<?php
-	}
-}
-add_action( 'woocommerce_after_main_content', 'baltic_woocommerce_wrapper_after' );
 
 /**
  * [baltic_wc_entry_inner_open description]
@@ -117,7 +210,6 @@ add_action( 'woocommerce_after_main_content', 'baltic_woocommerce_wrapper_after'
 function baltic_wc_entry_inner_open(){
 	echo '<div class="entry-product">';
 }
-add_action( 'woocommerce_before_shop_loop_item', 'baltic_wc_entry_inner_open', 5 );
 
 /**
  * [baltic_wc_entry_inner_close description]
@@ -126,35 +218,43 @@ add_action( 'woocommerce_before_shop_loop_item', 'baltic_wc_entry_inner_open', 5
 function baltic_wc_entry_inner_close(){
 	echo '</div>';
 }
-add_action( 'woocommerce_after_shop_loop_item', 'baltic_wc_entry_inner_close', 99 );
 
-function baltic_wc_container_open(){
-	?>
-		<div class="container">
-			<div class="columns">
-	<?php
+/**
+ * [baltic_wc_pagination description]
+ * @return [type] [description]
+ */
+function baltic_wc_pagination(){
+
+	if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'infinite-scroll' ) ) {
+		return;
+	}
+
+	if ( baltic_get_option( 'posts_navigation' ) == 'posts_navigation' ) {
+		the_posts_navigation( array(
+	        'prev_text'          => __( '&larr; Older Products', 'baltic' ),
+	        'next_text'          => __( 'Newer Products &rarr;', 'baltic' ),
+		) );
+	} else {
+		the_posts_pagination( array(
+			'prev_text'          => sprintf( '%s <span class="screen-reader-text">%s</span>', baltic_get_svg( array( 'icon' => 'arrow-left' ) ), __( 'Previous Product', 'baltic' ) ),
+			'next_text'          => sprintf( '%s <span class="screen-reader-text">%s</span>', baltic_get_svg( array( 'icon' => 'arrow-right' ) ), __( 'Next Product', 'baltic' ) ),
+			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'baltic' ) . ' </span>',
+		) );
+	}
+
 }
-add_action( 'woocommerce_before_main_content', 'baltic_wc_container_open', 5 );
 
-function baltic_wc_container_close(){
-	?>
-			</div><!-- .columns -->
-		</div><!-- .container -->
-	<?php
+/**
+ * [baltic_wc_sidebar description]
+ * @return [type] [description]
+ */
+function baltic_wc_sidebar(){
+
+	$layout = baltic_get_option( 'products_layout' );
+
+	if( $layout == 'content-sidebar' || $layout == 'sidebar-content' ) {
+		woocommerce_get_sidebar();
+	}
+
 }
-add_action( 'woocommerce_sidebar', 'baltic_wc_container_close', 15 );
 
-remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
-
-function baltic_wc_result_wrap_open(){
-	echo '<div class="result-count-wrap clear">';
-}
-add_action( 'woocommerce_before_shop_loop', 'baltic_wc_result_wrap_open', 19 );
-
-function baltic_wc_result_wrap_close(){
-	echo '</div>';
-}
-add_action( 'woocommerce_before_shop_loop', 'baltic_wc_result_wrap_close', 31 );
-
-remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
-add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_price', 5 );

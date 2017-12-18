@@ -1,6 +1,6 @@
 a {
 	color: $color__link;
-	transition-property: background, color, opacity;
+	transition-property: background, color, opacity, box-shadow;
 	transition-duration: 0.25s;
 	transition-timing-function: ease-in-out;
 	&:hover,

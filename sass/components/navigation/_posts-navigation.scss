@@ -3,11 +3,14 @@
 .post-navigation {
 	position: relative;
 	clear: both;
-	margin: 0 0 1.5rem;
+	margin: 0 0 $gutter__width;
 	overflow: hidden;
-	padding-left: 15px;
-	padding-right: 15px;
 	width: 100%;
+	box-shadow: 0 8px 16px rgba( 0,0,0,.1 );
+
+	.site-main & {
+		background-color: $color__white;
+	}
 
 	.nav-previous {
 		float: left;
@@ -25,8 +28,12 @@
 		display: inline-block;
 		@include font-size(0.875);
 		font-weight: bold;
-		padding: 1rem 0;
+		padding: $gutter__width;
 		text-transform: uppercase;
+		@include respond-to( large ){
+			padding-left: $gutter__width*4;
+			padding-right: $gutter__width*4
+		}
 		span {
 			color: $color__text-secondary;
 			display: block;
@@ -42,4 +49,17 @@
 		}
 	}
 
+}
+
+/** Pagination */
+.pagination {
+	background-color: $color__white;
+	display: block;
+	clear: both;
+	overflow: hidden;
+	position: relative;
+	margin-bottom: $gutter__width;
+	border-radius: 0.25rem;
+	text-align: center;
+	box-shadow: 0 8px 16px rgba( 0,0,0,.1 );
 }

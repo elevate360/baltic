@@ -48,7 +48,7 @@ class Baltic_Theme_Functions {
 	 * @return array
 	 */
 	public function post_classes( $classes ) {
-		$blog_layout = baltic_get_option( 'general_layout' );
+
 		if ( 'page' === get_post_type() ) {
 			$classes = array_diff( $classes, array( 'hentry' ) );
 		}
