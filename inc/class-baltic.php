@@ -234,7 +234,7 @@ class Baltic_Init {
 
 	public function include_classes(){
 		require get_parent_theme_file_path( '/inc/class-template-functions.php' );
-		require get_parent_theme_file_path( '/inc/vendor/class-breadcrumb.php' );
+		require get_parent_theme_file_path( '/inc/class-breadcrumb.php' );
 	}
 
 	/**

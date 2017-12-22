@@ -1,5 +1,9 @@
 .clear:before,
 .clear:after,
+.columns:before,
+.columns:after,
+.entry:before,
+.entry:after,
 .entry-content:before,
 .entry-content:after,
 .comment-content:before,
@@ -16,6 +20,8 @@
 .entry-inner:after,
 .checkout:before,
 .checkout:after,
+.coupon:before,
+.coupon:after,
 ul.products:before,
 ul.products:after,
 .woocommerce-tabs ul.tabs:before,
@@ -23,11 +29,21 @@ ul.products:after,
 .form-row:before,
 .form-row:after,
 .cart:before,
-.cart:after {
+.cart:after,
+.woocommerce-billing-fields:before,
+.woocommerce-billing-fields:after,
+.woocommerce-shipping-fields:before,
+.woocommerce-shipping-fields:after,
+.woocommerce-additional-fields:before,
+.woocommerce-additional-fields:after,
+.search-form:before,
+.search-form:after {
 	@include clearfix;
 }
 
 .clear:after,
+.columns:after,
+.entry:after,
 .entry-content:after,
 .comment-content:after,
 .site-header:after,
@@ -36,9 +52,14 @@ ul.products:after,
 .entry-inner:after,
 .widget:after,
 .checkout:after,
+.coupon:after,
 ul.products:after,
 .woocommerce-tabs ul.tabs:after,
 .form-row:after,
-.cart:after {
+.cart:after,
+.woocommerce-billing-fields:after,
+.woocommerce-shipping-fields:after,
+.woocommerce-additional-fields:after,
+.search-form:after {
 	@include clearfix-after;
 }

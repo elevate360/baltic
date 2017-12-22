@@ -36,8 +36,8 @@ class Baltic_Breadcrumb {
 			'home'                    => __( 'Home', 'baltic' ),
 			'sep'                     => __( ' <span aria-label="breadcrumb separator" class="separator">/</span> ', 'baltic' ),
 			'list_sep'                => ', ',
-			'prefix'                  => '<nav class="breadcrumb"><div class="container">',
-			'suffix'                  => '</div></nav>',
+			'prefix'                  => '<nav class="breadcrumb">',
+			'suffix'                  => '</nav>',
 			'heirarchial_attachments' => true,
 			'heirarchial_categories'  => true,
 			'labels' => array(

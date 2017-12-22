@@ -40,12 +40,15 @@
 		border-right-width: 0;
 		float: left;
 		width: calc( 100% - 42px );
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
 		-web-webkit-appearance: textfield;
 	}
 	.search-submit {
 		float: right;
 		width: 42px;
 		height: 42px;
+		padding: .5rem;
 		border-top-left-radius: 0;
 		border-bottom-left-radius: 0;
 	}

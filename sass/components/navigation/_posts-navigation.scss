@@ -6,7 +6,7 @@
 	margin: 0 0 $gutter__width;
 	overflow: hidden;
 	width: 100%;
-	box-shadow: 0 8px 16px rgba( 0,0,0,.1 );
+	@include radius-shadow();
 
 	.site-main & {
 		background-color: $color__white;
@@ -30,9 +30,11 @@
 		font-weight: bold;
 		padding: $gutter__width;
 		text-transform: uppercase;
-		@include respond-to( large ){
-			padding-left: $gutter__width*4;
-			padding-right: $gutter__width*4
+		@include respond-to( medium ){
+			padding-top: $gutter__width*2;
+			padding-bottom: $gutter__width*2;
+			padding-left: $gutter__width*3;
+			padding-right: $gutter__width*3;
 		}
 		span {
 			color: $color__text-secondary;
@@ -49,6 +51,17 @@
 		}
 	}
 
+	@include respond-to( medium ){
+		margin-bottom: $gutter__width*2;
+	}
+
+}
+
+.comment-navigation {
+	box-shadow: none;
+	a {
+		padding: 0;
+	}
 }
 
 /** Pagination */
@@ -59,7 +72,64 @@
 	overflow: hidden;
 	position: relative;
 	margin-bottom: $gutter__width;
-	border-radius: 0.25rem;
 	text-align: center;
-	box-shadow: 0 8px 16px rgba( 0,0,0,.1 );
+	@include radius-shadow();
+	@include respond-to( medium ){
+		margin-bottom: $gutter__width*2;
+	}
+}
+
+.page-numbers {
+	color: $color__text-main;
+	font-weight: 500;
+	display: none;
+	padding: 1rem 1.25rem;
+	position: relative;
+	&.current {
+		color: $color__text-main;
+		display: inline-block;
+		.screen-reader-text {
+		    clip: auto;
+		    height: auto;
+		    overflow: auto;
+		    position: relative !important;
+		    width: auto;
+		}
+	}
+	&.next,
+	&.prev {
+		display: block;
+		position: absolute;
+		top: 0;
+	}
+	&.next {
+		right: 0;
+	}
+	&.prev {
+		left: 0;
+	}
+	&:hover:not(.current),
+	&:focus:not(.current) {
+		color: $color__link-hover;
+	}
+	&.dots{
+		&:hover,
+		&:focus {
+			color: $color__text-main!important;
+		}
+	}
+
+	@include respond-to( medium ){
+		display: inline-block;
+		&.current {
+			color: $color__link;
+			.screen-reader-text {
+			    clip: rect(1px, 1px, 1px, 1px);
+			    height: 1px;
+			    overflow: hidden;
+			    position: absolute !important;
+			    width: 1px;
+			}
+		}
+	}
 }

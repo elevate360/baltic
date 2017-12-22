@@ -1,6 +1,7 @@
 /** Sidebar footer */
 #tertiary {
-	padding-top: $gutter__width*4;
+	background-color: $color__white;
+	padding-top: $gutter__width*2;
 }
 
 /** Site Footer */
@@ -11,6 +12,13 @@
 	padding-top: $gutter__width;
 	padding-bottom: $gutter__width;
 	position: relative;
+	a {
+		color: $color__text-main;
+		&:hover,
+		&:focus {
+			color: $color__link-hover;
+		}
+	}
 	@include respond-to( medium ) {
 		padding-top: $gutter__width*2;
 		padding-bottom: $gutter__width*2;

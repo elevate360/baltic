@@ -3,23 +3,77 @@
 	background-color: $color__site-header;
 	position: relative;
 	z-index: 5;
-	box-shadow: 0 16px 32px $color__alpha-dark;
+	transition: all .25s ease-in-out;
 	> .container {
 		position: relative;
 	}
 	@include respond-to(medium) {
-		padding-left: $gutter__width*2;
-		padding-right: $gutter__width*2;
+		.admin-bar &.stick {
+			top: 32px !important;
+		}
+		&.stick {
+			box-shadow: 0 16px 64px 16px rgba( 0,0,0,.1 );
+			.main-navigation {
+				display: none;
+				&.show {
+					display: block;
+				}
+			}
+		}
 	}
+}
+
+.header-menu-toggle {
+    background-color: transparent;
+    border-color: transparent;
+    position: absolute;
+    color: $color__text-main;
+    cursor: pointer;
+    padding: 0;
+    top: 18px;
+    left: $gutter__width;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    transform: scale(0);
+    z-index: 5;
+
+    &:hover,
+    &:focus,
+    &:active {
+    	background-color: transparent;
+		border-color: transparent;
+		color: $color__text-main;
+		box-shadow: none;
+    }
+
+	.icon-stroke {
+	    width: 2rem;
+	    height: 2rem;
+	}
+
+	&.toggled .icon-menu,
+    .icon-close {
+    	display: none;
+    }
+
+    &.toggled .icon-close {
+    	display: block;
+    }
+
+    .stick & {
+    	transform: scale(1);
+    	opacity: 1;
+    }
 }
 
 /** Site Branding */
 .site-branding {
 	position: relative;
-	padding-top: $gutter__width;
-	padding-bottom: $gutter__width;
+	padding: $gutter__width;
 	float: left;
+	left: 0;
 	z-index: 1;
+	transition: all .25s ease-in-out;
 	&,
 	a {
 		color: $color__text-main;
@@ -31,6 +85,11 @@
 	@include respond-to(medium) {
 		padding-top: $gutter__width*2;
 		padding-bottom: $gutter__width*2;
+		.stick & {
+			padding-top: $gutter__width;
+			padding-bottom: $gutter__width;
+			left: 60px;
+		}
 	}
 }
 
@@ -61,7 +120,10 @@ a.custom-logo-link {
 /** Header search */
 .header-search-area {
 	clear: both;
+	padding-left: $gutter__width;
+	padding-right: $gutter__width;
 	margin-bottom: $gutter__width;
+	transition: all .25s ease-in-out;
 	label {
 		margin: 0;
 	}
@@ -75,9 +137,11 @@ a.custom-logo-link {
 		float: left;
 		width: 50%;
 	    height: 50px;
+	    border-top-left-radius: 0;
+	    border-bottom-left-radius: 0;
 	}
 	.search-submit {
-		background-color: $color__white;
+		background-color: rgba( 255,255,255,.5 );
 		border-color: $color__alpha-dark;
 		display: none;
 		height: 50px;
@@ -116,6 +180,14 @@ a.custom-logo-link {
 	    padding-top: $gutter__width*2;
 	    padding-right: 180px;
 	    padding-left: 230px;
+	    .stick & {
+	    	padding-top: $gutter__width;
+	    	padding-left: 290px;
+	    }
+		.search-filter {
+		    border-top-right-radius: 0;
+		    border-bottom-right-radius: 0;
+		}
 	}
 }
 
@@ -139,6 +211,18 @@ a.custom-logo-link {
 		justify-content: center;
 		text-align: center;
 		text-shadow: 0 4px 8px rgba( 0,0,0,.5 );
+	}
+}
+
+.page-header-inner {
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+	@include respond-to( medium ){
+		max-width: 60%;
+		.has-archive-thumbnail &{
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 }
 
@@ -180,20 +264,7 @@ a.custom-logo-link {
 	}
 }
 
-.page-header-title {
+.page-title {
 	@include font-size(2);
 	font-weight: 500;
-	margin-bottom: .5rem;
-}
-
-.page-title,
-.page-description,
-.term-description {
-	@include respond-to( medium ){
-		max-width: 60%;
-		.page-header.has-archive-thumbnail &{
-			margin-left: auto;
-			margin-right: auto;
-		}
-	}
 }

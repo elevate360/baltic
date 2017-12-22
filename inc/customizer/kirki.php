@@ -1,6 +1,8 @@
 <?php
 /**
+ * Kirki settings
  *
+ * @package Baltic
  */
 
 Kirki::add_config( 'baltic', array(

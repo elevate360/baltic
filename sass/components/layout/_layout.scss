@@ -39,6 +39,24 @@
 	width: 100%;
 }
 
+.site-content > .container {
+	padding-top: $gutter__width;
+	padding-bottom: $gutter__width;
+
+	@include respond-to( medium ){
+		padding-top: $gutter__width*2;
+		padding-bottom: $gutter__width*2;
+	}
+	@include respond-to( large ){
+		padding-top: $gutter__width*3;
+		padding-bottom: $gutter__width*3;
+	}
+	@include respond-to( extra-large ){
+		padding-top: $gutter__width*4;
+		padding-bottom: $gutter__width*4;
+	}
+}
+
 @include respond-to( medium ){
 
 	.content-sidebar {

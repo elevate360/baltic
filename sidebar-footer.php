@@ -15,5 +15,9 @@ if ( ! is_active_sidebar( $sidebar ) ) {
 ?>
 
 <aside <?php baltic_attr( 'tertiary' );?>>
-	<?php dynamic_sidebar( $sidebar ); ?>
+	<div class="container">
+		<div class="columns columns-4">
+			<?php dynamic_sidebar( $sidebar ); ?>
+		</div><!-- .columns -->
+	</div><!-- .container -->
 </aside><!-- #tertiary -->

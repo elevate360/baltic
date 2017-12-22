@@ -21,12 +21,15 @@ class Baltic_WooCommerce {
 		add_filter( 'body_class', 			array( $this, 'body_classes' ) );
 		add_filter( 'post_class', 			array( $this, 'post_classes' ) );
 
+		add_action( 'baltic_meta', array( $this, 'force_layout' ) );
+
 		add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 		add_filter( 'loop_shop_per_page', 	array( $this, 'products_per_page' ) );
 		add_filter( 'loop_shop_columns', 	array( $this, 'loop_columns' ) );
 		add_filter( 'woocommerce_product_thumbnails_columns', 	array( $this, 'thumbnail_columns' ) );
 		add_filter( 'woocommerce_output_related_products_args', array( $this, 'related_products_args' ) );
+
 
 		add_filter( 'baltic_archive_crumb', array( $this, 'breadcrumb_args' ), 10, 2 );
 		add_filter( 'baltic_single_crumb', array( $this, 'breadcrumb_args' ), 10, 2 );
@@ -94,13 +97,7 @@ class Baltic_WooCommerce {
 	 */
 	public function body_classes( $classes ) {
 
-		if ( is_post_type_archive( 'product' ) && is_search() ) {
-			$classes[] = esc_attr( baltic_get_option( 'products_layout' ) );
-		}elseif ( is_shop() || is_product_category() || is_product_tag() ) {
-			$classes[] = esc_attr( baltic_get_option( 'products_layout' ) );
-		} elseif( is_product() ) {
-			$classes[] = esc_attr( baltic_get_option( 'product_layout' ) );
-		}
+		$classes[]	= esc_attr( baltic_get_products_layout() );
 
 		return $classes;
 	}
@@ -118,6 +115,16 @@ class Baltic_WooCommerce {
 	public function post_classes( $classes ) {
 
 		return $classes;
+	}
+
+	/**
+	 * [force_layout description]
+	 * @return [type] [description]
+	 */
+	public function force_layout(){
+		if ( is_page( wc_get_page_id( 'checkout' ) ) || is_page( wc_get_page_id( 'cart' ) ) ) {
+			add_filter( 'baltic_site_layout', 'baltic__get_full_width' );
+		}
 	}
 
 	/**
@@ -155,17 +162,9 @@ class Baltic_WooCommerce {
 	 */
 	public function related_products_args( $args ) {
 
-		$layout = baltic_get_option( 'product_layout' );
-
-		if ( ( $layout == 'content-sidebar' ) || ( $layout == 'sidebar-content' ) ) {
-			$num = 3;
-		} else {
-			$num = 4;
-		}
-
 		$defaults = array(
-			'posts_per_page' => absint( $num ),
-			'columns'        => absint( $num ),
+			'posts_per_page' => 2,
+			'columns'        => 2,
 		);
 
 		$args = wp_parse_args( $defaults, $args );

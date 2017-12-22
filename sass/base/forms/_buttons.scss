@@ -20,6 +20,7 @@ input[type="submit"] {
 	transition-property: background, color, opacity, transform, box-shadow;
 	transition-duration: 0.25s;
 	transition-timing-function: ease-in-out;
+	border-radius: .25rem;
 
 	&:hover,
 	&:active,

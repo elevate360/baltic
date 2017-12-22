@@ -123,48 +123,6 @@ function baltic_get_link_url() {
 }
 endif;
 
-if ( ! function_exists( 'baltic_page_header_page' ) ) :
-/**
- * Baltic page header archive
- *
- * @return string
- */
-function baltic_page_header_page( $page_id ){
-
-	if ( has_post_thumbnail( $page_id ) ) {
-		echo sprintf( '<div class="page-header-image">%s</div>', get_the_post_thumbnail( $page_id, 'full' ) );
-	}
-
-	echo sprintf( '<p class="page-header-title">%s</p>', get_the_title( absint( $page_id ) ) );
-	echo sprintf( '<div class="page-header-description">%s</div>', wpautop( get_post_field( 'post_content', absint( $page_id ) ) ) );
-
-}
-endif;
-
-if ( ! function_exists( 'baltic_breadcrumb' ) ) :
-/**
- * Helper function for the Baltic Breadcrumb Class.
- *
- * @since 1.0.0
- *
- * @global Baltic_Breadcrumb $_baltic_breadcrumb
- *
- * @param array $args Breadcrumb arguments.
- */
-function baltic_breadcrumb( $args = array() ) {
-
-	global $_baltic_breadcrumb;
-
-	if ( ! $_baltic_breadcrumb ) {
-		$_baltic_breadcrumb = new Baltic_Breadcrumb;
-	}
-
-	$_baltic_breadcrumb->output( $args );
-
-}
-endif;
-
-
 if ( ! function_exists( 'baltic_get_breadcrumb_link' ) ) :
 /**
  * Helper function for the Baltic Breadcrumb Class.
@@ -200,7 +158,7 @@ function baltic_get_layout(){
 
 	if ( baltic_is_blog() ) {
 		$layout = baltic_get_option( 'archive_layout' );
-	} elseif( is_singular() ) {
+	} elseif( is_singular() && ! is_singular( 'product' ) ) {
 		$layout = baltic_get_option( 'singular_layout' );
 	}
 
@@ -230,3 +188,15 @@ function baltic_get_products_layout(){
 
 }
 endif;
+
+function baltic__get_content_sidebar(){
+	return 'content-sidebar';
+}
+
+function baltic__get_sidebar_content(){
+	return 'sidebar-content';
+}
+
+function baltic__get_full_width(){
+	return 'full-width';
+}

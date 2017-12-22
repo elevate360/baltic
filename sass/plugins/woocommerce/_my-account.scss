@@ -37,3 +37,35 @@
 		padding-left: $gutter__width;
 	}
 }
+
+.woocommerce {
+
+	.u-columns {
+		margin-left: -$gutter__width;
+		margin-right: -$gutter__width;
+		.col-1,
+		.col-2 {
+			padding-left: $gutter__width;
+			padding-right: $gutter__width;
+			width: 50%;
+			float: left;
+		}
+		h2 {
+			@include font-size(1.125);
+		}
+	}
+
+}
+
+.woocommerce-form-login {
+	.woocommerce-form__label-for-checkbox {
+		display: inline-block!important;
+	    margin-left: 1rem;
+	    margin-top: .75rem;
+	    margin-bottom: 0;
+	}
+}
+
+.woocommerce-LostPassword {
+	@include font-size(0.875);
+}

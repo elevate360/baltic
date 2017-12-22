@@ -2,15 +2,9 @@
 	color: $color__white;
 	clear: both;
 	display: block;
-	margin-left: -$gutter__width;
-	margin-right: -$gutter__width;
 	position: relative;
 	z-index: 5;
 	transition: all ease-in-out .25s;
-	@include respond-to( medium ){
-		margin-left: -$gutter__width*2;
-		margin-right: -$gutter__width*2;
-	}
 
 	> .menu {
 		background-color: $color__background-submenu;

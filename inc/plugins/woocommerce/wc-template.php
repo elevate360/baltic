@@ -64,21 +64,23 @@ function baltic_wc_page_header(){
 ?>
     <header class="page-header woocommerce-products-header">
     	<div class="container">
-		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+			<div class="page-header-inner">
+				<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 
-			<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+					<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
 
-		<?php endif; ?>
+				<?php endif; ?>
 
-		<?php
-			/**
-			 * woocommerce_archive_description hook.
-			 *
-			 * @hooked woocommerce_taxonomy_archive_description - 10
-			 * @hooked woocommerce_product_archive_description - 10
-			 */
-			do_action( 'woocommerce_archive_description' );
-		?>
+				<?php
+					/**
+					 * woocommerce_archive_description hook.
+					 *
+					 * @hooked woocommerce_taxonomy_archive_description - 10
+					 * @hooked woocommerce_product_archive_description - 10
+					 */
+					do_action( 'woocommerce_archive_description' );
+				?>
+			</div><!-- .page-header-inner -->
 		</div><!-- .container -->
     </header><!-- .page-header -->
 <?php
@@ -236,8 +238,8 @@ function baltic_wc_pagination(){
 		) );
 	} else {
 		the_posts_pagination( array(
-			'prev_text'          => sprintf( '%s <span class="screen-reader-text">%s</span>', baltic_get_svg( array( 'icon' => 'arrow-left' ) ), __( 'Previous Product', 'baltic' ) ),
-			'next_text'          => sprintf( '%s <span class="screen-reader-text">%s</span>', baltic_get_svg( array( 'icon' => 'arrow-right' ) ), __( 'Next Product', 'baltic' ) ),
+			'prev_text'          => sprintf( '%s <span class="screen-reader-text">%s</span>', baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'arrow-left' ) ), __( 'Previous Product', 'baltic' ) ),
+			'next_text'          => sprintf( '%s <span class="screen-reader-text">%s</span>', baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'arrow-right' ) ), __( 'Next Product', 'baltic' ) ),
 			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'baltic' ) . ' </span>',
 		) );
 	}
@@ -250,7 +252,7 @@ function baltic_wc_pagination(){
  */
 function baltic_wc_sidebar(){
 
-	$layout = baltic_get_option( 'products_layout' );
+	$layout = baltic_get_products_layout();
 
 	if( $layout == 'content-sidebar' || $layout == 'sidebar-content' ) {
 		woocommerce_get_sidebar();

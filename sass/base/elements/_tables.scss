@@ -1,8 +1,11 @@
 table {
 	background-color: $color__white;
-	border: 1px solid $color__alpha-dark;
+	border-collapse: collapse;
 	margin: 0 0 1.5rem;
+	overflow: hidden;
 	width: 100%;
+	border-radius: .25rem;
+	box-shadow: 0 0 0 1px $color__alpha-dark, 0 4px 12px $color__alpha-dark;
 }
 
 caption{

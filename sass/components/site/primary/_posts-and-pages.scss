@@ -6,9 +6,8 @@
 	background-color: $color__white;
 	padding: $gutter__width;
 	margin-bottom: $gutter__width;
-	box-shadow: 0 8px 16px rgba( 0,0,0,.1 );
 	position: relative;
-	border-radius: .25rem;
+	@include radius-shadow();
 	transition: all .25s ease-in-out;
 	.sticky &{
 		background-color: #673ab7;
@@ -16,12 +15,12 @@
 	}
 
 	@include respond-to( medium ){
+		padding: $gutter__width*2;
 		margin-bottom: $gutter__width*2;
 	}
 
 	@include respond-to( large ){
 		padding: $gutter__width*3;
-		padding-bottom: $gutter__width*2;
 	}
 }
 
@@ -80,12 +79,13 @@
 		margin-top: -$gutter__width*3;
 		margin-left: -$gutter__width*3;
 		margin-right: -$gutter__width*3;
+		margin-bottom: $gutter__width*3;
 	}
 }
 
 .entry-title {
 	color: $color__text-main;
-	@include font-size(1.5);
+	@include font-size(1.75);
 	margin-bottom: 1rem;
 	line-height: 1;
 	position: relative;
@@ -129,6 +129,7 @@ a.more-link {
 		border-color: $color__link;
 		color: $color__white;
 		padding-right: 1rem;
+		box-shadow: 0 8px 16px rgba( 0,0,0,.25 );
 		.icon-stroke {
 			left: 0;
 			opacity: 1;
@@ -142,5 +143,17 @@ a.more-link {
 			background-color: $color__link;
 			border-color: $color__link;
 		}
+	}
+}
+
+.author-info {
+	background-color: $color__white;
+	padding: $gutter__width;
+	margin-bottom: $gutter__width;
+	overflow: hidden;
+	@include radius-shadow();
+	@include respond-to( medium ){
+		padding: $gutter__width*3;
+		margin-bottom: $gutter__width*2;
 	}
 }

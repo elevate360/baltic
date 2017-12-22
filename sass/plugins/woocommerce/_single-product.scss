@@ -3,7 +3,16 @@
 		background-color: #fff;
 		position: relative;
 		max-width: 100%;
-		padding: 1.5rem;
+		padding: $gutter__width;
+		@include radius-shadow();
+
+		@include respond-to( medium ){
+			padding: $gutter__width*2;
+		}
+
+		@include respond-to( large ){
+			padding: $gutter__width*3;
+		}
 
 		div.images img {
 		    display: block;
@@ -27,6 +36,7 @@
 		}
 
 		.woocommerce-product-gallery {
+			margin-bottom: 1.5rem;
 			position: relative;
 
 			.woocommerce-product-gallery__trigger {
@@ -176,7 +186,7 @@ p.stars {
 }
 
 .woocommerce-Reviews-title {
-	@include font-size(1.5);
+	@include font-size(1.25);
 }
 
 .woocommerce-review-link {
@@ -185,6 +195,73 @@ p.stars {
 	.count {
 		float: none;
 	}
+}
+
+table.variations,
+table.group_table {
+	border: none;
+	box-shadow: none;
+	td,
+	th {
+		padding: .25rem 0;
+		vertical-align: middle;
+	}
+	label {
+		margin: 0;
+	}
+	tbody tr:nth-of-type(even) {
+	    background-color: $color__white;
+	}
+}
+
+table.variations {
+	td,
+	th {
+		vertical-align: text-top;
+	}
+}
+
+a.reset_variations {
+	display: inline-block;
+	margin-top: .5rem;
+}
+
+.woocommerce-variation {
+	margin-bottom: 1.5rem;
+}
+
+.woocommerce-Price-amount {
+	@include font-size(1.125);
+	font-weight: 500;
+}
+
+.woocommerce-Reviews {
+
+	.commentlist {
+		margin-bottom: 1.5rem;
+	}
+
+	.comment-form {
+		margin-bottom: 1.5rem;
+	}
+
+	.description {
+		padding-left: 75px;
+	}
+
+	@include respond-to( medium ){
+		p.comment-form-author {
+			float: left;
+			width: 50%;
+			padding-right: $gutter__width;
+		}
+		p.comment-form-email {
+		    float: right;
+		    padding-right: 0;
+		    padding-left: $gutter__width;
+		}
+	}
+
 }
 
 .upsells.products,
@@ -210,5 +287,19 @@ p.stars {
 	}
 	ul.products li.product .button {
 		box-shadow: none;
+	}
+
+}
+
+@include respond-to( medium ){
+	.upsells.products {
+		float: left;
+		width: 50%;
+		padding-right: $gutter__width;
+	}
+	.related.products {
+		float: right;
+		width: 50%;
+		padding-left: $gutter__width;
 	}
 }

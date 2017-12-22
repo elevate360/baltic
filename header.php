@@ -28,15 +28,17 @@
 	<?php do_action( 'baltic_header_before' );?>
 	<header <?php baltic_attr( 'site-header' );?>>
 		<div class="container">
-		<?php
-		/**
-		 * baltic_header hook
-		 *
-		 * @hooked baltic_site_branding() - 10
-		 * @hooked baltic_header_search() - 20
-		 * @hooked baltic_menu_primary() - 30
-		 */
-		do_action( 'baltic_header' );?>
+			<div class="columns">
+			<?php
+			/**
+			 * baltic_header hook
+			 *
+			 * @hooked baltic_site_branding() - 10
+			 * @hooked baltic_header_search() - 20
+			 * @hooked baltic_menu_primary() - 30
+			 */
+			do_action( 'baltic_header' );?>
+			</div><!-- .columns -->
 		</div><!-- .container -->
 	</header><!-- #masthead -->
 	<?php do_action( 'baltic_header_after' );?>

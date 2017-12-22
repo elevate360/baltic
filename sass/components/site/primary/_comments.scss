@@ -1,11 +1,19 @@
 .comments-area {
 	background-color: $color__white;
 	border-top: 1px solid $color__alpha-dark05;
-	padding-top: 3rem;
-	padding-bottom: 3rem;
-	padding-left: 1.5rem;
-	padding-right: 1.5rem;
-	margin-bottom: 4rem;
+	padding: $gutter__width;
+	margin-bottom: $gutter__width;
+	@include radius-shadow();
+
+	@include respond-to( medium ){
+		padding: $gutter__width*2;
+		margin-bottom: $gutter__width*2;
+	}
+
+	@include respond-to( large ){
+		padding: $gutter__width*3;
+		margin-bottom: $gutter__width*4;
+	}
 }
 
 .bypostauthor {
@@ -13,9 +21,19 @@
 }
 
 .comments-title {
-	padding-bottom: 1.5rem;
-	margin-bottom: 1.5rem;
+	@include font-size(1.25);
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
 	position: relative;
+	&:before {
+		background-color: $color__text-secondary;
+		content: " ";
+		position: absolute;
+		bottom: -1px;
+		left: 0;
+		width: 32px;
+		height: 2px;
+	}
 }
 
 .comment-list,
@@ -100,11 +118,13 @@
 	line-height: 1;
 	padding: .5rem 1.5em;
 	margin-bottom: 1.5rem;
+	border-radius: .25rem;
 	&:hover,
 	&:focus {
 		background-color: $color__link;
 		border-color: $color__link;
 		color: $color__white;
+		box-shadow: 0 4px 8px rgba( 0,0,0,.2 );
 	}
 }
 

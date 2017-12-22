@@ -12,6 +12,25 @@
 	}
 }
 
+.cart-collaterals {
+	h2 {
+		@include font-size(1.5);
+		margin-bottom: 1.25rem;
+	}
+	@include respond-to( medium ) {
+		.cross-sells {
+			float: left;
+			width: 50%;
+			padding-right: $gutter__width;
+		}
+		.cart_totals {
+			float: right;
+			width: 50%;
+			padding-left: $gutter__width;
+		}
+	}
+}
+
 .woocommerce-billing-fields h3,
 #order_review_heading {
 	@include font-size(1.125);
@@ -24,6 +43,9 @@
 
 .place-order {
 	margin-top: $gutter__width;
+	@include respond-to( medium ){
+		margin-top: $gutter__width*2;
+	}
 }
 
 .woocommerce-cart-form {
@@ -34,16 +56,29 @@
 	.coupon {
 		width: 100%;
 		margin-bottom: .5rem;
-		overflow: hidden;
 		input[type="text"],
 		input[type="submit"] {
 			float: left;
 			width: 50%;
 		}
+		input[type="text"] {
+			border-right-width: 0;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
 		input[type="submit"] {
 			border-left-width: 0;
 			padding-left: 0;
 			padding-right: 0;
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+
+		@include respond-to( medium ){
+			float: left;
+			width: 40%;
+			padding-right: 10px;
+			margin-bottom: 0;
 		}
 	}
 	input[type="submit"] {
@@ -51,6 +86,10 @@
 		&[disabled] {
 			cursor: not-allowed;
 			opacity: .75;
+		}
+		@include respond-to( medium ){
+			float: right;
+			width: auto;
 		}
 	}
 }
@@ -102,8 +141,8 @@
 		}
 
 		input[type=checkbox]:checked + span:before {
-			border-color: #000;
-			background: #000;
+			border-color: $color__text-main;
+			background: $color__text-main;
 		}
 	}
 }
@@ -111,6 +150,19 @@
 .woocommerce-checkout-review-order-table {
 	border-bottom-width: 0;
 	margin-bottom: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	tfoot {
+		border-top: 2px solid $color__alpha-dark05;
+		border-bottom: 1px solid $color__alpha-dark05;
+		th {
+			text-align: right;
+		}
+		tr,
+		td {
+			background-color: transparent;
+		}
+	}
 }
 
 .woocommerce-checkout-payment {
@@ -118,8 +170,10 @@
 }
 
 .wc_payment_methods {
-	border: 1px solid $color__alpha-dark;
-	border-bottom-width: 0;
+	box-shadow: 0 0 0 1px $color__alpha-dark, 0 4px 12px $color__alpha-dark;
+	border-bottom-left-radius: .25rem;
+	border-bottom-right-radius: .25rem;
+	overflow: hidden;
 	&,
 	.li {
 		padding: 0;
@@ -128,10 +182,11 @@
 	}
 	li {
 		background-color: $color__white;
+		border-bottom: 1px solid $color__alpha-dark;
 	}
 	.payment_box {
 		background-color: $color__alpha-dark05;
-		border-bottom: 1px solid $color__alpha-dark;
+		border-top: 1px solid $color__alpha-dark;
 		@include font-size(0.875);
 		overflow: hidden;
 		padding: 1rem;
@@ -173,7 +228,6 @@
 	}
 
 	label {
-		border-bottom: 1px solid $color__alpha-dark;
 		cursor: pointer;
 		margin-bottom: 0;
 		padding: 1rem;
@@ -215,23 +269,9 @@
 
 }
 
-.woocommerce-checkout-review-order-table {
-	tfoot {
-		border-top: 2px solid $color__alpha-dark05;
-		border-bottom: 1px solid $color__alpha-dark05;
-		th {
-			text-align: right;
-		}
-		tr,
-		td {
-			background-color: transparent;
-		}
-	}
-}
-
 .payment_method_paypal .about_paypal {
     float: right;
-    line-height: 3;
+    line-height: 2;
 }
 
 .wc-terms-and-conditions {
@@ -251,12 +291,49 @@
 	margin-bottom: $gutter__width;
 }
 
-.checkout-button {
-	display: block;
-	@include font-size(1.25);
+.wcppec-checkout-buttons__separator {
 	text-align: center;
-	padding-top: $gutter__width;
-	padding-bottom: $gutter__width;
+	margin-top: .5rem;
+	margin-bottom: .5rem;
+}
+
+a.wcppec-cart-widget-button,
+a.wcppec-checkout-buttons__button {
+	background-color: #ffc439;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-size: auto 50%;
+	display: block;
+	margin-top: .5rem;
+	width: 100%;
+	padding: .5rem;
+	border-radius: .25rem;
+	&:hover,
+	&:focus {
+		background-color: #f2ba36;
+	}
+	img {
+		visibility: hidden;
+		vertical-align: middle;
+	}
+}
+
+a.wcppec-checkout-buttons__button {
+	padding-top: .75rem;
+	padding-bottom: .75rem;
+}
+
+.checkout-button,
+#place_order {
+	display: block;
+	@include font-size(1.125);
+	text-align: center;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+#place_order {
+	display: inline-block;
 }
 
 @include respond-to( medium ) {

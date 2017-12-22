@@ -120,7 +120,24 @@
 	function _stickyCheckout(){
 		$( '#order_review' ).stickit({
 			screenMinWidth: 782,
+			top: 60,
 			zIndex: 0
+		});
+	}
+
+	function _headerParallax(){
+		$( '.page-header' ).each( function(){
+			var $this = $(this);
+			var $hasPostThumbnail = $this.find( 'figure.page-header-thumbnail' );
+			var headerHeight = $('.site-header').height();
+
+			if ( $hasPostThumbnail.length !== 0 ) {
+				$this.addClass( 'has-archive-thumbnail' );
+				$this.css('min-height', 'calc( 65vh - '+ headerHeight +'px )');
+			}
+
+			$hasPostThumbnail.parallax();
+
 		});
 	}
 
@@ -129,6 +146,18 @@
 		if ( true === supportsInlineSVG() ) {
 			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
 		}
+
+		$( '.header-menu-toggle' ).on( 'click', function( e ){
+			var $mainNav = $( '.main-navigation' );
+
+			e.preventDefault();
+			$(this).toggleClass( 'toggled' );
+			$mainNav.attr( 'aria-expanded', function( index, value ) {
+				return 'false' === value ? 'true' : 'false';
+			});
+			$mainNav.toggleClass( 'show' );
+
+		});
 
 		$( '.sub-menu-toggle' ).on( 'click', function( e ) {
 			e.preventDefault();
@@ -151,21 +180,8 @@
 		_smoothScroll();
 		_jumbotronHeader();
 		_stickyCheckout();
+		_headerParallax();
 		$matchHeightProduct.matchHeight();
-
-		$( '.page-header' ).each( function(){
-			var $this = $(this);
-			var $hasPostThumbnail = $this.find( 'figure.page-header-thumbnail' );
-			var headerHeight = $('.site-header').height();
-
-			if ( $hasPostThumbnail.length !== 0 ) {
-				$this.addClass( 'has-archive-thumbnail' );
-				$this.css('min-height', 'calc( 100vh - '+ headerHeight +'px )');
-			}
-
-			$hasPostThumbnail.parallax();
-
-		});
 
 		$(window).scroll(function () {
 
@@ -180,6 +196,10 @@
 
 		$( document.body ).on( 'wc_fragments_refreshed', function () {
 			_stickyCheckout();
+		});
+
+		$( document.body).on( 'lazyload', function(){
+			_headerParallax();
 		});
 
 	});

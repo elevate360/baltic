@@ -39,8 +39,7 @@
 				}
 
 				wp.updates.installPlugin( {
-					slug: $button.data( 'slug' ),
-					success: ''
+					slug: $button.data( 'slug' )
 				} );
 
 			});
@@ -91,10 +90,6 @@
 		   		plugin 	= el.data( 'slug' );
 
 		   	e.preventDefault();
-
-		   	if( el.hasClass( 'baltic-install-now' ) ) {
-		   		return;
-		   	}
 
 		   	if ( ! el.hasClass( 'disabled' ) ) {
 

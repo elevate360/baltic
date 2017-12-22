@@ -210,7 +210,7 @@ add_filter( 'baltic_attr_secondary', 'baltic_attr_secondary', 5 );
 function baltic_attr_tertiary( $attr ) {
 
 	$attr['id'] 	= 'tertiary';
-	$attr['class']  = 'widget-area';
+	$attr['class']  = 'sidebar-footer widget-area';
 
 	return $attr;
 

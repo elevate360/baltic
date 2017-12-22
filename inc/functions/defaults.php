@@ -13,7 +13,7 @@ if ( ! function_exists( 'baltic_setting_default' ) ) :
  */
 function baltic_setting_default(){
 
-	$settings = array(
+	$default = array(
 		'enable_preloader'		=> true,
 		'preloader'				=> 'pulse',
 		'preloader_color'		=> '#ff5722',
@@ -24,7 +24,7 @@ function baltic_setting_default(){
 		'primary_color'			=> '#ff5722',
 		'secondary_color'		=> '#ff8a65',
 
-		'archive_layout'		=> 'full-width',
+		'archive_layout'		=> 'content-sidebar',
 		'singular_layout'		=> 'content-sidebar',
 
 		'meta_date'				=> true,
@@ -37,23 +37,21 @@ function baltic_setting_default(){
 		'more_link_text'		=> esc_html__( 'Continue reading', 'baltic' ),
 		'posts_navigation'		=> 'posts_pagination',
 
-		'custom_footers'		=> false,
-		'elementor_footer'		=> '',
+		'footer_text'			=> esc_html__( 'Copyright &copy; 2016-[YEAR] [SITE]. Proudly powered by [WP].', 'baltic' ),
 		'return_top'			=> true,
 
 		// WooCommerce
 		'price_color'			=> '#77a464',
 		'sale_color'			=> '#f44336',
-		'stars_color'			=> '#fc0',
-		'wc_quick_view'			=> true,
+		'stars_color'			=> '#ffc107',
 		'products_per_page'		=> 12,
-		'products_columns'		=> 4,
+		'products_columns'		=> 3,
 		'products_layout'		=> 'content-sidebar',
 		'product_layout'		=> 'content-sidebar',
 
 	);
 
-	return apply_filters( 'baltic_setting_default', $settings );
+	return apply_filters( 'baltic_setting_default', $default );
 
 }
 endif;

@@ -350,6 +350,7 @@ module.exports = function (grunt) {
 	grunt.registerTask( 'dist', [
 		'replace',
 		'css',
+		'makepot',
 		'uglify',
 		'clean',
 		'copy',
