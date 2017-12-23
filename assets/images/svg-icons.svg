@@ -289,5 +289,11 @@
 <symbol id="icon-caret-right" viewBox="0 0 32 32">
 <path d="M10 30 L26 16 10 2 Z" />
 </symbol>
+<symbol id="icon-msg" viewBox="0 0 32 32">
+<path d="M2 4 L30 4 30 22 16 22 8 29 8 22 2 22 Z" />
+</symbol>
+<symbol id="icon-calendar" viewBox="0 0 32 32">
+<path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9" />
+</symbol>
 </defs>
 </svg>

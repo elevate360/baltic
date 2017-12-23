@@ -68,7 +68,7 @@ class Baltic_Admin {
 		?>
 		<div class="wrap baltic-wrap">
 
-			<h1 class="wp-heading-inline"><?php echo BALTIC_THEME_NAME;?> <small><?php echo BALTIC_THEME_VERSION;?></small></h1>
+			<h1 class="wp-heading-inline"><?php echo BALTIC_THEME_NAME;?> &mdash; <small><?php echo BALTIC_THEME_VERSION;?></small></h1>
 
 			<nav class="nav-tab-wrapper baltic-admin-navigation">
 				<a href="<?php echo esc_url( admin_url( 'themes.php?page=baltic&tab=actions' ) ); ?>" class="nav-tab <?php echo 'actions' == $active_tab ? 'nav-tab-active' : ''; ?>"><?php esc_attr_e( 'Recommended Actions', 'baltic' ); ?></a>

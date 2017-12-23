@@ -114,7 +114,8 @@
 
 a.custom-logo-link {
 	display: inline-block;
-	max-width: 300px;
+	max-width: 180px;
+	max-height: 48px;
 }
 
 /** Header search */
@@ -267,4 +268,10 @@ a.custom-logo-link {
 .page-title {
 	@include font-size(2);
 	font-weight: 500;
+    margin-top: 0;
+    margin-bottom: .5rem;
+    line-height: 1;
+    .has-archive-thumbnail & {
+    	margin-bottom: 1rem;
+    }
 }

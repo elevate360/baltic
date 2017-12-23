@@ -844,42 +844,38 @@ label {
 	position: absolute !important;
 	width: 1px;
 	height: 1px;
-	margin: -1px;
-	padding: 0;
-	border: 0;
 	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
-
-	-webkit-clip-path: inset(50%);
-	clip-path: inset(50%);
 }
 
 .screen-reader-text:focus {
 	display: block;
 	clip: auto !important;
 	z-index: 100000; /* Above WP toolbar. */
-	top: 5px;
-	left: 5px;
+	top: 0.5rem;
+	left: 0.5rem;
 	width: auto;
 	height: auto;
 	padding: 15px 23px 14px;
-	border-radius: 3px;
-	color: #21759b;
-	background-color: #f1f1f1;
-	-webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	color: #fff;
+	background-color: #ff5722;
+	-webkit-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 	font-size: 14px;
 	font-size: 0.875rem;
 	font-weight: bold;
 	line-height: normal;
 	text-decoration: none;
-
-	-webkit-clip-path: none;
-	clip-path: none;
 }
 
 /* Do not show the outline on the skip link target. */
 
-#content[tabindex="-1"]:focus {
+#page[tabindex="-1"]:focus,
+#site-navigation[tabindex="-1"]:focus,
+#main[tabindex="-1"]:focus,
+#content[tabindex="-1"]:focus,
+#secondary[tabindex="-1"]:focus,
+.entry[tabindex="-1"]:focus,
+#quick-view-container[tabindex="-1"]:focus {
 	outline: 0;
 }
 
@@ -888,18 +884,8 @@ label {
 # Alignments
 --------------------------------------------------------------*/
 
-.alignleft {
-	display: inline;
-	float: left;
-	margin-right: 1.5em;
-}
-
-.alignright {
-	display: inline;
-	float: right;
-	margin-left: 1.5em;
-}
-
+.alignleft,
+.alignright
 .aligncenter {
 	display: block;
 	clear: both;
@@ -1064,8 +1050,13 @@ svg symbol {
 --------------------------------------------------------------*/
 
 .wp-caption {
+	overflow: hidden;
 	max-width: 100%;
-	margin-bottom: 1.5em;
+	margin-bottom: 1.5rem;
+	padding: 0.5rem;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 0.25rem;
+	background-color: rgba(255, 255, 255, 0.5);
 }
 
 .wp-caption img[class*="wp-image-"] {
@@ -1074,11 +1065,23 @@ svg symbol {
 	margin-left: auto;
 }
 
-.wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+.wp-caption > a {
+	display: block;
+}
+
+.wp-caption > a img {
+	vertical-align: middle;
+}
+
+.wp-caption > a:hover img,
+.wp-caption > a:focus img {
+	opacity: 0.5;
 }
 
 .wp-caption-text {
+	padding: 1rem 1rem 0.5rem;
+	font-size: 14px;
+	font-size: 0.875rem;
 	text-align: center;
 }
 
@@ -1337,7 +1340,7 @@ svg symbol {
 	display: inline-block;
 	padding: 0.25rem 1rem;
 	border-radius: 0.25rem;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.25);
 }
 
 
@@ -1354,6 +1357,7 @@ svg symbol {
 	width: 100%;
 	margin: 0 0 10px;
 	border-radius: 0.25rem;
+	background-color: #fff;
 	-webkit-box-shadow: 0 8px 92px rgba(0, 0, 0, 0.1);
 	box-shadow: 0 8px 92px rgba(0, 0, 0, 0.1);
 }
@@ -1656,14 +1660,95 @@ a.more-link:focus .icon-stroke {
 	background-color: #ff5722;
 }
 
+.entry-meta {
+	margin-bottom: 0.5rem;
+}
+
+.entry-meta .posted-on {
+	margin-right: 0.5rem;
+}
+
+.entry-meta .icon-stroke {
+	margin-right: 0.25rem;
+}
+
+.entry-meta a {
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.entry-meta a:hover,
+.entry-meta a:focus {
+	color: #ff916f;
+}
+
+.entry-footer {
+	overflow: hidden;
+	margin: -10px;
+	margin-top: 0;
+	padding: 10px;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	background-color: rgba(0, 0, 0, 0.025);
+	font-size: 14px;
+	font-size: 0.875rem;
+}
+
+.entry-footer .icon-stroke {
+	margin-right: 0.25rem;
+}
+
+.entry-footer a {
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.entry-footer a:hover,
+.entry-footer a:focus {
+	color: #ff916f;
+}
+
+.entry-footer a.post-edit-link {
+	display: inline-block;
+	float: right;
+	padding: 0 1rem;
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	border-radius: 0.25rem;
+}
+
+.entry-footer a.post-edit-link:hover,
+.entry-footer a.post-edit-link:focus {
+	border-color: #ff916f;
+	color: #fff;
+	background-color: #ff916f;
+}
+
+.cat-links,
+.tags-links {
+	margin-right: 0.5rem;
+}
+
 .author-info {
 	overflow: hidden;
 	margin-bottom: 10px;
 	padding: 10px;
+	padding-top: 20px;
 	border-radius: 0.25rem;
 	background-color: #fff;
 	-webkit-box-shadow: 0 8px 92px rgba(0, 0, 0, 0.1);
 	box-shadow: 0 8px 92px rgba(0, 0, 0, 0.1);
+	text-align: center;
+}
+
+.author-avatar {
+	display: inline-block;
+	overflow: hidden;
+	width: 64px;
+	margin-bottom: 10px;
+	border-radius: 64px;
+}
+
+.author-title {
+	font-size: 20px;
+	font-size: 1.25rem;
+	line-height: 1;
 }
 
 
@@ -1732,8 +1817,9 @@ a.more-link:focus .icon-stroke {
 .commentlist .comment .avatar {
 	display: block;
 	float: left;
+	width: 48px;
 	margin-right: 1em;
-	border-radius: 64px;
+	border-radius: 48px;
 	vertical-align: top;
 }
 
@@ -2105,7 +2191,8 @@ a.more-link:focus .icon-stroke {
 
 a.custom-logo-link {
 	display: inline-block;
-	max-width: 300px;
+	max-width: 180px;
+	max-height: 48px;
 }
 
 /** Header search */
@@ -2239,15 +2326,22 @@ a.custom-logo-link {
 }
 
 .page-title {
+	margin-top: 0;
+	margin-bottom: 0.5rem;
 	font-size: 32px;
 	font-size: 2rem;
 	font-weight: 500;
+	line-height: 1;
+}
+
+.has-archive-thumbnail .page-title {
+	margin-bottom: 1rem;
 }
 
 /** Sidebar footer */
 
 #tertiary {
-	padding-top: 20px;
+	padding-top: 40px;
 	background-color: #fff;
 }
 
@@ -2386,6 +2480,22 @@ a.custom-logo-link {
 --------------------------------------------------------------*/
 
 @media (min-width: 576px) {
+	.alignleft,
+	.alignright {
+		display: inline;
+		clear: none;
+	}
+
+	.alignleft {
+		float: left;
+		margin-right: 1.5em;
+	}
+
+	.alignright {
+		float: right;
+		margin-left: 1.5em;
+	}
+
 	.header-search-area input[type="search"] {
 		width: calc( 100% - 200px);
 	}
@@ -2665,9 +2775,25 @@ a.custom-logo-link {
 		max-width: 100%;
 	}
 
+	.entry-footer {
+		margin: -20px;
+		margin-top: 0;
+		padding: 20px;
+	}
+
 	.author-info {
 		margin-bottom: 20px;
 		padding: 30px;
+		padding-top: 30px;
+		text-align: left;
+	}
+
+	.author-detail {
+		padding-left: 84px;
+	}
+
+	.author-avatar {
+		float: left;
 	}
 
 	.comments-area {
@@ -2814,6 +2940,12 @@ a.custom-logo-link {
 		margin-right: -30px;
 		margin-bottom: 30px;
 		margin-left: -30px;
+	}
+
+	.entry-footer {
+		margin: -30px;
+		margin-top: 0;
+		padding: 20px 30px;
 	}
 
 	.comments-area {

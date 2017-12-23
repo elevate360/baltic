@@ -229,6 +229,8 @@ class Baltic_Init {
 		if ( class_exists( 'Kirki' ) ) {
 			require get_parent_theme_file_path( '/inc/customizer/kirki.php' );
 		}
+		require get_parent_theme_file_path( '/inc/customizer/css-selector.php' );
+		require get_parent_theme_file_path( '/inc/customizer/output.php' );
 
 	}
 

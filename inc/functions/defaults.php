@@ -35,7 +35,7 @@ function baltic_setting_default(){
 		'author_profile'		=> true,
 		'excerpt_length'		=> 30,
 		'more_link_text'		=> esc_html__( 'Continue reading', 'baltic' ),
-		'posts_navigation'		=> 'posts_pagination',
+		'posts_navigation'		=> 'posts_navigation',
 
 		'footer_text'			=> esc_html__( 'Copyright &copy; 2016-[YEAR] [SITE]. Proudly powered by [WP].', 'baltic' ),
 		'return_top'			=> true,
@@ -45,7 +45,7 @@ function baltic_setting_default(){
 		'sale_color'			=> '#f44336',
 		'stars_color'			=> '#ffc107',
 		'products_per_page'		=> 12,
-		'products_columns'		=> 3,
+		'products_columns'		=> 4,
 		'products_layout'		=> 'content-sidebar',
 		'product_layout'		=> 'content-sidebar',
 

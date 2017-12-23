@@ -147,6 +147,60 @@ function baltic_get_breadcrumb_link( $url, $title, $content, $sep = '' ) {
 }
 endif;
 
+if ( ! function_exists( 'baltic_breadcrumb' ) ) :
+/**
+ * Helper function for the Baltic Breadcrumb Class.
+ *
+ * @since 1.0.0
+ *
+ * @global Baltic_Breadcrumb $_baltic_breadcrumb
+ *
+ * @param array $args Breadcrumb arguments.
+ */
+function baltic_breadcrumb( $args = array() ) {
+
+	global $_baltic_breadcrumb;
+
+	if ( ! $_baltic_breadcrumb ) {
+		$_baltic_breadcrumb = new Baltic_Breadcrumb;
+	}
+
+	$_baltic_breadcrumb->output( $args );
+
+}
+endif;
+
+if ( ! function_exists( 'baltic_do_breadcrumb' ) ) :
+/**
+ * [baltic_do_breadcrumb description]
+ * @return [type] [description]
+ */
+function baltic_do_breadcrumb(){
+
+	if ( function_exists( 'bcn_display' ) ) {
+		echo '<div class="breadcrumb">';
+		bcn_display();
+		echo '</div>';
+	}
+	elseif ( function_exists( 'breadcrumbs' ) ) {
+		breadcrumbs();
+	}
+	elseif ( function_exists( 'crumbs' ) ) {
+		crumbs();
+	}
+	elseif ( class_exists( 'WPSEO_Breadcrumbs' ) ) {
+		yoast_breadcrumb( '<div class="breadcrumb">', '</div>' );
+	}
+	elseif( function_exists( 'yoast_breadcrumb' ) && ! class_exists( 'WPSEO_Breadcrumbs' ) ) {
+		yoast_breadcrumb( '<div class="breadcrumb">', '</div>' );
+	}
+	else {
+		baltic_breadcrumb();
+	}
+
+}
+endif;
+
 if ( ! function_exists( 'baltic_get_layout' ) ) :
 /**
  * [baltic_get_layout description]

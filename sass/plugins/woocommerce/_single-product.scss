@@ -246,7 +246,7 @@ a.reset_variations {
 	}
 
 	.description {
-		padding-left: 75px;
+		padding-left: 64px;
 	}
 
 	@include respond-to( medium ){
@@ -262,6 +262,15 @@ a.reset_variations {
 		}
 	}
 
+}
+
+.comment-form-rating {
+	margin-bottom: 1.5rem;
+	p.stars {
+		@include font-size(1.25);
+		margin: 0;
+		vertical-align: middle;
+	}
 }
 
 .upsells.products,

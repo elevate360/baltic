@@ -133,7 +133,7 @@
 
 			if ( $hasPostThumbnail.length !== 0 ) {
 				$this.addClass( 'has-archive-thumbnail' );
-				$this.css('min-height', 'calc( 65vh - '+ headerHeight +'px )');
+				$this.css('min-height', 'calc( 60vh - '+ headerHeight +'px )');
 			}
 
 			$hasPostThumbnail.parallax();

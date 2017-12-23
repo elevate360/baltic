@@ -123,7 +123,7 @@ p.stars {
 		a {
 			&:before {
 				content: "\53";
-				color: $color__link;
+				color: $color__stars;
 				opacity: 1;
 			}
 		}
@@ -133,7 +133,7 @@ p.stars {
 		a.active {
 			&:before {
 				content: "\53";
-				color: $color__link;
+				color: $color__stars;
 				opacity: 1;
 			}
 
@@ -147,7 +147,7 @@ p.stars {
 		a:not(.active) {
 			&:before {
 				content: "\53";
-				color: $color__link;
+				color: $color__stars;
 				opacity: 1;
 			}
 		}
@@ -168,7 +168,7 @@ p.stars {
 	ul.tabs {
 		background-color: $color__white;
 		list-style: none;
-		margin: 0;
+		margin: 0 0 1.5rem;
 		padding: 0;
 		text-align: left;
 
@@ -326,9 +326,10 @@ p.no-comments,
 			content: " ";
 			border: 2px solid #000;
 			border-radius: 50%;
-			border-top: 2px solid rgba( 255,255,255,.5 );
-			width: 16px;
-			height: 16px;
+			border: 2px solid #000;
+			border-top-color: $color__link;
+			width: 24px;
+			height: 24px;
 			position: absolute;
 			top: 50%;
 			left: 50%;

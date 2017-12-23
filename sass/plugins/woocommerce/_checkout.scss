@@ -283,12 +283,12 @@
 }
 
 .woocommerce-terms-and-conditions {
+	background-color: $color__alpha-dark05;
 	border: 1px solid $color__alpha-dark;
-	border-top-width: 0;
-	background-color: $color__white;
 	@include font-size(0.875);
-	padding: $gutter__width;
-	margin-bottom: $gutter__width;
+	padding: $gutter__width*2;
+	margin-bottom: $gutter__width*2;
+	border-radius: .25rem;
 }
 
 .wcppec-checkout-buttons__separator {

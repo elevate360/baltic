@@ -6,6 +6,16 @@
  */
 
 /**
+ * Baltic skip link
+ *
+ * @return [type] [description]
+ */
+function baltic_skip_links(){
+	get_template_part( 'components/header/skip', 'links' );
+}
+add_action( 'baltic_before', 'baltic_skip_links', 20 );
+
+/**
  * [baltic_header_toggle description]
  * @return [type] [description]
  */

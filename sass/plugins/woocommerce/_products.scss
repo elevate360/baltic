@@ -100,6 +100,7 @@ ul.products {
 	background-color: $color__white;
 	position: relative;
 	padding: $gutter__width;
+	text-align: center;
 	transition: all ease-in-out 0.25s;
 	@include radius-shadow();
 	&:hover {
@@ -138,6 +139,9 @@ ul.products {
 	img {
 		border-top-left-radius: .25rem;
 		border-top-right-radius: .25rem;
+	}
+	@include respond-to( medium ){
+		margin-bottom: $gutter__width*2;
 	}
 }
 
@@ -183,16 +187,16 @@ a.added_to_cart.wc-forward {
 	color: transparent!important;
 	&:before {
 		content: " ";
-		border: 2px solid $color__white;
+		border: 2px solid rgba( 0,0,0,.5 );
+		border-top-color: $color__white;
 		border-radius: 50%;
-		border-top: 2px solid rgba( 0,0,0,0 );
-		width: 16px;
-		height: 16px;
+		width: 24px;
+		height: 24px;
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		margin-top: -8px;
-		margin-left: -8px;
+		margin-top: -12px;
+		margin-left: -12px;
     	transform: translate(-50%, -50%);
 		animation: spin 2s linear infinite;
 	}

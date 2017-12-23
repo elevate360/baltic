@@ -15,7 +15,9 @@ function baltic_wc_markup(){
 	add_action( 'baltic_inner_before', 'baltic_wc_page_header', 20 );
 	add_action( 'woocommerce_archive_description', 'baltic_wc_archive_thumbnail', 20 );
 
+	/** Breadcrumb */
 	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+	add_action( 'woocommerce_archive_description', 'baltic_do_breadcrumb', 20 );
 
 	/** Wrap #primary and #secondary within container class */
 	add_action( 'woocommerce_before_main_content', 'baltic_wc_container_open', 5 );
