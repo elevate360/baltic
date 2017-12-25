@@ -69,7 +69,8 @@ module.exports = function (grunt) {
 				},
 				files: [{
 					'style.css': 'sass/style.scss',
-					'inc/admin/assets/css/admin.css': 'sass/admin.scss',
+					'assets/css/admin.css': 'sass/admin.scss',
+					'assets/css/customizer-control.css': 'sass/customizer-control.scss',
 					'assets/css/editor-style.css': 'sass/editor-style.scss',
 					'assets/css/woocommerce.css': 'sass/woocommerce.scss'
 				}]
@@ -84,7 +85,8 @@ module.exports = function (grunt) {
 			media: {
 				files: {
 					'style.css': ['style.css'],
-					'inc/admin/assets/css/admin.css': ['inc/admin/assets/css/admin.css'],
+					'assets/css/admin.css': ['inc/admin/assets/css/admin.css'],
+					'assets/css/customizer-control.css': ['assets/css/customizer-control.css'],
 					'assets/css/editor-style.css': ['assets/css/editor-style.css'],
 					'assets/css/woocommerce.css': ['assets/css/woocommerce.css']
 				}
@@ -105,13 +107,17 @@ module.exports = function (grunt) {
 					})
 				]
 			},
-			main: {
+			theme: {
 				src: 'style.css',
 				dest: 'style.css'
 			},
 			admin: {
 				src: 'inc/admin/assets/css/admin.css',
 				dest: 'inc/admin/assets/css/admin.css'
+			},
+			customizer: {
+				src: 'assets/css/customizer-control.css',
+				dest: 'assets/css/customizer-control.css'
 			},
 			editor: {
 				src: 'assets/css/editor-style.css',
@@ -130,7 +136,8 @@ module.exports = function (grunt) {
 	            },
 	            files: {
 	            	'style.css': ['style.css'],
-	            	'inc/admin/assets/css/admin.css': ['inc/admin/assets/css/admin.css'],
+	            	'assets/css/admin.css': ['assets/css/admin.css'],
+	            	'assets/css/customizer-control.css': ['assets/css/customizer-control.css'],
 	            	'assets/css/editor-style.css': ['assets/css/editor-style.css'],
 	            	'assets/css/woocommerce.css': ['assets/css/woocommerce.css']
 	            }
@@ -146,9 +153,7 @@ module.exports = function (grunt) {
 						'./*.css',
 						'!./*.min.css',
 						'assets/css/*.css',
-						'!assets/css/*.min.css',
-						'inc/admin/assets/css/*.css',
-						'!inc/admin/assets/css/*.min.css'],
+						'!assets/css/*.min.css'],
 					dest: './',
 					ext: '.min.css'
 				}]
@@ -162,12 +167,7 @@ module.exports = function (grunt) {
 			all: [
 				'Gruntfile.js',
 				'assets/js/*.js',
-				'assets/js/frontend/*.js',
-				'inc/admin/assets/js/*.js',
-				'inc/customizer/assets/js/*.js',
-				'!assets/js/*.min.js',
-				'inc/admin/assets/js/*.min.js',
-				'!inc/customizer/assets/js/*.min.js'
+				'!assets/js/*.min.js'
 			]
 		},
 
@@ -182,7 +182,7 @@ module.exports = function (grunt) {
 			options: {
 				preserveComments: 'some'
 			},
-			theme: {
+			js: {
 				files: [{
 					expand: true,
 					cwd: 'assets/js/',
@@ -191,30 +191,6 @@ module.exports = function (grunt) {
 						'!*.min.js'
 					],
 					dest: 'assets/js/',
-					ext: '.min.js'
-				}]
-			},
-			admin: {
-				files: [{
-					expand: true,
-					cwd: 'inc/admin/assets/js/',
-					src: [
-						'*.js',
-						'!*.min.js'
-					],
-					dest: 'inc/admin/assets/js/',
-					ext: '.min.js'
-				}]
-			},
-			customizer: {
-				files: [{
-					expand: true,
-					cwd: 'inc/customizer/assets/js/',
-					src: [
-						'*.js',
-						'!*.min.js'
-					],
-					dest: 'inc/customizer/assets/js/',
 					ext: '.min.js'
 				}]
 			}
@@ -226,7 +202,7 @@ module.exports = function (grunt) {
 					'sass/*.scss',
 					'sass/*/*.scss',
 					'sass/*/*/*.scss',
-					'sass/*/*/*/*.scss',
+					'sass/*/*/*/*.scss'
 				],
 				tasks: [
 					'sass',
@@ -235,29 +211,21 @@ module.exports = function (grunt) {
 			},
 			frontend: {
 				files: [
-					'assets/js/frontend/*.js',
+					'assets/js/frontend/*.js'
 				],
 				tasks: [
 					'concat',
-					'uglify:theme'
+					'uglify'
 				]
 			},
-			admin: {
+			js: {
 				files: [
-					'inc/admin/assets/js/admin.js',
-					'inc/admin/assets/js/notice.js',
+					'assets/js/admin.js',
+					'assets/js/notice.js',
+					'assets/js/customizer.js'
 				],
 				tasks: [
-					'uglify:admin'
-				]
-			},
-			customizer: {
-				files: [
-					'inc/customizer/assets/js/customizer.js',
-					'inc/customizer/assets/js/customizer-control.js',
-				],
-				tasks: [
-					'uglify:customizer'
+					'uglify'
 				]
 			}
 		},

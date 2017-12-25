@@ -160,6 +160,13 @@ a.more-link {
 		&:focus {
 			color: $color__link-hover;
 		}
+		.sticky & {
+			color: $color__white;
+			&:hover,
+			&:focus {
+				color: $color__link-hover;
+			}
+		}
 	}
 }
 
@@ -182,6 +189,14 @@ a.more-link {
 		&:focus {
 			color: $color__link-hover;
 		}
+
+		.sticky & {
+			color: $color__white;
+			&:hover,
+			&:focus {
+				color: $color__link-hover;
+			}
+		}
 	}
 
 	a.post-edit-link {
@@ -195,6 +210,17 @@ a.more-link {
 			background-color: $color__link-hover;
 			border-color: $color__link-hover;
 			color: $color__white;
+		}
+		.sticky & {
+			background-color: transparent;
+			border-color: $color__white;
+			color: $color__white;
+			&:hover,
+			&:focus {
+				background-color: $color__link-hover;
+				border-color: $color__link-hover;
+				color: $color__white;
+			}
 		}
 	}
 

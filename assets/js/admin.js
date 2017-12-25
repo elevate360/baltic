@@ -63,7 +63,7 @@
 		   		data 	: {
 		   			action 		: 'baltic_plugin_activation',
 		   			plugin 		: plugin,
-		   			nonce 		: BalticInstallerl10n.installer_nonce,
+		   			nonce 		: BalticAdminl10n.installer_nonce,
 		   			dataType 	: 'json'
 		   		},
 
@@ -71,7 +71,7 @@
 			   		if ( data ) {
 				   		if ( data.status === 'success' ) {
 					   		el.attr( 'class', 'activated button disabled' );
-					   		el.html( BalticInstallerl10n.activated_btn );
+					   		el.html( BalticAdminl10n.activated_btn );
 				   		}
 			   		}
 			   		is_loading = false;

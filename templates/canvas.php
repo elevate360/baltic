@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Baltic Canvas
+ * Template Name: Baltic - Canvas
  * Template Post Type: post, page
  *
  * @package Baltic

@@ -88,14 +88,30 @@ function baltic_header_style() {
  */
 function baltic_add_inline_style(){
 
-	$css_selector 			= baltic_css_classes_selector();
-
 	$css= '';
+
+	if ( baltic_get_option( 'color_text_primary' ) ) {
+		$css .= sprintf( '%s{color:%s}', baltic__text_color_primary(), baltic_get_option( 'color_text_primary' ) );
+	}
+
+	if ( baltic_get_option( 'color_text_field' ) ) {
+		$css .= sprintf( '%s{color:%s}', baltic__text_color_field(), baltic_get_option( 'color_text_field' ) );
+		$css .= sprintf( '
+			::-webkit-input-placeholder{ color:%1$s }
+			:-moz-placeholder{color:%1$s}
+			::-moz-placeholder{color:%1$s}
+			:-ms-input-placeholder{color:%1$s}',
+			baltic_get_option( 'color_text_field' ) );
+	}
+
+	if ( baltic_get_option( 'color_text_field_focus' ) ) {
+		$css .= sprintf( '%s{color:%s}', baltic__text_color_field_focus(), baltic_get_option( 'color_text_field_focus' ) );
+	}
 
     $css = str_replace( array( "\n", "\t", "\r" ), '', $css );
 
 	if ( ! empty( $css ) ) {
-		wp_add_inline_style( $baltic_inline_style, apply_filters( 'baltic_inline_style', trim( $css ) ) );
+		wp_add_inline_style( 'baltic-style', apply_filters( 'baltic_inline_style', trim( $css ) ) );
 	}
 
 }

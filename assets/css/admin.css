@@ -1,11 +1,9 @@
 /** Baltic admin Notice */
-
 .baltic-notice {
 	padding: 60px;
 	border: 10px solid #fff;
 	color: #608299;
 	background: #e9eff3;
-	-webkit-box-shadow: none;
 	box-shadow: none;
 	text-align: center;
 }
@@ -18,7 +16,6 @@
 .baltic-activate-button {
 	display: inline-block;
 	overflow: hidden;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	height: auto;
 	margin: 0;
@@ -40,8 +37,6 @@
 	text-overflow: ellipsis;
 	cursor: pointer;
 
-	-webkit-appearance: none;
-	-moz-appearance: none;
 	appearance: none;
 }
 
@@ -53,6 +48,12 @@
 
 .baltic-wrap {
 	margin-right: 10px;
+}
+
+@media (min-width: 768px) {
+	.baltic-wrap {
+		margin-right: 20px;
+	}
 }
 
 .baltic-support {
@@ -67,7 +68,6 @@
 	border-color: #4caf50;
 	color: #fff;
 	background: #4caf50;
-	-webkit-box-shadow: 0 1px 0 #388e3c;
 	box-shadow: 0 1px 0 #388e3c;
 	text-decoration: none;
 }
@@ -80,22 +80,13 @@
 }
 
 .baltic-admin-list {
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
 	position: relative;
 	left: -1%;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	width: 102%;
 
-	-webkit-box-direction: normal;
-	-webkit-box-orient: horizontal;
-	-webkit-box-pack: justify;
-	-ms-flex-flow: row wrap;
 	flex-flow: row wrap;
-	-ms-flex-pack: justify;
-	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
@@ -103,29 +94,38 @@
 .baltic-admin-list:after {
 	content: "";
 
-	-webkit-box-flex: 1;
-	-ms-flex: auto;
 	flex: auto;
 }
 
 .baltic-admin-list * {
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
 .baltic-admin-card {
 	position: relative;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	width: 100%;
 	margin-bottom: 10px;
 	border: 1px solid #ddd;
 }
 
+@media (min-width: 768px) {
+	.baltic-admin-card {
+		width: 48%;
+		margin: 0 1% 15px;
+	}
+}
+
+@media (min-width: 992px) {
+	.baltic-admin-card {
+		width: 31.333%;
+		margin: 0 1% 30px;
+	}
+}
+
 .baltic-admin-card-body {
 	overflow: hidden;
 	position: relative;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	min-height: 142px;
 	padding-top: 10px;
@@ -154,7 +154,6 @@
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	width: 100%;
 	padding-top: 10px;
@@ -182,22 +181,4 @@ span.premium-label {
 	border-radius: 3px;
 	color: #fff;
 	background: #00bcd4;
-}
-
-@media (min-width: 768px) {
-	.baltic-wrap {
-		margin-right: 20px;
-	}
-
-	.baltic-admin-card {
-		width: 48%;
-		margin: 0 1% 15px;
-	}
-}
-
-@media (min-width: 992px) {
-	.baltic-admin-card {
-		width: 31.333%;
-		margin: 0 1% 30px;
-	}
 }

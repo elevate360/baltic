@@ -51,6 +51,45 @@ function baltic_page_header_home(){
 add_action( 'baltic_page_header', 'baltic_page_header_home' );
 
 /**
+ * [page_header_archive description]
+ * @return [type] [description]
+ */
+function page_header_archive(){
+
+	if ( baltic_is_woocommerce() ) {
+		return;
+	}
+
+	if ( ! is_archive() ) {
+		return;
+	}
+
+	echo '<div class="page-header-inner">';
+
+	if( is_author() ) {
+
+		echo sprintf( '<h1 class="page-title">%s</h1>', get_the_author() );
+		echo sprintf( '<div class="page-description">%s</div>', wpautop( get_the_author_meta('description') ) );
+
+	} elseif( is_archive() ) {
+		$term_id = get_queried_object()->term_id;
+		$image_id = get_term_meta( $term_id, 'image', true );
+		echo sprintf( '<h1 class="page-title">%s</h1>', get_the_archive_title() );
+		echo sprintf( '<div class="page-description">%s</div>', wpautop( get_the_archive_description() ) );
+
+		if ( ! empty( $image_id ) ) {
+			echo sprintf( '<figure class="page-header-thumbnail">%s</figure>', wp_get_attachment_image( $image_id, 'full' ) );
+		}
+	}
+
+	baltic_do_breadcrumb();
+
+	echo '</div>';
+
+}
+add_action( 'baltic_page_header', 'page_header_archive' );
+
+/**
  * [page_header_singular description]
  * @return [type] [description]
  */

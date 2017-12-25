@@ -38,11 +38,11 @@ class Baltic_Init {
 		add_action( 'baltic_init', array( $this, 'constants' ), 0 );
 
 		// Includes files
+		add_action( 'baltic_init', array( $this, 'include_admin' ) );
 		add_action( 'baltic_init', array( $this, 'include_functions' ) );
 		add_action( 'baltic_init', array( $this, 'include_classes' ) );
 		add_action( 'baltic_init', array( $this, 'include_structure' ) );
 		add_action( 'baltic_init', array( $this, 'include_plugins' ) );
-		add_action( 'baltic_init', array( $this, 'include_admin' ) );
 
 	}
 
@@ -217,20 +217,31 @@ class Baltic_Init {
 	 *
 	 * @return void
 	 */
+	public function include_admin(){
+
+		if ( is_admin() ) {
+			require get_parent_theme_file_path( '/inc/admin/class-plugin-installer.php' );
+			require get_parent_theme_file_path( '/inc/admin/class-baltic-notification.php' );
+			require get_parent_theme_file_path( '/inc/admin/class-baltic-admin.php' );
+		}
+
+	}
+
+	/**
+	 * Include theme functions
+	 *
+	 * @return void
+	 */
 	public function include_functions(){
 
 		require get_parent_theme_file_path( '/inc/functions/attr.php' );
 		require get_parent_theme_file_path( '/inc/functions/icons.php' );
 		require get_parent_theme_file_path( '/inc/functions/widgets.php' );
-		require get_parent_theme_file_path( '/inc/functions/defaults.php' );
+		require get_parent_theme_file_path( '/inc/functions/options.php' );
 		require get_parent_theme_file_path( '/inc/functions/utility.php' );
 		require get_parent_theme_file_path( '/inc/functions/templates.php' );
 
-		if ( class_exists( 'Kirki' ) ) {
-			require get_parent_theme_file_path( '/inc/customizer/kirki.php' );
-		}
-		require get_parent_theme_file_path( '/inc/customizer/css-selector.php' );
-		require get_parent_theme_file_path( '/inc/customizer/output.php' );
+		require get_parent_theme_file_path( '/inc/customizer/customizer.php' );
 
 	}
 
@@ -268,26 +279,10 @@ class Baltic_Init {
 			require get_parent_theme_file_path( '/inc/plugins/woocommerce/class-wc.php' );
 			require get_parent_theme_file_path( '/inc/plugins/woocommerce/class-wc-thumbnail.php' );
 			require get_parent_theme_file_path( '/inc/plugins/woocommerce/wc-template.php' );
-			require get_parent_theme_file_path( '/inc/plugins/woocommerce/wc-checkout-template.php' );
 		}
 
 		if ( class_exists( 'Jetpack' ) ) {
 			require get_parent_theme_file_path( '/inc/plugins/class-jetpack.php' );
-		}
-
-	}
-
-	/**
-	 * Include theme functions
-	 *
-	 * @return void
-	 */
-	public function include_admin(){
-
-		if ( is_admin() ) {
-			require get_parent_theme_file_path( '/inc/admin/class-plugin-installer.php' );
-			require get_parent_theme_file_path( '/inc/admin/class-baltic-notification.php' );
-			require get_parent_theme_file_path( '/inc/admin/class-baltic-admin.php' );
 		}
 
 	}

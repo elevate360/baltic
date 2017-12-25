@@ -69,3 +69,64 @@
 .woocommerce-LostPassword {
 	@include font-size(0.875);
 }
+
+.wc-bacs-bank-details-heading,
+.woocommerce-Addresses h3,
+.woocommerce-order-downloads__title,
+.woocommerce-order-details__title {
+	@include font-size(1.25);
+}
+
+.wc-bacs-bank-details-account-name {
+	@include font-size(1.125);
+}
+
+.woocommerce-order-overview {
+	margin: 0 0 1.5rem;
+	padding: 0;
+	li {
+		list-style-type: none;
+	}
+
+	@include respond-to( medium ){
+		float: left;
+		width: 50%;
+		padding-right: $gutter__width;
+	}
+}
+
+.woocommerce-bacs-bank-details {
+	@include respond-to( medium ){
+		float: right;
+		width: 50%;
+		padding-left: $gutter__width;
+	}
+}
+
+.woocommerce-order-details,
+.woocommerce-order-downloads {
+	clear: both;
+}
+
+.woocommerce-customer-details {
+
+	.woocommerce-column__title {
+		@include font-size(1.25);
+	}
+
+	@include respond-to( medium ){
+		.col2-set {
+			.col-1 {
+				float: left;
+				width: 50%;
+				padding-right: $gutter__width;
+			}
+			.col-2 {
+				float: right;
+				width: 50%;
+				padding-left: $gutter__width;
+			}
+		}
+	}
+
+}

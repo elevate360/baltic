@@ -28,7 +28,7 @@ class Baltic_Notification {
 
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-		wp_enqueue_script( 'baltic-admin-notice', get_parent_theme_file_uri( "/inc/admin/assets/js/notice$suffix.js" ), array( 'jquery', 'updates' ), 'all' );
+		wp_enqueue_script( 'baltic-admin-notice', get_parent_theme_file_uri( "/assets/js/notice$suffix.js" ), array( 'jquery', 'updates' ), 'all' );
 		wp_localize_script( 'baltic-admin-notice', 'BalticNoticel10n', array(
 			'nonce' 	=> wp_create_nonce( 'baltic_notice_dismiss' ),
 		));

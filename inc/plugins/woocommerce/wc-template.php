@@ -233,12 +233,12 @@ function baltic_wc_pagination(){
 		return;
 	}
 
-	if ( baltic_get_option( 'posts_navigation' ) == 'posts_navigation' ) {
+	if ( baltic_get_option( 'products_nav' ) == 'products_navigation' ) {
 		the_posts_navigation( array(
-	        'prev_text'          => __( '&larr; Older Products', 'baltic' ),
-	        'next_text'          => __( 'Newer Products &rarr;', 'baltic' ),
+	        'prev_text'          => esc_html( baltic_get_option( 'products_nav_prev' ) ),
+	        'next_text'          => esc_html( baltic_get_option( 'products_nav_next' ) ),
 		) );
-	} else {
+	} elseif( baltic_get_option( 'products_nav' ) == 'products_pagination' ) {
 		the_posts_pagination( array(
 			'prev_text'          => sprintf( '%s <span class="screen-reader-text">%s</span>', baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'arrow-left' ) ), __( 'Previous Product', 'baltic' ) ),
 			'next_text'          => sprintf( '%s <span class="screen-reader-text">%s</span>', baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'arrow-right' ) ), __( 'Next Product', 'baltic' ) ),

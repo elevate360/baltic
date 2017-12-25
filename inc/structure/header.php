@@ -5,6 +5,25 @@
  * @package Baltic
  */
 
+
+/**
+ * Render the site title for the selective refresh partial.
+ *
+ * @return void
+ */
+function baltic__blogname() {
+	bloginfo( 'name' );
+}
+
+/**
+ * Render the site tagline for the selective refresh partial.
+ *
+ * @return void
+ */
+function baltic__blogdescription() {
+	bloginfo( 'description' );
+}
+
 /**
  * Baltic skip link
  *

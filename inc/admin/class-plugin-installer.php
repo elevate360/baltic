@@ -32,8 +32,8 @@ class Baltic_Plugin_Installer {
 
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-		wp_enqueue_script( 'baltic-plugin-installer', get_parent_theme_file_uri( "/inc/admin/assets/js/admin$suffix.js" ), array( 'jquery', 'updates' ), 'all' );
-		wp_localize_script( 'baltic-plugin-installer', 'BalticInstallerl10n', array(
+		wp_enqueue_script( 'baltic-admin', get_parent_theme_file_uri( "/assets/js/admin$suffix.js" ), array( 'jquery', 'updates' ), 'all' );
+		wp_localize_script( 'baltic-admin', 'BalticAdminl10n', array(
 			'installer_nonce' 	=> wp_create_nonce( 'baltic_installer_nonce' ),
 			'activated_btn' 	=> __( 'Activated', 'baltic' )
 		));

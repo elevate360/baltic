@@ -515,15 +515,6 @@ tfoot tr:nth-of-type(even) {
 # Typography
 --------------------------------------------------------------*/
 
-body,
-button,
-input,
-select,
-optgroup,
-textarea {
-	color: #505050;
-}
-
 h1,
 h2,
 h3,
@@ -771,8 +762,8 @@ textarea:focus {
 	outline: none;
 	color: #606060;
 	background-color: white;
-	-webkit-box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.025);
-	box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.025);
+	-webkit-box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
 }
 
 select {
@@ -794,7 +785,12 @@ select {
 }
 
 select:focus {
+	z-index: 1;
+	outline: none;
+	color: #606060;
 	background-color: white;
+	-webkit-box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
 }
 
 select::-ms-expand {
@@ -1681,6 +1677,15 @@ a.more-link:focus .icon-stroke {
 	color: #ff916f;
 }
 
+.sticky .entry-meta a {
+	color: #fff;
+}
+
+.sticky .entry-meta a:hover,
+.sticky .entry-meta a:focus {
+	color: #ff916f;
+}
+
 .entry-footer {
 	overflow: hidden;
 	margin: -10px;
@@ -1705,6 +1710,15 @@ a.more-link:focus .icon-stroke {
 	color: #ff916f;
 }
 
+.sticky .entry-footer a {
+	color: #fff;
+}
+
+.sticky .entry-footer a:hover,
+.sticky .entry-footer a:focus {
+	color: #ff916f;
+}
+
 .entry-footer a.post-edit-link {
 	display: inline-block;
 	float: right;
@@ -1715,6 +1729,19 @@ a.more-link:focus .icon-stroke {
 
 .entry-footer a.post-edit-link:hover,
 .entry-footer a.post-edit-link:focus {
+	border-color: #ff916f;
+	color: #fff;
+	background-color: #ff916f;
+}
+
+.sticky .entry-footer a.post-edit-link {
+	border-color: #fff;
+	color: #fff;
+	background-color: transparent;
+}
+
+.sticky .entry-footer a.post-edit-link:hover,
+.sticky .entry-footer a.post-edit-link:focus {
 	border-color: #ff916f;
 	color: #fff;
 	background-color: #ff916f;

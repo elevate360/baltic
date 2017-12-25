@@ -28,7 +28,7 @@ textarea {
 	&:focus {
 		background-color: rgba( 255,255,255,1 );
 		color: $color__text-input-focus;
-		box-shadow: 0 0 0 3px rgba( 0, 0, 0, .025 );
+		box-shadow: 0 0 0 4px $color__alpha-dark05;
 		outline: none;
 		z-index: 1;
 	}
@@ -57,6 +57,10 @@ select {
     border-radius: .25rem;
     &:focus {
     	background-color: rgba( 255,255,255,1 );
+    	color: $color__text-input-focus;
+		box-shadow: 0 0 0 4px $color__alpha-dark05;
+		outline: none;
+		z-index: 1;
     }
 }
 

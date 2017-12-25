@@ -32,7 +32,7 @@ class Baltic_Admin {
 
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-		wp_enqueue_style( 'baltic-admin-style', get_parent_theme_file_uri( "/inc/admin/assets/css/admin$suffix.css" ), '', BALTIC_THEME_VERSION );
+		wp_enqueue_style( 'baltic-admin-style', get_parent_theme_file_uri( "/assets/css/admin$suffix.css" ), '', BALTIC_THEME_VERSION );
 
 	}
 
@@ -66,11 +66,17 @@ class Baltic_Admin {
 
 		$active_tab   = isset( $_GET['tab'] ) ? wp_unslash( $_GET['tab'] ) : 'actions';
 		?>
+
+		<div class="wrap">
+			<h1>
+				<?php echo sprintf( __( '<strong>%s</strong> <small>version %s</small>', 'baltic' ), BALTIC_THEME_NAME, BALTIC_THEME_VERSION );?>
+			</h2>
+		</div>
+
 		<div class="wrap baltic-wrap">
 
-			<h1 class="wp-heading-inline"><?php echo BALTIC_THEME_NAME;?> &mdash; <small><?php echo BALTIC_THEME_VERSION;?></small></h1>
-
 			<nav class="nav-tab-wrapper baltic-admin-navigation">
+				<a href="<?php echo esc_url( admin_url( 'themes.php?page=baltic&tab=welcome' ) ); ?>" class="nav-tab <?php echo 'welcome' == $active_tab ? 'nav-tab-active' : ''; ?>"><?php esc_attr_e( 'Dashboard', 'baltic' ); ?></a>
 				<a href="<?php echo esc_url( admin_url( 'themes.php?page=baltic&tab=actions' ) ); ?>" class="nav-tab <?php echo 'actions' == $active_tab ? 'nav-tab-active' : ''; ?>"><?php esc_attr_e( 'Recommended Actions', 'baltic' ); ?></a>
 				<a href="<?php echo esc_url( admin_url( 'themes.php?page=baltic&tab=plugins' ) ); ?>" class="nav-tab <?php echo 'plugins' == $active_tab ? 'nav-tab-active' : ''; ?>"><?php esc_attr_e( 'Recommended Plugins', 'baltic' ); ?></a>
 				<a href="<?php echo esc_url( admin_url( 'themes.php?page=baltic&tab=addons' ) ); ?>" class="nav-tab <?php echo 'addons' == $active_tab ? 'nav-tab-active' : ''; ?>"><?php esc_attr_e( 'Add-Ons', 'baltic' ); ?></a>
@@ -79,6 +85,9 @@ class Baltic_Admin {
 
 		<?php
 			switch ( $active_tab ) {
+				case 'welcome':
+					require get_parent_theme_file_path( '/inc/admin/sections/welcome.php' );
+					break;
 				case 'actions':
 					require get_parent_theme_file_path( '/inc/admin/sections/recommended-actions.php' );
 					break;

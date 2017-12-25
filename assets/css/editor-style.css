@@ -1,0 +1,409 @@
+body.mce-content-body {
+	max-width: 810px;
+	margin: 1.5rem;
+}
+
+ul,
+ol {
+	margin: 0 0 1.5rem 0;
+	padding-left: 1.5rem;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 0;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5rem 1.5rem;
+}
+
+table {
+	overflow: hidden;
+	width: 100%;
+	margin: 0 0 1.5rem;
+	border-radius: 0.25rem;
+	border-collapse: collapse;
+	background-color: #fff;
+	-webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+caption {
+	font-weight: bold;
+}
+
+th {
+	font-weight: normal;
+}
+
+caption {
+	margin-bottom: 1rem;
+}
+
+th,
+td {
+	padding: 0.75rem;
+	text-align: left;
+}
+
+thead {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	background-color: rgba(0, 0, 0, 0.025);
+}
+
+thead th {
+	font-weight: 500;
+}
+
+tfoot {
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+thead tr:nth-of-type(even),
+tbody tr:nth-of-type(even),
+tfoot tr:nth-of-type(even) {
+	background-color: rgba(0, 0, 0, 0.025);
+}
+
+.table-responsive {
+	display: block;
+	overflow-x: auto;
+	width: 100%;
+	min-height: 0;
+	margin-bottom: 10px;
+	padding: 0.25rem;
+}
+
+.table-responsive table:last-child {
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	margin-bottom: 0.5rem;
+	color: inherit;
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+h1,
+.h1 {
+	font-size: 2.5rem;
+}
+
+h2,
+.h2 {
+	font-size: 2rem;
+}
+
+h3,
+.h3 {
+	font-size: 1.75rem;
+}
+
+h4,
+.h4 {
+	font-size: 1.5rem;
+}
+
+h5,
+.h5 {
+	font-size: 1.25rem;
+}
+
+h6,
+.h6 {
+	font-size: 1rem;
+}
+
+blockquote {
+	margin: 0 1.5rem;
+}
+
+address {
+	margin: 0 0 1.5rem;
+}
+
+pre {
+	overflow: auto;
+	max-width: 100%;
+	margin-bottom: 1.5rem;
+	padding: 1rem;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 0.25rem;
+	background-color: #fff;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+a {
+	color: #ff5722;
+	-webkit-transition-timing-function: ease-in-out;
+	transition-timing-function: ease-in-out;
+	-webkit-transition-duration: 0.25s;
+	transition-duration: 0.25s;
+	-webkit-transition-property: background, color, opacity, -webkit-box-shadow;
+	transition-property: background, color, opacity, -webkit-box-shadow;
+	transition-property: background, color, opacity, box-shadow;
+	transition-property: background, color, opacity, box-shadow, -webkit-box-shadow;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: #ff916f;
+	text-decoration: none;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0;
+	border: none;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/* Make sure logo link wraps around logo image. */
+
+.custom-logo-link {
+	display: inline-block;
+}
+
+img {
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	height: auto;
+	/* Adhere to container width. */
+}
+
+/** SVG icon */
+
+.icon {
+	display: inline-block;
+	position: relative;
+	/* Align more nicely with capital letters */
+	top: -0.0625rem;
+	width: 1rem;
+	height: 1rem;
+	vertical-align: middle;
+	-webkit-transition: opacity ease-in-out 0.25s;
+	transition: opacity ease-in-out 0.25s;
+
+	fill: currentColor;
+}
+
+.icon-stroke {
+	display: inline-block;
+	position: relative;
+	top: -0.05em;
+	width: 1rem;
+	height: 1rem;
+	/* Align more nicely with capital letters */
+	vertical-align: middle;
+	-webkit-transition: opacity ease-in-out 0.25s;
+	transition: opacity ease-in-out 0.25s;
+
+	fill: none;
+	stroke: currentColor;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 6.25%;
+}
+
+svg,
+svg symbol {
+	overflow: visible;
+}
+
+.svg-fallback {
+	display: none;
+}
+
+.no-svg .svg-fallback {
+	display: inline-block;
+}
+
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+
+.wp-caption {
+	overflow: hidden;
+	max-width: 100%;
+	margin-bottom: 1.5rem;
+	padding: 0.5rem;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 0.25rem;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.wp-caption > a {
+	display: block;
+}
+
+.wp-caption > a img {
+	vertical-align: middle;
+}
+
+.wp-caption > a:hover img,
+.wp-caption > a:focus img {
+	opacity: 0.5;
+}
+
+.wp-caption-text {
+	padding: 1rem 1rem 0.5rem;
+	font-size: 14px;
+	font-size: 0.875rem;
+	text-align: center;
+}
+
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	vertical-align: top;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}

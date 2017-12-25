@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Page Grid
+ * Template Name: Baltic - Grid
  * Template Post Type: page
  *
  * @package Baltic
