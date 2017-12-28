@@ -141,6 +141,11 @@
 		});
 	}
 
+	$( window ).on( 'load', function() {
+		$( '.site-preloader' ).fadeOut(1000);
+		$( '.preloader-enabled' ).delay(1000).css({ 'overflow':'visible' });
+	});
+
 	$( document ).ready( function() {
 
 		if ( true === supportsInlineSVG() ) {

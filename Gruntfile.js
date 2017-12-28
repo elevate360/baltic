@@ -222,7 +222,8 @@ module.exports = function (grunt) {
 				files: [
 					'assets/js/admin.js',
 					'assets/js/notice.js',
-					'assets/js/customizer.js'
+					'assets/js/customizer.js',
+					'assets/js/customizer-control.js'
 				],
 				tasks: [
 					'uglify'

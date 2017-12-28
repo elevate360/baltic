@@ -262,3 +262,70 @@ function baltic_wc_sidebar(){
 
 }
 
+/**
+ * [baltic_woocommerce_endpoint_menu description]
+ * @return [type] [description]
+ */
+function baltic_woocommerce_endpoint_menu(){
+
+	$menu_items = wc_get_account_menu_items();
+
+	$myaccount_menu = '';
+
+	foreach ( $menu_items as $endpoint => $label ) {
+		$myaccount_menu .= sprintf( '<li class="menu-item"><a href="%s">%s</a></li>',
+			esc_url( wc_get_account_endpoint_url( $endpoint ) ),
+			esc_html( $label )
+		);
+	}
+
+	return $myaccount_menu;
+
+}
+
+/**
+ * Add Login/ my account menu at menu-1
+ *
+ * @return string
+ */
+function baltic_primary_menu_extra( $menu, $args ){
+
+	$args = (array)$args;
+
+	if ( ! class_exists( 'WooCommerce' ) ) {
+		return $menu;
+	}
+
+	if ( 'menu-1' !== $args['theme_location']  ){
+		return $menu;
+	}
+
+	$toggle_menu = sprintf( '<button class="sub-menu-toggle" role="button" aria-expanded="false">%s%s</button>',
+		baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'chevron-top' ) ),
+		baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'chevron-bottom' ) ) );
+
+	$icon = baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'user' ) );
+
+	$myaccount_page = ( is_page( wc_get_page_id( 'myaccount' ) ) ) ? ' current-menu-item' : '';
+
+	if ( is_user_logged_in() ) {
+		$link = '
+			<li class="menu-item menu-item-has-children menu-right'. esc_attr(  $myaccount_page ) .'">
+				<a href="'. get_permalink( wc_get_page_id( 'myaccount' ) ) .'">'. $icon . esc_html__( 'My Account', 'baltic' ) . $toggle_menu .'</a>
+				<ul class="sub-menu">
+					'. baltic_woocommerce_endpoint_menu() .'
+				</ul>
+			</li>'
+		;
+	} else {
+		$link = '
+			<li class="menu-item menu-right'. esc_attr(  $myaccount_page ) .'">
+				<a href="'. get_permalink( wc_get_page_id( 'myaccount' ) ) .'">'. $icon . esc_html__( 'Login', 'baltic' ) .'</a>
+			</li>'
+		;
+	}
+
+	return $menu . $link;
+
+}
+add_filter( 'wp_nav_menu_items', 'baltic_primary_menu_extra', 10, 2 );

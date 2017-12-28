@@ -20,24 +20,24 @@ class Baltic_Init {
 	 */
 	public function __construct() {
 
-		// Backward compatibilty
+		/** Backward compatibilty */
 		if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
 			add_action( 'after_switch_theme', array( $this, 'back_compact' ) );
 			return;
 		}
 
-		// Setup
+		/** Setup */
 		add_action( 'after_setup_theme', array( $this, 'setup' ) );
 		add_action( 'template_redirect', array( $this, 'content_width' ), 0 );
 
-		// Scipts
+		/** Scipts */
 		add_action( 'wp_head', array( $this, 'javascript_detection'), 0 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'assets' ) );
 
-		// Baltic theme constants
+		/** Baltic theme constants */
 		add_action( 'baltic_init', array( $this, 'constants' ), 0 );
 
-		// Includes files
+		/** Includes files */
 		add_action( 'baltic_init', array( $this, 'include_admin' ) );
 		add_action( 'baltic_init', array( $this, 'include_functions' ) );
 		add_action( 'baltic_init', array( $this, 'include_classes' ) );
@@ -85,12 +85,10 @@ class Baltic_Init {
 		/** Add default posts and comments RSS feed links to head. */
 		add_theme_support( 'automatic-feed-links' );
 
-		/*
-		 * Let WordPress manage the document title.
-		 */
+		/** Let WordPress manage the document title. */
 		add_theme_support( 'title-tag' );
 
-		/*
+		/**
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
@@ -109,7 +107,7 @@ class Baltic_Init {
 			'menu-3' => esc_html__( 'Social Link', 'baltic' ),
 		) );
 
-		/*
+		/**
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
@@ -121,6 +119,33 @@ class Baltic_Init {
 			'caption',
 		) );
 
+		/** Enable support for custom logo */
+		add_theme_support( 'custom-logo', array(
+			'width'       => 360,
+			'height'      => 96,
+			'flex-width'  => true,
+			'flex-height' => false,
+			'header-text' => array( 'site-title', 'site-description' ),
+		) );
+
+		/** Custom Header */
+		add_theme_support( 'custom-header', apply_filters( 'baltic_custom_header_args', array(
+			'width'       			=> 1600,
+			'height'      			=> 1600,
+			'default-image'          => '',
+			'default-text-color'     => '455a64',
+			'flex-width'             => true,
+			'flex-height'            => true,
+			'wp-head-callback'       => 'baltic_header_style',
+		) ) );
+
+		/** Set up the WordPress core custom background feature. */
+		add_theme_support( 'custom-background', apply_filters( 'baltic_custom_background_args', array(
+			'default-color' 		=> 'eceff1',
+			'default-repeat'        => 'no-repeat',
+			'default-attachment'    => 'scroll'
+		) ) );
+
 		/** Add theme support for selective refresh for widgets. */
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
@@ -130,7 +155,7 @@ class Baltic_Init {
 		 */
 		add_editor_style( array( 'assets/css/editor-style.min.css' ) );
 
-		// This theme uses its own gallery styles.
+		/** This theme uses its own gallery styles. */
 		add_filter( 'use_default_gallery_style', '__return_false' );
 
 	}
@@ -184,6 +209,8 @@ class Baltic_Init {
 
 		/** Main Style */
 		wp_enqueue_style( 'baltic-style', get_theme_file_uri( "/style$suffix.css" ) );
+
+		wp_dequeue_style( 'google-font-roboto' );
 
 		/** lt IE 9 script */
 		wp_enqueue_script( 'html5shiv', get_theme_file_uri( "/assets/js/ie/html5shiv$suffix.js" ), array(), '3.7.3' );

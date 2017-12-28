@@ -32,6 +32,10 @@ class Baltic_Theme_Functions {
 	 */
 	public function body_classes( $classes ) {
 
+		if ( baltic_get_option( 'preloader' )  === true ) {
+			$classes[] = 'preloader-enabled';
+		}
+
 		$classes[]	= esc_attr( baltic_get_layout() );
 
 		return $classes;

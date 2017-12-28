@@ -60,11 +60,13 @@ function baltic_setting_default(){
 
 	$default = array(
 
-		'preloader_enable'			=> true,
+		'preloader'					=> true,
 		'preloader_type'			=> 'pulse',
 		'preloader_color'			=> '#ff5722',
 		'preloader_bg_color'		=> '#ffffff',
 
+		'color_bg_highlight'		=> '#ff5722',
+		'color_text_highlight'		=> '#ffffff',
 		'color_text_primary'		=> '#505050',
 		'color_text_secondary'		=> '#909090',
 		'color_text_field'			=> '#909090',
@@ -96,11 +98,11 @@ function baltic_setting_default(){
 		'color_price'				=> '#77a464',
 		'color_sale'				=> '#f44336',
 		'color_stars'				=> '#ffc107',
-		'products_per_page'			=> 12,
-		'products_columns'			=> 4,
 		'layout_products'			=> 'content-sidebar',
 		'layout_product'			=> 'content-sidebar',
-		'products_nav'				=> 'products_navigation',
+		'products_per_page'			=> 12,
+		'products_columns'			=> 4,
+		'products_nav'				=> 'products_pagination',
 		'products_nav_prev'			=> esc_html( '&larr; Older product', 'baltic' ),
 		'products_nav_next'			=> esc_html( 'Newer product &rarr;', 'baltic' ),
 

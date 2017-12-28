@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Baltic 1.0.0\n"
 "Report-Msgid-Bugs-To: https://elevate360/contact\n"
-"POT-Creation-Date: 2017-12-25 01:59:46+00:00\n"
+"POT-Creation-Date: 2017-12-28 01:15:43+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -118,7 +118,7 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: components/post/entry-content.php:11 inc/class-template-functions.php:147
+#: components/post/entry-content.php:11 inc/class-template-functions.php:151
 #. translators: %s: Name of current post. Only visible to screen readers
 #. translators: %s: Name of current post
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
@@ -320,15 +320,15 @@ msgid ""
 "version %s. Please upgrade and try again."
 msgstr ""
 
-#: inc/class-baltic.php:107
+#: inc/class-baltic.php:105
 msgid "Primary"
 msgstr ""
 
-#: inc/class-baltic.php:108
+#: inc/class-baltic.php:106
 msgid "Secondary"
 msgstr ""
 
-#: inc/class-baltic.php:109
+#: inc/class-baltic.php:107
 msgid "Social Link"
 msgstr ""
 
@@ -340,21 +340,343 @@ msgstr ""
 msgid " <span aria-label=\"breadcrumb separator\" class=\"separator\">/</span> "
 msgstr ""
 
-#: inc/class-template-functions.php:116
+#: inc/class-template-functions.php:120
 #. Translators: Used as a placeholder for untitled posts on non-singular views.
 msgid "(Untitled)"
 msgstr ""
 
-#: inc/customizer/customizer.php:32
-msgid "Baltic Header"
+#: inc/customizer/customizer.php:49
+msgid "Upgrade to Baltic Pro"
 msgstr ""
 
-#: inc/customizer/customizer.php:37
-msgid "Baltic Typography"
+#: inc/customizer/customizer.php:50
+msgid "Learn More"
 msgstr ""
 
-#: inc/customizer/customizer.php:42
+#: inc/customizer/customizer.php:58
+msgid "Baltic Settings"
+msgstr ""
+
+#: inc/customizer/customizer.php:63
+msgid "Typography"
+msgstr ""
+
+#: inc/customizer/customizer.php:68
 msgid "WooCommerce"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:12
+msgid "Preloader"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:19
+msgid "Enable Preloader"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:24
+#: inc/customizer/settings/baltic-settings.php:340
+msgid "On"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:25
+#: inc/customizer/settings/baltic-settings.php:341
+msgid "Off"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:32
+msgid "Preloader Effect"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:37
+msgid "rotating-plane"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:38
+msgid "double-bounce"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:39
+msgid "wave"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:40
+msgid "wandering-cubes"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:41
+msgid "pulse"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:42
+msgid "chasing-dots"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:43
+msgid "three-bounce"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:44
+msgid "circle"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:45
+msgid "cube-grid"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:46
+msgid "fading-circle"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:47
+msgid "folding-cube"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:70
+msgid "Preloader background color"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:94
+msgid "Preloader color"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:118
+msgid "Preview Preloader"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:130
+msgid "Show"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:131
+msgid "Hide"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:137
+#: inc/customizer/settings/woocommerce.php:45
+msgid "Layout"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:145
+msgid "Archives Layout"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:155
+msgid "Single Post/Page Layout"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:164
+msgid "Blog Post"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:172
+msgid "Display Date?"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:181
+msgid "Display Author?"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:190
+msgid "Display Comments?"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:199
+msgid "Display Categories?"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:208
+msgid "Display Tags?"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:217
+msgid "Display Author Profile?"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:226
+msgid "Excerpt Length"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:248
+msgid "More Link Text"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:257
+msgid "Posts Navigation Type"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:262
+#: inc/customizer/settings/woocommerce.php:110
+msgid "Previous/Next"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:263
+#: inc/customizer/settings/woocommerce.php:111
+msgid "Pagination"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:279
+msgid "Previous Post Text"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:295
+msgid "Next Post Text"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:311
+msgid "Footer"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:319
+msgid "Footer Text"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:336
+msgid "Enable return to top link?"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:13
+msgid "Color Button"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:21
+msgid "Color Button Hover"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:10
+msgid "Body"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:17
+msgid "Body Fonts"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:38
+msgid "Heading"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:45
+msgid "Heading Fonts"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:66
+msgid "H1 size"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:84
+msgid "H2 size"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:102
+msgid "H3 size"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:120
+msgid "H4 size"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:138
+msgid "H5 size"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:156
+msgid "H6 size"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:172
+msgid "Blockquote"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:179
+msgid "Blockquote Fonts"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:201
+msgid "Code"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:208
+msgid "Code Fonts"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:230
+#: inc/customizer/settings/woocommerce.php:12
+msgid "Colors"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:237
+msgid "Color Background Highlight"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:256
+msgid "Color Text Highlight"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:275
+msgid "Primary Text Color"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:290
+msgid "Secondary Text Color"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:299
+msgid "Text Field Color"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:330
+msgid "Text Field Focus Color"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:345
+msgid "Color Link"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:353
+msgid "Color Link Hover"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:19
+msgid "Price color"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:28
+msgid "Sale Badge Color"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:37
+msgid "Stars Rating Color"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:52
+msgid "Product Archive Layout"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:62
+msgid "Single Product Layout"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:70
+msgid "Products Archive"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:77
+msgid "Products per page"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:91
+msgid "Products Columns"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:105
+msgid "Products Navigation Type"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:118
+msgid "Previous Product Text"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:134
+msgid "Next Product Text"
 msgstr ""
 
 #: inc/functions/icons.php:37
@@ -365,12 +687,28 @@ msgstr ""
 msgid "Please define an SVG icon filename."
 msgstr ""
 
-#: inc/functions/options.php:87
+#: inc/functions/options.php:89
 msgid "Continue reading"
 msgstr ""
 
-#: inc/functions/options.php:92
+#: inc/functions/options.php:94
 msgid "Copyright &copy; 2016-[YEAR] [SITE]. Proudly powered by [WP]."
+msgstr ""
+
+#: inc/functions/utility.php:206
+msgid "Content Sidebar"
+msgstr ""
+
+#: inc/functions/utility.php:207
+msgid "Sidebar Content"
+msgstr ""
+
+#: inc/functions/utility.php:208
+msgid "Full Width"
+msgstr ""
+
+#: inc/functions/utility.php:209
+msgid "Narrow"
 msgstr ""
 
 #: inc/functions/widgets.php:15
@@ -425,6 +763,14 @@ msgstr ""
 
 #: inc/plugins/woocommerce/wc-template.php:244
 msgid "Next Product"
+msgstr ""
+
+#: inc/plugins/woocommerce/wc-template.php:314
+msgid "My Account"
+msgstr ""
+
+#: inc/plugins/woocommerce/wc-template.php:323
+msgid "Login"
 msgstr ""
 
 #: inc/structure/entry.php:43
@@ -844,14 +1190,6 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Baltic - Canvas"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Baltic - Grid"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Baltic - Homepage"
 msgstr ""
 
 #: comments.php:40

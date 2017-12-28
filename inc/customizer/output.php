@@ -6,46 +6,12 @@
  */
 
 /**
- * Baltic custom logo, header and background
- */
-function baltic_custom_logo_header_and_background(){
-
-	/** Enable support for custom logo */
-	add_theme_support( 'custom-logo', array(
-		'width'       => 360,
-		'height'      => 96,
-		'flex-width'  => true,
-		'flex-height' => false,
-		'header-text' => array( 'site-title', 'site-description' ),
-	) );
-
-	/** Custom Header */
-	add_theme_support( 'custom-header', apply_filters( 'baltic_custom_header_args', array(
-		'width'       			=> 1600,
-		'height'      			=> 1600,
-		'default-image'          => '',
-		'default-text-color'     => '455a64',
-		'flex-width'             => true,
-		'flex-height'            => true,
-		'wp-head-callback'       => 'baltic_header_style',
-	) ) );
-
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'baltic_custom_background_args', array(
-		'default-color' 		=> 'eceff1',
-		'default-repeat'        => 'no-repeat',
-		'default-attachment'    => 'scroll'
-	) ) );
-
-}
-add_action( 'after_setup_theme', 'baltic_custom_logo_header_and_background' );
-
-/**
  * Styles the header image and text displayed on the blog.
  *
  * @see baltic_custom_header_setup().
  */
 function baltic_header_style() {
+
 	$header_text_color = get_header_textcolor();
 
 	/*
@@ -57,56 +23,45 @@ function baltic_header_style() {
 	}
 
 	// If we get this far, we have custom styles. Let's do this.
-	?>
-	<style type="text/css">
-	<?php
-	// Has the text been hidden?
-	if ( ! display_header_text() ) :
-	?>
+
+	$css = '';
+
+	if ( ! display_header_text() ) {
+		$css .= '
 		.site-title,
 		.site-description {
 			position: absolute;
 			clip: rect(1px, 1px, 1px, 1px);
 		}
-	<?php
-		// If the user has set a custom color for the text use that.
-		else :
-	?>
+		';
+	} else {
+		$css .= '
 		.site-title a,
 		.site-description {
-			color: #<?php echo esc_attr( $header_text_color ); ?>;
+			color: # '. esc_attr( $header_text_color ) .';
 		}
-	<?php endif; ?>
-	</style>
-	<?php
+		';
+	}
+
+    $css = str_replace( array( "\n", "\t", "\r" ), '', $css );
+
+	if ( ! empty( $css ) ) {
+		return trim( $css );
+	}
+
 }
 
 /**
  * Print inline style
  *
+ * @uses  baltic_header_style() [<description>]
  * @return string
  */
 function baltic_add_inline_style(){
 
 	$css= '';
 
-	if ( baltic_get_option( 'color_text_primary' ) ) {
-		$css .= sprintf( '%s{color:%s}', baltic__text_color_primary(), baltic_get_option( 'color_text_primary' ) );
-	}
-
-	if ( baltic_get_option( 'color_text_field' ) ) {
-		$css .= sprintf( '%s{color:%s}', baltic__text_color_field(), baltic_get_option( 'color_text_field' ) );
-		$css .= sprintf( '
-			::-webkit-input-placeholder{ color:%1$s }
-			:-moz-placeholder{color:%1$s}
-			::-moz-placeholder{color:%1$s}
-			:-ms-input-placeholder{color:%1$s}',
-			baltic_get_option( 'color_text_field' ) );
-	}
-
-	if ( baltic_get_option( 'color_text_field_focus' ) ) {
-		$css .= sprintf( '%s{color:%s}', baltic__text_color_field_focus(), baltic_get_option( 'color_text_field_focus' ) );
-	}
+	$css .= baltic_header_style();
 
     $css = str_replace( array( "\n", "\t", "\r" ), '', $css );
 

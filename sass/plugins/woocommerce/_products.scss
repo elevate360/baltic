@@ -84,6 +84,7 @@ ul.products {
 			color: $color__text-secondary;
 			display: block;
 			border-radius: $site__border-radius;
+			padding: .75rem .25rem;
 			&:hover,
 			&:focus {
 				background-color: $color__button;

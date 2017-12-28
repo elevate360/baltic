@@ -15,13 +15,17 @@
 
 		<?php do_action( 'baltic_entry_header_before' );?>
 		<header <?php baltic_attr( 'entry-header' );?>>
+
 			<?php do_action( 'baltic_entry_header' );?>
+
 		</header><!-- .entry-header -->
 		<?php do_action( 'baltic_entry_header_after' );?>
 
 		<?php do_action( 'baltic_entry_content_before' );?>
 		<div <?php baltic_attr( 'entry-content' );?>>
+
 			<?php do_action( 'baltic_entry_content' );?>
+
 		</div><!-- .entry-content -->
 		<?php do_action( 'baltic_entry_content_after' );?>
 

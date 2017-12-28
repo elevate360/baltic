@@ -79,3 +79,27 @@ function baltic__text_color_field_focus(){
 	return apply_filters( 'baltic__text_color_field_focus', $baltic__text_color_field_focus );
 
 }
+
+/**
+ * [baltic__preloader_elements description]
+ * @return [type] [description]
+ */
+function baltic__preloader_elements(){
+
+	$baltic__preloader_elements = '
+		.sk-rotating-plane,
+		.sk-double-bounce .sk-child,
+		.sk-wave .sk-rect,
+		.sk-wandering-cubes .sk-cube,
+		.sk-spinner-pulse,
+		.sk-chasing-dots .sk-child,
+		.sk-three-bounce .sk-child,
+		.sk-circle .sk-child:before,
+		.sk-cube-grid .sk-cube,
+		.sk-fading-circle .sk-circle:before,
+		.sk-folding-cube .sk-cube:before
+	';
+
+	return apply_filters( 'baltic__preloader_elements', $baltic__preloader_elements );
+
+}

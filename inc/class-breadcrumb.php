@@ -11,7 +11,7 @@ if( ! class_exists( 'Baltic_Breadcrumb' ) ) :
  *
  * @since 1.0.0
  *
- * @package Baltic\Breadcrumbs
+ * @package Baltic
  */
 class Baltic_Breadcrumb {
 

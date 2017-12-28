@@ -195,6 +195,24 @@ function baltic_get_products_layout(){
 }
 endif;
 
+if ( ! function_exists( 'baltic_get_main_layout' ) ) :
+/**
+ * [baltic_get_main_layout description]
+ * @return array
+ */
+function baltic_get_main_layout(){
+
+	$layout = array(
+		'content-sidebar'  	=> esc_attr__( 'Content Sidebar', 'baltic' ),
+		'sidebar-content' 	=> esc_attr__( 'Sidebar Content', 'baltic' ),
+		'full-width' 		=> esc_attr__( 'Full Width', 'baltic' ),
+		'narrow'	 		=> esc_attr__( 'Narrow', 'baltic' ),
+	);
+
+	return apply_filters( 'baltic_get_main_layout', $layout );
+}
+endif;
+
 /**
  * [baltic__get_content_sidebar description]
  * @return string
