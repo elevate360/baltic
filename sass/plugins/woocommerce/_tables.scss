@@ -67,8 +67,8 @@ table.cart img {
 	text-align: center;
 	position: relative;
 	a {
-		background-color: $color__alpha-dark;
-		color: $color__text-secondary;
+		background-color: $color__text-main;
+		color: $color__white!important;
 		display: inline-block;
 		font-size: 1rem;
 		font-weight: normal;
@@ -83,7 +83,7 @@ table.cart img {
 		&:hover,
 		&:focus {
 			background-color: $woocommerce__color-error;
-			color: #fff;
+			color: $color__white!important;
 		}
 	}
 }

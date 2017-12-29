@@ -210,7 +210,7 @@ Kirki::add_field( 'baltic', array(
 	'default'     => array(
 		'font-family'    => 'Monaco,"Lucida Sans Typewriter","Lucida Typewriter","Courier New",Courier,monospace',
 		'variant'        => '400',
-		'font-size'      => '1rem',
+		'font-size'      => '0.875rem',
 		'line-height'    => '1.5',
 		'letter-spacing' => '0',
 		'subsets'        => '',
@@ -278,9 +278,22 @@ Kirki::add_field( 'baltic', array(
 	'transport'		=> 'auto',
 	'output'		=> array(
 		array(
-			'element'  => baltic__text_color_primary(),
+			'element'  => baltic__color_text_primary(),
 			'property' => 'color',
 		),
+		array(
+			'element'	=> 'ul.cart_list a.remove, .product-remove a, .widget-title:after, #ship-to-different-address label span:before, #ship-to-different-address label input[type=checkbox]:checked+span:before, .wc_payment_methods input.input-radio[name=payment_method]:checked+label:before',
+			'property'	=> 'background-color'
+		),
+		array(
+			'element'	=> '.return-to-top, #ship-to-different-address label span:before, #ship-to-different-address label input[type=checkbox]:checked+span:before',
+			'property'	=> 'border-color'
+		),
+		array(
+			'element'	=> '.wc_payment_methods input.input-radio[name=payment_method]+label:before',
+			'property'	=> 'box-shadow',
+			'value_pattern'	=> '0 0 0 2px $'
+		)
 	)
 ) );
 
@@ -290,7 +303,17 @@ Kirki::add_field( 'baltic', array(
 	'label'       	=> __( 'Secondary Text Color', 'baltic' ),
 	'section'     	=> 'baltic_font_color_section',
 	'default'     	=> $default['color_text_secondary'],
-	'transport'		=> 'auto'
+	'transport'		=> 'auto',
+	'output'		=> array(
+		array(
+			'element'  => baltic__color_text_secondary(),
+			'property' => 'color',
+		),
+		array(
+			'element'	=> 'ul.products li.product .button',
+			'property'	=> 'border-color'
+		)
+	)
 ) );
 
 Kirki::add_field( 'baltic', array(
@@ -302,7 +325,7 @@ Kirki::add_field( 'baltic', array(
 	'transport'		=> 'auto',
 	'output'		=> array(
 		array(
-			'element'  => baltic__text_color_field(),
+			'element'  => baltic__color_text_field(),
 			'property' => 'color',
 		),
 		array(
@@ -325,32 +348,62 @@ Kirki::add_field( 'baltic', array(
 ) );
 
 Kirki::add_field( 'baltic', array(
-	'type'        => 'color',
-	'settings'    => 'color_text_field_focus',
-	'label'       => __( 'Text Field Focus Color', 'baltic' ),
-	'section'     => 'baltic_font_color_section',
-	'default'     => $default['color_text_field_focus'],
+	'type'        	=> 'color',
+	'settings'    	=> 'color_text_field_focus',
+	'label'       	=> __( 'Text Field Focus Color', 'baltic' ),
+	'section'     	=> 'baltic_font_color_section',
+	'default'     	=> $default['color_text_field_focus'],
 	'transport'		=> 'auto',
 	'output'		=> array(
 		array(
-			'element'  => baltic__text_color_field_focus(),
+			'element'  => baltic__color_text_field_focus(),
 			'property' => 'color',
 		)
 	)
 ) );
 
 Kirki::add_field( 'baltic', array(
-	'type'        => 'color',
-	'settings'    => 'color_link_primary',
-	'label'       => __( 'Color Link', 'baltic' ),
-	'section'     => 'baltic_font_color_section',
-	'default'     => $default['color_link_primary'],
+	'type'        	=> 'color',
+	'settings'    	=> 'color_link_primary',
+	'label'       	=> __( 'Color Link', 'baltic' ),
+	'section'     	=> 'baltic_font_color_section',
+	'default'     	=> $default['color_link_primary'],
+	'transport'		=> 'auto',
+	'output'		=> array(
+		array(
+			'element'  	=> baltic__color_link_primary(),
+			'property' 	=> 'color',
+		),
+		array(
+			'element' 	=> '.screen-reader-text:focus, .widget_layered_nav_filters ul li.chosen:before, .woocommerce-widget-layered-nav-list li.chosen:before',
+			'property'	=> 'background-color'
+		),
+		array(
+			'element'	=> '.widget_layered_nav_filters ul li:before, .woocommerce-widget-layered-nav-list li:before, .widget_layered_nav_filters ul li.chosen:before, .woocommerce-widget-layered-nav-list li.chosen:before',
+			'property'	=> 'border-color'
+		),
+		array(
+			'element'	=> '.woocommerce .blockUI.blockOverlay::before, .woocommerce .loader::before',
+			'property'	=> 'border-top-color'
+		),
+	)
 ) );
 
 Kirki::add_field( 'baltic', array(
-	'type'        => 'color',
-	'settings'    => 'color_link_secondary',
-	'label'       => __( 'Color Link Hover', 'baltic' ),
-	'section'     => 'baltic_font_color_section',
-	'default'     => $default['color_link_secondary'],
+	'type'        	=> 'color',
+	'settings'    	=> 'color_link_secondary',
+	'label'       	=> __( 'Color Link Hover', 'baltic' ),
+	'section'     	=> 'baltic_font_color_section',
+	'default'     	=> $default['color_link_secondary'],
+	'transport'		=> 'auto',
+	'output'		=> array(
+		array(
+			'element'  	=> baltic__color_link_secondary(),
+			'property' 	=> 'color',
+		),
+		array(
+			'element'	=> 'ul.cart_list a.remove:focus, ul.cart_list a.remove:hover, .product-remove a:hover, .product-remove a:focus',
+			'property'	=> 'background-color'
+		),
+	)
 ) );

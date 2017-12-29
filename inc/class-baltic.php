@@ -317,4 +317,4 @@ class Baltic_Init {
 }
 endif;
 
-new Baltic_Init;
+return new Baltic_Init;

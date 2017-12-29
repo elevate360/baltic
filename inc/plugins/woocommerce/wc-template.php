@@ -149,8 +149,8 @@ function baltic_wc_container_close(){
  */
 function baltic_wc_wrapper_before() {
 	?>
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div id="primary" class="content-area is-woocommerce">
+		<main id="main" class="site-main woocommerce" role="main">
 	<?php
 }
 

@@ -73,8 +73,10 @@ function baltic_setting_default(){
 		'color_text_field_focus'	=> '#505050',
 		'color_link_primary'		=> '#ff5722',
 		'color_link_secondary'		=> '#ff8a65',
+		'color_text_button'			=> '#ffffff',
 		'color_button'				=> '#ff5722',
 		'color_button_hover'		=> '#ff8a65',
+		'color_border'				=> 'rgba( 0,0,0,0.1 )',
 
 		'layout_archive'			=> 'content-sidebar',
 		'layout_singular'			=> 'content-sidebar',
@@ -96,6 +98,7 @@ function baltic_setting_default(){
 
 		// WooCommerce
 		'color_price'				=> '#77a464',
+		'color_sale_text'			=> '#ffffff',
 		'color_sale'				=> '#f44336',
 		'color_stars'				=> '#ffc107',
 		'layout_products'			=> 'content-sidebar',

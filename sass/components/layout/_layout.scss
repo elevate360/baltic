@@ -49,11 +49,9 @@
 	}
 	@include respond-to( large ){
 		padding-top: $gutter__width*3;
-		padding-bottom: $gutter__width*3;
 	}
 	@include respond-to( extra-large ){
 		padding-top: $gutter__width*4;
-		padding-bottom: $gutter__width*4;
 	}
 }
 

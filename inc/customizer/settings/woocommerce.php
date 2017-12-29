@@ -20,15 +20,42 @@ Kirki::add_field( 'baltic', array(
 	'section'     	=> 'baltic_wc_color_section',
 	'default'     	=> $default['color_price'],
 	'transport'		=> 'auto',
+	'output'		=> array(
+		array(
+			'element'  => '.woocommerce-loop-product__link .price',
+			'property' => 'color',
+		)
+	)
+) );
+
+Kirki::add_field( 'baltic', array(
+	'type'        	=> 'color',
+	'settings'    	=> 'color_sale_text',
+	'label'       	=> __( 'Sale Badge Text Color', 'baltic' ),
+	'section'     	=> 'baltic_wc_color_section',
+	'default'     	=> $default['color_sale_text'],
+	'transport'		=> 'auto',
+	'output'		=> array(
+		array(
+			'element'  => '.onsale',
+			'property' => 'color',
+		)
+	)
 ) );
 
 Kirki::add_field( 'baltic', array(
 	'type'        	=> 'color',
 	'settings'    	=> 'color_sale',
-	'label'       	=> __( 'Sale Badge Color', 'baltic' ),
+	'label'       	=> __( 'Sale Badge Background Color', 'baltic' ),
 	'section'     	=> 'baltic_wc_color_section',
 	'default'     	=> $default['color_sale'],
 	'transport'		=> 'auto',
+	'output'		=> array(
+		array(
+			'element'  => '.onsale',
+			'property' => 'background-color',
+		)
+	)
 ) );
 
 Kirki::add_field( 'baltic', array(
@@ -38,6 +65,12 @@ Kirki::add_field( 'baltic', array(
 	'section'     	=> 'baltic_wc_color_section',
 	'default'     	=> $default['color_stars'],
 	'transport'		=> 'auto',
+	'output'		=> array(
+		array(
+			'element'  => '.star-rating span:before',
+			'property' => 'color',
+		)
+	)
 ) );
 
 /** Layout */
@@ -82,7 +115,6 @@ Kirki::add_field( 'baltic', array(
 		'max'  => 9999,
 		'step' => 1,
 	),
-	'transport'		=> 'postMessage'
 ) );
 
 Kirki::add_field( 'baltic', array(
@@ -96,7 +128,6 @@ Kirki::add_field( 'baltic', array(
 		'max'  => 9999,
 		'step' => 1,
 	),
-	'transport'		=> 'postMessage'
 ) );
 
 Kirki::add_field( 'baltic', array(
@@ -109,7 +140,16 @@ Kirki::add_field( 'baltic', array(
 	'choices' 		=> array(
 		'products_navigation' 	=> esc_attr__( 'Previous/Next', 'baltic' ),
 		'products_pagination'	=> esc_attr__( 'Pagination', 'baltic' ),
-	)
+	),
+	'partial_refresh' => array(
+		'products_nav' => array(
+			'selector'        		=> '.is-woocommerce .navigation ',
+			'render_callback' 		=> function() {
+				return baltic_wc_pagination();
+			},
+			'container_inclusive' 	=> true
+		),
+	),
 ) );
 
 Kirki::add_field( 'baltic', array(
@@ -126,6 +166,15 @@ Kirki::add_field( 'baltic', array(
 			'value'    => 'products_navigation',
 		),
 	),
+	'partial_refresh' => array(
+		'products_nav_prev' => array(
+			'selector'        		=> '.is-woocommerce .navigation ',
+			'render_callback' 		=> function() {
+				return baltic_wc_pagination();
+			},
+			'container_inclusive' 	=> true
+		),
+	),
 ) );
 
 Kirki::add_field( 'baltic', array(
@@ -140,6 +189,15 @@ Kirki::add_field( 'baltic', array(
 			'setting'  => 'products_nav',
 			'operator' => '==',
 			'value'    => 'products_navigation',
+		),
+	),
+	'partial_refresh' => array(
+		'products_nav_next' => array(
+			'selector'        		=> '.is-woocommerce .navigation ',
+			'render_callback' 		=> function() {
+				return baltic_wc_pagination();
+			},
+			'container_inclusive' 	=> true
 		),
 	),
 ) );

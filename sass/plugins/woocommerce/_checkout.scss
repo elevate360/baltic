@@ -183,6 +183,9 @@
 	li {
 		background-color: $color__white;
 		border-bottom: 1px solid $color__alpha-dark;
+		&:last-child {
+			border-bottom-width: 0;
+		}
 	}
 	.payment_box {
 		background-color: $color__alpha-dark05;

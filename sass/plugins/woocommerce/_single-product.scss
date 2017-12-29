@@ -14,6 +14,10 @@
 			padding: $gutter__width*3;
 		}
 
+		@include respond-to( extra-large ){
+			padding: $gutter__width*4;
+		}
+
 		div.images img {
 		    display: block;
 		    width: 100%;
@@ -231,7 +235,6 @@ a.reset_variations {
 }
 
 .woocommerce-Price-amount {
-	@include font-size(1.125);
 	font-weight: 500;
 }
 

@@ -7,6 +7,7 @@
 	padding: $gutter__width;
 	margin-bottom: $gutter__width;
 	position: relative;
+	word-wrap: break-word;
 	@include radius-shadow();
 	transition: all .25s ease-in-out;
 	.sticky &{
@@ -22,6 +23,11 @@
 	@include respond-to( large ){
 		padding: $gutter__width*3;
 	}
+
+	@include respond-to( extra-large ){
+		padding: $gutter__width*4;
+	}
+
 }
 
 .updated:not(.published) {
@@ -37,6 +43,8 @@
 	margin-left: -$gutter__width;
 	margin-right: -$gutter__width;
 	margin-bottom: $gutter__width;
+	border-top-left-radius: .25rem;
+	border-top-right-radius: .25rem;
 	img {
 		display: block;
 		vertical-align: bottom;
@@ -66,6 +74,7 @@
 			}
 		}
 	}
+
 	&.alignleft {
 		max-width: 40%;
 		margin-top: -$gutter__width;
@@ -75,17 +84,30 @@
 			max-width: 100%;
 		}
 	}
+
+	@include respond-to( medium ){
+		margin-top: -$gutter__width*2;
+		margin-left: -$gutter__width*2;
+		margin-right: -$gutter__width*2;
+	}
+
 	@include respond-to( large ){
 		margin-top: -$gutter__width*3;
 		margin-left: -$gutter__width*3;
 		margin-right: -$gutter__width*3;
 		margin-bottom: $gutter__width*3;
 	}
+
+	@include respond-to( extra-large ){
+		margin-top: -$gutter__width*4;
+		margin-left: -$gutter__width*4;
+		margin-right: -$gutter__width*4;
+	}
 }
 
 .entry-title {
 	color: $color__text-main;
-	@include font-size(1.75);
+	@include font-size(1.125);
 	margin-bottom: 1rem;
 	line-height: 1;
 	position: relative;
@@ -103,6 +125,10 @@
 			}
 		}
 	}
+
+	@include respond-to( medium ){
+		@include font-size( 1.75);
+	}
 }
 
 .page-links {
@@ -115,6 +141,7 @@ a.more-link {
 	color: $color__text-main;
 	display: inline-block;
 	padding: .5rem 1.25rem;
+	margin-bottom: 1rem;
 	padding-right: 0;
 	border-radius: 2rem;
 	transition: all ease-in-out .25s;
@@ -148,7 +175,9 @@ a.more-link {
 
 .entry-meta {
 	margin-bottom: .5rem;
-	.posted-on {
+	@include font-size( 0.875 );
+	.posted-on,
+	.author {
 		margin-right: .5rem;
 	}
 	.icon-stroke {
@@ -236,6 +265,11 @@ a.more-link {
 		padding: $gutter__width*2 $gutter__width*3;
 	}
 
+	@include respond-to( extra-large ){
+		margin: -$gutter__width*4;
+		margin-top: 0;
+		padding: $gutter__width*2 $gutter__width*4;
+	}
 }
 
 .cat-links,

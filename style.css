@@ -2302,6 +2302,7 @@ svg symbol {
 	background-color: #fff;
 	-webkit-box-shadow: 0 8px 92px rgba(0, 0, 0, 0.1);
 	box-shadow: 0 8px 92px rgba(0, 0, 0, 0.1);
+	word-wrap: break-word;
 	-webkit-transition: all 0.25s ease-in-out;
 	transition: all 0.25s ease-in-out;
 }
@@ -2323,6 +2324,8 @@ svg symbol {
 	margin-right: -10px;
 	margin-bottom: 10px;
 	margin-left: -10px;
+	border-top-left-radius: 0.25rem;
+	border-top-right-radius: 0.25rem;
 	background-color: #505050;
 }
 
@@ -2373,8 +2376,8 @@ svg symbol {
 	position: relative;
 	margin-bottom: 1rem;
 	color: #505050;
-	font-size: 28px;
-	font-size: 1.75rem;
+	font-size: 18px;
+	font-size: 1.125rem;
 	line-height: 1;
 }
 
@@ -2403,6 +2406,7 @@ svg symbol {
 
 a.more-link {
 	display: inline-block;
+	margin-bottom: 1rem;
 	padding: 0.5rem 1.25rem;
 	padding-right: 0;
 	border: 1px solid #505050;
@@ -2448,9 +2452,12 @@ a.more-link:focus .icon-stroke {
 
 .entry-meta {
 	margin-bottom: 0.5rem;
+	font-size: 14px;
+	font-size: 0.875rem;
 }
 
-.entry-meta .posted-on {
+.entry-meta .posted-on,
+.entry-meta .author {
 	margin-right: 0.5rem;
 }
 
@@ -3592,6 +3599,17 @@ a.custom-logo-link {
 		max-width: 100%;
 	}
 
+	.entry-thumbnail {
+		margin-top: -20px;
+		margin-right: -20px;
+		margin-left: -20px;
+	}
+
+	.entry-title {
+		font-size: 28px;
+		font-size: 1.75rem;
+	}
+
 	.entry-footer {
 		margin: -20px;
 		margin-top: 0;
@@ -3776,18 +3794,32 @@ a.custom-logo-link {
 
 	.site-content > .container {
 		padding-top: 30px;
-		padding-bottom: 30px;
 	}
 }
 
 @media (min-width: 1200px) {
+	.entry-inner {
+		padding: 40px;
+	}
+
+	.entry-thumbnail {
+		margin-top: -40px;
+		margin-right: -40px;
+		margin-left: -40px;
+	}
+
+	.entry-footer {
+		margin: -40px;
+		margin-top: 0;
+		padding: 20px 40px;
+	}
+
 	.container {
 		max-width: 1140px;
 	}
 
 	.site-content > .container {
 		padding-top: 40px;
-		padding-bottom: 40px;
 	}
 }
 

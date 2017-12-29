@@ -52,6 +52,27 @@ function baltic_entry_meta(){
 
 	echo '<div class="entry-meta">';
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+
+	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+		echo '<span class="comments-link">';
+		echo baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'msg' ) );
+		comments_popup_link(
+			sprintf(
+				wp_kses(
+					/* translators: %s: post title */
+					__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'baltic' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
+				get_the_title()
+			)
+		);
+		echo '</span>';
+	}
+
 	echo '</div>';
 
 
@@ -89,26 +110,6 @@ function baltic_entry_footer(){
 			baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'tag' ) ),
 			$tags_list ); // WPCS: XSS OK.
 		}
-	}
-
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		echo baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'msg' ) );
-		comments_popup_link(
-			sprintf(
-				wp_kses(
-					/* translators: %s: post title */
-					__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'baltic' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			)
-		);
-		echo '</span>';
 	}
 
 	edit_post_link(

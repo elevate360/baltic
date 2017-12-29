@@ -234,7 +234,7 @@ Kirki::add_field( 'baltic', array(
 	'transport'		=> 'postMessage',
 	'partial_refresh' => array(
 		'excerpt_length' => array(
-			'selector'        		=> '.site-main',
+			'selector'        		=> '.content-area:not(.is-woocommerce) .site-main',
 			'render_callback' 		=> function() {
 				return baltic_loop_index();
 			}
@@ -264,7 +264,7 @@ Kirki::add_field( 'baltic', array(
 	),
 	'partial_refresh' => array(
 		'posts_nav' => array(
-			'selector'        		=> '.content-area .navigation ',
+			'selector'        		=> '.content-area:not(.is-woocommerce) .navigation ',
 			'render_callback' 		=> function() {
 				return baltic_posts_navigation();
 			},
