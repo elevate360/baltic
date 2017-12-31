@@ -133,7 +133,6 @@ class Baltic_Init {
 			'width'       			=> 1600,
 			'height'      			=> 1600,
 			'default-image'          => '',
-			'default-text-color'     => '455a64',
 			'flex-width'             => true,
 			'flex-height'            => true,
 			'wp-head-callback'       => 'baltic_header_style',

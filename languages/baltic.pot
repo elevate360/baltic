@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Baltic 1.0.0\n"
 "Report-Msgid-Bugs-To: https://elevate360/contact\n"
-"POT-Creation-Date: 2017-12-29 21:17:59+00:00\n"
+"POT-Creation-Date: 2017-12-31 16:58:50+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -137,7 +137,7 @@ msgid "Next Page"
 msgstr ""
 
 #: components/posts-navigation.php:21
-#: inc/plugins/woocommerce/wc-template.php:245
+#: inc/plugins/woocommerce/wc-template.php:253
 msgid "Page"
 msgstr ""
 
@@ -354,7 +354,7 @@ msgid "Learn More"
 msgstr ""
 
 #: inc/customizer/customizer.php:58
-msgid "Baltic Settings"
+msgid "Theme Settings"
 msgstr ""
 
 #: inc/customizer/customizer.php:63
@@ -362,6 +362,10 @@ msgid "Typography"
 msgstr ""
 
 #: inc/customizer/customizer.php:68
+msgid "Colors"
+msgstr ""
+
+#: inc/customizer/customizer.php:73 inc/customizer/settings/woocommerce.php:12
 msgid "WooCommerce"
 msgstr ""
 
@@ -452,7 +456,7 @@ msgid "Hide"
 msgstr ""
 
 #: inc/customizer/settings/baltic-settings.php:137
-#: inc/customizer/settings/woocommerce.php:78
+#: inc/customizer/settings/woocommerce.php:79
 msgid "Layout"
 msgstr ""
 
@@ -505,12 +509,12 @@ msgid "Posts Navigation Type"
 msgstr ""
 
 #: inc/customizer/settings/baltic-settings.php:262
-#: inc/customizer/settings/woocommerce.php:141
+#: inc/customizer/settings/woocommerce.php:142
 msgid "Previous/Next"
 msgstr ""
 
 #: inc/customizer/settings/baltic-settings.php:263
-#: inc/customizer/settings/woocommerce.php:142
+#: inc/customizer/settings/woocommerce.php:143
 msgid "Pagination"
 msgstr ""
 
@@ -534,19 +538,91 @@ msgstr ""
 msgid "Enable return to top link?"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:13
+#: inc/customizer/settings/colors.php:12
+msgid "Header"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:19
+msgid "Header Background Color"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:34
+msgid "Header Text Color"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:48
+msgid "Background"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:54
+msgid "Selection"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:61
+msgid "Color Background Highlight"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:80
+msgid "Color Text Highlight"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:98
+msgid "Text"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:105
+msgid "Primary Text Color"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:133
+msgid "Secondary Text Color"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:151
+msgid "TextField"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:158
+msgid "Text Field Color"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:189
+msgid "Text Field Focus Color"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:203
+msgid "Link"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:210
+msgid "Color Link"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:237
+msgid "Color Link Hover"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:255
+msgid "Button"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:262
 msgid "Color Text Button"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:28
+#: inc/customizer/settings/colors.php:277
 msgid "Color Background Button"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:47
+#: inc/customizer/settings/colors.php:296
 msgid "Color Button Hover"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:66
+#: inc/customizer/settings/colors.php:313
+msgid "Border"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:320
 msgid "Color Border"
 msgstr ""
 
@@ -606,104 +682,67 @@ msgstr ""
 msgid "Code Fonts"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:230
-#: inc/customizer/settings/woocommerce.php:12
-msgid "Colors"
-msgstr ""
-
-#: inc/customizer/settings/typography.php:237
-msgid "Color Background Highlight"
-msgstr ""
-
-#: inc/customizer/settings/typography.php:256
-msgid "Color Text Highlight"
-msgstr ""
-
-#: inc/customizer/settings/typography.php:275
-msgid "Primary Text Color"
-msgstr ""
-
-#: inc/customizer/settings/typography.php:303
-msgid "Secondary Text Color"
-msgstr ""
-
-#: inc/customizer/settings/typography.php:322
-msgid "Text Field Color"
-msgstr ""
-
-#: inc/customizer/settings/typography.php:353
-msgid "Text Field Focus Color"
-msgstr ""
-
-#: inc/customizer/settings/typography.php:368
-msgid "Color Link"
-msgstr ""
-
-#: inc/customizer/settings/typography.php:395
-msgid "Color Link Hover"
-msgstr ""
-
-#: inc/customizer/settings/woocommerce.php:19
+#: inc/customizer/settings/woocommerce.php:20
 msgid "Price color"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:34
+#: inc/customizer/settings/woocommerce.php:35
 msgid "Sale Badge Text Color"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:49
+#: inc/customizer/settings/woocommerce.php:50
 msgid "Sale Badge Background Color"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:64
+#: inc/customizer/settings/woocommerce.php:65
 msgid "Stars Rating Color"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:85
+#: inc/customizer/settings/woocommerce.php:86
 msgid "Product Archive Layout"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:95
+#: inc/customizer/settings/woocommerce.php:96
 msgid "Single Product Layout"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:103
+#: inc/customizer/settings/woocommerce.php:104
 msgid "Products Archive"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:110
+#: inc/customizer/settings/woocommerce.php:111
 msgid "Products per page"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:123
+#: inc/customizer/settings/woocommerce.php:124
 msgid "Products Columns"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:136
+#: inc/customizer/settings/woocommerce.php:137
 msgid "Products Navigation Type"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:158
+#: inc/customizer/settings/woocommerce.php:159
 msgid "Previous Product Text"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:183
+#: inc/customizer/settings/woocommerce.php:184
 msgid "Next Product Text"
 msgstr ""
 
-#: inc/functions/icons.php:37
+#: inc/functions/icons.php:39
 msgid "Please define default parameters in the form of an array."
 msgstr ""
 
-#: inc/functions/icons.php:42
+#: inc/functions/icons.php:44
 msgid "Please define an SVG icon filename."
 msgstr ""
 
-#: inc/functions/options.php:91
+#: inc/functions/options.php:97
 msgid "Continue reading"
 msgstr ""
 
-#: inc/functions/options.php:96
+#: inc/functions/options.php:102
 msgid "Copyright &copy; 2016-[YEAR] [SITE]. Proudly powered by [WP]."
 msgstr ""
 
@@ -769,19 +808,31 @@ msgstr ""
 msgid "Products tagged &ldquo;"
 msgstr ""
 
-#: inc/plugins/woocommerce/wc-template.php:243
+#: inc/plugins/woocommerce/wc-template.php:251
 msgid "Previous Product"
 msgstr ""
 
-#: inc/plugins/woocommerce/wc-template.php:244
+#: inc/plugins/woocommerce/wc-template.php:252
 msgid "Next Product"
 msgstr ""
 
-#: inc/plugins/woocommerce/wc-template.php:314
+#: inc/plugins/woocommerce/wc-template.php:285
+msgid "Wishlist"
+msgstr ""
+
+#: inc/plugins/woocommerce/wc-template.php:286
+msgid "Compare"
+msgstr ""
+
+#: inc/plugins/woocommerce/wc-template.php:287
+msgid "Cart"
+msgstr ""
+
+#: inc/plugins/woocommerce/wc-template.php:395
 msgid "My Account"
 msgstr ""
 
-#: inc/plugins/woocommerce/wc-template.php:323
+#: inc/plugins/woocommerce/wc-template.php:404
 msgid "Login"
 msgstr ""
 

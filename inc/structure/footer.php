@@ -15,6 +15,15 @@ function baltic_sidebar_footer(){
 add_action( 'baltic_footer_before', 'baltic_sidebar_footer', 10 );
 
 /**
+ * [baltic_social_menu description]
+ * @return [type] [description]
+ */
+function baltic_social_menu() {
+	get_template_part( 'components/menus/menu', 'social' );
+}
+add_action( 'baltic_footer_before', 'baltic_social_menu', 10 );
+
+/**
  * Baltic footer copyright
  *
  * @return string

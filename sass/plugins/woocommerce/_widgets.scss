@@ -1,6 +1,11 @@
 /**
  * WooCommerce Price Filter
  */
+
+.widget span.count {
+	float: right;
+}
+
 .widget_price_filter {
 	.price_slider {
 		margin-bottom: 1.5em;
@@ -80,7 +85,7 @@ ul.product_list_widget {
 		padding-top: 0;
 		a {
 			display: block;
-			font-weight: bold;
+			font-weight: 500;
 		}
 		img {
 			float: right;
@@ -115,8 +120,9 @@ ul.cart_list {
 		display: block;
 		font-size: 1rem;
 		font-weight: normal;
-		height: 1.5rem;
-		width: 1.5rem;
+		height: 1rem;
+		width: 1rem;
+		line-height: 1;
 		text-align: center;
 		border-radius: 100%;
 		text-decoration: none;
@@ -223,6 +229,18 @@ ul.product_list_widget {
 
 a.wcppec-cart-widget-button {
 	width: 100%!important;
+}
+
+.widget_rating_filter {
+	ul,
+	li {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+	}
+	a {
+		display: block;
+	}
 }
 
 .woocommerce-widget-layered-nav-dropdown {

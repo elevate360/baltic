@@ -72,6 +72,7 @@
 	padding: $gutter__width;
 	float: left;
 	left: 0;
+	max-width: 60%;
 	z-index: 1;
 	transition: all .25s ease-in-out;
 	&,
@@ -83,12 +84,13 @@
 		}
 	}
 	@include respond-to(medium) {
+		max-width: 220px;
 		padding-top: $gutter__width*2;
 		padding-bottom: $gutter__width*2;
 		.stick & {
 			padding-top: $gutter__width;
 			padding-bottom: $gutter__width;
-			left: 60px;
+			left: 40px;
 		}
 	}
 }
@@ -179,11 +181,11 @@ a.custom-logo-link {
 	    right: $gutter__width*2;
 	    width: 100%;
 	    padding-top: $gutter__width*2;
-	    padding-right: 180px;
-	    padding-left: 230px;
+	    padding-right: 160px;
+	    padding-left: 240px;
 	    .stick & {
 	    	padding-top: $gutter__width;
-	    	padding-left: 290px;
+	    	padding-left: 280px;
 	    }
 		.search-filter {
 		    border-top-right-radius: 0;

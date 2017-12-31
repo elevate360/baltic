@@ -20,7 +20,7 @@ $menu_location = apply_filters( 'baltic_primary_menu', 'menu-1' );
 			wp_nav_menu( array(
 				'theme_location' 	=> $menu_location,
 				'menu_id'        	=> 'primary-menu',
-				'container_class' 	=> 'menu',
+				'container_class' 	=> 'container',
 			) );
 		?>
 	</nav><!-- #site-navigation -->

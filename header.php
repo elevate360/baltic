@@ -21,25 +21,31 @@
 </head>
 <body <?php baltic_attr( 'body' );?>>
 
-<?php do_action( 'baltic_before' );?>
+<?php
+/**
+ * baltic_before hook
+ *
+ * @hooked baltic_do_preloader() - 10
+ * @hooked baltic_skip_links() - 20
+ */
+do_action( 'baltic_before' );?>
 
 <div <?php baltic_attr( 'site' );?>>
 
 	<?php do_action( 'baltic_header_before' );?>
 	<header <?php baltic_attr( 'site-header' );?>>
-		<div class="container">
-			<div class="columns">
 			<?php
 			/**
 			 * baltic_header hook
 			 *
-			 * @hooked baltic_site_branding() - 10
-			 * @hooked baltic_header_search() - 20
-			 * @hooked baltic_menu_primary() - 30
+			 * @hooked baltic_header_container_open() - 10
+			 * @hooked baltic_header_toggle() - 20
+			 * @hooked baltic_site_branding() - 30
+			 * @hooked baltic_header_search() - 40
+			 * @hooked baltic_header_container_close() - 50
+			 * @hooked baltic_menu_primary() - 60
 			 */
 			do_action( 'baltic_header' );?>
-			</div><!-- .columns -->
-		</div><!-- .container -->
 	</header><!-- #masthead -->
 	<?php do_action( 'baltic_header_after' );?>
 
@@ -47,6 +53,6 @@
 	/**
 	 * baltic_inner_before hook
 	 *
-	 * @auth_cookie_expired baltic_inner_markup_open() - 10
+	 * @hooked baltic_inner_markup_open() - 10
 	 */
 	do_action( 'baltic_inner_before' );?>

@@ -152,7 +152,7 @@ function baltic_do_preloader(){
 	<?php endif;
 
 }
-add_action( 'baltic_before', 'baltic_do_preloader' );
+add_action( 'baltic_before', 'baltic_do_preloader', 10 );
 
 /**
  * Render the site title for the selective refresh partial.
@@ -183,13 +183,25 @@ function baltic_skip_links(){
 add_action( 'baltic_before', 'baltic_skip_links', 20 );
 
 /**
+ * [baltic_header_container_open description]
+ * @return [type] [description]
+ */
+function baltic_header_container_open(){
+?>
+	<div class="container">
+		<div class="columns">
+<?php
+}
+add_action( 'baltic_header', 'baltic_header_container_open', 10 );
+
+/**
  * [baltic_header_toggle description]
  * @return [type] [description]
  */
 function baltic_header_toggle(){
 	get_template_part( 'components/header/header', 'toggle' );
 }
-add_action( 'baltic_header', 'baltic_header_toggle', 10 );
+add_action( 'baltic_header', 'baltic_header_toggle', 20 );
 
 /**
  * Baltic site branding
@@ -199,7 +211,7 @@ add_action( 'baltic_header', 'baltic_header_toggle', 10 );
 function baltic_site_branding(){
 	get_template_part( 'components/header/site', 'branding' );
 }
-add_action( 'baltic_header', 'baltic_site_branding', 10 );
+add_action( 'baltic_header', 'baltic_site_branding', 30 );
 
 /**
  * Baltic site branding
@@ -209,7 +221,19 @@ add_action( 'baltic_header', 'baltic_site_branding', 10 );
 function baltic_header_search(){
 	get_template_part( 'components/header/header', 'search' );
 }
-add_action( 'baltic_header', 'baltic_header_search', 20 );
+add_action( 'baltic_header', 'baltic_header_search', 40 );
+
+/**
+ * [baltic_header_container_open description]
+ * @return [type] [description]
+ */
+function baltic_header_container_close(){
+?>
+		</div><!-- .colums -->
+	</div><!-- .container -->
+<?php
+}
+add_action( 'baltic_header', 'baltic_header_container_close', 50 );
 
 /**
  * Baltic site branding
@@ -219,4 +243,4 @@ add_action( 'baltic_header', 'baltic_header_search', 20 );
 function baltic_menu_primary(){
 	get_template_part( 'components/menus/menu', 'primary' );
 }
-add_action( 'baltic_header', 'baltic_menu_primary', 30 );
+add_action( 'baltic_header', 'baltic_menu_primary', 60 );

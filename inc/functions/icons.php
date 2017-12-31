@@ -11,6 +11,7 @@
 function baltic_include_svg_icons() {
 	// Define SVG sprite file.
 	$svg_icons = get_parent_theme_file_path( '/assets/images/svg-icons.svg' );
+	$svg_icons = wp_normalize_path( $svg_icons );
 
 	// If it exists, include it.
 	if ( file_exists( $svg_icons ) ) {
@@ -25,6 +26,7 @@ add_action( 'wp_footer', 'baltic_include_svg_icons', 9999 );
  * @param array $args {
  *     Parameters needed to display an SVG.
  *
+ *     @type string $class Optional SVG class.
  *     @type string $icon  Required SVG icon filename.
  *     @type string $title Optional SVG title.
  *     @type string $desc  Optional SVG description.
@@ -127,7 +129,7 @@ function baltic_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 	$social_icons = baltic_social_links_icons();
 
 	// Change SVG icon inside social links menu if there is supported URL.
-	if ( 'social' === $args->theme_location ) {
+	if ( 'menu-3' === $args->theme_location ) {
 		foreach ( $social_icons as $attr => $value ) {
 			if ( false !== strpos( $item_output, $attr ) ) {
 				$item_output = str_replace( $args->link_after, '</span>' . baltic_get_svg( array( 'icon' => esc_attr( $value ) ) ), $item_output );
@@ -164,6 +166,7 @@ function baltic_dropdown_icon_to_menu_link( $title, $item, $args, $depth ) {
 	}
 
 	return $title;
+
 }
 add_filter( 'nav_menu_item_title', 'baltic_dropdown_icon_to_menu_link', 10, 4 );
 
@@ -173,49 +176,82 @@ add_filter( 'nav_menu_item_title', 'baltic_dropdown_icon_to_menu_link', 10, 4 );
  * @return array $social_links_icons
  */
 function baltic_social_links_icons() {
-	// Supported social links icons.
+	/** @var array [Supported social links icons.] */
 	$social_links_icons = array(
-		'behance.net'     => 'behance',
-		'codepen.io'      => 'codepen',
-		'deviantart.com'  => 'deviantart',
-		'digg.com'        => 'digg',
-		'dribbble.com'    => 'dribbble',
-		'dropbox.com'     => 'dropbox',
-		'facebook.com'    => 'facebook',
-		'flickr.com'      => 'flickr',
-		'foursquare.com'  => 'foursquare',
-		'plus.google.com' => 'google-plus',
-		'github.com'      => 'github',
-		'instagram.com'   => 'instagram',
-		'linkedin.com'    => 'linkedin',
-		'mailto:'         => 'envelope-o',
-		'medium.com'      => 'medium',
-		'pinterest.com'   => 'pinterest-p',
-		'getpocket.com'   => 'get-pocket',
-		'reddit.com'      => 'reddit-alien',
-		'skype.com'       => 'skype',
-		'skype:'          => 'skype',
-		'slideshare.net'  => 'slideshare',
-		'snapchat.com'    => 'snapchat',
-		'soundcloud.com'  => 'soundcloud',
-		'spotify.com'     => 'spotify',
-		'stumbleupon.com' => 'stumbleupon',
-		'tumblr.com'      => 'tumblr',
-		'twitch.tv'       => 'twitch',
-		'twitter.com'     => 'twitter',
-		'vimeo.com'       => 'vimeo',
-		'vine.co'         => 'vine',
-		'vk.com'          => 'vk',
-		'wordpress.org'   => 'wordpress',
-		'wordpress.com'   => 'wordpress',
-		'yelp.com'        => 'yelp',
-		'youtube.com'     => 'youtube',
+		'amazon.com'		=> 'amazon',
+		'behance.net'     	=> 'behance',
+		'bitbucket.org'		=> 'bitbucket',
+		'blogger.com'		=> 'blogger',
+		'buysellads.com'	=> 'buysellads',
+		'codepen.io'      	=> 'codepen',
+		'del.icio.us'		=> 'delicious',
+		'deviantart.com'  	=> 'deviantart',
+		'digg.com'        	=> 'digg',
+		'digitalocean.com'	=> 'digitalocean',
+		'dribbble.com'    	=> 'dribbble',
+		'dropbox.com'     	=> 'dropbox',
+		'facebook.com'    	=> 'facebook',
+		'flickr.com'      	=> 'flickr',
+		'foursquare.com'  	=> 'foursquare',
+		'getpocket.com'		=> 'getpocket',
+		'github.com'      	=> 'github',
+		'gitlab.com'		=> 'gitlab',
+		'gitter.im'			=> 'gitter',
+		'plus.google.com' 	=> 'google-plus',
+		'wallet.google.com' => 'google-wallet',
+		'hubspot.com'		=> 'hubspot',
+		'instagram.com'   	=> 'instagram',
+		'jsfiddle.net'		=> 'jsfiddle',
+		'kickstarter.com'	=> 'kickstarter',
+		'last.fm'			=> 'lastfm',
+		'leanpub.com'		=> 'leanpub',
+		'linkedin.com'    	=> 'linkedin',
+		'medium.com'		=> 'medium',
+		'mailto:'			=> 'envelope',
+		'openid.net'		=> 'openid.net',
+		'patreon.com'		=> 'patreon',
+		'paypal.com'		=> 'paypal',
+		'paypal.me'			=> 'paypal',
+		'pinterest.com'		=> 'pinterest',
+		'quora.com'			=> 'quora',
+		'reddit.com'		=> 'reddit',
+		'renren'			=> 'renren',
+		'skype.com'       	=> 'skype',
+		'skype:'			=> 'skype',
+		'slack.com'			=> 'slack',
+		'slideshare.com'	=> 'slideshare',
+		'snapchat.com'		=> 'snapchat',
+		'soundcloud.com'	=> 'soundcloud',
+		'spotify.com'		=> 'spotify',
+		'stackexchange.com'	=> 'stackexchange',
+		'stackoverflow.com'	=> 'stackoverflow',
+		'steam.com'			=> 'steam',
+		'stumbleupon.com'	=> 'stumbleupon',
+		'telegram.org'		=> 'telegram',
+		'telegram.me'		=> 'telegram',
+		'trello.com'		=> 'trello',
+		'tripadvisor.com'	=> 'tripadvisor',
+		'tumblr.com'		=> 'tumblr',
+		'twitch.com'		=> 'twitch',
+		'twitter.com'		=> 'twitter',
+		'vimeo.com'			=> 'vimeo',
+		'vk.com'			=> 'vk',
+		'whatsapp.com'		=> 'whatsapp',
+		'api.whatsapp.com'	=> 'whatsapp',
+		'wikipedia.org'		=> 'wikipedia',
+		'wordpress.com'		=> 'wordpress',
+		'wordpress.org'		=> 'wordpress',
+		'xing.com'			=> 'xing',
+		'yahoo.com'			=> 'yahoo',
+		'yandex.com'		=> 'yandex',
+		'yelp.com'			=> 'yelp',
+		'youtube.com'		=> 'youtube'
 	);
 
 	/**
 	 * Filter Baltic social links icons.
 	 *
-	 * @since Baltic 1.0
+	 * @since Baltic 1.0.0
 	 *
 	 * @param array $social_links_icons Array of social links icons.
 	 */

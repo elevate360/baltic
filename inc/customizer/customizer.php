@@ -55,12 +55,17 @@ function baltic_customize_register( $wp_customize ){
 	}
 
 	$wp_customize->add_panel( 'baltic_setting_panel', array(
-		'title' 		=> esc_html__( 'Baltic Settings', 'baltic' ),
+		'title' 		=> esc_html__( 'Theme Settings', 'baltic' ),
 		'priority' 		=> 199,
 	) );
 
 	$wp_customize->add_panel( 'baltic_typograhy_panel', array(
 		'title' 		=> esc_html__( 'Typography', 'baltic' ),
+		'priority' 		=> 199,
+	) );
+
+	$wp_customize->add_panel( 'baltic_colors_panel', array(
+		'title' 		=> esc_html__( 'Colors', 'baltic' ),
 		'priority' 		=> 199,
 	) );
 
@@ -70,9 +75,10 @@ function baltic_customize_register( $wp_customize ){
 	) );
 
 	/** WP */
-	$wp_customize->get_section( 'header_image' )->panel 				= 'baltic_setting_panel';
-	$wp_customize->get_section( 'background_image' )->panel 			= 'baltic_setting_panel';
-	$wp_customize->get_section( 'colors' )->panel 						= 'baltic_setting_panel';
+	$wp_customize->get_section( 'header_image' )->panel 		= 'baltic_setting_panel';
+	$wp_customize->get_section( 'background_image' )->panel 	= 'baltic_setting_panel';
+	$wp_customize->get_control( 'header_textcolor' )->section 	= 'baltic_header_color_section';
+	$wp_customize->get_control( 'background_color' )->section 	= 'baltic_bg_color_section';
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -92,28 +98,6 @@ function baltic_customize_register( $wp_customize ){
 }
 endif;
 add_action( 'customize_register', 'baltic_customize_register' );
-
-
-/**
- * Add preconnect for Google Fonts.
- *
- * @param array  $urls           URLs to print for resource hints.
- * @param string $relation_type  The relation type the URLs are printed.
- * @return array $urls           URLs to print for resource hints.
- */
-function baltic_resource_hints( $urls, $relation_type ) {
-
-	if ( 'preconnect' === $relation_type ) {
-		$urls[] = array(
-			'href' => 'https://fonts.gstatic.com',
-			'crossorigin',
-		);
-	}
-
-	return $urls;
-
-}
-add_filter( 'wp_resource_hints', 'baltic_resource_hints', 10, 2 );
 
 require get_parent_theme_file_path( '/inc/customizer/css.php' );
 if ( class_exists( 'Kirki' ) ) {

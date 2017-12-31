@@ -9,8 +9,9 @@ $default = baltic_setting_default();
 
 /** Colors */
 Kirki::add_section( 'baltic_wc_color_section', array(
-    'title' 		=> esc_attr__( 'Colors', 'baltic' ),
-    'panel' 		=> 'baltic_wc_panel',
+    'title' 		=> esc_attr__( 'WooCommerce', 'baltic' ),
+    'panel' 		=> 'baltic_colors_panel',
+    'priority'		=> 100
 ) );
 
 Kirki::add_field( 'baltic', array(

@@ -14,10 +14,13 @@ if ( ! function_exists( 'baltic_get_option' ) ) :
  * @return bool
  */
 function baltic_get_option( $name ){
+
 	$setting = baltic_setting_default();
+
 	if ( array_key_exists( $name, $setting ) ) {
 		return get_theme_mod( esc_attr( $name ), $setting[$name] );
 	}
+
 }
 endif;
 
@@ -77,6 +80,9 @@ function baltic_setting_default(){
 		'color_button'				=> '#ff5722',
 		'color_button_hover'		=> '#ff8a65',
 		'color_border'				=> 'rgba( 0,0,0,0.1 )',
+
+		'color_bg_header'			=> '#ffffff',
+		'color_text_header'			=> '#505050',
 
 		'layout_archive'			=> 'content-sidebar',
 		'layout_singular'			=> 'content-sidebar',

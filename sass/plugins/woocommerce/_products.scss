@@ -75,7 +75,7 @@ ul.products {
 			position: absolute;
 			top: 15px;
 			right: 15px;
-			text-shadow: 0 -1px 0 $color__white;
+			text-shadow: 0 1px 0 rgba( 0,0,0,.75 );
 		}
 
 		.button {
@@ -175,7 +175,7 @@ a.added_to_cart.wc-forward {
 	border-radius: 32px;
 	box-shadow: 0 4px 8px rgba(0,0,0,.25);
 	&:before {
-		content: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 32 32' width='16' height='16' fill='none' stroke='#ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'><path d='M2 20 L12 28 30 4' /></svg>");
+		content: url("data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZlcnNpb249JzEuMScgdmlld0JveD0nMCAwIDMyIDMyJyB3aWR0aD0nMTYnIGhlaWdodD0nMTYnIGZpbGw9J25vbmUnIHN0cm9rZT0nI2ZmZmZmZicgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJyBzdHJva2UtbGluZWpvaW49J3JvdW5kJyBzdHJva2Utd2lkdGg9JzInPjxwYXRoIGQ9J00yIDIwIEwxMiAyOCAzMCA0JyAvPjwvc3ZnPg==");
 		vertical-align: middle;
 	}
 	@include respond-to( medium ){

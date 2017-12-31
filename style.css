@@ -910,6 +910,8 @@ label {
 .comment-content:after,
 .site-header:before,
 .site-header:after,
+.main-navigation:before,
+.main-navigation:after,
 .site-content:before,
 .site-content:after,
 .site-footer:before,
@@ -949,6 +951,7 @@ ul.products:after,
 .entry-content:after,
 .comment-content:after,
 .site-header:after,
+.main-navigation:after,
 .site-content:after,
 .site-footer:after,
 .entry-inner:after,
@@ -968,7 +971,7 @@ ul.products:after,
 
 
 /*--------------------------------------------------------------
-# Preloader
+# Vendor
 --------------------------------------------------------------*/
 
 /*
@@ -2031,9 +2034,10 @@ svg symbol {
 	transition: all ease-in-out 0.25s;
 }
 
-.main-navigation > .menu {
+.main-navigation > .container {
 	display: none;
 	clear: both;
+	position: relative;
 	margin: 0;
 	padding: 0;
 	opacity: 0;
@@ -2044,7 +2048,7 @@ svg symbol {
 	display: none;
 }
 
-.main-navigation.toggled > .menu {
+.main-navigation.toggled > .container {
 	display: block;
 	opacity: 1;
 }
@@ -2083,7 +2087,7 @@ svg symbol {
 	text-decoration: none;
 }
 
-.main-navigation .icon {
+.main-navigation .icon-user {
 	margin-right: 0.5rem;
 }
 
@@ -2097,6 +2101,47 @@ svg symbol {
 .main-navigation li.current-menu-ancestor > a {
 	opacity: 1;
 	color: #fff;
+}
+
+
+/*--------------------------------------------------------------
+## Social Links
+--------------------------------------------------------------*/
+
+.social-links {
+	overflow: hidden;
+	position: relative;
+	background-color: #fff;
+	text-align: center;
+}
+
+.social-links ul,
+.social-links li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.social-links ul {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.social-links li {
+	float: left;
+}
+
+.social-links li a {
+	display: block;
+	width: 48px;
+	height: 48px;
+	color: #909090;
+	line-height: 48px;
+}
+
+.social-links li a:hover,
+.social-links li a:focus {
+	color: #ff5722;
 }
 
 
@@ -2975,6 +3020,7 @@ a.more-link:focus .icon-stroke {
 	position: relative;
 	z-index: 1;
 	left: 0;
+	max-width: 60%;
 	padding: 10px;
 	-webkit-transition: all 0.25s ease-in-out;
 	transition: all 0.25s ease-in-out;
@@ -3345,7 +3391,7 @@ a.custom-logo-link {
 		clear: both;
 	}
 
-	.main-navigation > .menu {
+	.main-navigation > .container {
 		display: block;
 		clear: none;
 		margin-right: auto;
@@ -3670,12 +3716,13 @@ a.custom-logo-link {
 	}
 
 	.site-branding {
+		max-width: 220px;
 		padding-top: 20px;
 		padding-bottom: 20px;
 	}
 
 	.stick .site-branding {
-		left: 60px;
+		left: 40px;
 		padding-top: 10px;
 		padding-bottom: 10px;
 	}
@@ -3686,13 +3733,13 @@ a.custom-logo-link {
 		right: 20px;
 		width: 100%;
 		padding-top: 20px;
-		padding-right: 180px;
-		padding-left: 230px;
+		padding-right: 160px;
+		padding-left: 240px;
 	}
 
 	.stick .header-search-area {
 		padding-top: 10px;
-		padding-left: 290px;
+		padding-left: 280px;
 	}
 
 	.header-search-area .search-filter {

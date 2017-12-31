@@ -1,10 +1,5 @@
 ( function( $ ) {
 
-	var $smoothScroll 		= $( 'a[href*="#page"], a[href*="#content"], a[href*="#site-navigation"], a[href*="#secondary"], a[href*="#tertiary"]' ),
-		$returnTop 			= $( '.return-to-top' ),
-		$matchHeight 		= $( '.columns' ).find('.entry-inner'),
-		$matchHeightProduct = $( 'ul.products' ).find('.entry-product');
-
 	$.fn.parallax = function () {
 		var window_width = $(window).width();
 		// Parallax Scripts
@@ -72,8 +67,44 @@
 		return 'http://www.w3.org/2000/svg' === ( 'undefined' !== typeof SVGRect && div.firstChild && div.firstChild.namespaceURI );
 	}
 
+	function _headerMenuToggle() {
+
+		var $headerMenuToggle 	= $( '.header-menu-toggle' ),
+			$mainNav 			= $( '.main-navigation, .site-header-cart' );
+
+		$headerMenuToggle.on( 'click', function( e ){
+
+			e.preventDefault();
+			$(this).toggleClass( 'toggled' );
+			$mainNav.attr( 'aria-expanded', function( index, value ) {
+				return 'false' === value ? 'true' : 'false';
+			});
+			$mainNav.toggleClass( 'show' );
+
+		});
+
+	}
+
+	function _subMenuToggle() {
+
+		$( '.sub-menu-toggle' ).on( 'click', function( e ) {
+			e.preventDefault();
+			var $this = $( this );
+			$this.attr( 'aria-expanded', function( index, value ) {
+				return 'false' === value ? 'true' : 'false';
+			});
+			$this.toggleClass( 'toggled' );
+			var toggleElement = $this.closest( 'li' ).children( '.sub-menu' );
+			toggleElement.slideToggle(0);
+		});
+
+	}
+
 	// Smooth scroll
-	function _smoothScroll(){
+	function _smoothScroll() {
+
+		var $smoothScroll 		= $( 'a[href*="#page"], a[href*="#content"], a[href*="#site-navigation"], a[href*="#secondary"], a[href*="#tertiary"]' );
+
 		$smoothScroll.click(function(event) {
 	        // On-page links
 	        if (
@@ -97,43 +128,31 @@
 	                    if ($target.is(':focus')) { // Checking if the target was focused
 	                        return false;
 	                    } else {
-	                        $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+	                        $target.attr( 'tabindex', '-1' ); // Adding tabindex for elements not focusable
 	                        $target.focus(); // Set focus again
 	                    }
 	                });
 	            }
 	        }
 		});
+
 	}
 
-	function _jumbotronHeader(){
-		$( '.jumbotron-image' ).each( function(){
-			var $this = $(this);
-
-			if ( $this.length !== 0 ) {
-				$this.parallax();
-			}
-
+	function _fitVids() {
+		$( '#page' ).fitVids({
+			customSelector: 'iframe[src^="https://videopress.com"]'
 		});
 	}
 
-	function _stickyCheckout(){
-		$( '#order_review' ).stickit({
-			screenMinWidth: 782,
-			top: 60,
-			zIndex: 0
-		});
-	}
-
-	function _headerParallax(){
+	function _headerParallax() {
 		$( '.page-header' ).each( function(){
 			var $this = $(this);
 			var $hasPostThumbnail = $this.find( 'figure.page-header-thumbnail' );
-			var headerHeight = $('.site-header').height();
+			var headerHeight = $( '.site-header' ).height();
 
 			if ( $hasPostThumbnail.length !== 0 ) {
 				$this.addClass( 'has-archive-thumbnail' );
-				$this.css('min-height', 'calc( 60vh - '+ headerHeight +'px )');
+				$this.css( 'min-height', 'calc( 60vh - '+ headerHeight +'px )' );
 			}
 
 			$hasPostThumbnail.parallax();
@@ -141,9 +160,64 @@
 		});
 	}
 
+	function _matchHeightElements() {
+		var	$matchHeight 		= $( '.columns' ).find( '.entry-inner' ),
+			$matchHeightProduct = $( 'ul.products' ).find( '.entry-product' );
+
+		$matchHeight.matchHeight();
+		$matchHeightProduct.matchHeight();
+	}
+
+	function _returnTop() {
+		$returnTop 			= $( '.return-to-top' );
+		$(window).scroll(function () {
+
+		    if ($(this).scrollTop() > 250) {
+		        $returnTop.removeClass( 'off' ).addClass( 'on' );
+		    }
+		    else {
+		        $returnTop.removeClass( 'on' ).addClass( 'off' );
+		    }
+
+		});
+	}
+
+	function _headerCartToggle() {
+
+		var $cartLink 	= $( 'a.header-cart-link' ),
+			$widget 	= $( '.header-cart-content' );
+
+		$cartLink.on( 'click', function( e ) {
+			e.stopPropagation();
+			e.preventDefault();
+			$(this).addClass( 'toggled' );
+			$widget.toggleClass( 'show' );
+		});
+
+		$( 'html' ).click( function( e ) {
+
+			if ( $cartLink.hasClass( 'show' ) || $widget.hasClass( 'show' ) ) {
+				if( !$(e.target).is( '.header-cart-content, .header-cart-content *' ) ){
+					$cartLink.removeClass( 'toggled' );
+					$widget.removeClass( 'show' );
+				}
+			}
+
+		});
+
+	}
+
+	function _stickyCheckout() {
+		$( '#order_review' ).stickit({
+			screenMinWidth: 782,
+			top: 60,
+			zIndex: 0
+		});
+	}
+
 	$( window ).on( 'load', function() {
-		$( '.site-preloader' ).fadeOut(1000);
-		$( '.preloader-enabled' ).delay(1000).css({ 'overflow':'visible' });
+		$( '.site-preloader' ).fadeOut(500);
+		$( '.preloader-enabled' ).delay(500).css({ 'overflow':'visible' });
 	});
 
 	$( document ).ready( function() {
@@ -152,61 +226,33 @@
 			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
 		}
 
-		$( '.header-menu-toggle' ).on( 'click', function( e ){
-			var $mainNav = $( '.main-navigation' );
-
-			e.preventDefault();
-			$(this).toggleClass( 'toggled' );
-			$mainNav.attr( 'aria-expanded', function( index, value ) {
-				return 'false' === value ? 'true' : 'false';
-			});
-			$mainNav.toggleClass( 'show' );
-
-		});
-
-		$( '.sub-menu-toggle' ).on( 'click', function( e ) {
-			e.preventDefault();
-			var $this = $( this );
-			$this.attr( 'aria-expanded', function( index, value ) {
-				return 'false' === value ? 'true' : 'false';
-			});
-			$this.toggleClass( 'toggled' );
-			var toggleElement = $this.closest('li').children('.sub-menu');
-			toggleElement.slideToggle(0);
-		});
-
 		$( '.site-header' ).stickit({
 			screenMinWidth: 782,
 			zIndex: 5
 		});
 
-		$matchHeight.matchHeight();
+		_headerMenuToggle();
+		_subMenuToggle();
 
+		_fitVids();
 		_smoothScroll();
-		_jumbotronHeader();
-		_stickyCheckout();
 		_headerParallax();
-		$matchHeightProduct.matchHeight();
+		_headerCartToggle();
+		_returnTop();
 
-		$(window).scroll(function () {
+		_matchHeightElements();
 
-		    if ($(this).scrollTop() > 250) {
-		        $returnTop.removeClass('off').addClass('on');
-		    }
-		    else {
-		        $returnTop.removeClass('on').addClass('off');
-		    }
+		_stickyCheckout();
 
-		});
+	});
 
-		$( document.body ).on( 'wc_fragments_refreshed', function () {
-			_stickyCheckout();
-		});
+	$( document.body ).on( 'wc_fragments_refreshed', function () {
+		_stickyCheckout();
+	});
 
-		$( document.body).on( 'lazyload', function(){
-			_headerParallax();
-		});
-
+	$( document.body).on( 'lazyload', function() {
+		_fitVids();
+		_headerParallax();
 	});
 
 } )( jQuery );

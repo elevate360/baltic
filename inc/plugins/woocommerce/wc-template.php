@@ -37,7 +37,7 @@ function baltic_wc_markup(){
 	add_action( 'woocommerce_before_shop_loop', 'baltic_wc_product_columns_wrapper', 40 );
 	add_action( 'woocommerce_after_shop_loop', 'baltic_wc_product_columns_wrapper_close', 40 );
 
-	/** Add pagination within primary and main class */
+	/** Remove WooCommerce Pagination*/
 	remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
 
 	/** Add entry-inner inside li.product */
@@ -51,6 +51,14 @@ function baltic_wc_markup(){
 	/** Remove sidebar if full-width layout is selected */
 	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 	add_action( 'woocommerce_sidebar', 'baltic_wc_sidebar', 10 );
+
+	/** Header extra */
+	add_action( 'baltic_header', 'baltic_wc_header_extra', 35 );
+	add_filter( 'woocommerce_add_to_cart_fragments', 'baltic_wc_cart_link_fragment' );
+	add_action( 'baltic_header', 'baltic_wc_header_cart', 35 );
+
+	/** Add extra menu */
+	add_filter( 'wp_nav_menu_items', 'baltic_wc_myaccount_menu', 10, 2 );
 
 }
 add_action( 'baltic_init', 'baltic_wc_markup', 15 );
@@ -250,6 +258,7 @@ function baltic_wc_pagination(){
 
 /**
  * [baltic_wc_sidebar description]
+ * @uses   baltic_get_products_layout() [<description>]
  * @return [type] [description]
  */
 function baltic_wc_sidebar(){
@@ -263,10 +272,81 @@ function baltic_wc_sidebar(){
 }
 
 /**
- * [baltic_woocommerce_endpoint_menu description]
+ * [baltic_wc_header_extra description]
+ *
+ * @uses  baltic_get_svg()
+ * @uses  baltic_wc_cart_link()
  * @return [type] [description]
  */
-function baltic_woocommerce_endpoint_menu(){
+function baltic_wc_header_extra(){
+?>
+	<div class="site-header-extra">
+		<ul>
+			<li><a href="#" title="<?php esc_html_e( 'Wishlist', 'baltic' );?>"><?php echo baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'heart' ) );?> <span class="total">20</span></a></li>
+			<li><a href="#" title="<?php esc_html_e( 'Compare', 'baltic' );?>"><?php echo baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'eye' ) );?> <span class="total">9</span></a></li>
+			<li><a href="#" title="<?php esc_html_e( 'Cart', 'baltic' );?>" class="header-cart-link"><?php baltic_wc_cart_link();?></a></li>
+		</ul>
+	</div><!-- .site-header-extra -->
+<?php
+}
+
+
+/**
+ * [baltic_wc_cart_link description]
+ * @return [type] [description]
+ */
+function baltic_wc_cart_link() {
+?>
+<div class="cart-link-content">
+	<?php
+	echo baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'cart' ) );
+
+	if( WC()->cart->get_cart_contents_count() !== 0 ) : ?>
+		<span class="total">
+			<?php echo wp_kses_data( WC()->cart->get_cart_contents_count() );?>
+		</span>
+	<?php endif;?>
+</div>
+<?php
+}
+
+/**
+ * [baltic_wc_cart_link_fragment description]
+ * @return [type] [description]
+ */
+function baltic_wc_cart_link_fragment( $fragments ) {
+	ob_start();
+	baltic_wc_cart_link();
+	$fragments['.cart-link-content'] = ob_get_clean();
+
+	return $fragments;
+}
+
+
+/**
+ * [baltic_wc_header_cart description]
+ *
+ * @uses  the_widget( $widget, $instance = array, $args = array ) [<description>]
+ * @return [type] [description]
+ */
+function baltic_wc_header_cart() {
+	if( is_cart() || is_checkout() ) {
+		return;
+	}
+?>
+	<div class="header-cart-content">
+		<?php the_widget( 'WC_Widget_Cart', array( 'title' => '' ) );?>
+	</div><!-- .site-header-cart -->
+<?php
+}
+
+
+/**
+ * [baltic_woocommerce_endpoint_menu description]
+ * @uses  wc_get_account_menu_items() [<description>]
+ * @return [type] [description]
+ */
+function baltic_wc_endpoint_menu() {
 
 	$menu_items = wc_get_account_menu_items();
 
@@ -286,9 +366,10 @@ function baltic_woocommerce_endpoint_menu(){
 /**
  * Add Login/ my account menu at menu-1
  *
+ * @uses  baltic_get_svg( array() )
  * @return string
  */
-function baltic_primary_menu_extra( $menu, $args ){
+function baltic_wc_myaccount_menu( $menu, $args ) {
 
 	$args = (array)$args;
 
@@ -313,7 +394,7 @@ function baltic_primary_menu_extra( $menu, $args ){
 			<li class="menu-item menu-item-has-children menu-right'. esc_attr(  $myaccount_page ) .'">
 				<a href="'. get_permalink( wc_get_page_id( 'myaccount' ) ) .'">'. $icon . esc_html__( 'My Account', 'baltic' ) . $toggle_menu .'</a>
 				<ul class="sub-menu">
-					'. baltic_woocommerce_endpoint_menu() .'
+					'. baltic_wc_endpoint_menu() .'
 				</ul>
 			</li>'
 		;
@@ -328,4 +409,4 @@ function baltic_primary_menu_extra( $menu, $args ){
 	return $menu . $link;
 
 }
-add_filter( 'wp_nav_menu_items', 'baltic_primary_menu_extra', 10, 2 );
+
