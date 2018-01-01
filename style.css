@@ -2103,6 +2103,39 @@ svg symbol {
 	color: #fff;
 }
 
+.secondary-navigation ul,
+.secondary-navigation li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.secondary-navigation ul {
+	text-align: center;
+}
+
+.secondary-navigation li {
+	display: inline-block;
+	position: relative;
+	vertical-align: bottom;
+}
+
+.secondary-navigation li:before {
+	position: absolute;
+	top: 0;
+	right: -4px;
+	content: "\002F";
+}
+
+.secondary-navigation li:last-child:before {
+	display: none;
+}
+
+.secondary-navigation a {
+	display: block;
+	padding: 0 0.25rem;
+}
+
 
 /*--------------------------------------------------------------
 ## Social Links
@@ -3219,12 +3252,13 @@ a.custom-logo-link {
 
 .site-footer {
 	position: relative;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	color: #909090;
 	background-color: #fff;
 	font-size: 14px;
 	font-size: 0.875rem;
+	text-align: center;
 }
 
 .site-footer a {
@@ -3234,6 +3268,10 @@ a.custom-logo-link {
 .site-footer a:hover,
 .site-footer a:focus {
 	color: #ff916f;
+}
+
+.site-info {
+	margin-bottom: 10px;
 }
 
 /** Return to top */
@@ -3601,6 +3639,11 @@ a.custom-logo-link {
 		color: #fff;
 	}
 
+	.secondary-navigation ul {
+		float: right;
+		text-align: right;
+	}
+
 	.comment-navigation a,
 	.posts-navigation a,
 	.post-navigation a {
@@ -3757,8 +3800,13 @@ a.custom-logo-link {
 	}
 
 	.site-footer {
-		padding-top: 20px;
-		padding-bottom: 20px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		text-align: left;
+	}
+
+	.site-info {
+		margin-bottom: 0;
 	}
 
 	.site-content > .container {

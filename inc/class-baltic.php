@@ -254,7 +254,6 @@ class Baltic_Init {
 		}
 
 		/** Theme classes */
-		require get_parent_theme_file_path( '/inc/class-ajax.php' );
 		require get_parent_theme_file_path( '/inc/class-breadcrumb.php' );
 		require get_parent_theme_file_path( '/inc/class-template-functions.php' );
 

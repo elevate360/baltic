@@ -5,8 +5,6 @@
 		return;
 	}
 
-	var $installed_btn =
-
 	$( function() {
 
 		$( document ).ready( function() {

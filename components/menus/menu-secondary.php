@@ -14,6 +14,7 @@ $menu_location = apply_filters( 'baltic_primary_menu', 'menu-2' );
 				'theme_location' 	=> $menu_location,
 				'menu_id'        	=> 'secondary-menu',
 				'container_class' 	=> 'menu',
+				'depth' 			=> 1,
 			) );
 		?>
 	</nav><!-- #site-navigation -->

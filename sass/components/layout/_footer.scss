@@ -9,9 +9,10 @@
 	background-color: $color__site-footer;
 	color: $color__text-secondary;
 	@include font-size(0.875);
-	padding-top: $gutter__width;
-	padding-bottom: $gutter__width;
+	padding-top: $gutter__width*2;
+	padding-bottom: $gutter__width*2;
 	position: relative;
+	text-align: center;
 	a {
 		color: $color__text-main;
 		&:hover,
@@ -20,8 +21,16 @@
 		}
 	}
 	@include respond-to( medium ) {
-		padding-top: $gutter__width*2;
-		padding-bottom: $gutter__width*2;
+		text-align: left;
+		padding-top: $gutter__width*3;
+		padding-bottom: $gutter__width*3;
+	}
+}
+
+.site-info {
+	margin-bottom: $gutter__width;
+	@include respond-to( medium ) {
+		margin-bottom: 0;
 	}
 }
 

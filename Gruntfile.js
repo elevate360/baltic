@@ -211,7 +211,8 @@ module.exports = function (grunt) {
 			},
 			frontend: {
 				files: [
-					'assets/js/frontend/*.js'
+					'assets/js/frontend/*.js',
+					'assets/js/baltic-wishlist.js'
 				],
 				tasks: [
 					'concat',

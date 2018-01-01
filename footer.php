@@ -15,7 +15,7 @@
 	<?php do_action( 'baltic_footer_before' );?>
 	<footer <?php baltic_attr( 'site-footer' );?>>
 		<div class="container">
-			<div class="columns">
+			<div class="columns columns-2">
 				<?php do_action( 'baltic_footer' );?>
 			</div><!-- .columns -->
 		</div><!-- .container -->

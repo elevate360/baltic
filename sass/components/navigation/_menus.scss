@@ -266,3 +266,43 @@
 	}
 
 }
+
+.secondary-navigation {
+	ul,
+	li {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+	}
+
+	ul {
+		text-align: center;
+	}
+
+	li {
+		display: inline-block;
+		vertical-align: bottom;
+		position: relative;
+		&:before {
+			content: "\002F";
+			position: absolute;
+			top: 0;
+			right: -4px;
+		}
+		&:last-child:before {
+			display: none;
+		}
+	}
+
+	a {
+		display: block;
+		padding: 0 .25rem;
+	}
+
+	@include respond-to( medium ) {
+		ul {
+			text-align: right;
+			float: right;
+		}
+	}
+}

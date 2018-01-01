@@ -250,3 +250,19 @@ function baltic_attr_post( $attr ) {
 
 }
 add_filter( 'baltic_attr_post', 'baltic_attr_post', 5 );
+
+/**
+ * <nav> main-navigation attributes.
+ *
+ * @param  array   $attr
+ * @return array
+ */
+function baltic_attr_secondary_navigation( $attr ) {
+
+	$attr['id'] 	= 'secondary-navigation';
+	$attr['class']  = 'secondary-navigation column-item';
+
+	return $attr;
+
+}
+add_filter( 'baltic_attr_secondary-navigation', 'baltic_attr_secondary_navigation', 5 );
