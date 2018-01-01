@@ -64,7 +64,7 @@ class Baltic_Admin {
 		require_once( ABSPATH . 'wp-admin/admin.php' );
 		require_once( ABSPATH . 'wp-admin/admin-header.php' );
 
-		$active_tab   = isset( $_GET['tab'] ) ? wp_unslash( $_GET['tab'] ) : 'actions';
+		$active_tab   = isset( $_GET['tab'] ) ? wp_unslash( $_GET['tab'] ) : 'welcome';
 		?>
 
 		<div class="wrap">
@@ -77,7 +77,6 @@ class Baltic_Admin {
 
 			<nav class="nav-tab-wrapper baltic-admin-navigation">
 				<a href="<?php echo esc_url( admin_url( 'themes.php?page=baltic&tab=welcome' ) ); ?>" class="nav-tab <?php echo 'welcome' == $active_tab ? 'nav-tab-active' : ''; ?>"><?php esc_attr_e( 'Dashboard', 'baltic' ); ?></a>
-				<a href="<?php echo esc_url( admin_url( 'themes.php?page=baltic&tab=actions' ) ); ?>" class="nav-tab <?php echo 'actions' == $active_tab ? 'nav-tab-active' : ''; ?>"><?php esc_attr_e( 'Recommended Actions', 'baltic' ); ?></a>
 				<a href="<?php echo esc_url( admin_url( 'themes.php?page=baltic&tab=plugins' ) ); ?>" class="nav-tab <?php echo 'plugins' == $active_tab ? 'nav-tab-active' : ''; ?>"><?php esc_attr_e( 'Recommended Plugins', 'baltic' ); ?></a>
 				<a href="<?php echo esc_url( admin_url( 'themes.php?page=baltic&tab=addons' ) ); ?>" class="nav-tab <?php echo 'addons' == $active_tab ? 'nav-tab-active' : ''; ?>"><?php esc_attr_e( 'Add-Ons', 'baltic' ); ?></a>
 				<a href="<?php echo esc_url( admin_url( 'themes.php?page=baltic&tab=support' ) ); ?>" class="nav-tab <?php echo 'support' == $active_tab ? 'nav-tab-active' : ''; ?>"><?php esc_attr_e( 'Support', 'baltic' ); ?></a>
@@ -87,9 +86,6 @@ class Baltic_Admin {
 			switch ( $active_tab ) {
 				case 'welcome':
 					require get_parent_theme_file_path( '/inc/admin/sections/welcome.php' );
-					break;
-				case 'actions':
-					require get_parent_theme_file_path( '/inc/admin/sections/recommended-actions.php' );
 					break;
 				case 'plugins':
 					require get_parent_theme_file_path( '/inc/admin/sections/recommended-plugins.php' );

@@ -215,6 +215,92 @@
 		});
 	}
 
+	function _quickView(){
+
+		var $body 				= $( 'body' ),
+			$quickView			= $( 'a.ajax-quick-view' ),
+			$quickViewContainer = $( '#quick-view-container' ),
+			$closeQuickView		= $( '.close-quick-view'),
+			$quickViewContent 	= $( '#quick-view-content');
+
+		$quickView.on( 'click', function( e ){
+
+			e.preventDefault();
+
+			$body.css({ 'overflow':'hidden' });
+			$quickViewContainer.removeClass( 'hide' ).addClass( 'show' );
+			$quickViewContainer.attr( 'tabindex', '-1' );
+			$quickViewContainer.focus();
+
+			$quickViewContainer.append( '<div class="quick-view-ajax-loader spinner">'+ Balticl10n.loader +'</div>' );
+
+	        $.ajax({
+
+	            url: Balticl10n.ajax_url,
+	            data: {
+	                action: 'baltic_product_quick_view',
+	                product_id: $(this).attr('data-product_id')
+	            },
+	            dataType: 'html',
+	            type: 'POST',
+	            success: function ( data ) {
+
+	            	$('.quick-view-ajax-loader').fadeOut( 'slow', function(){
+	            		$(this).remove();
+	            	});
+	            	$quickViewContent.html(data).addClass( 'shadow' );
+
+					var form_variation = $quickViewContent.find( '.variations_form' );
+					form_variation.wc_variation_form();
+					form_variation.trigger( 'check_variations' );
+
+					var product_gallery = $quickViewContent.find( '.woocommerce-product-gallery' );
+					product_gallery.each( function() {
+						$( this ).wc_product_gallery();
+						$( this ).ajaxComplete( function(){
+							$(this).trigger( 'woocommerce_gallery_reset_slide_position' );
+						});
+					} );
+
+	            }
+
+			});
+		});
+
+		$closeQuickView.on( 'click', function( e ){
+
+			e.preventDefault();
+
+			$quickViewContent.removeClass( 'shadow' );
+			$quickViewContainer.removeClass( 'show' ).addClass( 'hide' );
+			$body.css({ 'overflow':'visible' });
+			$( '#quick-view-modal > .product' ).remove();
+
+		});
+	}
+
+	function _wishlistUpdate() {
+
+		var counter = $( '.header-wishlist > span.total' );
+
+		$.ajax({
+			url: Balticl10n.ajax_url,
+			data: {
+				action: 'baltic_wcwl_update_count'
+			},
+			dataType: 'json',
+			success: function( data ) {
+				if ( data.count == 0 ) {
+					counter.addClass( 'hide' );
+				} else {
+					counter.removeClass( 'hide' );
+					counter.html( data.count );
+				}
+			}
+		});
+
+	}
+
 	$( window ).on( 'load', function() {
 		$( '.site-preloader' ).fadeOut(500);
 		$( '.preloader-enabled' ).delay(500).css({ 'overflow':'visible' });
@@ -244,6 +330,10 @@
 
 		_stickyCheckout();
 
+		_wishlistUpdate();
+
+		_quickView();
+
 	});
 
 	$( document.body ).on( 'wc_fragments_refreshed', function () {
@@ -253,6 +343,10 @@
 	$( document.body).on( 'lazyload', function() {
 		_fitVids();
 		_headerParallax();
+	});
+
+	$( document ).on( 'added_to_wishlist removed_from_wishlist added_to_cart', function() {
+		_wishlistUpdate();
 	});
 
 } )( jQuery );

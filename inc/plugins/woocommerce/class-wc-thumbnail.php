@@ -15,14 +15,12 @@ class Baltic_WC_Secondary_Thumbnail {
 
 		add_filter( 'post_class', array( $this, 'product_has_gallery' ) );
 
-		remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
 		remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
 
-		add_action( 'woocommerce_before_shop_loop_item', array( $this, 'thumbnail_markup_open' ), 9 );
-		add_action( 'woocommerce_before_shop_loop_item', 'woocommerce_show_product_loop_sale_flash', 9 );
-		add_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_thumbnail', 9 );
-		add_action( 'woocommerce_before_shop_loop_item', array( $this, 'secondary_product_thumbnail' ), 9 );
-		add_action( 'woocommerce_before_shop_loop_item', array( $this, 'thumbnail_markup_close' ), 9 );
+		add_action( 'woocommerce_before_shop_loop_item', array( $this, 'thumbnail_markup_open' ), 8 );
+		add_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_thumbnail', 8 );
+		add_action( 'woocommerce_before_shop_loop_item', array( $this, 'secondary_product_thumbnail' ), 8 );
+		add_action( 'woocommerce_before_shop_loop_item', array( $this, 'thumbnail_markup_close' ), 8 );
 
 	}
 

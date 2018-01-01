@@ -13,3 +13,6 @@
 require_once( get_template_directory() . '/inc/class-baltic.php' );
 // Baltic init hook
 do_action( 'baltic_init' );
+
+// Baltic setup hook
+do_action( 'baltic_setup' );

@@ -38,11 +38,8 @@ class Baltic_Init {
 		add_action( 'baltic_init', array( $this, 'constants' ), 0 );
 
 		/** Includes files */
-		add_action( 'baltic_init', array( $this, 'include_admin' ) );
-		add_action( 'baltic_init', array( $this, 'include_functions' ) );
-		add_action( 'baltic_init', array( $this, 'include_classes' ) );
-		add_action( 'baltic_init', array( $this, 'include_structure' ) );
-		add_action( 'baltic_init', array( $this, 'include_plugins' ) );
+		add_action( 'baltic_init', array( $this, 'includes' ) );
+		add_action( 'baltic_init', array( $this, 'integrations' ) );
 
 	}
 
@@ -181,7 +178,9 @@ class Baltic_Init {
 	 * Adds a `js` class to the root `<html>` element when JavaScript is detected.
 	 */
 	public function javascript_detection() {
+
 		echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
+
 	}
 
 	/**
@@ -190,6 +189,7 @@ class Baltic_Init {
 	 * @return  void
 	 */
 	public function constants(){
+
 		$theme = wp_get_theme();
 		define( 'BALTIC_THEME_NAME', 				$theme->get( 'Name' ) );
 		define( 'BALTIC_THEME_URL', 				$theme->get( 'ThemeURI' ) );
@@ -197,12 +197,15 @@ class Baltic_Init {
 		define( 'BALTIC_THEME_DEVELOPER_URI', 		$theme->get( 'AuthorURI' ) );
 		define( 'BALTIC_THEME_VERSION', 			$theme->get( 'Version' ) );
 		define( 'BALTIC_THEME_DOMAIN', 				$theme->get( 'TextDomain' ) );
+
 	}
 
 	/**
 	 * Enqueue scripts and styles.
+	 *
+	 * @return  void
 	 */
-	function assets() {
+	public function assets() {
 
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
@@ -226,8 +229,6 @@ class Baltic_Init {
 		wp_enqueue_script( 'jquery-stickit', get_theme_file_uri( "/assets/js/stickit/jquery.stickit$suffix.js" ), array( 'jquery' ), '0.2.13', true );
 		wp_enqueue_script( 'jquery-match-height', get_theme_file_uri( "/assets/js/match-height/jquery.matchHeight$suffix.js" ), array( 'jquery' ), '0.7.2', true );
 		wp_enqueue_script( 'jquery-slick', get_theme_file_uri( "/assets/js/slick/slick$suffix.js" ), array( 'jquery' ), '1.7.1', true );
-		//wp_enqueue_script( 'jquery-scrollbar', get_theme_file_uri( "/assets/js/scrollbar/jquery.scrollbar$suffix.js" ), array( 'jquery' ), '0.2.10', true );
-		wp_enqueue_script( 'fontfaceobserver', get_theme_file_uri( "/assets/js/fontfaceobserver/fontfaceobserver.js" ), array(), '2.0.13', true );
 
 		// Main script
 		wp_enqueue_script( 'baltic-script', get_theme_file_uri( "/assets/js/frontend$suffix.js" ), array( 'jquery' ), '20151215', true );
@@ -239,27 +240,25 @@ class Baltic_Init {
 	}
 
 	/**
-	 * Include theme functions
+	 * Include Baltic theme files
 	 *
 	 * @return void
 	 */
-	public function include_admin(){
+	public function includes() {
 
+		/** Admin Dashboard */
 		if ( is_admin() ) {
 			require get_parent_theme_file_path( '/inc/admin/class-plugin-installer.php' );
 			require get_parent_theme_file_path( '/inc/admin/class-baltic-notification.php' );
 			require get_parent_theme_file_path( '/inc/admin/class-baltic-admin.php' );
 		}
 
-	}
+		/** Theme classes */
+		require get_parent_theme_file_path( '/inc/class-ajax.php' );
+		require get_parent_theme_file_path( '/inc/class-breadcrumb.php' );
+		require get_parent_theme_file_path( '/inc/class-template-functions.php' );
 
-	/**
-	 * Include theme functions
-	 *
-	 * @return void
-	 */
-	public function include_functions(){
-
+		/** Include theme functions */
 		require get_parent_theme_file_path( '/inc/functions/attr.php' );
 		require get_parent_theme_file_path( '/inc/functions/icons.php' );
 		require get_parent_theme_file_path( '/inc/functions/widgets.php' );
@@ -267,22 +266,10 @@ class Baltic_Init {
 		require get_parent_theme_file_path( '/inc/functions/utility.php' );
 		require get_parent_theme_file_path( '/inc/functions/templates.php' );
 
+		/** Include theme customizer */
 		require get_parent_theme_file_path( '/inc/customizer/customizer.php' );
 
-	}
-
-	public function include_classes(){
-		require get_parent_theme_file_path( '/inc/class-template-functions.php' );
-		require get_parent_theme_file_path( '/inc/class-breadcrumb.php' );
-	}
-
-	/**
-	 * Include theme functions
-	 *
-	 * @return void
-	 */
-	public function include_structure(){
-
+		/** Theme structures */
 		require get_parent_theme_file_path( '/inc/structure/header.php' );
 		require get_parent_theme_file_path( '/inc/structure/page-header.php' );
 		require get_parent_theme_file_path( '/inc/structure/content.php' );
@@ -297,14 +284,18 @@ class Baltic_Init {
 	 *
 	 * @return  void
 	 */
-	public function include_plugins(){
+	public function integrations(){
 
 		require get_parent_theme_file_path( '/inc/plugins/demo-import.php' );
 
 		if ( class_exists( 'WooCommerce' ) ) {
 			require get_parent_theme_file_path( '/inc/plugins/woocommerce/class-wc.php' );
 			require get_parent_theme_file_path( '/inc/plugins/woocommerce/class-wc-thumbnail.php' );
+			require get_parent_theme_file_path( '/inc/plugins/woocommerce/class-quick-view.php' );
 			require get_parent_theme_file_path( '/inc/plugins/woocommerce/wc-template.php' );
+			if ( defined( 'YITH_WCWL' ) ) {
+				require get_parent_theme_file_path( '/inc/plugins/woocommerce/class-yith-wishlist.php' );
+			}
 		}
 
 		if ( class_exists( 'Jetpack' ) ) {

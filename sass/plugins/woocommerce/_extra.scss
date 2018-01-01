@@ -37,6 +37,9 @@
 		right: -4px;
 		border-radius: 20px;
 		box-shadow: 0 2px 8px $color__alpha-dark;
+		&.hide {
+			display: none;
+		}
 	}
 
 	.icon-stroke {
@@ -110,5 +113,77 @@
 	}
 	.woocommerce-mini-cart__empty-message {
 		margin: 0;
+	}
+}
+
+.baltic-extra-button {
+	ul,
+	li {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+	}
+	ul {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	li {
+		display: inline-block;
+	    vertical-align: middle;
+	}
+	a,
+	a.add_to_wishlist {
+	    background-color: $color__white;
+	    color: $color__text-main;
+	    display: block;
+	    width: 32px;
+	    height: 32px;
+	    line-height: 32px;
+		border-radius: 32px;
+		box-shadow: 0 4px 8px rgba( 0,0,0,.5 );
+		overflow: hidden;
+		opacity: 0;
+		transform: scale(0);
+		transition: all .25s ease-in-out;
+		&:hover,
+		&:focus {
+			background-color: $color__link;
+			color: $color__white;
+		}
+		ul.products li.product:hover & {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+	.yith-wcwl-add-to-wishlist,
+	.yith-wcwl-add-button.show {
+		margin: 0!important;
+		height: 32px;
+	}
+	.feedback {
+		display: none;
+	}
+	.yith-wcwl-add-button,
+	.yith-wcwl-wishlistaddedbrowse,
+	.yith-wcwl-wishlistexistsbrowse {
+		a:before {
+			content: url( "data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZlcnNpb249JzEuMScgdmlld0JveD0nMCAwIDMyIDMyJyB3aWR0aD0nMTYnIGhlaWdodD0nMTYnIGZpbGw9J25vbmUnIHN0cm9rZT0nIzUwNTA1MCcgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJyBzdHJva2UtbGluZWpvaW49J3JvdW5kJyBzdHJva2Utd2lkdGg9JzInPjxwYXRoIGQ9J000IDE2IEMxIDEyIDIgNiA3IDQgMTIgMiAxNSA2IDE2IDggMTcgNiAyMSAyIDI2IDQgMzEgNiAzMSAxMiAyOCAxNiAyNSAyMCAxNiAyOCAxNiAyOCAxNiAyOCA3IDIwIDQgMTYgWicgLz48L3N2Zz4=" );
+			vertical-align: middle;
+			position: relative;
+			top: 1px;
+		}
+		img {
+			display: none!important;
+		}
+	}
+
+	.yith-wcwl-wishlistaddedbrowse a,
+	.yith-wcwl-wishlistexistsbrowse a {
+		background-color: $color__link;
+		&:before {
+			content: url( "data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZlcnNpb249JzEuMScgdmlld0JveD0nMCAwIDMyIDMyJyB3aWR0aD0nMTYnIGhlaWdodD0nMTYnIGZpbGw9JyNmZmZmZmYnPjxwYXRoIGQ9J000IDE2IEMxIDEyIDIgNiA3IDQgMTIgMiAxNSA2IDE2IDggMTcgNiAyMSAyIDI2IDQgMzEgNiAzMSAxMiAyOCAxNiAyNSAyMCAxNiAyOCAxNiAyOCAxNiAyOCA3IDIwIDQgMTYgWicgLz48L3N2Zz4=" );
+		}
 	}
 }

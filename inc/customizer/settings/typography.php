@@ -209,7 +209,7 @@ Kirki::add_field( 'baltic', array(
 	'section'     => 'baltic_code_font_section',
 	'default'     => array(
 		'font-family'    => 'Monaco,"Lucida Sans Typewriter","Lucida Typewriter","Courier New",Courier,monospace',
-		'variant'        => '400',
+		'variant'        => '',
 		'font-size'      => '0.875rem',
 		'line-height'    => '1.5',
 		'letter-spacing' => '0',

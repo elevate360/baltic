@@ -7,7 +7,8 @@
 
 /**
  * Baltic WooCommerce Markup
- * @return [type] [description]
+ *
+ * @return void
  */
 function baltic_wc_markup(){
 
@@ -43,6 +44,15 @@ function baltic_wc_markup(){
 	/** Add entry-inner inside li.product */
 	add_action( 'woocommerce_before_shop_loop_item', 'baltic_wc_entry_inner_open', 5 );
 	add_action( 'woocommerce_after_shop_loop_item', 'baltic_wc_entry_inner_close', 99 );
+
+	/** Onsale flash */
+	remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
+
+	/** Product thumbnail wrap */
+	add_action( 'woocommerce_before_shop_loop_item', 'baltic_product_thumbnail_wrap_open', 7 );
+	add_action( 'woocommerce_before_shop_loop_item', 'woocommerce_show_product_loop_sale_flash', 9 );
+	add_action( 'woocommerce_before_shop_loop_item', 'baltic_products_extra_buttons', 9 );
+	add_action( 'woocommerce_before_shop_loop_item', 'baltic_product_thumbnail_wrap_close', 9 );
 
 	/** Reposition rating */
 	remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
@@ -232,6 +242,46 @@ function baltic_wc_entry_inner_close(){
 }
 
 /**
+ * [baltic_product_thumbnail_wrap_open description]
+ * @return [type] [description]
+ */
+function baltic_product_thumbnail_wrap_open(){
+	echo '<div class="baltic-product-thumbnail-wrap">';
+}
+
+/**
+ * [baltic_product_thumbnail_wrap_close description]
+ * @return [type] [description]
+ */
+function baltic_product_thumbnail_wrap_close(){
+	echo '</div>';
+}
+
+/**
+ * [baltic_products_extra_buttons description]
+ *
+ * @return [type] [description]
+ */
+function baltic_products_extra_buttons() {
+?>
+	<div class="baltic-extra-button">
+		<ul>
+			<?php if( defined( 'YITH_WCWL' ) ) :?>
+			<li>
+				<?php echo do_shortcode( '[yith_wcwl_add_to_wishlist]' );?>
+			</li>
+			<?php endif;?>
+			<li>
+				<a href="<?php the_permalink( get_the_id() );?>" class="extra-button ajax-quick-view" title="<?php esc_html_e( 'Quick View', 'baltic' );?>" data-product_id="<?php echo get_the_ID();?>">
+					<?php echo baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'search' ) );?>
+				</a>
+			</li>
+		</ul>
+	</div>
+<?php
+}
+
+/**
  * [baltic_wc_pagination description]
  * @return [type] [description]
  */
@@ -282,8 +332,9 @@ function baltic_wc_header_extra(){
 ?>
 	<div class="site-header-extra">
 		<ul>
-			<li><a href="#" title="<?php esc_html_e( 'Wishlist', 'baltic' );?>"><?php echo baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'heart' ) );?> <span class="total">20</span></a></li>
-			<li><a href="#" title="<?php esc_html_e( 'Compare', 'baltic' );?>"><?php echo baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'eye' ) );?> <span class="total">9</span></a></li>
+			<?php if( defined( 'YITH_WCWL' ) ) : ?>
+				<li><a href="<?php the_permalink( get_option( 'yith-wcwl-page-id' ) );?>" title="<?php esc_html_e( 'Wishlist', 'baltic' );?>" class="header-wishlist"><?php echo baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'heart' ) );?> <span class="total hide">0</span></a></li>
+			<?php endif;?>
 			<li><a href="#" title="<?php esc_html_e( 'Cart', 'baltic' );?>" class="header-cart-link"><?php baltic_wc_cart_link();?></a></li>
 		</ul>
 	</div><!-- .site-header-extra -->
@@ -312,6 +363,7 @@ function baltic_wc_cart_link() {
 
 /**
  * [baltic_wc_cart_link_fragment description]
+ * @uses  baltic_wc_cart_link()
  * @return [type] [description]
  */
 function baltic_wc_cart_link_fragment( $fragments ) {
@@ -326,6 +378,8 @@ function baltic_wc_cart_link_fragment( $fragments ) {
 /**
  * [baltic_wc_header_cart description]
  *
+ * @uses  is_checkout() [<description>]
+ * @uses  is_cart() [<description>]
  * @uses  the_widget( $widget, $instance = array, $args = array ) [<description>]
  * @return [type] [description]
  */

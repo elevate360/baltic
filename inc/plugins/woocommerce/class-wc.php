@@ -30,7 +30,6 @@ class Baltic_WooCommerce {
 		add_filter( 'woocommerce_product_thumbnails_columns', 	array( $this, 'thumbnail_columns' ) );
 		add_filter( 'woocommerce_output_related_products_args', array( $this, 'related_products_args' ) );
 
-
 		add_filter( 'baltic_archive_crumb', array( $this, 'breadcrumb_args' ), 10, 2 );
 		add_filter( 'baltic_single_crumb', array( $this, 'breadcrumb_args' ), 10, 2 );
 
@@ -87,6 +86,12 @@ class Baltic_WooCommerce {
 
 		wp_add_inline_style( 'baltic-woocommerce-style', $inline_style );
 
+		$output = array(
+			'ajax_url'	=> admin_url( 'admin-ajax.php' ),
+			'loader'	=> baltic_get_preloader()
+		);
+		wp_localize_script( 'baltic-script', 'Balticl10n', $output );
+
 	}
 
 	/**
@@ -121,8 +126,8 @@ class Baltic_WooCommerce {
 	 * [force_layout description]
 	 * @return [type] [description]
 	 */
-	public function force_layout(){
-		if ( is_page( wc_get_page_id( 'checkout' ) ) || is_page( wc_get_page_id( 'cart' ) ) ) {
+	public function force_layout() {
+		if ( is_page( wc_get_page_id( 'checkout' ) ) || is_page( wc_get_page_id( 'cart' ) ) || is_page( get_option( 'yith-wcwl-page-id' ) ) ) {
 			add_filter( 'baltic_site_layout', 'baltic__get_full_width' );
 		}
 	}
@@ -132,7 +137,7 @@ class Baltic_WooCommerce {
 	 *
 	 * @return integer number of products.
 	 */
-	public function products_per_page(){
+	public function products_per_page() {
 		return absint( baltic_get_option( 'products_per_page' ) );
 	}
 
@@ -179,7 +184,7 @@ class Baltic_WooCommerce {
 	 * @param array $args related products args.
 	 * @return array $args related products args.
 	 */
-	public function breadcrumb_args( $crumb, $args ){
+	public function breadcrumb_args( $crumb, $args ) {
 
 		$shop_id 	= wc_get_page_id( 'shop' );
 		$shop_title = get_the_title( $shop_id );
