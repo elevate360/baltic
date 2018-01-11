@@ -34,13 +34,15 @@ function baltic_page_header_home(){
 
 	$blog_id = get_option( 'page_for_posts' );
 
+	$image = get_the_post_thumbnail_url( $blog_id, 'full' );
+
 	echo '<div class="page-header-inner">';
 
 	echo sprintf( '<p class="page-title">%s</p>', get_the_title( absint( $blog_id ) ) );
 	echo sprintf( '<div class="page-description">%s</div>', wpautop( get_post_field( 'post_content', absint( $blog_id ) ) ) );
 
 	if ( has_post_thumbnail( $blog_id ) ) {
-		echo sprintf( '<figure class="page-header-thumbnail">%s</figure>', get_the_post_thumbnail( $blog_id, 'full' ) );
+		echo sprintf( '<div class="page-header-thumbnail" style="background-image:url(%s)" ></div>', esc_url( $image ) );
 	}
 
 	baltic_do_breadcrumb();
@@ -74,11 +76,12 @@ function page_header_archive(){
 	} elseif( is_archive() ) {
 		$term_id = get_queried_object()->term_id;
 		$image_id = get_term_meta( $term_id, 'image', true );
+		$image = wp_get_attachment_image_src( $image_id, 'full' );
 		echo sprintf( '<h1 class="page-title">%s</h1>', get_the_archive_title() );
 		echo sprintf( '<div class="page-description">%s</div>', wpautop( get_the_archive_description() ) );
 
 		if ( ! empty( $image_id ) ) {
-			echo sprintf( '<figure class="page-header-thumbnail">%s</figure>', wp_get_attachment_image( $image_id, 'full' ) );
+			echo sprintf( '<div class="page-header-thumbnail" style="background-image:url(%s)" ></div>', esc_url( $image[0] ) );
 		}
 	}
 
@@ -99,12 +102,14 @@ function page_header_singular(){
 		return;
 	}
 
+	$image = get_the_post_thumbnail_url( get_the_id(), 'full' );
+
 	echo '<div class="page-header-inner">';
 
 	echo sprintf( '<p class="page-title">%s</p>', get_the_title( absint( get_the_id() ) ) );
 
 	if ( has_post_thumbnail( get_the_id() ) ) {
-		echo sprintf( '<figure class="page-header-thumbnail">%s</figure>', get_the_post_thumbnail( get_the_id(), 'full' ) );
+		echo sprintf( '<div class="page-header-thumbnail" style="background-image:url(%s)" ></div>', esc_url( $image ) );
 	}
 
 	baltic_do_breadcrumb();

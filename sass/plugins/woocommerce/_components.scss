@@ -405,7 +405,7 @@ a.reset_variations:before {
 		left: 0;
 		width: 100%;
 		height: 100%;
-		padding: 1.5rem;
+		padding: $gutter__width;
 		background-color: rgba(255, 255, 255, 0.9);
 	}
 	&.hide {
@@ -414,13 +414,17 @@ a.reset_variations:before {
 	}
 }
 
+.quick-view-wrap {
+	position: relative;
+}
+
 .close-quick-view {
 	position: fixed;
 	z-index: 9;
-	top: 15px;
-	right: 30px;
-	width: 48px;
-	height: 48px;
+	top: 5px;
+	right: 5px;
+	width: 32px;
+	height: 32px;
 	margin: 0;
 	padding: 0;
 	background-color: $color__text-main;
@@ -453,6 +457,12 @@ a.reset_variations:before {
 			transform: scale(1.5);
 		}
 	}
+	@include respond-to( medium ) {
+		width: 48px;
+		height: 48px;
+		top: 15px;
+		right: 15px;
+	}
 }
 
 #quick-view-content {
@@ -463,27 +473,29 @@ a.reset_variations:before {
 	max-width: 100%;
 	border-radius: 0.25rem;
 	opacity: 0;
-	transition: opacity ease-in-out 0.5s, transform ease-in-out 0.5s;
-	transform: scale(0);
-	div.product {
-		margin: 0;
-		padding: 0;
-	}
+	transition: opacity ease-in-out 0.25s, transform ease-in-out 0.5s;
+	transform: scale(0.5) rotateY(180deg);
 	> div.product {
-		padding: 1.5rem;
+		padding: $gutter__width;
+		margin: 0;
 	}
 	&.shadow {
 		top: 0;
-		margin-bottom: 1rem;
+		margin-bottom: $gutter__width;
 		opacity: 1;
 		box-shadow: 0 8px 128px rgba(0, 0, 0, 0.25);
-		transform: scale(1);
+		transform: scale(1) rotateY(0deg);
 	}
 
 	@include respond-to( medium ) {
 
 		left: 50%;
 		margin-left: -360px;
+
+		> div.product {
+			padding: $gutter__width*2;
+			margin: 0;
+		}
 
 		&.shadow {
 			margin-top: 5vh;

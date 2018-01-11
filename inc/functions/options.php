@@ -24,6 +24,60 @@ function baltic_get_option( $name ){
 }
 endif;
 
+if ( ! function_exists( 'baltic_get_sidebar_widget_options' ) ) :
+/**
+ * Find a given widget in a given sidebar and return its settings.
+ *
+ * Example usage:
+ * $options = [];
+ * try {
+ *    $options = baltic_get_sidebar_widget_options('sidebar-1', 'recent-comments');
+ * } catch (Exception $e) {}
+ *
+ * @link https://www.flynsarmy.com/2015/06/retrieving-wordpress-sidebar-widget-options/
+ *
+ * @param $sidebar_id    The ID of the sidebar. Defined in your register_sidebar() call
+ * @param $widget_type   Widget type specified in register_sidebar()
+ * @return array         Saved options
+ * @throws Exception     "Widget not found in sidebar" or "Widget has no saved options"
+ */
+function baltic_get_sidebar_widget_options( $sidebar_id, $widget_type ) {
+
+    // Grab the list of sidebars and their widgets
+    $sidebars = wp_get_sidebars_widgets();
+    // Just grab the widgets for our sidebar
+    $widgets = $sidebars[$sidebar_id];
+
+    // Get the ID of our widget in this sidebar
+    $widget_id = 0;
+    foreach ( $widgets as $widget_details )
+    {
+        // $widget_details is of the format $widget_type-$id - we just want the id part
+        if ( preg_match("/^{$widget_type}\-(?P<id>\d+)$/", $widget_details, $matches) )
+        {
+            $widget_id = $matches['id'];
+            break;
+        }
+    }
+
+    // If we didn't find the given widget in the given sidebar, throw an error
+    if ( !$widget_id )
+        throw new Exception("Widget not found in sidebar");
+
+    // Grab the options of each instance of our $widget_type from the DB
+    $options = get_option( 'widget_' . $widget_type );
+
+    // Ensure there are settings to return
+    if ( !isset($options[$widget_id]) )
+        throw new Exception( "Widget has no saved options" );
+
+    // Grab the settings
+    $widget_options = $options[$widget_id];
+
+    return $widget_options;
+
+}
+endif;
 
 if ( ! function_exists( 'baltic_get_custom_field' ) ) :
 /**

@@ -68,19 +68,20 @@
 .header-cart-content {
 	background-color: $color__white;
 	position: absolute;
-	top: calc( 100% + 16px );
+	top: -1000%;
 	right: $gutter__width;
 	padding: $gutter__width;
 	line-height: 1.5;
 	width: 300px;
 	@include radius-shadow();
 	opacity: 0;
-	transition: all ease-in-out 0.25s;
-	transform: scale(0);
+	transform: scale(0.5) rotateY(180deg);
+	transition: opacity 0.25s ease-in-out, transform 0.35s ease-in-out;
 	z-index: 8;
 	&.show {
+		top: calc( 100% + 16px );
 		opacity: 1;
-		transform: scale(1);
+		transform: scale(1) rotateY(0deg);
 	}
 	&:before {
 		position: absolute;
@@ -145,6 +146,7 @@
 		box-shadow: 0 4px 8px rgba( 0,0,0,.5 );
 		overflow: hidden;
 		opacity: 0;
+		position: relative;
 		transform: scale(0);
 		transition: all .25s ease-in-out;
 		&:hover,
@@ -184,6 +186,26 @@
 		background-color: $color__link;
 		&:before {
 			content: url( "data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZlcnNpb249JzEuMScgdmlld0JveD0nMCAwIDMyIDMyJyB3aWR0aD0nMTYnIGhlaWdodD0nMTYnIGZpbGw9JyNmZmZmZmYnPjxwYXRoIGQ9J000IDE2IEMxIDEyIDIgNiA3IDQgMTIgMiAxNSA2IDE2IDggMTcgNiAyMSAyIDI2IDQgMzEgNiAzMSAxMiAyOCAxNiAyNSAyMCAxNiAyOCAxNiAyOCAxNiAyOCA3IDIwIDQgMTYgWicgLz48L3N2Zz4=" );
+		}
+	}
+}
+
+.baltic-wishlist-loader {
+	&.show {
+		&::before {
+			content: " ";
+			border: 2px solid $color__white;
+			border-top-color: $color__link;
+			border-radius: 50%;
+			width: 32px;
+			height: 32px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -16px;
+			margin-left: -16px;
+	    	transform: translate(-50%, -50%);
+			animation: spin 2s linear infinite;
 		}
 	}
 }

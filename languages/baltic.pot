@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Baltic 1.0.0\n"
 "Report-Msgid-Bugs-To: https://elevate360/contact\n"
-"POT-Creation-Date: 2018-01-01 20:59:07+00:00\n"
+"POT-Creation-Date: 2018-01-11 08:52:21+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -143,31 +143,31 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
-#: inc/admin/class-baltic-notification.php:70
+#: inc/admin/class-baltic-notification.php:71
 msgid "Thank you for choosing %s theme!."
 msgstr ""
 
-#: inc/admin/class-baltic-notification.php:71
+#: inc/admin/class-baltic-notification.php:72
 msgid ""
 "%s theme is designed to be an ecommerce website. To enable eCommerce "
 "features you need to install and activate the WooCommerce plugin."
 msgstr ""
 
-#: inc/admin/class-baltic-notification.php:72
+#: inc/admin/class-baltic-notification.php:73
 msgid "Install WooCommerce"
 msgstr ""
 
-#: inc/admin/class-baltic-notification.php:74
+#: inc/admin/class-baltic-notification.php:77
 msgid "Your site is almost ready."
 msgstr ""
 
-#: inc/admin/class-baltic-notification.php:75
+#: inc/admin/class-baltic-notification.php:78
 msgid ""
 "In order to enable additional features of %s theme, you can navigate to the "
 "theme setup. Otherwise you can close this notification."
 msgstr ""
 
-#: inc/admin/class-baltic-notification.php:76
+#: inc/admin/class-baltic-notification.php:79
 msgid "Complete Setup"
 msgstr ""
 
@@ -343,6 +343,7 @@ msgid "Colors"
 msgstr ""
 
 #: inc/customizer/customizer.php:73 inc/customizer/settings/woocommerce.php:12
+#: inc/vendor/vendor.php:35
 msgid "WooCommerce"
 msgstr ""
 
@@ -715,11 +716,11 @@ msgstr ""
 msgid "Please define an SVG icon filename."
 msgstr ""
 
-#: inc/functions/options.php:97
+#: inc/functions/options.php:151
 msgid "Continue reading"
 msgstr ""
 
-#: inc/functions/options.php:102
+#: inc/functions/options.php:156
 msgid "Copyright &copy; 2016-[YEAR] [SITE]. Proudly powered by [WP]."
 msgstr ""
 
@@ -744,7 +745,7 @@ msgid "Sidebar"
 msgstr ""
 
 #: inc/functions/widgets.php:17 inc/functions/widgets.php:26
-#: inc/functions/widgets.php:36
+#: inc/functions/widgets.php:35 inc/functions/widgets.php:45
 msgid "Add widgets here."
 msgstr ""
 
@@ -752,7 +753,11 @@ msgstr ""
 msgid "Sidebar Footer"
 msgstr ""
 
-#: inc/functions/widgets.php:34
+#: inc/functions/widgets.php:33
+msgid "Sidebar Footer 2"
+msgstr ""
+
+#: inc/functions/widgets.php:43
 msgid "Sidebar Shop"
 msgstr ""
 
@@ -1208,8 +1213,104 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
+#: inc/vendor/vendor.php:25
+msgid "Kirki Toolkit"
+msgstr ""
+
+#: inc/vendor/vendor.php:45
+msgid "WP Term Images"
+msgstr ""
+
 #: woocommerce/product-searchform.php:31
 msgid "Search"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:32
+msgid "Edit title"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:41
+msgid "Save"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:45
+msgid "Cancel"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:82
+msgid "Product Name"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:89
+msgid "Unit Price"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:102 woocommerce/wishlist-view.php:175
+msgid "Stock Status"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:152 woocommerce/wishlist-view.php:229
+msgid "Remove this product"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:163
+msgid "Product"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:169
+msgid "Price"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:170
+msgid "Free!"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:176
+msgid "Out of Stock"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:176
+msgid "In Stock"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:185
+msgid "Added on : %s"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:197
+msgid "Move"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:209
+msgid "Shared"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:212
+msgid "Private"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:215
+msgid "Public"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:229
+msgid "Remove"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:239
+msgid "No products were added to the wishlist"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:256
+msgid "Add the selected products to the cart"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:264 woocommerce/wishlist-view.php:310
+msgid "Ask for an estimate"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:300
+msgid "Your email"
 msgstr ""
 
 #. Theme Name of the plugin/theme
@@ -1217,7 +1318,7 @@ msgid "Baltic"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://underscores.me/"
+msgid "https://elevatethemes.com.au/baltic"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -1229,7 +1330,7 @@ msgid "Elevate360"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://elevate360.com.au"
+msgid "https://elevatethemes.com.au/"
 msgstr ""
 
 #. Template Name of the plugin/theme

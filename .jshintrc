@@ -11,7 +11,8 @@
   "quotmark": "single",
   "trailing": true,
   "undef": true,
-  "unused": true,
+  "unused": false,
+  "sub": true,
 
   "browser": true,
 
@@ -19,6 +20,10 @@
     "_": false,
     "Backbone": false,
     "jQuery": false,
-    "wp": false
+    "wp": false,
+    "ajaxurl": false,
+    "Balticl10n" : false,
+    "BalticAdminl10n" : false,
+    "BalticNoticel10n" : false
   }
 }

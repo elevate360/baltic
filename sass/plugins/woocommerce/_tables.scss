@@ -109,6 +109,42 @@ table.cart img {
 	}
 }
 
+.woocommerce {
+
+	table.wishlist_table {
+		@include font-size(1);
+	}
+
+	table.wishlist_table thead th {
+		border: none;
+	}
+
+	table.wishlist_table thead th,
+	table.wishlist_table tbody td {
+		border-color: $color__alpha-dark;
+	}
+
+	table.wishlist_table tr td.product-remove {
+		padding: .75rem;
+	}
+
+	#content table.wishlist_table.cart a.remove {
+		padding: 0;
+	}
+
+}
+
+.wishlist_table tr td.product-name {
+	text-align: right;
+	@include respond-to( medium ) {
+		text-align: left;
+	}
+}
+
+.yith-wcwl-share {
+	margin-bottom: $gutter__width;
+}
+
 @media screen and (min-width: 48em) {
 	table.shop_table_responsive {
 		thead {

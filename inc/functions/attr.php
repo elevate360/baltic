@@ -218,6 +218,22 @@ function baltic_attr_tertiary( $attr ) {
 add_filter( 'baltic_attr_tertiary', 'baltic_attr_tertiary', 5 );
 
 /**
+ * <div> quaternary element attributes.
+ *
+ * @param  array   $attr
+ * @return array
+ */
+function baltic_attr_quaternary( $attr ) {
+
+	$attr['id'] 	= 'quaternary';
+	$attr['class']  = 'sidebar-footer widget-area';
+
+	return $attr;
+
+}
+add_filter( 'baltic_attr_quaternary', 'baltic_attr_quaternary', 5 );
+
+/**
  * <main> element attributes.
  *
  * @param  array   $attr

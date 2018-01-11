@@ -29,10 +29,19 @@ function baltic_widgets_init() {
 		'before_title'  => '<h2 class="widget-title h6">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar Footer 2', 'baltic' ),
+		'id'            => 'sidebar-3',
+		'description'   => esc_html__( 'Add widgets here.', 'baltic' ),
+		'before_widget' => '<section id="%1$s" class="widget column-item %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title h6">',
+		'after_title'   => '</h2>',
+	) );
 	if ( class_exists( 'WooCommerce' ) ) {
 		register_sidebar( array(
 			'name'          => esc_html__( 'Sidebar Shop', 'baltic' ),
-			'id'            => 'sidebar-3',
+			'id'            => 'sidebar-4',
 			'description'   => esc_html__( 'Add widgets here.', 'baltic' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',

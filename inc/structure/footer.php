@@ -15,13 +15,22 @@ function baltic_sidebar_footer(){
 add_action( 'baltic_footer_before', 'baltic_sidebar_footer', 10 );
 
 /**
+ * [baltic_sidebar_footer2 description]
+ * @return [type] [description]
+ */
+function baltic_sidebar_footer2(){
+	get_sidebar( 'footer-2' );
+}
+add_action( 'baltic_footer_before', 'baltic_sidebar_footer2', 20 );
+
+/**
  * [baltic_social_menu description]
  * @return [type] [description]
  */
 function baltic_social_menu() {
 	get_template_part( 'components/menus/menu', 'social' );
 }
-add_action( 'baltic_footer_before', 'baltic_social_menu', 20 );
+add_action( 'baltic_footer_before', 'baltic_social_menu', 30 );
 
 /**
  * Baltic footer copyright
@@ -40,7 +49,7 @@ add_action( 'baltic_footer', 'baltic_footer_copyright', 10 );
 function baltic_menu_secondary() {
 	get_template_part( 'components/menus/menu', 'secondary' );
 }
-add_action( 'baltic_footer', 'baltic_menu_secondary', 10 );
+add_action( 'baltic_footer', 'baltic_menu_secondary', 20 );
 
 /**
  * Baltic footer copyright

@@ -209,10 +209,10 @@ class Baltic_Init {
 
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
+		wp_dequeue_style( 'contact-form-7' );
+
 		/** Main Style */
 		wp_enqueue_style( 'baltic-style', get_theme_file_uri( "/style$suffix.css" ) );
-
-		wp_dequeue_style( 'google-font-roboto' );
 
 		/** lt IE 9 script */
 		wp_enqueue_script( 'html5shiv', get_theme_file_uri( "/assets/js/ie/html5shiv$suffix.js" ), array(), '3.7.3' );
@@ -284,6 +284,8 @@ class Baltic_Init {
 	 * @return  void
 	 */
 	public function integrations(){
+
+		// require get_parent_theme_file_path( '/inc/vendor/vendor.php' );
 
 		require get_parent_theme_file_path( '/inc/plugins/demo-import.php' );
 

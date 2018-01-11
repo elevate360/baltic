@@ -118,18 +118,18 @@ function baltic_wc_archive_thumbnail(){
 	    global $wp_query;
 	    $cat 		= $wp_query->get_queried_object();
 	    $image_id 	= get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
-	    $image 		= wp_get_attachment_image( $image_id, 'full' );
+	    $image 		= wp_get_attachment_image_src( $image_id, 'full' );
 
 	    if ( $image ) {
-	    	echo sprintf( '<figure class="page-header-thumbnail">%s</figure>', $image );
+	    	echo sprintf( '<div class="page-header-thumbnail" style="background-image:url(%s)" ></div>', esc_url( $image[0] ) );
 		}
 
 	} elseif ( is_shop() || ( is_post_type_archive( 'product' ) && is_search() ) ) {
 
-		$image 		= get_the_post_thumbnail( $shop_id, 'full' );
+		$image 		= get_the_post_thumbnail_url( $shop_id, 'full' );
 
 		if ( $image ) {
-			echo sprintf( '<figure class="page-header-thumbnail">%s</figure>', $image );
+			echo sprintf( '<div class="page-header-thumbnail" style="background-image:url(%s)" ></div>', esc_url( $image ) );
 		}
 
 	}

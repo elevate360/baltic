@@ -7,7 +7,7 @@
  * @package Baltic
  */
 
-$sidebar = apply_filters( 'baltic_sidebar_shop', 'sidebar-3' );
+$sidebar = apply_filters( 'baltic_sidebar_shop', 'sidebar-4' );
 
 if ( ! is_active_sidebar( $sidebar ) ) {
 	return;

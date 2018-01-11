@@ -174,7 +174,7 @@ module.exports = function (grunt) {
 		concat: {
 			frontend: {
 				src: ['assets/js/frontend/*.js'],
-				dest: 'assets/js/frontend.js',
+				dest: 'assets/js/frontend.js'
 			}
 		},
 

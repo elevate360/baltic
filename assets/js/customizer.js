@@ -5,7 +5,6 @@
  *
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  */
-
 ( function( $, api ) {
 
 	// Site title and description.
@@ -42,7 +41,7 @@
 
 	api( 'show_preloader', function( value ) {
 		value.bind( function( to ) {
-			if ( to == true ){
+			if ( to === true ){
 				$( '.site-preloader' ).css({ 'display': 'block' });
 				$( '.js .preloader-enabled' ).css({ 'overflow':'hidden' });
 			} else {

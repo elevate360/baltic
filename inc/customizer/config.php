@@ -26,4 +26,4 @@ Kirki::add_config( 'baltic', array(
 function baltic_kirki_css_file(){
 	return 'file';
 }
-//add_filter( 'kirki_dynamic_css_method', 'baltic_kirki_css_file' );
+add_filter( 'kirki_dynamic_css_method', 'baltic_kirki_css_file' );

@@ -239,18 +239,10 @@ a.custom-logo-link {
 	padding: 0;
 	margin: 0;
 	overflow: hidden;
-	img {
-		position: absolute;
-		left: 50%;
-		bottom: 0;
-		min-width: 100%;
-		min-height: 100%;
-		max-width: inherit;
-		-webkit-transform: translate3d(0, 0, 0);
-		transform: translate3d(0, 0, 0);
-		-webkit-transform: translateX(-50%);
-		transform: translateX(-50%);
-	}
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
 	&:after {
 	    position: absolute;
 	    top: 0;
@@ -264,6 +256,9 @@ a.custom-logo-link {
 		background: -webkit-linear-gradient(left, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.3) 100%); /* Chrome10-25,Safari5.1-6 */
 		background: linear-gradient(to right, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6000000', endColorstr='#4d000000',GradientType=1 ); /* IE6-9 */
+	}
+	@include respond-to( medium ) {
+		background-attachment: fixed;
 	}
 }
 

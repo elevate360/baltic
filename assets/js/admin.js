@@ -76,7 +76,6 @@
 		   		},
 
 		   		error: function( xhr, status, error ) {
-		      		console.log( status );
 		      		is_loading = false;
 		   		}
 		   	} );
@@ -91,7 +90,9 @@
 
 		   	if ( ! el.hasClass( 'disabled' ) ) {
 
-		      	if ( is_loading ) return false;
+		      	if ( is_loading ) {
+		      		return false;
+		      	}
 
 			   	// Activation
 			   	if ( el.hasClass( 'activate-now' ) ) {

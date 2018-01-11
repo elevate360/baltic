@@ -156,4 +156,5 @@ class Baltic_Theme_Functions {
 
 }
 endif;
+
 return new Baltic_Theme_Functions();

@@ -1,8 +1,8 @@
 /*!
 Theme Name: Baltic
-Theme URI: http://underscores.me/
+Theme URI: https://elevatethemes.com.au/baltic
 Author: Elevate360
-Author URI: https://elevate360.com.au
+Author URI: https://elevatethemes.com.au/
 Description: Baltic WooCommerce Theme
 Version: 1.0.0
 License: GNU General Public License v2 or later
@@ -64,6 +64,11 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 # Vendor
 --------------------------------------------------------------*/
 @import "vendor/preloader";
+
+/*--------------------------------------------------------------
+# CF7
+--------------------------------------------------------------*/
+@import "plugins/cf7";
 
 /*--------------------------------------------------------------
 # Media

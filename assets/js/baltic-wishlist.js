@@ -1,8 +1,8 @@
 ( function( $ ) {
 
-	var balticWishListCount = balticWishListCount || {};
+	var balticWishList = balticWishList || {};
 
-	balticWishListCount.updateWishList = function(){
+	balticWishList.updateWishList = function(){
 
 		var counter = $( '.header-wishlist > span.total' );
 
@@ -13,23 +13,47 @@
 			},
 			dataType: 'json',
 			success: function( data ) {
-				if ( data.count == 0 ) {
+
+				if ( data.count === '0' || data.count === 0 ) {
 					counter.addClass( 'hide' );
 				} else {
 					counter.removeClass( 'hide' );
 					counter.html( data.count );
 				}
+
 			}
 		});
 
 	};
 
+
+	balticWishList.loader = function() {
+
+		$( '.add_to_wishlist' ).on( 'click', function(){
+
+			var $loader = $( this ).find( '.baltic-wishlist-loader' );
+
+			$loader.addClass( 'show' );
+
+			$loader.on( 'added_to_wishlist', function(){
+				$( this ).removeClass( 'show' );
+			});
+
+		});
+
+	};
+
+
 	$( document ).ready( function() {
-		balticWishListCount.updateWishList();
+		balticWishList.loader();
+	});
+
+	$( window ).on( 'load', function() {
+		balticWishList.updateWishList();
 	});
 
 	$( document ).on( 'added_to_wishlist removed_from_wishlist added_to_cart', function() {
-		balticWishListCount.updateWishList();
+		balticWishList.updateWishList();
 	});
 
 })( jQuery );
