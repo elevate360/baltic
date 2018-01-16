@@ -22,9 +22,9 @@
 				'premium'		=> true,
 			),
 			array(
-				'slug' 			=> 'elevate-elements',
+				'slug' 			=> 'kit-elements',
 				'url' 			=> 'https://elevatethemes.com.au/elevate-elements/',
-				'name' 			=> esc_html__( 'Elevate Elements', 'baltic' ),
+				'name' 			=> esc_html__( 'Kit Elements', 'baltic' ),
 				'description' 	=> esc_html__( 'Add new premium features for Elementor page builder plugin.', 'baltic' ),
 				'icon' 			=> get_parent_theme_file_uri( '/assets/images/elevate-elements.png' ),
 				'author' 		=> esc_html__( 'Elevate Themes', 'baltic' ),
