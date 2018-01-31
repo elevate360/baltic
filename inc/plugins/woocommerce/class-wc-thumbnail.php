@@ -5,13 +5,27 @@
  * @package Baltic
  */
 
-if ( ! class_exists( 'Baltic_WC_Secondary_Thumbnail' ) ) :
+if ( ! class_exists( 'Baltic_WC_Thumbnail' ) ) :
 /**
  * Baltic WC secondary thumbnail
  */
-class Baltic_WC_Secondary_Thumbnail {
+class Baltic_WC_Thumbnail {
+
 
 	public function __construct() {
+
+		add_action( 'baltic_init', array( $this, 'hooks' ), 15 );
+		/** Fire hook before Elementor editor */
+		add_action( 'admin_action_elementor', array( $this, 'hooks' ), 9 );
+
+	}
+
+	/**
+	 * Setup action hook for custom WooCommerce thumbnail
+	 *
+	 * @return [type] [description]
+	 */
+	public function hooks() {
 
 		add_filter( 'post_class', array( $this, 'product_has_gallery' ) );
 
@@ -103,4 +117,4 @@ class Baltic_WC_Secondary_Thumbnail {
 
 }
 endif;
-return new Baltic_WC_Secondary_Thumbnail();
+return new Baltic_WC_Thumbnail();

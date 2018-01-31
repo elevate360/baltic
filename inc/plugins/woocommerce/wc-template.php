@@ -54,6 +54,8 @@ function baltic_wc_markup(){
 	add_action( 'woocommerce_before_shop_loop_item', 'baltic_products_extra_buttons', 9 );
 	add_action( 'woocommerce_before_shop_loop_item', 'baltic_product_thumbnail_wrap_close', 9 );
 
+	/** Elementor hook */
+
 	/** Reposition rating */
 	remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
 	add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
@@ -72,6 +74,7 @@ function baltic_wc_markup(){
 
 }
 add_action( 'baltic_init', 'baltic_wc_markup', 15 );
+add_action( 'admin_action_elementor', 'baltic_wc_markup', 9 );
 
 /**
  * [baltic_wc_page_header description]

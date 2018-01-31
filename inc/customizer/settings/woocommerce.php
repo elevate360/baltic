@@ -9,8 +9,8 @@ $default = baltic_setting_default();
 
 /** Colors */
 Kirki::add_section( 'baltic_wc_color_section', array(
-    'title' 		=> esc_attr__( 'WooCommerce', 'baltic' ),
-    'panel' 		=> 'baltic_colors_panel',
+    'title' 		=> esc_attr__( 'Colors', 'baltic' ),
+    'panel' 		=> 'woocommerce',
     'priority'		=> 100
 ) );
 
@@ -77,7 +77,7 @@ Kirki::add_field( 'baltic', array(
 /** Layout */
 Kirki::add_section( 'baltic_wc_layout_section', array(
     'title' 		=> esc_attr__( 'Layout', 'baltic' ),
-    'panel' 		=> 'baltic_wc_panel',
+    'panel' 		=> 'woocommerce',
 ) );
 
 Kirki::add_field( 'baltic', array(
@@ -100,16 +100,12 @@ Kirki::add_field( 'baltic', array(
 	'choices' 		=> baltic_get_main_layout(),
 ) );
 
-Kirki::add_section( 'baltic_wc_archive_section', array(
-    'title' 		=> esc_attr__( 'Products Archive', 'baltic' ),
-    'panel' 		=> 'baltic_wc_panel',
-) );
-
+/** WooCommerce product catalog */
 Kirki::add_field( 'baltic', array(
 	'type'        	=> 'number',
 	'settings'    	=> 'products_per_page',
 	'label'       	=> esc_attr__( 'Products per page', 'baltic' ),
-	'section'     	=> 'baltic_wc_archive_section',
+	'section'     	=> 'woocommerce_product_catalog',
 	'default'     	=> $default['products_per_page'],
 	'choices'     	=> array(
 		'min'  => 0,
@@ -122,7 +118,7 @@ Kirki::add_field( 'baltic', array(
 	'type'        	=> 'number',
 	'settings'    	=> 'products_columns',
 	'label'       	=> esc_attr__( 'Products Columns', 'baltic' ),
-	'section'     	=> 'baltic_wc_archive_section',
+	'section'     	=> 'woocommerce_product_catalog',
 	'default'     	=> $default['products_columns'],
 	'choices'     	=> array(
 		'min'  => 0,
@@ -135,7 +131,7 @@ Kirki::add_field( 'baltic', array(
 	'type'        	=> 'select',
 	'settings'    	=> 'products_nav',
 	'label'       	=> __( 'Products Navigation Type', 'baltic' ),
-	'section'     	=> 'baltic_wc_archive_section',
+	'section'     	=> 'woocommerce_product_catalog',
 	'default'     	=> $default['products_nav'],
 	'transport'		=> 'postMessage',
 	'choices' 		=> array(
@@ -157,7 +153,7 @@ Kirki::add_field( 'baltic', array(
 	'type'        	=> 'text',
 	'settings'    	=> 'products_nav_prev',
 	'label'       	=> esc_attr__( 'Previous Product Text', 'baltic' ),
-	'section'     	=> 'baltic_wc_archive_section',
+	'section'     	=> 'woocommerce_product_catalog',
 	'default'     	=> $default['products_nav_prev'],
 	'transport'		=> 'postMessage',
 	'active_callback'    => array(
@@ -182,7 +178,7 @@ Kirki::add_field( 'baltic', array(
 	'type'        	=> 'text',
 	'settings'    	=> 'products_nav_next',
 	'label'       	=> esc_attr__( 'Next Product Text', 'baltic' ),
-	'section'     	=> 'baltic_wc_archive_section',
+	'section'     	=> 'woocommerce_product_catalog',
 	'default'     	=> $default['products_nav_next'],
 	'transport'		=> 'postMessage',
 	'active_callback'    => array(
