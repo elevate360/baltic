@@ -29,6 +29,9 @@
 
 .site-info {
 	margin-bottom: $gutter__width;
+	p {
+		margin-bottom: $gutter__width/2;
+	}
 	@include respond-to( medium ) {
 		margin-bottom: 0;
 	}

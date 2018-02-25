@@ -19,3 +19,7 @@
 <?php if( is_active_sidebar( 'sidebar-2' ) ) :?>
 	<a class="skip-link screen-reader-text" href="#tertiary"><?php esc_html_e( 'Skip to Footer', 'baltic' ); ?></a>
 <?php endif;?>
+
+<?php if( has_nav_menu( 'menu-2' ) ) :?>
+	<a class="skip-link screen-reader-text" href="#secondary-navigation"><?php esc_html_e( 'Skip to secondary navigation', 'baltic' ); ?></a>
+<?php endif;?>

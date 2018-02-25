@@ -5,7 +5,7 @@
  * @package Baltic
  */
 ?>
-<div <?php baltic_attr( 'page-header' );?>>
+<div <?php baltic_attr( 'jumbotron-header' );?>>
 	<div class="container">
 		<?php do_action( 'baltic_page_header' );?>
 	</div><!-- .container -->

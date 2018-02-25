@@ -28,6 +28,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<input type="hidden" name="post_type" value="product" />
 	<button type="submit" class="search-submit">
 		<?php echo baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'search' ) ); ?>
-		<span class="screen-reader-text"><?php esc_html_e( 'Search', 'submit button', 'baltic' ); ?></span>
+		<span class="screen-reader-text"><?php esc_html_e( 'Search', 'baltic' ); ?></span>
 	</button>
 </form>

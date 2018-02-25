@@ -11,6 +11,7 @@
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function baltic_widgets_init() {
+
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'baltic' ),
 		'id'            => 'sidebar-1',
@@ -29,19 +30,10 @@ function baltic_widgets_init() {
 		'before_title'  => '<h2 class="widget-title h6">',
 		'after_title'   => '</h2>',
 	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar Footer 2', 'baltic' ),
-		'id'            => 'sidebar-3',
-		'description'   => esc_html__( 'Add widgets here.', 'baltic' ),
-		'before_widget' => '<section id="%1$s" class="widget column-item %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title h6">',
-		'after_title'   => '</h2>',
-	) );
 	if ( class_exists( 'WooCommerce' ) ) {
 		register_sidebar( array(
 			'name'          => esc_html__( 'Sidebar Shop', 'baltic' ),
-			'id'            => 'sidebar-4',
+			'id'            => 'sidebar-3',
 			'description'   => esc_html__( 'Add widgets here.', 'baltic' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
@@ -49,6 +41,7 @@ function baltic_widgets_init() {
 			'after_title'   => '</h2>',
 		) );
 	}
+
 }
 add_action( 'widgets_init', 'baltic_widgets_init' );
 
@@ -56,7 +49,7 @@ add_action( 'widgets_init', 'baltic_widgets_init' );
  * [baltic_after_setup_widget description]
  * @return [type] [description]
  */
-function baltic_after_setup_widget(){
+function baltic_after_setup_widget() {
 
 	add_filter( 'widget_tag_cloud_args', 'baltic_widget_tag_cloud_args' );
 	add_filter( 'woocommerce_product_tag_cloud_widget_args', 'baltic_widget_tag_cloud_args' );

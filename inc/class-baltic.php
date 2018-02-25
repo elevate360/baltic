@@ -163,6 +163,7 @@ class Baltic_Init {
 	 * @global int $content_width
 	 */
 	public function content_width(){
+
 		$content_width = $GLOBALS['content_width'];
 
 		if ( baltic_get_layout() == 'full-width' ) {
@@ -170,6 +171,7 @@ class Baltic_Init {
 		}
 
 		$GLOBALS['content_width'] = apply_filters( 'baltic_content_width', $content_width );
+
 	}
 
 	/**
@@ -251,6 +253,7 @@ class Baltic_Init {
 			require get_parent_theme_file_path( '/inc/admin/class-plugin-installer.php' );
 			require get_parent_theme_file_path( '/inc/admin/class-baltic-notification.php' );
 			require get_parent_theme_file_path( '/inc/admin/class-baltic-admin.php' );
+			require get_parent_theme_file_path( '/inc/vendor/vendor.php' );
 		}
 
 		/** Theme classes */
@@ -263,7 +266,6 @@ class Baltic_Init {
 		require get_parent_theme_file_path( '/inc/functions/widgets.php' );
 		require get_parent_theme_file_path( '/inc/functions/options.php' );
 		require get_parent_theme_file_path( '/inc/functions/utility.php' );
-		require get_parent_theme_file_path( '/inc/functions/templates.php' );
 
 		/** Include theme customizer */
 		require get_parent_theme_file_path( '/inc/customizer/customizer.php' );

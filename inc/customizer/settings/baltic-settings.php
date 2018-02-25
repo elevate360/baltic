@@ -332,21 +332,26 @@ Kirki::add_field( 'baltic', array(
 
 Kirki::add_field( 'baltic', array(
 	'type' 			=> 'switch',
+	'settings'    	=> 'footer_credits',
+	'label'       	=> __( 'Display theme designer?', 'baltic' ),
+	'section'     	=> 'baltic_footer_section',
+	'default'     	=> $default['footer_credits'],
+	'transport'		=> 'postMessage',
+	'choices'     	=> array(
+		'on'  => esc_attr__( 'On', 'baltic' ),
+		'off' => esc_attr__( 'Off', 'baltic' ),
+	)
+) );
+
+Kirki::add_field( 'baltic', array(
+	'type' 			=> 'switch',
 	'settings'    	=> 'return_top',
 	'label'       	=> __( 'Enable return to top link?', 'baltic' ),
 	'section'     	=> 'baltic_footer_section',
 	'default'     	=> $default['return_top'],
+	'transport'		=> 'postMessage',
 	'choices'     	=> array(
 		'on'  => esc_attr__( 'On', 'baltic' ),
 		'off' => esc_attr__( 'Off', 'baltic' ),
-	),
-	'partial_refresh' => array(
-		'return_top' => array(
-			'selector'        		=> '.return-to-top-customizer',
-			'render_callback' 		=> function() {
-				return baltic_return_to_top();
-			},
-			'container_inclusive' 	=> true
-		),
-	),
+	)
 ) );

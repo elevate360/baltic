@@ -24,20 +24,21 @@ function baltic_register_required_plugins() {
 			/* Recommended plugin name */
 			'name'      => __( 'Kirki Toolkit', 'baltic' ),
 			'slug'      => 'kirki',
-			'required'  => true,
-            'detail' 	=> array(
-                'image' => esc_url( 'https://ps.w.org/elementor/assets/icon-128x128.png' ),
-            )
+			'required'  => false
 		),
 
 		array(
 			/* Recommended plugin name */
 			'name'      => __( 'WooCommerce', 'baltic' ),
 			'slug'      => 'woocommerce',
-			'required'  => false,
-            'detail' 	=> array(
-                'image' => esc_url( 'https://ps.w.org/woocommerce/assets/icon-128x128.png' ),
-            )
+			'required'  => false
+		),
+
+		array(
+			/* Recommended plugin name */
+			'name'      => __( 'YITH WooCommerce Wishlist', 'baltic' ),
+			'slug'      => 'yith-woocommerce-wishlist',
+			'required'  => false
 		),
 
 		array(

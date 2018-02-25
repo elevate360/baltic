@@ -55,6 +55,13 @@
 	}
 }
 
+.error404 .site-content {
+	text-align: center;
+	> .container {
+		padding-bottom: $gutter__width*4;
+	}
+}
+
 @include respond-to( medium ){
 
 	.content-sidebar {
@@ -84,6 +91,16 @@
 		}
 	}
 
+	.narrow,
+	.error404 {
+		#primary {
+			float: left;
+			width: 100%;
+			padding-left: 160px;
+			padding-right: 160px;
+		}
+	}
+
 	@for $i from 2 through 6 {
 		.columns-#{$i} {
 			.column-item {
@@ -91,4 +108,5 @@
 			}
 		}
 	}
+
 }

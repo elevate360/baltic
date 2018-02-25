@@ -143,15 +143,15 @@ add_filter( 'baltic_attr_site-content', 'baltic_attr_site_content', 5 );
  * @param  array   $attr
  * @return array
  */
-function baltic_attr_page_header( $attr ) {
+function baltic_attr_jumbotron_header( $attr ) {
 
-	$attr['id'] 	= 'page-header';
-	$attr['class']  = 'page-header';
+	$attr['id'] 	= 'jumbotron-header';
+	$attr['class']  = 'jumbotron-header';
 
 	return $attr;
 
 }
-add_filter( 'baltic_attr_page-header', 'baltic_attr_page_header', 5 );
+add_filter( 'baltic_attr_jumbotron-header', 'baltic_attr_jumbotron_header', 5 );
 
 /**
  * <footer> element attributes.

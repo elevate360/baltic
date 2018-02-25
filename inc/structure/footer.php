@@ -15,15 +15,6 @@ function baltic_sidebar_footer(){
 add_action( 'baltic_footer_before', 'baltic_sidebar_footer', 10 );
 
 /**
- * [baltic_sidebar_footer2 description]
- * @return [type] [description]
- */
-function baltic_sidebar_footer2(){
-	get_sidebar( 'footer-2' );
-}
-add_action( 'baltic_footer_before', 'baltic_sidebar_footer2', 20 );
-
-/**
  * [baltic_social_menu description]
  * @return [type] [description]
  */

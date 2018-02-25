@@ -23,6 +23,10 @@ Kirki::add_config( 'baltic', array(
 	'option_type' => 'theme_mod',
 ) );
 
+/**
+ * [baltic_kirki_css_file description]
+ * @return [type] [description]
+ */
 function baltic_kirki_css_file(){
 	return 'file';
 }

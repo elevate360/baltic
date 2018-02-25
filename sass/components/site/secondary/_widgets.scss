@@ -109,3 +109,55 @@
 		padding-left: 1rem;
 	}
 }
+
+.widget_latest_tweets_widget {
+	ul,
+	li {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+	}
+
+	li {
+		background-color: $color__white;
+		overflow: hidden;
+		padding: 10px;
+		word-wrap: break-word;
+		height: 100%;
+		margin-bottom: 5px;
+	}
+
+	.tweet-profile-link {
+		display: block;
+		float: left;
+		margin-right: 10px;
+		overflow: hidden;
+	}
+
+	.tweet-profile,
+	.tweet-details {
+		a {
+			color: #657786;
+		}
+	}
+
+	.tweet-name {
+		font-weight: bold;
+	}
+
+	.tweet-profile,
+	.tweet-text,
+	.tweet-details {
+		padding-left: 58px;
+		margin-bottom: 5px;
+	}
+
+	.tweet-details {
+		margin-bottom: 0;
+	}
+
+	.tweet-screen,
+	.tweet-details {
+		font-size: 80%;
+	}
+}

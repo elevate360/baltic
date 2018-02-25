@@ -200,8 +200,8 @@ a.custom-logo-link {
 		calc(100% - 10px) calc(1em + 7px);
 }
 
-/** Page Header */
-.page-header {
+/** Jumbotron Header */
+.jumbotron-header {
 	background-color: $color__alpha-dark05;
 	position: relative;
 	overflow: hidden;
@@ -217,7 +217,7 @@ a.custom-logo-link {
 	}
 }
 
-.page-header-inner {
+.jumbotron-header-inner {
 	padding-top: 1.5rem;
 	padding-bottom: 1.5rem;
 	@include respond-to( medium ){
@@ -229,7 +229,7 @@ a.custom-logo-link {
 	}
 }
 
-.page-header-thumbnail {
+.jumbotron-header-thumbnail {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -262,7 +262,7 @@ a.custom-logo-link {
 	}
 }
 
-.page-title {
+.jumbotron-title {
 	@include font-size(2);
 	font-weight: 500;
     margin-top: 0;

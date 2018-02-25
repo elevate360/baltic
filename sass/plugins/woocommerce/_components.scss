@@ -414,10 +414,6 @@ a.reset_variations:before {
 	}
 }
 
-.quick-view-wrap {
-	position: relative;
-}
-
 .close-quick-view {
 	position: fixed;
 	z-index: 9;
@@ -463,6 +459,10 @@ a.reset_variations:before {
 		top: 15px;
 		right: 15px;
 	}
+}
+
+.quick-view-wrap {
+	position: relative;
 }
 
 #quick-view-content {

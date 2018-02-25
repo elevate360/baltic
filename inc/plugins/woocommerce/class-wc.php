@@ -127,9 +127,17 @@ class Baltic_WooCommerce {
 	 * @return [type] [description]
 	 */
 	public function force_layout() {
-		if ( is_page( wc_get_page_id( 'checkout' ) ) || is_page( wc_get_page_id( 'cart' ) ) || is_page( get_option( 'yith-wcwl-page-id' ) ) ) {
+
+		if ( is_page( wc_get_page_id( 'checkout' ) ) || is_page( wc_get_page_id( 'cart' ) ) ) {
 			add_filter( 'baltic_site_layout', 'baltic__get_full_width' );
 		}
+
+		if ( get_option( 'yith-wcwl-page-id' ) != '' ) {
+			if ( is_page( get_option( 'yith-wcwl-page-id' ) ) ) {
+				add_filter( 'baltic_site_layout', 'baltic__get_full_width' );
+			}
+		}
+
 	}
 
 	/**

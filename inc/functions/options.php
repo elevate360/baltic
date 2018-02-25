@@ -154,6 +154,7 @@ function baltic_setting_default(){
 		'posts_nav_next'			=> esc_html( 'Newer posts &rarr;', 'baltic' ),
 
 		'footer_text'				=> esc_html__( 'Copyright &copy; 2016-[YEAR] [SITE]. Proudly powered by [WP].', 'baltic' ),
+		'footer_credits'			=> true,
 		'return_top'				=> true,
 
 		// WooCommerce

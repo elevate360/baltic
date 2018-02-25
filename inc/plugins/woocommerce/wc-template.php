@@ -13,7 +13,7 @@
 function baltic_wc_markup(){
 
 	/** Add archive page header */
-	add_action( 'baltic_inner_before', 'baltic_wc_page_header', 20 );
+	add_action( 'baltic_inner_before', 'baltic_wc_jumbotron_header', 20 );
 	add_action( 'woocommerce_archive_description', 'baltic_wc_archive_thumbnail', 20 );
 
 	/** Breadcrumb */
@@ -41,25 +41,6 @@ function baltic_wc_markup(){
 	/** Remove WooCommerce Pagination*/
 	remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
 
-	/** Add entry-inner inside li.product */
-	add_action( 'woocommerce_before_shop_loop_item', 'baltic_wc_entry_inner_open', 5 );
-	add_action( 'woocommerce_after_shop_loop_item', 'baltic_wc_entry_inner_close', 99 );
-
-	/** Onsale flash */
-	remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
-
-	/** Product thumbnail wrap */
-	add_action( 'woocommerce_before_shop_loop_item', 'baltic_product_thumbnail_wrap_open', 7 );
-	add_action( 'woocommerce_before_shop_loop_item', 'woocommerce_show_product_loop_sale_flash', 9 );
-	add_action( 'woocommerce_before_shop_loop_item', 'baltic_products_extra_buttons', 9 );
-	add_action( 'woocommerce_before_shop_loop_item', 'baltic_product_thumbnail_wrap_close', 9 );
-
-	/** Elementor hook */
-
-	/** Reposition rating */
-	remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
-	add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
-
 	/** Remove sidebar if full-width layout is selected */
 	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 	add_action( 'woocommerce_sidebar', 'baltic_wc_sidebar', 10 );
@@ -74,20 +55,46 @@ function baltic_wc_markup(){
 
 }
 add_action( 'baltic_init', 'baltic_wc_markup', 15 );
-add_action( 'admin_action_elementor', 'baltic_wc_markup', 9 );
 
 /**
- * [baltic_wc_page_header description]
+ * [baltic_product_markup description]
  * @return [type] [description]
  */
-function baltic_wc_page_header(){
+function baltic_product_markup() {
+
+	/** Add entry-inner inside li.product */
+	add_action( 'woocommerce_before_shop_loop_item', 'baltic_wc_entry_inner_open', 5 );
+	add_action( 'woocommerce_after_shop_loop_item', 'baltic_wc_entry_inner_close', 99 );
+
+	/** Onsale flash */
+	remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
+
+	/** Product thumbnail wrap */
+	add_action( 'woocommerce_before_shop_loop_item', 'baltic_product_thumbnail_wrap_open', 7 );
+	add_action( 'woocommerce_before_shop_loop_item', 'woocommerce_show_product_loop_sale_flash', 9 );
+	add_action( 'woocommerce_before_shop_loop_item', 'baltic_products_extra_buttons', 9 );
+	add_action( 'woocommerce_before_shop_loop_item', 'baltic_product_thumbnail_wrap_close', 9 );
+
+	/** Reposition rating */
+	remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+	add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+
+}
+add_action( 'baltic_init', 'baltic_product_markup', 15 );
+add_action( 'admin_action_elementor', 'baltic_product_markup', 9 );
+
+/**
+ * [baltic_wc_jumbotron_header description]
+ * @return [type] [description]
+ */
+function baltic_wc_jumbotron_header(){
 	if( ! is_woocommerce() ) {
 		return;
 	}
 ?>
-    <header class="page-header woocommerce-products-header">
+    <header class="jumbotron-header woocommerce-products-header">
     	<div class="container">
-			<div class="page-header-inner">
+			<div class="jumbotron-header-inner">
 				<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 
 					<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
@@ -103,9 +110,9 @@ function baltic_wc_page_header(){
 					 */
 					do_action( 'woocommerce_archive_description' );
 				?>
-			</div><!-- .page-header-inner -->
+			</div><!-- .jumbotron-header-inner -->
 		</div><!-- .container -->
-    </header><!-- .page-header -->
+    </header><!-- .jumbotron-header -->
 <?php
 }
 
@@ -124,7 +131,7 @@ function baltic_wc_archive_thumbnail(){
 	    $image 		= wp_get_attachment_image_src( $image_id, 'full' );
 
 	    if ( $image ) {
-	    	echo sprintf( '<div class="page-header-thumbnail" style="background-image:url(%s)" ></div>', esc_url( $image[0] ) );
+	    	echo sprintf( '<div class="jumbotron-header-thumbnail" style="background-image:url(%s)" ></div>', esc_url( $image[0] ) );
 		}
 
 	} elseif ( is_shop() || ( is_post_type_archive( 'product' ) && is_search() ) ) {
@@ -132,7 +139,7 @@ function baltic_wc_archive_thumbnail(){
 		$image 		= get_the_post_thumbnail_url( $shop_id, 'full' );
 
 		if ( $image ) {
-			echo sprintf( '<div class="page-header-thumbnail" style="background-image:url(%s)" ></div>', esc_url( $image ) );
+			echo sprintf( '<div class="jumbotron-header-thumbnail" style="background-image:url(%s)" ></div>', esc_url( $image ) );
 		}
 
 	}
@@ -197,6 +204,9 @@ function baltic_wc_wrapper_after() {
  * @return [type] [description]
  */
 function baltic_wc_result_wrap_open(){
+	if ( ! wc_get_loop_prop( 'is_paginated' ) || ! woocommerce_products_will_display() ) {
+		return;
+	}
 	echo '<div class="result-count-wrap clear">';
 }
 
@@ -205,6 +215,9 @@ function baltic_wc_result_wrap_open(){
  * @return [type] [description]
  */
 function baltic_wc_result_wrap_close(){
+	if ( ! wc_get_loop_prop( 'is_paginated' ) || ! woocommerce_products_will_display() ) {
+		return;
+	}
 	echo '</div>';
 }
 
@@ -214,7 +227,9 @@ function baltic_wc_result_wrap_close(){
  * @return  void
  */
 function baltic_wc_product_columns_wrapper() {
-
+	if ( ! wc_get_loop_prop( 'is_paginated' ) || ! woocommerce_products_will_display() ) {
+		return;
+	}
 	echo '<div class="columns-' . absint( baltic_get_option( 'products_columns' ) ) .'">';
 
 }
@@ -225,6 +240,9 @@ function baltic_wc_product_columns_wrapper() {
  * @return  void
  */
 function baltic_wc_product_columns_wrapper_close() {
+	if ( ! wc_get_loop_prop( 'is_paginated' ) || ! woocommerce_products_will_display() ) {
+		return;
+	}
 	echo '</div>';
 }
 

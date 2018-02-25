@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Baltic 1.0.0\n"
 "Report-Msgid-Bugs-To: https://elevate360/contact\n"
-"POT-Creation-Date: 2018-01-31 16:43:06+00:00\n"
+"POT-Creation-Date: 2018-02-22 17:38:25+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -30,22 +30,22 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: components/content-none.php:14
+#: components/content-none.php:15
 msgid "Nothing Found"
 msgstr ""
 
-#: components/content-none.php:25
+#: components/content-none.php:26
 #. translators: 1: link to WP admin new post page.
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: components/content-none.php:38
+#: components/content-none.php:39
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: components/content-none.php:44
+#: components/content-none.php:45
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
@@ -53,6 +53,10 @@ msgstr ""
 
 #: components/footer/footer-copyright.php:12
 msgid "Y"
+msgstr ""
+
+#: components/footer/footer-copyright.php:20
+msgid "Theme design by %1$s %2$s."
 msgstr ""
 
 #: components/footer/return-top.php:10
@@ -91,6 +95,10 @@ msgstr ""
 msgid "Skip to Footer"
 msgstr ""
 
+#: components/header/skip-links.php:24
+msgid "Skip to secondary navigation"
+msgstr ""
+
 #: components/menus/menu-primary.php:16
 msgid "Menu"
 msgstr ""
@@ -118,7 +126,7 @@ msgid "Next Page"
 msgstr ""
 
 #: components/posts-navigation.php:21
-#: inc/plugins/woocommerce/wc-template.php:306
+#: inc/plugins/woocommerce/wc-template.php:324
 msgid "Page"
 msgstr ""
 
@@ -322,11 +330,11 @@ msgstr ""
 msgid "(Untitled)"
 msgstr ""
 
-#: inc/customizer/customizer.php:49
-msgid "Upgrade to Baltic Pro"
+#: inc/customizer/customizer.php:50
+msgid "Campaign Kit"
 msgstr ""
 
-#: inc/customizer/customizer.php:50
+#: inc/customizer/customizer.php:51
 msgid "Learn More"
 msgstr ""
 
@@ -355,12 +363,14 @@ msgid "Enable Preloader"
 msgstr ""
 
 #: inc/customizer/settings/baltic-settings.php:24
-#: inc/customizer/settings/baltic-settings.php:340
+#: inc/customizer/settings/baltic-settings.php:341
+#: inc/customizer/settings/baltic-settings.php:354
 msgid "On"
 msgstr ""
 
 #: inc/customizer/settings/baltic-settings.php:25
-#: inc/customizer/settings/baltic-settings.php:341
+#: inc/customizer/settings/baltic-settings.php:342
+#: inc/customizer/settings/baltic-settings.php:355
 msgid "Off"
 msgstr ""
 
@@ -512,6 +522,10 @@ msgid "Footer Text"
 msgstr ""
 
 #: inc/customizer/settings/baltic-settings.php:336
+msgid "Display theme designer?"
+msgstr ""
+
+#: inc/customizer/settings/baltic-settings.php:349
 msgid "Enable return to top link?"
 msgstr ""
 
@@ -735,24 +749,20 @@ msgstr ""
 msgid "Narrow"
 msgstr ""
 
-#: inc/functions/widgets.php:15
+#: inc/functions/widgets.php:16
 msgid "Sidebar"
 msgstr ""
 
-#: inc/functions/widgets.php:17 inc/functions/widgets.php:26
-#: inc/functions/widgets.php:35 inc/functions/widgets.php:45
+#: inc/functions/widgets.php:18 inc/functions/widgets.php:27
+#: inc/functions/widgets.php:37
 msgid "Add widgets here."
 msgstr ""
 
-#: inc/functions/widgets.php:24
+#: inc/functions/widgets.php:25
 msgid "Sidebar Footer"
 msgstr ""
 
-#: inc/functions/widgets.php:33
-msgid "Sidebar Footer 2"
-msgstr ""
-
-#: inc/functions/widgets.php:43
+#: inc/functions/widgets.php:35
 msgid "Sidebar Shop"
 msgstr ""
 
@@ -781,39 +791,39 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: inc/plugins/woocommerce/class-wc.php:202
+#: inc/plugins/woocommerce/class-wc.php:210
 msgid "Search results for &ldquo;"
 msgstr ""
 
-#: inc/plugins/woocommerce/class-wc.php:253
+#: inc/plugins/woocommerce/class-wc.php:261
 msgid "Products tagged &ldquo;"
 msgstr ""
 
-#: inc/plugins/woocommerce/wc-template.php:278
+#: inc/plugins/woocommerce/wc-template.php:296
 msgid "Quick View"
 msgstr ""
 
-#: inc/plugins/woocommerce/wc-template.php:304
+#: inc/plugins/woocommerce/wc-template.php:322
 msgid "Previous Product"
 msgstr ""
 
-#: inc/plugins/woocommerce/wc-template.php:305
+#: inc/plugins/woocommerce/wc-template.php:323
 msgid "Next Product"
 msgstr ""
 
-#: inc/plugins/woocommerce/wc-template.php:339
+#: inc/plugins/woocommerce/wc-template.php:357
 msgid "Wishlist"
 msgstr ""
 
-#: inc/plugins/woocommerce/wc-template.php:341
+#: inc/plugins/woocommerce/wc-template.php:359
 msgid "Cart"
 msgstr ""
 
-#: inc/plugins/woocommerce/wc-template.php:452
+#: inc/plugins/woocommerce/wc-template.php:470
 msgid "My Account"
 msgstr ""
 
-#: inc/plugins/woocommerce/wc-template.php:461
+#: inc/plugins/woocommerce/wc-template.php:479
 msgid "Login"
 msgstr ""
 
@@ -1356,7 +1366,7 @@ msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
-#: inc/plugins/woocommerce/class-wc.php:253
+#: inc/plugins/woocommerce/class-wc.php:261
 msgctxt "endquote"
 msgid "&rdquo;"
 msgstr ""

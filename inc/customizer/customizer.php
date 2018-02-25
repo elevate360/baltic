@@ -26,6 +26,7 @@ function baltic_customizer_control() {
 
 	wp_enqueue_style( 'baltic-customizer-control', get_parent_theme_file_uri( "/assets/css/customizer-control$suffix.css" ), array(), time(), 'all' );
 	wp_enqueue_script( 'baltic-customizer-control', get_parent_theme_file_uri( "/assets/js/customizer-control$suffix.js" ), array(), time(), true );
+
 }
 add_action( 'customize_controls_enqueue_scripts', 'baltic_customizer_control', 15 );
 
@@ -46,10 +47,9 @@ function baltic_customize_register( $wp_customize ){
 
 		// Register sections.
 		$wp_customize->add_section( new Baltic_Customize_Section_Pro( $wp_customize, 'baltic_pro', array(
-			'title'    			=> esc_html__( 'Upgrade to Baltic Pro', 'baltic' ),
+			'title'    			=> esc_html__( 'Campaign Kit', 'baltic' ),
 			'pro_text' 			=> esc_html__( 'Learn More', 'baltic' ),
-			'pro_url'  			=> esc_url( 'https://elevatethemes.com.au/baltic' ),
-			//'pro_description'	=> esc_html__( 'Unlock all the features of Baltic theme can offer.', 'baltic' ),
+			'pro_url'  			=> esc_url( 'https://campaignkit.co/' ),
 			'priority'			=> 999
 		) ) );
 	}

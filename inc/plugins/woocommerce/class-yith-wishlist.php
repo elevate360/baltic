@@ -35,8 +35,10 @@ class Baltic_YITH_Wishlist {
 	 * @return void
 	 */
 	public function script() {
+
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 		wp_enqueue_script( 'baltic-wishlist', get_theme_file_uri( "/assets/js/baltic-wishlist$suffix.js" ), array( 'baltic-script' ), BALTIC_THEME_VERSION, true );
+
 	}
 
 }
