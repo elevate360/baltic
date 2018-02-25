@@ -250,9 +250,6 @@ class Baltic_Init {
 
 		/** Admin Dashboard */
 		if ( is_admin() ) {
-			require get_parent_theme_file_path( '/inc/admin/class-plugin-installer.php' );
-			require get_parent_theme_file_path( '/inc/admin/class-baltic-notification.php' );
-			require get_parent_theme_file_path( '/inc/admin/class-baltic-admin.php' );
 			require get_parent_theme_file_path( '/inc/vendor/vendor.php' );
 		}
 
