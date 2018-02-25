@@ -37,8 +37,13 @@ function baltic_header_style() {
 	} else {
 		$css .= '
 		.site-title a,
-		.site-description {
+		.site-description,
+		.site-header-extra a,
+		.main-navigation ul.menu>.menu-item>a {
 			color: # '. esc_attr( $header_text_color ) .';
+		}
+		.header-search-area .search-submit .icon-stroke {
+			stroke: # '. esc_attr( $header_text_color ) .';
 		}
 		';
 	}

@@ -12,7 +12,7 @@ function pacific_customize_preview_js() {
 
 	$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-	wp_enqueue_script( 'baltic-customizer', get_parent_theme_file_uri( "/assets/js/customizer$suffix.js" ), array( 'customize-preview', 'customize-selective-refresh' ), BALTIC_THEME_VERSION, true );
+	wp_enqueue_script( 'baltic-customizer', get_parent_theme_file_uri( "/assets/js/customizer$suffix.js" ), array( 'customize-preview', 'customize-selective-refresh' ), time(), true );
 
 }
 add_action( 'customize_preview_init', 'pacific_customize_preview_js' );

@@ -129,10 +129,11 @@ class Baltic_Init {
 		add_theme_support( 'custom-header', apply_filters( 'baltic_custom_header_args', array(
 			'width'       			=> 1600,
 			'height'      			=> 1600,
-			'default-image'          => '',
-			'flex-width'             => true,
-			'flex-height'            => true,
-			'wp-head-callback'       => 'baltic_header_style',
+			'default-image'         => '',
+			'flex-width'            => true,
+			'flex-height'           => true,
+			'default-text-color'	=> '505050',
+			'wp-head-callback'      => 'baltic_header_style',
 		) ) );
 
 		/** Set up the WordPress core custom background feature. */

@@ -386,6 +386,12 @@ svg symbol {
 	display: block;
 }
 
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	img[src$=".svg"] {
+		width: 100%;
+	}
+}
+
 @-webkit-keyframes spin {
 	0% {
 		-webkit-transform: rotate(0deg);

@@ -3574,6 +3574,12 @@ a.custom-logo-link {
 # Media Queries
 --------------------------------------------------------------*/
 
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	img[src$=".svg"] {
+		width: 100%;
+	}
+}
+
 @media (min-width: 576px) {
 	.alignleft,
 	.alignright {

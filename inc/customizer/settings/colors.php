@@ -28,21 +28,6 @@ Kirki::add_field( 'baltic', array(
 	)
 ) );
 
-Kirki::add_field( 'baltic', array(
-	'type'        	=> 'color',
-	'settings'    	=> 'color_text_header',
-	'label'       	=> __( 'Header Text Color', 'baltic' ),
-	'section'     	=> 'baltic_header_color_section',
-	'default'     	=> $default['color_text_header'],
-	'transport'		=> 'auto',
-	'output'		=> array(
-		array(
-			'element'  => '.site-header',
-			'property' => 'color',
-		)
-	)
-) );
-
 /** Background */
 Kirki::add_section( 'baltic_bg_color_section', array(
     'title'          => esc_attr__( 'Background', 'baltic' ),

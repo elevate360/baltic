@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Baltic 1.0.0\n"
 "Report-Msgid-Bugs-To: https://elevate360/contact\n"
-"POT-Creation-Date: 2018-02-25 23:14:46+00:00\n"
+"POT-Creation-Date: 2018-02-25 23:59:27+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -374,83 +374,79 @@ msgstr ""
 msgid "Header Background Color"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:34
-msgid "Header Text Color"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:48
+#: inc/customizer/settings/colors.php:33
 msgid "Background"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:54
+#: inc/customizer/settings/colors.php:39
 msgid "Selection"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:61
+#: inc/customizer/settings/colors.php:46
 msgid "Color Background Highlight"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:80
+#: inc/customizer/settings/colors.php:65
 msgid "Color Text Highlight"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:98
+#: inc/customizer/settings/colors.php:83
 msgid "Text"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:105
+#: inc/customizer/settings/colors.php:90
 msgid "Primary Text Color"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:133
+#: inc/customizer/settings/colors.php:118
 msgid "Secondary Text Color"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:151
+#: inc/customizer/settings/colors.php:136
 msgid "TextField"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:158
+#: inc/customizer/settings/colors.php:143
 msgid "Text Field Color"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:189
+#: inc/customizer/settings/colors.php:174
 msgid "Text Field Focus Color"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:203
+#: inc/customizer/settings/colors.php:188
 msgid "Link"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:210
+#: inc/customizer/settings/colors.php:195
 msgid "Color Link"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:237
+#: inc/customizer/settings/colors.php:222
 msgid "Color Link Hover"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:255
+#: inc/customizer/settings/colors.php:240
 msgid "Button"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:262
+#: inc/customizer/settings/colors.php:247
 msgid "Color Text Button"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:277
+#: inc/customizer/settings/colors.php:262
 msgid "Color Background Button"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:296
+#: inc/customizer/settings/colors.php:281
 msgid "Color Button Hover"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:313
+#: inc/customizer/settings/colors.php:298
 msgid "Border"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:320
+#: inc/customizer/settings/colors.php:305
 msgid "Color Border"
 msgstr ""
 
