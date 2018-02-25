@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Baltic 1.0.0\n"
 "Report-Msgid-Bugs-To: https://elevate360/contact\n"
-"POT-Creation-Date: 2018-02-25 20:08:07+00:00\n"
+"POT-Creation-Date: 2018-02-25 20:29:22+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -715,6 +715,10 @@ msgstr ""
 
 #: inc/structure/entry.php:175
 msgid "Continue Reading"
+msgstr ""
+
+#: inc/structure/page-header.php:133
+msgid "Search Results for: %s"
 msgstr ""
 
 #: inc/vendor/class-tgm-plugin-activation.php:327

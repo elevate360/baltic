@@ -9,13 +9,13 @@
  * [baltic_page_header description]
  * @return [type] [description]
  */
-function baltic_page_header(){
+function baltic_page_header() {
 
 	if ( baltic_is_woocommerce() ) {
 		return;
 	}
 
-	if ( is_front_page() ) {
+	if ( is_page_template( 'templates/canvas.php' ) ) {
 		return;
 	}
 
@@ -32,7 +32,7 @@ add_action( 'baltic_inner_before', 'baltic_page_header', 20 );
  * [baltic_page_header_home description]
  * @return [type] [description]
  */
-function baltic_page_header_home(){
+function baltic_page_header_home() {
 
 	if ( ! is_home() ) {
 		return;
@@ -62,7 +62,7 @@ add_action( 'baltic_page_header', 'baltic_page_header_home' );
  * [page_header_archive description]
  * @return [type] [description]
  */
-function page_header_archive(){
+function baltic_page_header_archive() {
 
 	if ( baltic_is_woocommerce() ) {
 		return;
@@ -96,13 +96,13 @@ function page_header_archive(){
 	echo '</div>';
 
 }
-add_action( 'baltic_page_header', 'page_header_archive' );
+add_action( 'baltic_page_header', 'baltic_page_header_archive' );
 
 /**
  * [page_header_singular description]
  * @return [type] [description]
  */
-function page_header_singular(){
+function baltic_page_header_singular() {
 
 	if ( ! is_singular() ) {
 		return;
@@ -123,4 +123,17 @@ function page_header_singular(){
 	echo '</div>';
 
 }
-add_action( 'baltic_page_header', 'page_header_singular' );
+add_action( 'baltic_page_header', 'baltic_page_header_singular' );
+
+function baltic_page_header_search() {
+
+	if ( is_search() ) {
+		echo '<div class="jumbotron-header-inner">';
+			echo '<p class="jumbotron-title">';
+			printf( esc_html__( 'Search Results for: %s', 'baltic' ), '<span>' . get_search_query() . '</span>' );
+			echo '</p>';
+		echo '</div>';
+	}
+
+}
+add_action( 'baltic_page_header', 'baltic_page_header_search' );
