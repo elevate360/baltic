@@ -6,7 +6,6 @@
  * @package Baltic
  */
 
-
 add_filter( 'pt-ocdi/plugin_page_title', '__return_false' );
 add_filter( 'pt-ocdi/plugin_intro_text', '__return_false' );
 

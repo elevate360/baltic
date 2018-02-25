@@ -30,18 +30,7 @@ class Baltic_Jetpack {
 			'type'      		=> 'click',
 			'container' 		=> 'main',
 			'render'    		=> array( $this, 'infinite_scroll_render' ),
-			'footer_widgets'	=> array( 'sidebar-2', 'sidebar-3', 'sidebar-4', ),
-		) );
-
-		add_theme_support( 'jetpack-testimonial' );
-
-		/**
-		 * Add theme support for Portfolio Custom Post Type.
-		 */
-		add_theme_support( 'jetpack-portfolio', array(
-			'title'          => true,
-			'content'        => true,
-			'featured-image' => true,
+			'footer_widgets'	=> array( 'sidebar-2' ),
 		) );
 
 	}

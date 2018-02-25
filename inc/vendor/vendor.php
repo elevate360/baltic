@@ -29,6 +29,13 @@ function baltic_register_required_plugins() {
 
 		array(
 			/* Recommended plugin name */
+			'name'      => __( 'Elementor', 'baltic' ),
+			'slug'      => 'elementor',
+			'required'  => false,
+		),
+
+		array(
+			/* Recommended plugin name */
 			'name'      => __( 'WooCommerce', 'baltic' ),
 			'slug'      => 'woocommerce',
 			'required'  => false
