@@ -2241,6 +2241,22 @@ ul.products li.product:hover
 		width: 16.66%;
 	}
 
+	.columns-7 ul.products li.product {
+		width: 14.28%;
+	}
+
+	.columns-8 ul.products li.product {
+		width: 12.5%;
+	}
+
+	.columns-9 ul.products li.product {
+		width: 11.11%;
+	}
+
+	.columns-10 ul.products li.product {
+		width: 10%;
+	}
+
 	.single-product div.product,
 	#quick-view-content div.product {
 		padding: 20px;

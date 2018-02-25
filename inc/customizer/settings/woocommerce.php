@@ -128,6 +128,18 @@ Kirki::add_field( 'baltic', array(
 ) );
 
 Kirki::add_field( 'baltic', array(
+	'type' 			=> 'switch',
+	'settings'    	=> 'product_quick_view',
+	'label'       	=> __( 'Enable product quick view?', 'baltic' ),
+	'section'     	=> 'woocommerce_product_catalog',
+	'default'     	=> '1',
+	'choices'     	=> array(
+		'on'  => esc_attr__( 'Yes', 'baltic' ),
+		'off' => esc_attr__( 'No', 'baltic' ),
+	),
+) );
+
+Kirki::add_field( 'baltic', array(
 	'type'        	=> 'select',
 	'settings'    	=> 'products_nav',
 	'label'       	=> __( 'Products Navigation Type', 'baltic' ),

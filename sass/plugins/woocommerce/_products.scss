@@ -221,7 +221,7 @@ a.added_to_cart.wc-forward {
 		}
 	}
 
-	@for $i from 2 through 6 {
+	@for $i from 2 through 10 {
 		.columns-#{$i} {
 			ul.products {
 				li.product {

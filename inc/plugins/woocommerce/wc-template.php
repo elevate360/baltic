@@ -284,6 +284,11 @@ function baltic_product_thumbnail_wrap_close(){
  * @return [type] [description]
  */
 function baltic_products_extra_buttons() {
+
+	if( ! defined( 'YITH_WCWL' ) && ( baltic_get_option( 'product_quick_view' ) == false ) ) {
+		return;
+	}
+
 ?>
 	<div class="baltic-extra-button">
 		<ul>
@@ -292,11 +297,13 @@ function baltic_products_extra_buttons() {
 				<?php echo do_shortcode( '[yith_wcwl_add_to_wishlist]' );?>
 			</li>
 			<?php endif;?>
-			<li>
-				<a href="<?php the_permalink( get_the_id() );?>" class="extra-button ajax-quick-view" title="<?php esc_html_e( 'Quick View', 'baltic' );?>" data-product_id="<?php echo get_the_ID();?>">
-					<?php echo baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'search' ) );?>
-				</a>
-			</li>
+			<?php if( baltic_get_option( 'product_quick_view' ) == true ) : ?>
+				<li>
+					<a href="<?php the_permalink( get_the_id() );?>" class="extra-button ajax-quick-view" title="<?php esc_html_e( 'Quick View', 'baltic' );?>" data-product_id="<?php echo get_the_ID();?>">
+						<?php echo baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'search' ) );?>
+					</a>
+				</li>
+			<?php endif;?>
 		</ul>
 	</div>
 <?php

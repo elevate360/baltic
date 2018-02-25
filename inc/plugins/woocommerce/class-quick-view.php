@@ -14,6 +14,10 @@ class Baltic_WC_Quick_View {
 	/** Constructor */
 	public function __construct() {
 
+		if ( baltic_get_option( 'product_quick_view' ) == false ) {
+			return;
+		}
+
 		add_action( 'wp_enqueue_scripts', 	array( $this, 'scripts' ) );
 
 		add_action( 'wp_ajax_baltic_product_quick_view', array( $this, 'quick_view_ajax' ) );

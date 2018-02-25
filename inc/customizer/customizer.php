@@ -69,11 +69,6 @@ function baltic_customize_register( $wp_customize ){
 		'priority' 		=> 199,
 	) );
 
-	$wp_customize->add_panel( 'baltic_wc_panel', array(
-		'title' 		=> esc_html__( 'WooCommerce', 'baltic' ),
-		'priority' 		=> 199,
-	) );
-
 	/** WP */
 	$wp_customize->get_section( 'header_image' )->panel 		= 'baltic_setting_panel';
 	$wp_customize->get_section( 'background_image' )->panel 	= 'baltic_setting_panel';

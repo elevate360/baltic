@@ -166,6 +166,7 @@ function baltic_setting_default(){
 		'layout_product'			=> 'content-sidebar',
 		'products_per_page'			=> 12,
 		'products_columns'			=> 4,
+		'product_quick_view'		=> true,
 		'products_nav'				=> 'products_pagination',
 		'products_nav_prev'			=> esc_html( '&larr; Older product', 'baltic' ),
 		'products_nav_next'			=> esc_html( 'Newer product &rarr;', 'baltic' ),
