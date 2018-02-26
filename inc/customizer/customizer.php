@@ -38,21 +38,19 @@ if ( ! function_exists( 'baltic_customize_register' ) ) :
  */
 function baltic_customize_register( $wp_customize ){
 
-	if ( ! defined( 'BALTIC_PRO_VERSION' ) ) {
-		// Load custom sections.
-		require_once( get_parent_theme_file_path( "/inc/customizer/controls/class-section-pro.php" ) );
+	// Load custom sections.
+	require_once( get_parent_theme_file_path( "/inc/customizer/controls/class-section-pro.php" ) );
 
-		// Register custom section types.
-		$wp_customize->register_section_type( 'Baltic_Customize_Section_Pro' );
+	// Register custom section types.
+	$wp_customize->register_section_type( 'Baltic_Customize_Section_Pro' );
 
-		// Register sections.
-		$wp_customize->add_section( new Baltic_Customize_Section_Pro( $wp_customize, 'baltic_pro', array(
-			'title'    			=> esc_html__( 'Campaign Kit', 'baltic' ),
-			'pro_text' 			=> esc_html__( 'Learn More', 'baltic' ),
-			'pro_url'  			=> esc_url( 'https://campaignkit.co/' ),
-			'priority'			=> 999
-		) ) );
-	}
+	// Register sections.
+	$wp_customize->add_section( new Baltic_Customize_Section_Pro( $wp_customize, 'baltic_pro', array(
+		'title'    			=> esc_html__( 'Campaign Kit', 'baltic' ),
+		'pro_text' 			=> esc_html__( 'Learn More', 'baltic' ),
+		'pro_url'  			=> esc_url( 'https://campaignkit.co/' ),
+		'priority'			=> 999
+	) ) );
 
 	$wp_customize->add_panel( 'baltic_setting_panel', array(
 		'title' 		=> esc_html__( 'Theme Settings', 'baltic' ),
@@ -75,9 +73,11 @@ function baltic_customize_register( $wp_customize ){
 	$wp_customize->get_control( 'header_textcolor' )->section 	= 'baltic_header_color_section';
 	$wp_customize->get_control( 'background_color' )->section 	= 'baltic_bg_color_section';
 
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'blogname' )->transport         	= 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport  	= 'postMessage';
+	$wp_customize->get_setting( 'header_textcolor' )->transport 	= 'postMessage';
+	$wp_customize->get_setting( 'header_image' )->transport 		= 'postMessage';
+	$wp_customize->get_setting( 'header_image_data'  )->transport 	= 'postMessage';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(

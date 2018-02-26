@@ -3174,6 +3174,10 @@ a.more-link:focus .icon-stroke {
 	position: relative;
 	z-index: 5;
 	background-color: #fff;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: top center;
+	background-size: cover;
 	-webkit-transition: all 0.25s ease-in-out;
 	transition: all 0.25s ease-in-out;
 }

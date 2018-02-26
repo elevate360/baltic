@@ -42,6 +42,12 @@
 		} );
 	} );
 
+	api( 'header_image', function( value ) {
+		value.bind( function( to ) {
+			$('.site-header').css( 'background-image', 'url(' + to +')' );
+		} );
+	} );
+
 	api( 'show_preloader', function( value ) {
 		value.bind( function( to ) {
 			if ( to === true ){
