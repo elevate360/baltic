@@ -9,7 +9,6 @@
 		baltic.$html 	= $( 'html' );
 
 		this.inlineSVG();
-		//this.preloader();
 		this.fitVids();
 		this.smoothScroll();
 		this.stickyHeader();
@@ -20,6 +19,8 @@
 		this.matchHeight();
 		this.returnToTop();
 		this.stickyOrder();
+		this.homepageSlider();
+		this.productsSlider();
 		this.wcQuickView();
 		this.bind();
 
@@ -216,6 +217,79 @@
 
 	};
 
+	baltic.homepageSlider = function() {
+
+		$( '.baltic-homepage-slider-container' ).not('.slick-initialized').slick({
+			lazyLoad: 'progressive',
+			infinite: true,
+			adaptiveHeight: true,
+			slidesToScroll: 1,
+			fade: false,
+			slidesToShow: 1,
+			autoplay: true,
+			autoplaySpeed: 5000,
+			arrows: true,
+            dots: true,
+            pauseOnHover: false,
+            dotsClass: 'baltic-slick-dots',
+            prevArrow: Balticl10n.sliderPrevBtn,
+            nextArrow: Balticl10n.sliderNextBtn,
+			responsive: [
+				{
+					breakpoint: 788,
+					settings: {
+						fade: true,
+						slidesToShow: 1
+					}
+				}
+			]
+		});
+
+	};
+
+	baltic.productsSlider = function() {
+
+		$slider = $( '.homepage-section.slider' );
+
+	    if ( 'undefined' === typeof $slider ) {
+	        return;
+	    }
+
+		$slider.each( function(){
+
+			$this = $(this),
+			sliderID = $this.attr('id'),
+			columns = $this.data('columns');
+
+			$( '#' + sliderID + ' .products' ).not('.slick-initialized').slick({
+				lazyLoad: 'progressive',
+				infinite: true,
+				adaptiveHeight: true,
+				slidesToScroll: 1,
+				fade: false,
+				slidesToShow: columns,
+				autoplay: true,
+				autoplaySpeed: 5000,
+				arrows: true,
+	            dots: true,
+	            pauseOnHover: false,
+	            dotsClass: 'baltic-slick-dots',
+	            arrows: false,
+				responsive: [
+					{
+						breakpoint: 788,
+						settings: {
+							fade: true,
+							slidesToShow: 1
+						}
+					}
+				]
+			});
+
+		});
+
+	};
+
 	baltic.wcQuickView = function() {
 
 		var $body 				= $( 'body' ),
@@ -283,26 +357,38 @@
 
 	baltic.bind = function() {
 
-		baltic.$body.on( 'wc_fragments_refreshed', function () {
-			baltic.stickyOrder();
+		baltic.$window.on( 'load', function() {
+			baltic.preloader();
 		});
 
 		baltic.$body.on( 'lazyload', function() {
 			baltic.fitVids();
 		});
 
-		baltic.$window.on( 'load', function() {
-			baltic.preloader();
+		baltic.$body.on( 'wc_fragments_refreshed', function () {
+			baltic.stickyOrder();
 		});
 
 	};
 
 	/** Initialize baltic.init() */
 	$( function() {
+
 		baltic.init();
+
+	    if ( 'undefined' === typeof wp || ! wp.customize || ! wp.customize.selectiveRefresh ) {
+	        return;
+	    }
+
+	    wp.customize.selectiveRefresh.bind( 'partial-content-rendered', function( placement ) {
+	        if ( placement.container ) {
+	        	$( window ).resize();
+	            baltic.homepageSlider();
+	            baltic.productsSlider();
+	        }
+	    } );
+
 	});
-
-
 
 } )( jQuery );
 

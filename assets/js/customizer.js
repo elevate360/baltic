@@ -35,9 +35,6 @@
 				$( '.site-title a, .site-description, .site-header-extra a, .main-navigation ul.menu>.menu-item>a' ).css( {
 					'color': to
 				} );
-				$( '.header-search-area .search-submit .icon-stroke' ).css( {
-					'stroke': to
-				} );
 			}
 		} );
 	} );
@@ -331,11 +328,5 @@
 			}
 		} );
 	} );
-
-	api.selectiveRefresh.bind( 'partial-content-rendered', function( placement ) {
-
-		$( window ).resize();
-
-	});
 
 } )( jQuery, wp.customize );

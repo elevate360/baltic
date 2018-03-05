@@ -26,6 +26,26 @@ function baltic_is_blog(){
 }
 endif;
 
+if ( ! function_exists( 'baltic_homepage_woocommerce' ) ) :
+/**
+ * Wrapper function for is_woocommerce() WooCommerce
+ */
+function baltic_homepage_woocommerce(){
+
+	if ( ! class_exists( 'WooCommerce' ) ) {
+
+		if ( is_customize_preview() ) {
+			echo '<div class="baltic-require-plugin">';
+			echo esc_html__( 'This homepage block require WooCommerce plugin', 'baltic' );
+			echo '</div>';
+		}
+
+		return true;
+	}
+
+}
+endif;
+
 
 if ( ! function_exists( 'baltic_is_woocommerce' ) ) :
 /**
@@ -48,6 +68,15 @@ function baltic_is_shop(){
 	if ( function_exists( 'is_shop' ) ) {
 		return is_shop();
 	}
+}
+endif;
+
+if ( ! function_exists( 'baltic_is_homepage_template' ) ) :
+/**
+ * Callback funtion for is_page_template( 'templates/homepage.php' );
+ */
+function baltic_is_homepage_template(){
+	return (bool) is_page_template( 'templates/homepage.php' );
 }
 endif;
 
@@ -95,6 +124,62 @@ function baltic_get_breadcrumb_link( $url, $title, $content, $sep = '' ) {
 	}
 
 	return $link;
+
+}
+endif;
+
+if ( ! function_exists( 'baltic_get_terms' ) ) :
+/**
+ * Get an array of terms from a taxonomy
+ *
+ * @static
+ * @access public
+ * @param string|array $taxonomies See https://developer.wordpress.org/reference/functions/get_terms/ for details.
+ * @return array
+ */
+function baltic_get_terms( $taxonomies ) {
+
+	$items = array();
+
+	// Get the post types.
+	$terms = get_terms( array(
+    	'taxonomy' 		=> $taxonomies
+	) );
+
+	// Build the array.
+	foreach ( $terms as $term ) {
+		$items[ $term->term_id ] = $term->name;
+	}
+
+	return $items;
+
+}
+endif;
+
+if ( ! function_exists( 'baltic_get_terms_slug' ) ) :
+/**
+ * Get an array of terms from a taxonomy
+ *
+ * @static
+ * @access public
+ * @param string|array $taxonomies See https://developer.wordpress.org/reference/functions/get_terms/ for details.
+ * @return array
+ */
+function baltic_get_terms_slug( $taxonomies ) {
+
+	$items = array();
+
+	// Get the post types.
+	$terms = get_terms( array(
+    	'taxonomy' 		=> $taxonomies
+	) );
+
+	// Build the array.
+	foreach ( $terms as $term ) {
+		$items[ $term->slug ] = $term->name;
+	}
+
+	return $items;
 
 }
 endif;

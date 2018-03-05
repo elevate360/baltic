@@ -68,16 +68,22 @@ function baltic_customize_register( $wp_customize ){
 	) );
 
 	/** WP */
+	$wp_customize->get_section( 'title_tagline' )->panel 		= 'baltic_setting_panel';
 	$wp_customize->get_section( 'header_image' )->panel 		= 'baltic_setting_panel';
 	$wp_customize->get_section( 'background_image' )->panel 	= 'baltic_setting_panel';
 	$wp_customize->get_control( 'header_textcolor' )->section 	= 'baltic_header_color_section';
 	$wp_customize->get_control( 'background_color' )->section 	= 'baltic_bg_color_section';
 
-	$wp_customize->get_setting( 'blogname' )->transport         	= 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  	= 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport 	= 'postMessage';
-	$wp_customize->get_setting( 'header_image' )->transport 		= 'postMessage';
-	$wp_customize->get_setting( 'header_image_data'  )->transport 	= 'postMessage';
+	$wp_settings = array(
+		'blogname',
+		'blogdescription',
+		'header_textcolor',
+		'header_image',
+		'header_image_data',
+	);
+	foreach ( $wp_settings as $wp_setting ) {
+		$wp_customize->get_setting( $wp_setting )->transport = 'postMessage';
+	}
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
@@ -100,6 +106,7 @@ if ( class_exists( 'Kirki' ) ) {
 	require get_parent_theme_file_path( '/inc/customizer/settings/typography.php' );
 	require get_parent_theme_file_path( '/inc/customizer/settings/baltic-settings.php' );
 	require get_parent_theme_file_path( '/inc/customizer/settings/colors.php' );
+	require get_parent_theme_file_path( '/inc/customizer/settings/homepage.php' );
 	if ( class_exists( 'WooCommerce' ) ) {
 		require get_parent_theme_file_path( '/inc/customizer/settings/woocommerce.php' );
 	}

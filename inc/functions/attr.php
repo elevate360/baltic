@@ -244,6 +244,10 @@ function baltic_attr_site_main( $attr ) {
 	$attr['id'] 	= 'main';
 	$attr['class']  = 'site-main';
 
+	if ( is_page_template( 'templates/homepage.php' ) ) {
+		$attr['class']  = 'site-main baltic-homepage';
+	}
+
 	return $attr;
 
 }

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Baltic 1.0.0\n"
 "Report-Msgid-Bugs-To: https://elevate360/contact\n"
-"POT-Creation-Date: 2018-02-26 20:46:27+00:00\n"
+"POT-Creation-Date: 2018-03-05 00:01:48+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -280,6 +280,8 @@ msgid "Hide"
 msgstr ""
 
 #: inc/customizer/settings/baltic-settings.php:137
+#: inc/customizer/settings/homepage.php:478
+#: inc/customizer/settings/homepage.php:485
 #: inc/customizer/settings/woocommerce.php:79
 msgid "Layout"
 msgstr ""
@@ -374,80 +376,430 @@ msgstr ""
 msgid "Header Background Color"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:33
-msgid "Background"
+#: inc/customizer/settings/colors.php:34
+msgid "Header search background color"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:39
-msgid "Selection"
+#: inc/customizer/settings/colors.php:50
+msgid "Header search background color focus"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:46
-msgid "Color Background Highlight"
+#: inc/customizer/settings/colors.php:66
+msgid "Header search text color"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:65
-msgid "Color Text Highlight"
+#: inc/customizer/settings/colors.php:102
+msgid "Header search text color focus"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:83
-msgid "Text"
+#: inc/customizer/settings/colors.php:138
+msgid "Header search button color"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:90
-msgid "Primary Text Color"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:118
-msgid "Secondary Text Color"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:136
-msgid "TextField"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:143
-msgid "Text Field Color"
+#: inc/customizer/settings/colors.php:154
+msgid "Header search button color hover"
 msgstr ""
 
 #: inc/customizer/settings/colors.php:174
-msgid "Text Field Focus Color"
+msgid "Header search icon color"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:188
-msgid "Link"
+#: inc/customizer/settings/colors.php:190
+msgid "Header search icon color hover"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:195
-msgid "Color Link"
+#: inc/customizer/settings/colors.php:205
+#: inc/customizer/settings/homepage.php:523
+#: inc/customizer/settings/homepage.php:530
+msgid "Background"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:222
-msgid "Color Link Hover"
+#: inc/customizer/settings/colors.php:211
+msgid "Selection"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:240
-msgid "Button"
+#: inc/customizer/settings/colors.php:218
+msgid "Color Background Highlight"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:247
-msgid "Color Text Button"
+#: inc/customizer/settings/colors.php:237
+msgid "Color Text Highlight"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:255
+msgid "Text"
 msgstr ""
 
 #: inc/customizer/settings/colors.php:262
+msgid "Primary Text Color"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:290
+msgid "Secondary Text Color"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:308
+msgid "TextField"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:315
+msgid "Text Field Color"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:346
+msgid "Text Field Focus Color"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:360
+msgid "Link"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:367
+msgid "Color Link"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:394
+msgid "Color Link Hover"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:412
+msgid "Button"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:419
+msgid "Color Text Button"
+msgstr ""
+
+#: inc/customizer/settings/colors.php:434
 msgid "Color Background Button"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:281
+#: inc/customizer/settings/colors.php:453
 msgid "Color Button Hover"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:298
+#: inc/customizer/settings/colors.php:470
 msgid "Border"
 msgstr ""
 
-#: inc/customizer/settings/colors.php:305
+#: inc/customizer/settings/colors.php:477
 msgid "Color Border"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:14
+msgid "Homepage Slider"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:21
+msgid "Slides"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:27
+#: inc/customizer/settings/homepage.php:569
+msgid "Slider"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:32
+msgid "slide"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:37
+msgid "Slide title #1"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:38
+msgid "Slide description #1"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:40
+msgid "Button text #1A"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:42
+msgid "Button text #1B"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:46
+msgid "Slide title #2"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:47
+msgid "Slide description #2"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:49
+msgid "Button text #2A"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:51
+msgid "Button text #2B"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:58
+#: inc/customizer/settings/homepage.php:214
+#: inc/customizer/settings/homepage.php:397
+msgid "Title"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:59
+msgid "Slide title"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:63
+#: inc/customizer/settings/homepage.php:388
+#: inc/customizer/settings/homepage.php:412
+msgid "Description"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:64
+msgid "Slide description"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:68
+msgid "Image"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:73
+msgid "Button Text #1"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:74
+msgid "Button text"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:78
+msgid "Button Link #1"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:83
+msgid "Button Text #2"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:88
+msgid "Button Link #2"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:104
+msgid "Slides Setting"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:111
+msgid "Effect"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:117
+msgid "Fade"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:118
+msgid "Slide"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:131
+msgid "Product Categories #%s"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:137
+msgid "Product categories"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:144
+msgid "Product Categories"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:173
+msgid "Products #%s"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:179
+msgid "Property"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:187
+msgid "Categories"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:205
+msgid "Orderby"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:208
+msgid "Date"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:209
+msgid "ID"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:210
+msgid "Menu Order"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:211
+msgid "Popularity"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:212
+msgid "Random"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:213
+msgid "Rating"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:230
+msgid "Order"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:233
+msgid "Lowest to highest"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:234
+msgid "Highest to lowest"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:250
+msgid "Visibility"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:253
+msgid "Visible"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:254
+msgid "Catalog"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:255
+#: woocommerce/product-searchform.php:31
+msgid "Search"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:256
+msgid "Hidden"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:257
+msgid "Featured"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:273
+#: inc/vendor/class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:276 inc/plugins/demo-import.php:24
+msgid "Default"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:277
+msgid "On Sale"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:278
+msgid "Best Selling"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:279
+msgid "Top Rated"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:306
+#: inc/customizer/settings/homepage.php:314
+msgid "Display"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:317
+msgid "Grid"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:318
+msgid "Slideshow"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:334
+msgid "Limit"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:355
+msgid "Columns"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:427
+msgid "Text and description aligment"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:431
+msgid "Left"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:432
+msgid "Center"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:433
+msgid "Right"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:448
+msgid "Text and description color"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:489
+msgid "Boxed"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:490
+msgid "Full width"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:506
+msgid "Spacing"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:553
+msgid "Homepage Order"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:570
+msgid "Product Categories #1"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:571
+msgid "Product Categories #2"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:572
+msgid "Products #1"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:573
+msgid "Products #2"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:574
+msgid "Products #3"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:575
+msgid "Products #4"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:576
+msgid "Posts #1"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:577
+msgid "Posts #2"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:578
+msgid "Testimonial"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:579
+msgid "Latest Tweet"
 msgstr ""
 
 #: inc/customizer/settings/typography.php:10
@@ -570,27 +922,31 @@ msgstr ""
 msgid "Please define an SVG icon filename."
 msgstr ""
 
-#: inc/functions/options.php:151
+#: inc/functions/options.php:161
 msgid "Continue reading"
 msgstr ""
 
-#: inc/functions/options.php:156
+#: inc/functions/options.php:166
 msgid "Copyright &copy; 2016-[YEAR] [SITE]. Proudly powered by [WP]."
 msgstr ""
 
-#: inc/functions/utility.php:206
+#: inc/functions/utility.php:39
+msgid "This homepage block require WooCommerce plugin"
+msgstr ""
+
+#: inc/functions/utility.php:291
 msgid "Content Sidebar"
 msgstr ""
 
-#: inc/functions/utility.php:207
+#: inc/functions/utility.php:292
 msgid "Sidebar Content"
 msgstr ""
 
-#: inc/functions/utility.php:208
+#: inc/functions/utility.php:293
 msgid "Full Width"
 msgstr ""
 
-#: inc/functions/utility.php:209
+#: inc/functions/utility.php:294
 msgid "Narrow"
 msgstr ""
 
@@ -619,10 +975,6 @@ msgstr ""
 msgid "Premium"
 msgstr ""
 
-#: inc/plugins/demo-import.php:24
-msgid "Default"
-msgstr ""
-
 #: inc/plugins/demo-import.php:30 inc/plugins/demo-import.php:40
 #: inc/plugins/demo-import.php:50
 msgid "After you import this demo, you will have to setup the slider separately."
@@ -640,11 +992,11 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: inc/plugins/woocommerce/class-wc.php:210
+#: inc/plugins/woocommerce/class-wc.php:204
 msgid "Search results for &ldquo;"
 msgstr ""
 
-#: inc/plugins/woocommerce/class-wc.php:261
+#: inc/plugins/woocommerce/class-wc.php:255
 msgid "Products tagged &ldquo;"
 msgstr ""
 
@@ -947,10 +1299,6 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2554
-msgid "Status"
-msgstr ""
-
 #: inc/vendor/class-tgm-plugin-activation.php:2603
 #. translators: %2$s: plugin name in screen reader markup
 msgid "Install %2$s"
@@ -1095,10 +1443,6 @@ msgstr ""
 msgid "WP Term Images"
 msgstr ""
 
-#: woocommerce/product-searchform.php:31
-msgid "Search"
-msgstr ""
-
 #: woocommerce/wishlist-view.php:32
 msgid "Edit title"
 msgstr ""
@@ -1192,7 +1536,7 @@ msgid "Baltic"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://elevatethemes.com.au/baltic"
+msgid "https://baltic.elevatethemes.com.au/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -1204,11 +1548,15 @@ msgid "Elevate360"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://elevatethemes.com.au/"
+msgid "https://campaignkit.co/"
 msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Baltic - Canvas"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Baltic - Homepage"
 msgstr ""
 
 #: comments.php:40
@@ -1235,7 +1583,7 @@ msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
-#: inc/plugins/woocommerce/class-wc.php:261
+#: inc/plugins/woocommerce/class-wc.php:255
 msgctxt "endquote"
 msgid "&rdquo;"
 msgstr ""

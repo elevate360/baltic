@@ -15,7 +15,7 @@ function baltic_page_header() {
 		return;
 	}
 
-	if ( is_page_template( 'templates/canvas.php' ) ) {
+	if ( is_page_template( 'templates/canvas.php' ) || is_page_template( 'templates/homepage.php' ) ) {
 		return;
 	}
 

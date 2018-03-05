@@ -143,6 +143,23 @@ class Baltic_Init {
 			'default-attachment'    => 'scroll'
 		) ) );
 
+		/**
+		* Add support for Gutenberg.
+		*
+		* @link https://wordpress.org/gutenberg/handbook/reference/theme-support/
+		*/
+		add_theme_support( 'gutenberg', array(
+
+		    // Make specific theme colors available in the editor.
+		    'colors' => array(
+		        baltic_get_option( 'color_text_primary' ),
+		        baltic_get_option( 'color_text_secondary' ),
+		        baltic_get_option( 'color_link_primary' ),
+		        baltic_get_option( 'color_link_secondary' ),
+		    ),
+
+		) );
+
 		/** Add theme support for selective refresh for widgets. */
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
@@ -231,10 +248,18 @@ class Baltic_Init {
 		wp_enqueue_script( 'jquery-fitvids', get_theme_file_uri( "/assets/js/fitvids/jquery.fitvids$suffix.js" ), array( 'jquery' ), '1.2.0', true );
 		wp_enqueue_script( 'jquery-stickit', get_theme_file_uri( "/assets/js/stickit/jquery.stickit$suffix.js" ), array( 'jquery' ), '0.2.13', true );
 		wp_enqueue_script( 'jquery-match-height', get_theme_file_uri( "/assets/js/match-height/jquery.matchHeight$suffix.js" ), array( 'jquery' ), '0.7.2', true );
-		wp_enqueue_script( 'jquery-slick', get_theme_file_uri( "/assets/js/slick/slick$suffix.js" ), array( 'jquery' ), '1.7.1', true );
+		wp_enqueue_script( 'jquery-slick', get_theme_file_uri( "/assets/js/slick/slick$suffix.js" ), array( 'jquery' ), '1.8.0', true );
 
 		// Main script
-		wp_enqueue_script( 'baltic-script', get_theme_file_uri( "/assets/js/frontend$suffix.js" ), array( 'jquery' ), '20151215', true );
+		wp_enqueue_script( 'baltic-script', get_theme_file_uri( "/assets/js/frontend$suffix.js" ), array( 'jquery', 'flexslider' ), '20151215', true );
+
+		$output = array(
+			'sliderPrevBtn'	=> '<button type="button" data-role="none" class="baltic-slick-prev" aria-label="Previous" tabindex="0" role="button">'. baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'chevron-left' ) ) .'</button>',
+			'sliderNextBtn' => '<button type="button" data-role="none" class="baltic-slick-next" aria-label="Next" tabindex="0" role="button">'. baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'chevron-right' ) ) .'</button>',
+			'ajax_url'		=> admin_url( 'admin-ajax.php' ),
+			'loader'		=> str_replace( array( "\n", "\t", "\r" ), '', baltic_get_preloader() )
+		);
+		wp_localize_script( 'baltic-script', 'Balticl10n', $output );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
@@ -275,6 +300,7 @@ class Baltic_Init {
 		require get_parent_theme_file_path( '/inc/structure/sidebar.php' );
 		require get_parent_theme_file_path( '/inc/structure/entry.php' );
 		require get_parent_theme_file_path( '/inc/structure/footer.php' );
+		require get_parent_theme_file_path( '/inc/structure/homepage.php' );
 
 	}
 

@@ -28,3 +28,31 @@
 	margin-left:  0;
 	margin-right: 8px;
 }
+
+li#accordion-panel-baltic_homepage_slider_panel,
+li#accordion-panel-baltic_homepage_product_categories_1_panel,
+li#accordion-panel-baltic_homepage_product_categories_2_panel,
+li#accordion-panel-baltic_homepage_products_1_panel,
+li#accordion-panel-baltic_homepage_products_2_panel,
+li#accordion-panel-baltic_homepage_products_3_panel,
+li#accordion-panel-baltic_homepage_products_4_panel,
+li#accordion-panel-baltic_homepage_latest_posts_panel,
+li#accordion-panel-baltic_homepage_posts_1_panel,
+li#accordion-panel-baltic_homepage_posts_2_panel,
+li#accordion-panel-baltic_homepage_latest_tweets_panel,
+li#accordion-section-baltic_homepage_order {
+	> h3.accordion-section-title:before {
+		font-family: dashicons;
+		content: "\f180";
+		position: relative;
+		display: inline-block;
+		speak: none;
+		text-align: center;
+		vertical-align: top;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+	}
+}
+li#accordion-section-baltic_homepage_order > h3.accordion-section-title:before {
+	content: "\f333";
+}

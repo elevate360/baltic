@@ -1,0 +1,52 @@
+.baltic-require-plugin {
+	background-color: $woocommerce__color-error;
+	color: $color__white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.homepage-section {
+	padding-top: $gutter__width*2;
+	padding-bottom: $gutter__width*2;
+}
+
+/** Slider */
+.baltic-homepage-slider {
+
+}
+
+.slide-item {
+	position: relative;
+}
+
+.slide-inner {
+	text-align: center;
+	padding: $gutter__width*8 $gutter__width*2;
+	max-width: 720px;
+	margin-left: auto;
+	margin-right: auto;
+	min-height: 60vh;
+}
+
+.slide-button-1,
+.slide-button-2 {
+	padding: 1rem 1.5rem;
+	margin: 0 5px;
+}
+
+
+/** Products section */
+.homepage-products {
+
+	.baltic-slick-dots {
+		bottom: -1rem;
+	}
+
+	.baltic-slick-dots li button {
+		background-color: $color__text-main;
+		width: .5rem;
+		height: .5rem;
+		border-radius: .5rem;
+	}
+
+}

@@ -22,8 +22,180 @@ Kirki::add_field( 'baltic', array(
 	'transport'		=> 'auto',
 	'output'		=> array(
 		array(
-			'element'  => '.site-header',
+			'element'  => '.site-header, .menu-toggle, .menu-toggle:hover, .menu-toggle:focus, .toggled .menu-toggle',
 			'property' => 'background-color',
+		)
+	)
+) );
+
+Kirki::add_field( 'baltic', array(
+	'type'        	=> 'color',
+	'settings'    	=> 'color_header_input',
+	'label'       	=> __( 'Header search background color', 'baltic' ),
+	'section'     	=> 'baltic_header_color_section',
+	'default'     	=> $default['color_header_input'],
+	'choices'     	=> array( 'alpha' => true ),
+	'transport'		=> 'auto',
+	'output'		=> array(
+		array(
+			'element'  => '.header-search-area input[type=search], .header-search-area select',
+			'property' => 'background-color',
+		),
+	)
+) );
+
+Kirki::add_field( 'baltic', array(
+	'type'        	=> 'color',
+	'settings'    	=> 'color_header_input_focus',
+	'label'       	=> __( 'Header search background color focus', 'baltic' ),
+	'section'     	=> 'baltic_header_color_section',
+	'default'     	=> $default['color_header_input_focus'],
+	'choices'     	=> array( 'alpha' => true ),
+	'transport'		=> 'auto',
+	'output'		=> array(
+		array(
+			'element'  => '.header-search-area input[type=search]:focus',
+			'property' => 'background-color',
+		),
+	)
+) );
+
+Kirki::add_field( 'baltic', array(
+	'type'        	=> 'color',
+	'settings'    	=> 'color_header_textfield',
+	'label'       	=> __( 'Header search text color', 'baltic' ),
+	'section'     	=> 'baltic_header_color_section',
+	'default'     	=> $default['color_header_textfield'],
+	'choices'     	=> array( 'alpha' => true ),
+	'transport'		=> 'auto',
+	'output'		=> array(
+		array(
+			'element'  => '.header-search-area input[type=search]',
+			'property' => 'color',
+		),
+		array(
+			'element'  => '.header-search-area select',
+			'property' => 'color',
+		),
+		array(
+			'element'	=> '.header-search-area input[type=search]::-webkit-input-placeholder',
+			'property'	=> 'color'
+		),
+		array(
+			'element'	=> '.header-search-area input[type=search]::-moz-placeholder',
+			'property'	=> 'color'
+		),
+		array(
+			'element'	=> '.header-search-area input[type=search]:-ms-input-placeholder',
+			'property'	=> 'color'
+		),
+		array(
+			'element'	=> '.header-search-area input[type=search]:-moz-placeholder',
+			'property'	=> 'color'
+		),
+	)
+) );
+
+Kirki::add_field( 'baltic', array(
+	'type'        	=> 'color',
+	'settings'    	=> 'color_header_textfield_focus',
+	'label'       	=> __( 'Header search text color focus', 'baltic' ),
+	'section'     	=> 'baltic_header_color_section',
+	'default'     	=> $default['color_header_textfield_focus'],
+	'choices'     	=> array( 'alpha' => true ),
+	'transport'		=> 'auto',
+	'output'		=> array(
+		array(
+			'element'  => '.header-search-area input[type=search]:focus',
+			'property' => 'color',
+		),
+		array(
+			'element'  => '.header-search-area select:focus',
+			'property' => 'color',
+		),
+		array(
+			'element'	=> '.header-search-area input[type=search]:focus::-webkit-input-placeholder',
+			'property'	=> 'color'
+		),
+		array(
+			'element'	=> '.header-search-area input[type=search]:focus::-moz-placeholder',
+			'property'	=> 'color'
+		),
+		array(
+			'element'	=> '.header-search-area input[type=search]:focus:-ms-input-placeholder',
+			'property'	=> 'color'
+		),
+		array(
+			'element'	=> '.header-search-area input[type=search]:focus:-moz-placeholder',
+			'property'	=> 'color'
+		),
+	)
+) );
+
+Kirki::add_field( 'baltic', array(
+	'type'        	=> 'color',
+	'settings'    	=> 'color_header_btn',
+	'label'       	=> __( 'Header search button color', 'baltic' ),
+	'section'     	=> 'baltic_header_color_section',
+	'default'     	=> $default['color_header_btn'],
+	'choices'     	=> array( 'alpha' => true ),
+	'transport'		=> 'auto',
+	'output'		=> array(
+		array(
+			'element'  => '.header-search-area .search-submit',
+			'property' => 'background-color',
+		)
+	)
+) );
+
+Kirki::add_field( 'baltic', array(
+	'type'        	=> 'color',
+	'settings'    	=> 'color_header_btn_hover',
+	'label'       	=> __( 'Header search button color hover', 'baltic' ),
+	'section'     	=> 'baltic_header_color_section',
+	'default'     	=> $default['color_header_btn_hover'],
+	'choices'     	=> array( 'alpha' => true ),
+	'transport'		=> 'auto',
+	'output'		=> array(
+		array(
+			'element'  => '.header-search-area .search-submit:hover, .header-search-area .search-submit:focus',
+			'property' => 'background-color',
+		),
+		array(
+			'element'  => '.header-search-area .search-submit:hover, .header-search-area .search-submit:focus',
+			'property' => 'border-color',
+		)
+	)
+) );
+
+Kirki::add_field( 'baltic', array(
+	'type'        	=> 'color',
+	'settings'    	=> 'color_header_btn_icon',
+	'label'       	=> __( 'Header search icon color', 'baltic' ),
+	'section'     	=> 'baltic_header_color_section',
+	'default'     	=> $default['color_header_btn_icon'],
+	'choices'     	=> array( 'alpha' => true ),
+	'transport'		=> 'auto',
+	'output'		=> array(
+		array(
+			'element'  => '.header-search-area .search-submit .icon-stroke',
+			'property' => 'stroke',
+		)
+	)
+) );
+
+Kirki::add_field( 'baltic', array(
+	'type'        	=> 'color',
+	'settings'    	=> 'color_header_btn_icon_hover',
+	'label'       	=> __( 'Header search icon color hover', 'baltic' ),
+	'section'     	=> 'baltic_header_color_section',
+	'default'     	=> $default['color_header_btn_icon_hover'],
+	'choices'     	=> array( 'alpha' => true ),
+	'transport'		=> 'auto',
+	'output'		=> array(
+		array(
+			'element'  => '.header-search-area .search-submit:hover .icon-stroke, .header-search-area .search-submit:focus .icon-stroke',
+			'property' => 'stroke',
 		)
 	)
 ) );

@@ -1,14 +1,14 @@
 /*!
 Theme Name: Baltic
-Theme URI: https://elevatethemes.com.au/baltic
+Theme URI: https://baltic.elevatethemes.com.au/
 Author: Elevate360
-Author URI: https://elevatethemes.com.au/
+Author URI: https://campaignkit.co/
 Description: Baltic WooCommerce Theme
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: baltic
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: custom-background, custom-header, custom-logo, custom-colors, custom-menu, e-commerce, editor-style, featured-images, footer-widgets, full-width-template, microformats, theme-options, blog, left-sidebar, right-sidebar, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -22,6 +22,30 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 # Bootstrap Reboot
+# Elements
+# Typography
+# Forms
+# Accessibility
+# Alignments
+# Clearings
+# Vendor
+	## Preloader
+	## Slick
+# Media
+	## Captions
+	## Galleries
+# Navigation
+	## Menu Toggles
+	## Menus
+	## Social Links
+	## Breadcrumb
+	## Posts Navigation
+# Site
+	## Posts and pages
+	## Comments
+	## Widgets
+# Layout
+# Media Queries
 --------------------------------------------------------------*/
 
 
@@ -974,6 +998,11 @@ ul.products:after,
 # Vendor
 --------------------------------------------------------------*/
 
+
+/*--------------------------------------------------------------
+## Preloader
+--------------------------------------------------------------*/
+
 /*
  *  Usage:
  *
@@ -1757,6 +1786,237 @@ ul.products:after,
 
 
 /*--------------------------------------------------------------
+## Slick
+--------------------------------------------------------------*/
+
+/* Slider */
+
+.slick-slider {
+	display: block;
+	position: relative;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	-webkit-tap-highlight-color: transparent;
+	-ms-touch-action: pan-y;
+	touch-action: pan-y;
+	-webkit-touch-callout: none;
+}
+
+.slick-list {
+	display: block;
+	overflow: hidden;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+.slick-list:focus {
+	outline: none;
+}
+
+.slick-list.dragging {
+	cursor: pointer;
+	cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+	-webkit-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+	display: block;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+.slick-track:before,
+.slick-track:after {
+	display: table;
+	content: "";
+}
+
+.slick-track:after {
+	clear: both;
+}
+
+.slick-loading .slick-track {
+	visibility: hidden;
+}
+
+.slick-slide {
+	display: none;
+	float: left;
+	height: 100%;
+	min-height: 1px;
+}
+
+[dir="rtl"] .slick-slide {
+	float: right;
+}
+
+.slick-slide img {
+	display: block;
+}
+
+.slick-slide.slick-loading img {
+	display: none;
+}
+
+.slick-slide.dragging img {
+	pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+	display: block;
+}
+
+.slick-loading .slick-slide {
+	visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+	display: block;
+	height: auto;
+	border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+	display: none;
+}
+
+/* Slider */
+
+.slick-loading .slick-list {
+	background: #fff url("assets/js/slick/ajax-loader.gif") center center no-repeat;
+}
+
+/* Arrows */
+
+.baltic-slick-prev,
+.baltic-slick-next {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	padding: 0;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	background-color: transparent;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	font-size: 0;
+	cursor: pointer;
+	-webkit-transition: all ease-in-out 0.25s;
+	transition: all ease-in-out 0.25s;
+	-webkit-transform: translate(0, -50%) scale(1);
+	-ms-transform: translate(0, -50%) scale(1);
+	transform: translate(0, -50%) scale(1);
+}
+
+.baltic-slick-prev .icon-stroke,
+.baltic-slick-next .icon-stroke {
+	width: 2rem;
+	height: 2rem;
+}
+
+.baltic-slick-prev:hover,
+.baltic-slick-next:hover {
+	-webkit-transform: translate(0, -50%) scale(1.5);
+	-ms-transform: translate(0, -50%) scale(1.5);
+	transform: translate(0, -50%) scale(1.5);
+}
+
+.baltic-slick-prev:hover,
+.baltic-slick-prev:focus,
+.baltic-slick-next:hover,
+.baltic-slick-next:focus {
+	outline: none;
+	background-color: transparent;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.baltic-slick-prev.slick-disabled:before,
+.baltic-slick-next.slick-disabled:before {
+	opacity: 0.25;
+}
+
+.baltic-slick-prev {
+	left: 20px;
+}
+
+.baltic-slick-next {
+	right: 20px;
+}
+
+/* Dots */
+
+.baltic-slick-dots {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	bottom: 1rem;
+	left: 0;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	list-style: none;
+}
+
+.baltic-slick-dots li {
+	display: inline-block;
+	position: relative;
+	width: 1rem;
+	height: 1rem;
+	margin: 0 5px;
+	padding: 0;
+	cursor: pointer;
+}
+
+.baltic-slick-dots li button {
+	display: block;
+	width: 1rem;
+	height: 1rem;
+	padding: 5px;
+	border: 0;
+	border-radius: 1rem;
+	outline: none;
+	opacity: 0.25;
+	color: transparent;
+	background: #fff;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	font-size: 0;
+	line-height: 0;
+	cursor: pointer;
+	-webkit-transition: all ease-in-out 0.25s;
+	transition: all ease-in-out 0.25s;
+}
+
+.baltic-slick-dots li button:hover,
+.baltic-slick-dots li button:focus {
+	outline: none;
+	opacity: 0.75;
+}
+
+.baltic-slick-dots li.slick-active button {
+	opacity: 1;
+	color: #fff;
+}
+
+
+/*--------------------------------------------------------------
 # CF7
 --------------------------------------------------------------*/
 
@@ -2061,6 +2321,12 @@ svg symbol {
 
 .gallery-caption {
 	display: block;
+}
+
+.wp-block-gallery {
+	margin-right: -8px;
+	margin-left: -8px;
+	padding: 0;
 }
 
 
@@ -3165,6 +3431,57 @@ a.more-link:focus .icon-stroke {
 
 
 /*--------------------------------------------------------------
+## Homepage
+--------------------------------------------------------------*/
+
+.baltic-require-plugin {
+	padding: 1rem;
+	color: #fff;
+	background-color: #e2401c;
+	text-align: center;
+}
+
+.homepage-section {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+/** Slider */
+
+.slide-item {
+	position: relative;
+}
+
+.slide-inner {
+	max-width: 720px;
+	min-height: 60vh;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 80px 20px;
+	text-align: center;
+}
+
+.slide-button-1,
+.slide-button-2 {
+	margin: 0 5px;
+	padding: 1rem 1.5rem;
+}
+
+/** Products section */
+
+.homepage-products .baltic-slick-dots {
+	bottom: -1rem;
+}
+
+.homepage-products .baltic-slick-dots li button {
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 0.5rem;
+	background-color: #505050;
+}
+
+
+/*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
 
@@ -3665,6 +3982,11 @@ a.custom-logo-link {
 		width: 100%;
 		color: #505050;
 		line-height: 1.5;
+	}
+
+	.main-navigation ul.menu > li {
+		-webkit-box-shadow: none;
+		box-shadow: none;
 	}
 
 	.main-navigation ul.menu .menu-item {

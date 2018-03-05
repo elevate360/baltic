@@ -86,12 +86,6 @@ class Baltic_WooCommerce {
 
 		wp_add_inline_style( 'baltic-woocommerce-style', $inline_style );
 
-		$output = array(
-			'ajax_url'	=> admin_url( 'admin-ajax.php' ),
-			'loader'	=> baltic_get_preloader()
-		);
-		wp_localize_script( 'baltic-script', 'Balticl10n', $output );
-
 	}
 
 	/**

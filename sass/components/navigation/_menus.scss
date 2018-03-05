@@ -114,6 +114,10 @@
 			line-height: 1.5;
 			width: 100%;
 
+			> li {
+				box-shadow: none;
+			}
+
 			.menu-item {
 				border: none;
 				display: block;

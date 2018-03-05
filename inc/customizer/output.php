@@ -34,19 +34,22 @@ function baltic_header_style() {
 			clip: rect(1px, 1px, 1px, 1px);
 		}
 		';
-	} else {
-		$css .= '
-		.site-title a,
-		.site-description,
-		.site-header-extra a,
-		.main-navigation ul.menu>.menu-item>a {
-			color: # '. esc_attr( $header_text_color ) .';
-		}
-		.header-search-area .search-submit .icon-stroke {
-			stroke: # '. esc_attr( $header_text_color ) .';
-		}
-		';
 	}
+
+	$css .= '
+	.site-title a,
+	.site-description,
+	.site-header-extra a,
+	.main-navigation ul.menu>.menu-item>a,
+	.menu-toggle,
+	.menu-toggle:focus,
+	.menu-toggle:hover,
+	.toggled .menu-toggle,
+	.site-header-extra a,
+	.header-menu-toggle {
+		color: #'. esc_attr( $header_text_color ) .'!important;
+	}
+	';
 
     $css = str_replace( array( "\n", "\t", "\r" ), '', $css );
 
