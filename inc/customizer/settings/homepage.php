@@ -25,7 +25,7 @@ function baltic_customize_register_homepage() {
 			Kirki::add_field( 'baltic', array(
 				'type'        => 'repeater',
 				'label'       => esc_html__( 'Slider', 'baltic' ),
-				'section'     => 'baltic_homepage_slider_panel',
+				'section'     => 'baltic_homepage_slider_section',
 				'priority'    => 10,
 				'row_label' => array(
 					'type' => 'text',
@@ -106,16 +106,40 @@ function baltic_customize_register_homepage() {
 		) );
 
 			Kirki::add_field( 'baltic', array(
+				'type'        	=> 'color',
+				'settings'    	=> 'baltic_homepage_slider_color',
+				'label'       	=> __( 'Text color', 'baltic' ),
+				'section'     	=> 'baltic_homepage_slider_setting',
+				'default'     	=> $default['color_text_primary'],
+				'choices'     	=> array( 'alpha' => true ),
+				'transport'		=> 'auto',
+				'output'		=> array(
+					array(
+						'element'  => '.slide-content',
+						'property' => 'color',
+					),
+				)
+			) );
+
+			Kirki::add_field( 'baltic', array(
 				'type'        => 'select',
 				'settings'    => 'baltic_homepage_slider_effect',
 				'label'       => __( 'Effect', 'baltic' ),
 				'section'     => 'baltic_homepage_slider_setting',
-				'default'     => 'fade',
+				'default'     => 'true',
 				'priority'    => 10,
 				'multiple'    => 1,
 				'choices'     => array(
-					'fade' 	=> esc_html__( 'Fade', 'baltic' ),
-					'slide' => esc_html__( 'Slide', 'baltic' )
+					'true' 	=> esc_html__( 'Fade', 'baltic' ),
+					'false' => esc_html__( 'Slide', 'baltic' )
+				),
+				'transport'	=> 'auto',
+				'partial_refresh' => array(
+					'baltic_homepage_slider_effect' => array(
+						'selector'        		=> '.baltic-homepage-slider',
+						'render_callback' 		=> 'baltic_homepage_slider',
+						'container_inclusive' 	=> true
+					),
 				),
 			) );
 
@@ -139,17 +163,14 @@ function baltic_customize_register_homepage() {
 		) );
 
 			Kirki::add_field( 'baltic', array(
-				'type'        	=> 'select',
-				'settings'    	=> 'baltic_homepage_' . $setting,
-				'label'       	=> __( 'Product Categories', 'baltic' ),
-				'section'     	=> 'baltic_homepage_'. $setting .'_selector',
-				'default'     	=> '',
-				'priority'    	=> 10,
-				'multiple'    	=> 3,
-				'choices'     	=> baltic_get_terms( 'product_cat' ),
-				'transport' 	=> 'auto',
+				'type'        	=> 'text',
+				'settings'    	=> 'baltic_homepage_' . $setting . '_btn_text',
+				'label'       	=> esc_attr__( 'Button text', 'baltic' ),
+				'section'     	=> 'baltic_homepage_' . $setting . '_selector',
+				'default'     	=> esc_html__( 'Shop Now', 'baltic' ),
+				'transport'		=> 'auto',
 				'partial_refresh' => array(
-					'baltic_homepage' . $setting => array(
+					'baltic_homepage' . $setting .'_btn_text' => array(
 						'selector'        		=> '.baltic-homepage-' . str_replace( '_', '-', $setting ),
 						'render_callback' 		=> 'baltic_homepage_' . $setting,
 						'container_inclusive' 	=> true
@@ -158,6 +179,44 @@ function baltic_customize_register_homepage() {
 			) );
 
 	}
+
+		Kirki::add_field( 'baltic', array(
+			'type'        	=> 'select',
+			'settings'    	=> 'baltic_homepage_product_categories_1',
+			'label'       	=> __( 'Product Categories', 'baltic' ),
+			'section'     	=> 'baltic_homepage_product_categories_1_selector',
+			'default'     	=> '',
+			'priority'    	=> 1,
+			'multiple'    	=> 6,
+			'choices'     	=> baltic_get_terms( 'product_cat' ),
+			'transport' 	=> 'auto',
+			'partial_refresh' => array(
+				'baltic_homepage_product_categories_1' => array(
+					'selector'        		=> '.baltic-homepage-product-categories-1',
+					'render_callback' 		=> 'baltic_homepage_product_categories_1',
+					'container_inclusive' 	=> true
+				),
+			),
+		) );
+
+		Kirki::add_field( 'baltic', array(
+			'type'        	=> 'select',
+			'settings'    	=> 'baltic_homepage_product_categories_2',
+			'label'       	=> __( 'Product Categories', 'baltic' ),
+			'section'     	=> 'baltic_homepage_product_categories_2_selector',
+			'default'     	=> '',
+			'priority'    	=> 1,
+			'multiple'    	=> 999,
+			'choices'     	=> baltic_get_terms( 'product_cat' ),
+			'transport' 	=> 'auto',
+			'partial_refresh' => array(
+				'baltic_homepage_product_categories_2' => array(
+					'selector'        		=> '.baltic-homepage-product-categories-2',
+					'render_callback' 		=> 'baltic_homepage_product_categories_2',
+					'container_inclusive' 	=> true
+				),
+			),
+		) );
 
 	$products = array(
 		'products_1',

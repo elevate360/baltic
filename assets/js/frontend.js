@@ -6,7 +6,8 @@
 
 		baltic.$body 	= $( document.body ),
 		baltic.$window 	= $( window ),
-		baltic.$html 	= $( 'html' );
+		baltic.$html 	= $( 'html' ),
+		baltic.$header  = $( '.site-header' );
 
 		this.inlineSVG();
 		this.fitVids();
@@ -96,7 +97,7 @@
 
 	baltic.stickyHeader = function() {
 
-		$( '.site-header' ).stickit({
+		baltic.$header.stickit({
 			screenMinWidth: 782,
 			zIndex: 5
 		});
@@ -142,7 +143,7 @@
 
 			var $this = $(this);
 			var $hasPostThumbnail = $this.find( '.jumbotron-header-thumbnail' );
-			var headerHeight = $( '.site-header' ).height();
+			var headerHeight = baltic.$header.height();
 
 			if ( $hasPostThumbnail.length !== 0 ) {
 				$this.addClass( 'has-archive-thumbnail' );
@@ -219,12 +220,20 @@
 
 	baltic.homepageSlider = function() {
 
+		var $slide = $( '.baltic-homepage-slider-container' ),
+			effect = $slide.parent().data( 'fade' ),
+			headerHeight = baltic.$header.height();
+
+		if ( baltic.$window.width() > 768 ) {
+			$( '.slide-inner' ).css( 'min-height', 'calc( 100vh - '+ headerHeight +'px )' );
+		}
+
 		$( '.baltic-homepage-slider-container' ).not('.slick-initialized').slick({
 			lazyLoad: 'progressive',
 			infinite: true,
 			adaptiveHeight: true,
 			slidesToScroll: 1,
-			fade: false,
+			fade: effect,
 			slidesToShow: 1,
 			autoplay: true,
 			autoplaySpeed: 5000,
@@ -249,7 +258,7 @@
 
 	baltic.productsSlider = function() {
 
-		$slider = $( '.homepage-section.slider' );
+		var $slider 	 = $( '.homepage-section.slider' );
 
 	    if ( 'undefined' === typeof $slider ) {
 	        return;
@@ -257,9 +266,9 @@
 
 		$slider.each( function(){
 
-			$this = $(this),
-			sliderID = $this.attr('id'),
-			columns = $this.data('columns');
+			var $this 		 = $(this),
+				sliderID 	 = $this.attr('id'),
+				columns 	 = $this.data('columns');
 
 			$( '#' + sliderID + ' .products' ).not('.slick-initialized').slick({
 				lazyLoad: 'progressive',
@@ -279,8 +288,8 @@
 					{
 						breakpoint: 788,
 						settings: {
-							fade: true,
-							slidesToShow: 1
+							fade: false,
+							slidesToShow: 2
 						}
 					}
 				]
@@ -367,6 +376,15 @@
 
 		baltic.$body.on( 'wc_fragments_refreshed', function () {
 			baltic.stickyOrder();
+		});
+
+	    if ( 'undefined' === typeof jetpackLazyImagesModule ) {
+	        return;
+	    }
+
+		baltic.$body.on( 'afterChange', function () {
+			jetpackLazyImagesModule( $ );
+			baltic.matchHeight();
 		});
 
 	};

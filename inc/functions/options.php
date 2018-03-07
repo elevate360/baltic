@@ -19,6 +19,8 @@ function baltic_get_option( $name ){
 
 	if ( array_key_exists( $name, $setting ) ) {
 		return get_theme_mod( esc_attr( $name ), $setting[$name] );
+	} else {
+		return get_theme_mod( esc_attr( $name ) );
 	}
 
 }

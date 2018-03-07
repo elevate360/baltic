@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Baltic 1.0.0\n"
 "Report-Msgid-Bugs-To: https://elevate360/contact\n"
-"POT-Creation-Date: 2018-03-05 00:01:48+00:00\n"
+"POT-Creation-Date: 2018-03-07 19:09:29+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -107,6 +107,11 @@ msgstr ""
 
 #: components/header/skip-links.php:24
 msgid "Skip to secondary navigation"
+msgstr ""
+
+#: components/homepage/product-categories-1.php:25
+#: inc/customizer/settings/homepage.php:170
+msgid "Shop Now"
 msgstr ""
 
 #: components/menus/menu-primary.php:16
@@ -280,8 +285,8 @@ msgid "Hide"
 msgstr ""
 
 #: inc/customizer/settings/baltic-settings.php:137
-#: inc/customizer/settings/homepage.php:478
-#: inc/customizer/settings/homepage.php:485
+#: inc/customizer/settings/homepage.php:537
+#: inc/customizer/settings/homepage.php:544
 #: inc/customizer/settings/woocommerce.php:79
 msgid "Layout"
 msgstr ""
@@ -409,8 +414,8 @@ msgid "Header search icon color hover"
 msgstr ""
 
 #: inc/customizer/settings/colors.php:205
-#: inc/customizer/settings/homepage.php:523
-#: inc/customizer/settings/homepage.php:530
+#: inc/customizer/settings/homepage.php:582
+#: inc/customizer/settings/homepage.php:589
 msgid "Background"
 msgstr ""
 
@@ -495,7 +500,7 @@ msgid "Slides"
 msgstr ""
 
 #: inc/customizer/settings/homepage.php:27
-#: inc/customizer/settings/homepage.php:569
+#: inc/customizer/settings/homepage.php:628
 msgid "Slider"
 msgstr ""
 
@@ -536,8 +541,8 @@ msgid "Button text #2B"
 msgstr ""
 
 #: inc/customizer/settings/homepage.php:58
-#: inc/customizer/settings/homepage.php:214
-#: inc/customizer/settings/homepage.php:397
+#: inc/customizer/settings/homepage.php:273
+#: inc/customizer/settings/homepage.php:456
 msgid "Title"
 msgstr ""
 
@@ -546,8 +551,8 @@ msgid "Slide title"
 msgstr ""
 
 #: inc/customizer/settings/homepage.php:63
-#: inc/customizer/settings/homepage.php:388
-#: inc/customizer/settings/homepage.php:412
+#: inc/customizer/settings/homepage.php:447
+#: inc/customizer/settings/homepage.php:471
 msgid "Description"
 msgstr ""
 
@@ -564,6 +569,7 @@ msgid "Button Text #1"
 msgstr ""
 
 #: inc/customizer/settings/homepage.php:74
+#: inc/customizer/settings/homepage.php:168
 msgid "Button text"
 msgstr ""
 
@@ -584,221 +590,226 @@ msgid "Slides Setting"
 msgstr ""
 
 #: inc/customizer/settings/homepage.php:111
+msgid "Text color"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:127
 msgid "Effect"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:117
+#: inc/customizer/settings/homepage.php:133
 msgid "Fade"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:118
+#: inc/customizer/settings/homepage.php:134
 msgid "Slide"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:131
+#: inc/customizer/settings/homepage.php:155
 msgid "Product Categories #%s"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:137
+#: inc/customizer/settings/homepage.php:161
 msgid "Product categories"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:144
+#: inc/customizer/settings/homepage.php:186
+#: inc/customizer/settings/homepage.php:205
 msgid "Product Categories"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:173
+#: inc/customizer/settings/homepage.php:232
 msgid "Products #%s"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:179
+#: inc/customizer/settings/homepage.php:238
 msgid "Property"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:187
+#: inc/customizer/settings/homepage.php:246
 msgid "Categories"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:205
+#: inc/customizer/settings/homepage.php:264
 msgid "Orderby"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:208
+#: inc/customizer/settings/homepage.php:267
 msgid "Date"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:209
+#: inc/customizer/settings/homepage.php:268
 msgid "ID"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:210
+#: inc/customizer/settings/homepage.php:269
 msgid "Menu Order"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:211
+#: inc/customizer/settings/homepage.php:270
 msgid "Popularity"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:212
+#: inc/customizer/settings/homepage.php:271
 msgid "Random"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:213
+#: inc/customizer/settings/homepage.php:272
 msgid "Rating"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:230
+#: inc/customizer/settings/homepage.php:289
 msgid "Order"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:233
+#: inc/customizer/settings/homepage.php:292
 msgid "Lowest to highest"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:234
+#: inc/customizer/settings/homepage.php:293
 msgid "Highest to lowest"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:250
+#: inc/customizer/settings/homepage.php:309
 msgid "Visibility"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:253
+#: inc/customizer/settings/homepage.php:312
 msgid "Visible"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:254
+#: inc/customizer/settings/homepage.php:313
 msgid "Catalog"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:255
+#: inc/customizer/settings/homepage.php:314
 #: woocommerce/product-searchform.php:31
 msgid "Search"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:256
+#: inc/customizer/settings/homepage.php:315
 msgid "Hidden"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:257
+#: inc/customizer/settings/homepage.php:316
 msgid "Featured"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:273
+#: inc/customizer/settings/homepage.php:332
 #: inc/vendor/class-tgm-plugin-activation.php:2554
 msgid "Status"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:276 inc/plugins/demo-import.php:24
+#: inc/customizer/settings/homepage.php:335 inc/plugins/demo-import.php:24
 msgid "Default"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:277
+#: inc/customizer/settings/homepage.php:336
 msgid "On Sale"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:278
+#: inc/customizer/settings/homepage.php:337
 msgid "Best Selling"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:279
+#: inc/customizer/settings/homepage.php:338
 msgid "Top Rated"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:306
-#: inc/customizer/settings/homepage.php:314
+#: inc/customizer/settings/homepage.php:365
+#: inc/customizer/settings/homepage.php:373
 msgid "Display"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:317
+#: inc/customizer/settings/homepage.php:376
 msgid "Grid"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:318
+#: inc/customizer/settings/homepage.php:377
 msgid "Slideshow"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:334
+#: inc/customizer/settings/homepage.php:393
 msgid "Limit"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:355
+#: inc/customizer/settings/homepage.php:414
 msgid "Columns"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:427
+#: inc/customizer/settings/homepage.php:486
 msgid "Text and description aligment"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:431
+#: inc/customizer/settings/homepage.php:490
 msgid "Left"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:432
+#: inc/customizer/settings/homepage.php:491
 msgid "Center"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:433
+#: inc/customizer/settings/homepage.php:492
 msgid "Right"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:448
+#: inc/customizer/settings/homepage.php:507
 msgid "Text and description color"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:489
+#: inc/customizer/settings/homepage.php:548
 msgid "Boxed"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:490
+#: inc/customizer/settings/homepage.php:549
 msgid "Full width"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:506
+#: inc/customizer/settings/homepage.php:565
 msgid "Spacing"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:553
+#: inc/customizer/settings/homepage.php:612
 msgid "Homepage Order"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:570
+#: inc/customizer/settings/homepage.php:629
 msgid "Product Categories #1"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:571
+#: inc/customizer/settings/homepage.php:630
 msgid "Product Categories #2"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:572
+#: inc/customizer/settings/homepage.php:631
 msgid "Products #1"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:573
+#: inc/customizer/settings/homepage.php:632
 msgid "Products #2"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:574
+#: inc/customizer/settings/homepage.php:633
 msgid "Products #3"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:575
+#: inc/customizer/settings/homepage.php:634
 msgid "Products #4"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:576
+#: inc/customizer/settings/homepage.php:635
 msgid "Posts #1"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:577
+#: inc/customizer/settings/homepage.php:636
 msgid "Posts #2"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:578
+#: inc/customizer/settings/homepage.php:637
 msgid "Testimonial"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:579
+#: inc/customizer/settings/homepage.php:638
 msgid "Latest Tweet"
 msgstr ""
 
@@ -922,11 +933,11 @@ msgstr ""
 msgid "Please define an SVG icon filename."
 msgstr ""
 
-#: inc/functions/options.php:161
+#: inc/functions/options.php:163
 msgid "Continue reading"
 msgstr ""
 
-#: inc/functions/options.php:166
+#: inc/functions/options.php:168
 msgid "Copyright &copy; 2016-[YEAR] [SITE]. Proudly powered by [WP]."
 msgstr ""
 
