@@ -14,8 +14,6 @@
 			dataType: 'json',
 			success: function( data ) {
 
-				console.log( data.count );
-
 				if ( data.count > 0 ) {
 					counter.removeClass( 'hide' );
 					counter.html( data.count );

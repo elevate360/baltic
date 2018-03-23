@@ -244,51 +244,6 @@ module.exports = function (grunt) {
 					to: 'Version: <%= pkg.version %>'
 				} ]
 			}
-		},
-
-		// Clean up dist directory
-		clean: {
-			main: ['dist']
-		},
-
-		// Copy the theme into the dist directory
-		copy: {
-			main: {
-				src:  [
-					'**',
-					'!csscomb.json',
-					'!node_modules/**',
-					'!.sass-cache/**',
-					'!sass/**',
-					'!dist/**',
-					'!orig/**',
-					'!.git/**',
-					'!Gruntfile.js',
-					'!package.json',
-					'!package-lock.json',
-					'!phpcs.xml.dist',
-					'!.gitignore',
-					'!.gitmodules',
-					'!**/Gruntfile.js',
-					'!**/package.json',
-					'!**/*~'
-				],
-				dest: 'dist/<%= pkg.name %>/'
-			}
-		},
-
-		// Compress build directory into <name>.<version>.zip
-		compress: {
-			main: {
-				options: {
-					mode: 'zip',
-					archive: './dist/<%= pkg.name %>.<%= pkg.version %>.zip'
-				},
-				expand: true,
-				cwd: 'dist/<%= pkg.name %>/',
-				src: ['**/*'],
-				dest: '<%= pkg.name %>/'
-			}
 		}
 
 	});
@@ -296,10 +251,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks( 'grunt-postcss' );
     grunt.loadNpmTasks( 'grunt-checktextdomain' );
     grunt.loadNpmTasks( 'grunt-combine-media-queries' );
-    grunt.loadNpmTasks( 'grunt-contrib-clean' );
-    grunt.loadNpmTasks( 'grunt-contrib-compress' );
     grunt.loadNpmTasks( 'grunt-contrib-concat' );
-    grunt.loadNpmTasks( 'grunt-contrib-copy' );
     grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
     grunt.loadNpmTasks( 'grunt-contrib-jshint' );
     grunt.loadNpmTasks( 'grunt-contrib-watch' );
@@ -318,13 +270,11 @@ module.exports = function (grunt) {
 	]);
 
 	grunt.registerTask( 'dist', [
+		'checktextdomain',
 		'replace',
 		'css',
 		'makepot',
-		'uglify',
-		'clean',
-		'copy',
-		'compress'
+		'uglify'
 	]);
 
 };
