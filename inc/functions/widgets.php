@@ -69,3 +69,30 @@ function baltic_widget_tag_cloud_args( $args ) {
 	$args['unit'] = 'rem';
 	return $args;
 }
+
+/**
+ * [baltic_latest_tweets_render description]
+ * @param  [type] $html  [description]
+ * @param  [type] $date  [description]
+ * @param  [type] $link  [description]
+ * @param  array  $tweet [description]
+ * @return [type]        [description]
+ */
+function baltic_latest_tweets_render( $html, $date, $link, array $tweet ) {
+
+	$profile_name 	= $tweet['user']['name'];
+	$screen_name 	= $tweet['user']['screen_name'];
+	$profile_link 	= 'https://twitter.com/' . $screen_name;
+	$picture 		= $tweet['user']['profile_image_url_https'];
+
+	$tweets = '';
+
+	$tweets .= sprintf( '<a href="%s" class="tweet-profile-link"><img src="%s" alt="%s"></a>', $profile_link, $picture, $profile_name );
+	$tweets .= sprintf( '<p class="tweet-profile"><a href="%s"><span class="tweet-name">%s</span> <span class="tweet-screen">@%s</span></a></p>', $profile_link, $profile_name, $screen_name );
+	$tweets .= sprintf( '<p class="tweet-text">%s</p>', $html );
+	$tweets .= sprintf( '<p class="tweet-details"><a href="%s">%s</a></p>', $link, $date );
+
+	return $tweets;
+
+}
+add_filter( 'latest_tweets_render_tweet', 'baltic_latest_tweets_render', 10, 4 );

@@ -49,7 +49,7 @@ function baltic_customize_register( $wp_customize ){
 		'title'    			=> esc_html__( 'Campaign Kit', 'baltic' ),
 		'pro_text' 			=> esc_html__( 'Learn More', 'baltic' ),
 		'pro_url'  			=> esc_url( 'https://campaignkit.co/' ),
-		'priority'			=> 999
+		'priority'			=> 0
 	) ) );
 
 	$wp_customize->add_panel( 'baltic_setting_panel', array(

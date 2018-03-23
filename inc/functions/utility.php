@@ -28,7 +28,7 @@ endif;
 
 if ( ! function_exists( 'baltic_homepage_woocommerce' ) ) :
 /**
- * Wrapper function for is_woocommerce() WooCommerce
+ * Helper function for homepage section if WooCommerce is not active
  */
 function baltic_homepage_woocommerce(){
 
@@ -37,6 +37,26 @@ function baltic_homepage_woocommerce(){
 		if ( is_customize_preview() ) {
 			echo '<div class="baltic-require-plugin">';
 			echo esc_html__( 'This homepage block require WooCommerce plugin', 'baltic' );
+			echo '</div>';
+		}
+
+		return true;
+	}
+
+}
+endif;
+
+if ( ! function_exists( 'baltic_homepage_twitter' ) ) :
+/**
+ * Helper function for homepage section if Latest Tweet Widget is not active
+ */
+function baltic_homepage_twitter(){
+
+	if ( ! class_exists( 'Latest_Tweets_Widget' ) ) {
+
+		if ( is_customize_preview() ) {
+			echo '<div class="baltic-require-plugin">';
+			echo esc_html__( 'This homepage block require Latest Tweets Widget plugin', 'baltic' );
 			echo '</div>';
 		}
 

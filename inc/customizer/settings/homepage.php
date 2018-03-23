@@ -16,132 +16,132 @@ function baltic_customize_register_homepage() {
 	    'active_callback'	=> 'baltic_is_homepage_template'
 	) );
 
-		/** Homepage Slider section*/
-		Kirki::add_section( 'baltic_homepage_slider_section', array(
-		    'title' 		=> esc_html__( 'Slides', 'baltic' ),
-		    'panel' 		=> 'baltic_homepage_slider_panel'
+	/** Homepage Slider section*/
+	Kirki::add_section( 'baltic_homepage_slider_section', array(
+	    'title' 		=> esc_html__( 'Slides', 'baltic' ),
+	    'panel' 		=> 'baltic_homepage_slider_panel'
+	) );
+
+		Kirki::add_field( 'baltic', array(
+			'type'        => 'repeater',
+			'label'       => esc_html__( 'Slider', 'baltic' ),
+			'section'     => 'baltic_homepage_slider_section',
+			'priority'    => 10,
+			'row_label' => array(
+				'type' => 'text',
+				'value' => esc_html__( 'slide', 'baltic' ),
+			),
+			'settings'    => 'baltic_homepage_slider',
+			'default'     => array(
+				array(
+					'title' 		=> esc_html__( 'Slide title #1', 'baltic' ),
+					'description'  	=> esc_html__( 'Slide description #1', 'baltic' ),
+					'image'			=> '',
+					'btn_text_1'	=> esc_html__( 'Button text #1A', 'baltic' ),
+					'btn_link_1'	=> '#',
+					'btn_text_2'	=> esc_html__( 'Button text #1B', 'baltic' ),
+					'btn_link_2'	=> '#',
+				),
+				array(
+					'title' 		=> esc_html__( 'Slide title #2', 'baltic' ),
+					'description'  	=> esc_html__( 'Slide description #2', 'baltic' ),
+					'image'			=> '',
+					'btn_text_1'	=> esc_html__( 'Button text #2A', 'baltic' ),
+					'btn_link_1'	=> '#',
+					'btn_text_2'	=> esc_html__( 'Button text #2B', 'baltic' ),
+					'btn_link_2'	=> '#',
+				),
+			),
+			'fields' => array(
+				'title' => array(
+					'type'        => 'text',
+					'label'       => esc_html__( 'Title', 'baltic' ),
+					'default'     => esc_html__( 'Slide title', 'baltic' ),
+				),
+				'description' => array(
+					'type'        => 'textarea',
+					'label'       => esc_html__( 'Description', 'baltic' ),
+					'default'     => esc_html__( 'Slide description', 'baltic' ),
+				),
+				'image' => array(
+					'type'        => 'image',
+					'label'       => esc_html__( 'Image', 'baltic' ),
+					'default'     => '',
+				),
+				'btn_text_1' => array(
+					'type'        => 'text',
+					'label'       => esc_html__( 'Button Text #1', 'baltic' ),
+					'default'     => esc_html__( 'Button text', 'baltic' ),
+				),
+				'btn_link_1' => array(
+					'type'        => 'url',
+					'label'       => esc_html__( 'Button Link #1', 'baltic' ),
+					'default'     => '#',
+				),
+				'btn_text_2' => array(
+					'type'        => 'text',
+					'label'       => esc_html__( 'Button Text #2', 'baltic' ),
+					'default'     => '',
+				),
+				'btn_link_2' => array(
+					'type'        => 'url',
+					'label'       => esc_html__( 'Button Link #2', 'baltic' ),
+					'default'     => '',
+				),
+			),
+			'transport'	=> 'auto',
+			'partial_refresh' => array(
+				'baltic_homepage_slider' => array(
+					'selector'        		=> '.baltic-homepage-slider',
+					'render_callback' 		=> 'baltic_homepage_slider',
+					'container_inclusive' 	=> true
+				),
+			),
 		) );
 
-			Kirki::add_field( 'baltic', array(
-				'type'        => 'repeater',
-				'label'       => esc_html__( 'Slider', 'baltic' ),
-				'section'     => 'baltic_homepage_slider_section',
-				'priority'    => 10,
-				'row_label' => array(
-					'type' => 'text',
-					'value' => esc_html__( 'slide', 'baltic' ),
-				),
-				'settings'    => 'baltic_homepage_slider',
-				'default'     => array(
-					array(
-						'title' 		=> esc_html__( 'Slide title #1', 'baltic' ),
-						'description'  	=> esc_html__( 'Slide description #1', 'baltic' ),
-						'image'			=> '',
-						'btn_text_1'	=> esc_html__( 'Button text #1A', 'baltic' ),
-						'btn_link_1'	=> '#',
-						'btn_text_2'	=> esc_html__( 'Button text #1B', 'baltic' ),
-						'btn_link_2'	=> '#',
-					),
-					array(
-						'title' 		=> esc_html__( 'Slide title #2', 'baltic' ),
-						'description'  	=> esc_html__( 'Slide description #2', 'baltic' ),
-						'image'			=> '',
-						'btn_text_1'	=> esc_html__( 'Button text #2A', 'baltic' ),
-						'btn_link_1'	=> '#',
-						'btn_text_2'	=> esc_html__( 'Button text #2B', 'baltic' ),
-						'btn_link_2'	=> '#',
-					),
-				),
-				'fields' => array(
-					'title' => array(
-						'type'        => 'text',
-						'label'       => esc_html__( 'Title', 'baltic' ),
-						'default'     => esc_html__( 'Slide title', 'baltic' ),
-					),
-					'description' => array(
-						'type'        => 'textarea',
-						'label'       => esc_html__( 'Description', 'baltic' ),
-						'default'     => esc_html__( 'Slide description', 'baltic' ),
-					),
-					'image' => array(
-						'type'        => 'image',
-						'label'       => esc_html__( 'Image', 'baltic' ),
-						'default'     => '',
-					),
-					'btn_text_1' => array(
-						'type'        => 'text',
-						'label'       => esc_html__( 'Button Text #1', 'baltic' ),
-						'default'     => esc_html__( 'Button text', 'baltic' ),
-					),
-					'btn_link_1' => array(
-						'type'        => 'url',
-						'label'       => esc_html__( 'Button Link #1', 'baltic' ),
-						'default'     => '#',
-					),
-					'btn_text_2' => array(
-						'type'        => 'text',
-						'label'       => esc_html__( 'Button Text #2', 'baltic' ),
-						'default'     => '',
-					),
-					'btn_link_2' => array(
-						'type'        => 'url',
-						'label'       => esc_html__( 'Button Link #2', 'baltic' ),
-						'default'     => '',
-					),
-				),
-				'transport'	=> 'auto',
-				'partial_refresh' => array(
-					'baltic_homepage_slider' => array(
-						'selector'        		=> '.baltic-homepage-slider',
-						'render_callback' 		=> 'baltic_homepage_slider',
-						'container_inclusive' 	=> true
-					),
-				),
-			) );
+	/** Homepage Slider section*/
+	Kirki::add_section( 'baltic_homepage_slider_setting', array(
+	    'title' 		=> esc_html__( 'Slides Setting', 'baltic' ),
+	    'panel' 		=> 'baltic_homepage_slider_panel'
+	) );
 
-		/** Homepage Slider section*/
-		Kirki::add_section( 'baltic_homepage_slider_setting', array(
-		    'title' 		=> esc_html__( 'Slides Setting', 'baltic' ),
-		    'panel' 		=> 'baltic_homepage_slider_panel'
+		Kirki::add_field( 'baltic', array(
+			'type'        	=> 'color',
+			'settings'    	=> 'baltic_homepage_slider_color',
+			'label'       	=> __( 'Text color', 'baltic' ),
+			'section'     	=> 'baltic_homepage_slider_setting',
+			'default'     	=> $default['color_text_primary'],
+			'choices'     	=> array( 'alpha' => true ),
+			'transport'		=> 'auto',
+			'output'		=> array(
+				array(
+					'element'  => '.slide-content',
+					'property' => 'color',
+				),
+			)
 		) );
 
-			Kirki::add_field( 'baltic', array(
-				'type'        	=> 'color',
-				'settings'    	=> 'baltic_homepage_slider_color',
-				'label'       	=> __( 'Text color', 'baltic' ),
-				'section'     	=> 'baltic_homepage_slider_setting',
-				'default'     	=> $default['color_text_primary'],
-				'choices'     	=> array( 'alpha' => true ),
-				'transport'		=> 'auto',
-				'output'		=> array(
-					array(
-						'element'  => '.slide-content',
-						'property' => 'color',
-					),
-				)
-			) );
-
-			Kirki::add_field( 'baltic', array(
-				'type'        => 'select',
-				'settings'    => 'baltic_homepage_slider_effect',
-				'label'       => __( 'Effect', 'baltic' ),
-				'section'     => 'baltic_homepage_slider_setting',
-				'default'     => 'true',
-				'priority'    => 10,
-				'multiple'    => 1,
-				'choices'     => array(
-					'true' 	=> esc_html__( 'Fade', 'baltic' ),
-					'false' => esc_html__( 'Slide', 'baltic' )
+		Kirki::add_field( 'baltic', array(
+			'type'        => 'select',
+			'settings'    => 'baltic_homepage_slider_effect',
+			'label'       => __( 'Effect', 'baltic' ),
+			'section'     => 'baltic_homepage_slider_setting',
+			'default'     => 'true',
+			'priority'    => 10,
+			'multiple'    => 1,
+			'choices'     => array(
+				'true' 	=> esc_html__( 'Fade', 'baltic' ),
+				'false' => esc_html__( 'Slide', 'baltic' )
+			),
+			'transport'	=> 'auto',
+			'partial_refresh' => array(
+				'baltic_homepage_slider_effect' => array(
+					'selector'        		=> '.baltic-homepage-slider',
+					'render_callback' 		=> 'baltic_homepage_slider',
+					'container_inclusive' 	=> true
 				),
-				'transport'	=> 'auto',
-				'partial_refresh' => array(
-					'baltic_homepage_slider_effect' => array(
-						'selector'        		=> '.baltic-homepage-slider',
-						'render_callback' 		=> 'baltic_homepage_slider',
-						'container_inclusive' 	=> true
-					),
-				),
-			) );
+			),
+		) );
 
 	$product_categories = array(
 		'product_categories_1',
@@ -349,13 +349,135 @@ function baltic_customize_register_homepage() {
 
 	}
 
+	$posts = array(
+		'posts_1',
+		'posts_2'
+	);
+	$count = 0;
+	foreach ( $posts as $setting ) {
+
+		$count++;
+		Kirki::add_panel( 'baltic_homepage_' . $setting . '_panel', array(
+		    'title' 		=> sprintf( esc_html__( 'Posts #%s', 'baltic' ), $count ),
+		    'priority'		=> 10,
+		    'active_callback'	=> 'baltic_is_homepage_template'
+		) );
+
+		Kirki::add_section( 'baltic_homepage_' . $setting . '_section', array(
+		    'title' 		=> esc_html__( 'Categories', 'baltic' ),
+		    'panel' 		=> 'baltic_homepage_' . $setting . '_panel'
+		) );
+
+			Kirki::add_field( 'baltic', array(
+				'type'        	=> 'select',
+				'settings'    	=> 'baltic_homepage_' . $setting ,
+				'section'     	=> 'baltic_homepage_'. $setting .'_section',
+				'label'       	=> __( 'Categories', 'baltic' ),
+				'default'     	=> '',
+				'priority'    	=> 1,
+				'multiple'    	=> 999,
+				'choices'     	=> baltic_get_terms( 'category' ),
+				'transport' 	=> 'auto',
+				'partial_refresh' => array(
+					'baltic_homepage_' . $setting => array(
+						'selector'        		=> '.baltic-homepage-' . str_replace( '_', '-', $setting ),
+						'render_callback' 		=> 'baltic_homepage_' . $setting,
+						'container_inclusive' 	=> true
+					),
+				),
+			) );
+
+	}
+
+	/** Latest tweets panel*/
+	Kirki::add_panel( 'baltic_homepage_latest_tweets_panel', array(
+	    'title' 			=> esc_html__( 'Latest Tweets', 'baltic' ),
+	    'priority'			=> 10,
+	    'active_callback'	=> 'baltic_is_homepage_template'
+	) );
+
+	Kirki::add_section( 'baltic_homepage_latest_tweets_section', array(
+	    'title' 		=> esc_html__( 'Latest Tweets', 'baltic' ),
+	    'panel' 		=> 'baltic_homepage_latest_tweets_panel'
+	) );
+
+			Kirki::add_field( 'baltic', array(
+				'type'        	=> 'text',
+				'settings'    	=> 'baltic_homepage_latest_tweets_handle',
+				'label'       	=> esc_attr__( 'Username', 'baltic' ),
+				'section'     	=> 'baltic_homepage_latest_tweets_section',
+				'default'     	=> '',
+				'transport'		=> 'auto',
+				'partial_refresh' => array(
+					'baltic_homepage_latest_tweets_handle' => array(
+						'selector'        		=> '.baltic-homepage-latest-tweets',
+						'render_callback' 		=> 'baltic_homepage_latest_tweets',
+						'container_inclusive' 	=> true
+					),
+				),
+			) );
+
+			Kirki::add_field( 'baltic', array(
+				'type'        => 'number',
+				'settings'    => 'baltic_homepage_latest_tweets_pop',
+				'label'       => esc_attr__( 'Maximum popularity', 'baltic' ),
+				'section'     => 'baltic_homepage_latest_tweets_section',
+				'default'     => 0,
+				'choices'     => array(
+					'min'  => 0,
+					'max'  => 999,
+					'step' => 1,
+				),
+				'transport'		=> 'auto',
+				'partial_refresh' => array(
+					'baltic_homepage_latest_tweets_pop' => array(
+						'selector'        		=> '.baltic-homepage-latest-tweets',
+						'render_callback' 		=> 'baltic_homepage_latest_tweets',
+						'container_inclusive' 	=> true
+					),
+				),
+			) );
+
+			Kirki::add_field( 'baltic', array(
+				'type'        => 'checkbox',
+				'settings'    => 'baltic_homepage_latest_tweets_retweet',
+				'label'       => esc_attr__( 'Show retweet', 'baltic' ),
+				'section'     => 'baltic_homepage_latest_tweets_section',
+				'default'     => false,
+				'transport'		=> 'auto',
+				'partial_refresh' => array(
+					'baltic_homepage_latest_tweets_retweet' => array(
+						'selector'        		=> '.baltic-homepage-latest-tweets',
+						'render_callback' 		=> 'baltic_homepage_latest_tweets',
+						'container_inclusive' 	=> true
+					),
+				),
+			) );
+
+			Kirki::add_field( 'baltic', array(
+				'type'        => 'checkbox',
+				'settings'    => 'baltic_homepage_latest_tweets_replies',
+				'label'       => esc_attr__( 'Show replies', 'baltic' ),
+				'section'     => 'baltic_homepage_latest_tweets_section',
+				'default'     => false,
+				'transport'		=> 'auto',
+				'partial_refresh' => array(
+					'baltic_homepage_latest_tweets_replies' => array(
+						'selector'        		=> '.baltic-homepage-latest-tweets',
+						'render_callback' 		=> 'baltic_homepage_latest_tweets',
+						'container_inclusive' 	=> true
+					),
+				),
+			) );
+
 	$displays = array(
 		'product_categories_2',
 		'products_1',
 		'products_2',
 		'products_3',
 		'products_4',
-		'latest_posts',
+		'posts_1',
+		'posts_2',
 		'testimonial',
 		'latest_tweets'
 	);
@@ -437,7 +559,8 @@ function baltic_customize_register_homepage() {
 		'products_2',
 		'products_3',
 		'products_4',
-		'latest_posts',
+		'posts_1',
+		'posts_2',
 		'testimonial',
 		'latest_tweets'
 	);
@@ -527,7 +650,8 @@ function baltic_customize_register_homepage() {
 		'products_2',
 		'products_3',
 		'products_4',
-		'latest_posts',
+		'posts_1',
+		'posts_2',
 		'testimonial',
 		'latest_tweets'
 	);

@@ -16,6 +16,23 @@ function baltic_entry_thumbnail(){
 }
 add_action( 'baltic_entry_header_before', 'baltic_entry_thumbnail', 10 );
 
+function baltic_homepage_entry_thumbnail() {
+
+	if ( ! baltic_is_homepage_template() ) {
+		return;
+	}
+
+	if( has_post_thumbnail() ) : ?>
+	<div class="entry-thumbnail">
+		<a href="<?php the_permalink( get_the_id() );?>" class="entry-thumbnail-link">
+			<?php the_post_thumbnail( $size = 'post-thumbnail' );?>
+		</a>
+	</div>
+	<?php endif;
+
+}
+add_action( 'baltic_entry_header_before', 'baltic_homepage_entry_thumbnail', 10 );
+
 /**
  * Baltic entry meta
  * @return [type] [description]
@@ -147,9 +164,20 @@ add_action( 'baltic_entry_header', 'baltic_entry_title', 20 );
  * Baltic entry title
  * @return [type] [description]
  */
+function baltic_homepage_entry_title(){
+	if( baltic_is_homepage_template() ) {
+		the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+	}
+}
+add_action( 'baltic_entry_header', 'baltic_homepage_entry_title', 20 );
+
+/**
+ * Baltic entry title
+ * @return [type] [description]
+ */
 function baltic_entry_content(){
 
-	if ( is_singular() || post_password_required() ) {
+	if ( ( is_singular() && ! is_page_template( 'templates/homepage.php' ) ) || post_password_required() ) {
 		get_template_part( 'components/post/entry', 'content' );
 	} else {
 		the_excerpt();
@@ -200,7 +228,7 @@ add_action( 'baltic_entry_after', 'baltic_entry_author_biography', 20 );
  */
 function baltic_entry_comments(){
 
-	if ( ! is_singular() ) {
+	if ( ! is_singular() || is_page_template( 'templates/homepage.php' ) ) {
 		return;
 	}
 

@@ -366,10 +366,6 @@
 
 	baltic.bind = function() {
 
-		baltic.$window.on( 'load', function() {
-			baltic.preloader();
-		});
-
 		baltic.$body.on( 'lazyload', function() {
 			baltic.fitVids();
 		});
@@ -389,6 +385,10 @@
 
 	};
 
+	$( window ).on( 'load', function() {
+		baltic.preloader();
+	});
+
 	/** Initialize baltic.init() */
 	$( function() {
 
@@ -399,11 +399,15 @@
 	    }
 
 	    wp.customize.selectiveRefresh.bind( 'partial-content-rendered', function( placement ) {
+
 	        if ( placement.container ) {
-	        	$( window ).resize();
+
 	            baltic.homepageSlider();
 	            baltic.productsSlider();
+	            baltic.matchHeight();
+
 	        }
+
 	    } );
 
 	});

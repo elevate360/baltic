@@ -223,3 +223,12 @@
 	}
 
 }
+
+/** Posts section */
+
+.homepage-posts {
+
+	.entry-title {
+		@include font-size(1.25);
+	}
+}

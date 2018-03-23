@@ -72,7 +72,7 @@ class Baltic_Theme_Functions {
 
 	public function hook_filters() {
 
-		if ( baltic_is_blog() ) {
+		if ( baltic_is_blog() || baltic_is_homepage_template() ) {
 			add_filter( 'the_title', array( $this, 'untitled_post' ) );
 			add_filter( 'excerpt_length', array( $this, 'excerpt_length' ), 999 );
 			add_filter( 'excerpt_more', array( $this, 'excerpt_more' ) );

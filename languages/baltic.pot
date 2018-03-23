@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Baltic 1.0.0\n"
 "Report-Msgid-Bugs-To: https://elevate360/contact\n"
-"POT-Creation-Date: 2018-03-07 19:09:29+00:00\n"
+"POT-Creation-Date: 2018-03-08 20:54:52+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -285,8 +285,8 @@ msgid "Hide"
 msgstr ""
 
 #: inc/customizer/settings/baltic-settings.php:137
-#: inc/customizer/settings/homepage.php:537
-#: inc/customizer/settings/homepage.php:544
+#: inc/customizer/settings/homepage.php:661
+#: inc/customizer/settings/homepage.php:668
 #: inc/customizer/settings/woocommerce.php:79
 msgid "Layout"
 msgstr ""
@@ -414,8 +414,8 @@ msgid "Header search icon color hover"
 msgstr ""
 
 #: inc/customizer/settings/colors.php:205
-#: inc/customizer/settings/homepage.php:582
-#: inc/customizer/settings/homepage.php:589
+#: inc/customizer/settings/homepage.php:706
+#: inc/customizer/settings/homepage.php:713
 msgid "Background"
 msgstr ""
 
@@ -500,7 +500,7 @@ msgid "Slides"
 msgstr ""
 
 #: inc/customizer/settings/homepage.php:27
-#: inc/customizer/settings/homepage.php:628
+#: inc/customizer/settings/homepage.php:752
 msgid "Slider"
 msgstr ""
 
@@ -542,7 +542,7 @@ msgstr ""
 
 #: inc/customizer/settings/homepage.php:58
 #: inc/customizer/settings/homepage.php:273
-#: inc/customizer/settings/homepage.php:456
+#: inc/customizer/settings/homepage.php:579
 msgid "Title"
 msgstr ""
 
@@ -551,8 +551,8 @@ msgid "Slide title"
 msgstr ""
 
 #: inc/customizer/settings/homepage.php:63
-#: inc/customizer/settings/homepage.php:447
-#: inc/customizer/settings/homepage.php:471
+#: inc/customizer/settings/homepage.php:570
+#: inc/customizer/settings/homepage.php:594
 msgid "Description"
 msgstr ""
 
@@ -627,6 +627,8 @@ msgid "Property"
 msgstr ""
 
 #: inc/customizer/settings/homepage.php:246
+#: inc/customizer/settings/homepage.php:367
+#: inc/customizer/settings/homepage.php:375
 msgid "Categories"
 msgstr ""
 
@@ -716,100 +718,125 @@ msgstr ""
 msgid "Top Rated"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:365
-#: inc/customizer/settings/homepage.php:373
+#: inc/customizer/settings/homepage.php:361
+msgid "Posts #%s"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:394
+#: inc/customizer/settings/homepage.php:400
+msgid "Latest Tweets"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:407
+msgid "Username"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:423
+msgid "Maximum popularity"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:444
+msgid "Show retweet"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:460
+msgid "Show replies"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:487
+#: inc/customizer/settings/homepage.php:495
 msgid "Display"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:376
+#: inc/customizer/settings/homepage.php:498
 msgid "Grid"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:377
+#: inc/customizer/settings/homepage.php:499
 msgid "Slideshow"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:393
+#: inc/customizer/settings/homepage.php:515
 msgid "Limit"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:414
+#: inc/customizer/settings/homepage.php:536
 msgid "Columns"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:486
+#: inc/customizer/settings/homepage.php:609
 msgid "Text and description aligment"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:490
+#: inc/customizer/settings/homepage.php:613
 msgid "Left"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:491
+#: inc/customizer/settings/homepage.php:614
 msgid "Center"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:492
+#: inc/customizer/settings/homepage.php:615
 msgid "Right"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:507
+#: inc/customizer/settings/homepage.php:630
 msgid "Text and description color"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:548
+#: inc/customizer/settings/homepage.php:672
 msgid "Boxed"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:549
+#: inc/customizer/settings/homepage.php:673
 msgid "Full width"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:565
+#: inc/customizer/settings/homepage.php:689
 msgid "Spacing"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:612
+#: inc/customizer/settings/homepage.php:736
 msgid "Homepage Order"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:629
+#: inc/customizer/settings/homepage.php:753
 msgid "Product Categories #1"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:630
+#: inc/customizer/settings/homepage.php:754
 msgid "Product Categories #2"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:631
+#: inc/customizer/settings/homepage.php:755
 msgid "Products #1"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:632
+#: inc/customizer/settings/homepage.php:756
 msgid "Products #2"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:633
+#: inc/customizer/settings/homepage.php:757
 msgid "Products #3"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:634
+#: inc/customizer/settings/homepage.php:758
 msgid "Products #4"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:635
+#: inc/customizer/settings/homepage.php:759
 msgid "Posts #1"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:636
+#: inc/customizer/settings/homepage.php:760
 msgid "Posts #2"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:637
+#: inc/customizer/settings/homepage.php:761
 msgid "Testimonial"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:638
+#: inc/customizer/settings/homepage.php:762
 msgid "Latest Tweet"
 msgstr ""
 
@@ -945,19 +972,23 @@ msgstr ""
 msgid "This homepage block require WooCommerce plugin"
 msgstr ""
 
-#: inc/functions/utility.php:291
+#: inc/functions/utility.php:59
+msgid "This homepage block require Latest Tweets Widget plugin"
+msgstr ""
+
+#: inc/functions/utility.php:311
 msgid "Content Sidebar"
 msgstr ""
 
-#: inc/functions/utility.php:292
+#: inc/functions/utility.php:312
 msgid "Sidebar Content"
 msgstr ""
 
-#: inc/functions/utility.php:293
+#: inc/functions/utility.php:313
 msgid "Full Width"
 msgstr ""
 
-#: inc/functions/utility.php:294
+#: inc/functions/utility.php:314
 msgid "Narrow"
 msgstr ""
 
@@ -1039,48 +1070,48 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
-#: inc/structure/entry.php:43
+#: inc/structure/entry.php:60
 msgid "Posted on"
 msgstr ""
 
-#: inc/structure/entry.php:49
+#: inc/structure/entry.php:66
 msgid "by"
 msgstr ""
 
-#: inc/structure/entry.php:63
+#: inc/structure/entry.php:80
 #. translators: %s: post title
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
-#: inc/structure/entry.php:97
+#: inc/structure/entry.php:114
 #. translators: used between list items, there is a space after the comma
 msgid ", "
 msgstr ""
 
-#: inc/structure/entry.php:100
+#: inc/structure/entry.php:117
 #. translators: 1: list of categories.
 msgid "Posted in"
 msgstr ""
 
-#: inc/structure/entry.php:109
+#: inc/structure/entry.php:126
 #. translators: 1: list of tags.
 msgid "Tagged"
 msgstr ""
 
-#: inc/structure/entry.php:119
+#: inc/structure/entry.php:136
 #. translators: %s: Name of current post. Only visible to screen readers
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: inc/structure/entry.php:173
+#: inc/structure/entry.php:201
 msgid "<span>&larr; previous post</span> %title"
 msgstr ""
 
-#: inc/structure/entry.php:174
+#: inc/structure/entry.php:202
 msgid "<span>next post &rarr;</span> %title"
 msgstr ""
 
-#: inc/structure/entry.php:175
+#: inc/structure/entry.php:203
 msgid "Continue Reading"
 msgstr ""
 
@@ -1599,7 +1630,7 @@ msgctxt "endquote"
 msgid "&rdquo;"
 msgstr ""
 
-#: inc/structure/entry.php:106
+#: inc/structure/entry.php:123
 #. translators: used between list items, there is a space after the comma
 msgctxt "list item separator"
 msgid ", "

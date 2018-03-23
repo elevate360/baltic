@@ -23,13 +23,14 @@
 .columns {
 	margin-right: -$gutter__width;
 	margin-left: -$gutter__width;
-}
 
-.column-item {
-	float: left;
-	width: 100%;
-	padding-left: $gutter__width;
-	padding-right: $gutter__width;
+	.column-item {
+		float: left;
+		width: 100%;
+		padding-left: $gutter__width;
+		padding-right: $gutter__width;
+	}
+
 }
 
 #primary,
@@ -103,7 +104,8 @@
 
 	@for $i from 2 through 6 {
 		.columns-#{$i} {
-			.column-item {
+			.column-item,
+			.entry {
 				@include column-width( $i );
 			}
 		}

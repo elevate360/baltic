@@ -5,7 +5,7 @@
  * @package Baltic
  */
 
-if ( is_singular() && has_post_thumbnail() ) :?>
+if ( is_archive() && has_post_thumbnail() ) :?>
 <div class="entry-thumbnail">
 	<?php the_post_thumbnail( $size = 'post-thumbnail' );?>
 </div>

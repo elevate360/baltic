@@ -3557,6 +3557,13 @@ a.more-link:focus .icon-stroke {
 	padding-top: 10px;
 }
 
+/** Posts section */
+
+.homepage-posts .entry-title {
+	font-size: 20px;
+	font-size: 1.25rem;
+}
+
 
 /*--------------------------------------------------------------
 # Layout
@@ -3940,7 +3947,8 @@ a.custom-logo-link {
 	margin-left: -10px;
 }
 
-.column-item {
+.columns .column-item,
+.columns .entry {
 	float: left;
 	width: 100%;
 	padding-right: 10px;
@@ -4571,23 +4579,28 @@ a.custom-logo-link {
 		padding-left: 160px;
 	}
 
-	.columns-2 .column-item {
+	.columns-2 .column-item,
+	.columns-2 .entry {
 		width: 50%;
 	}
 
-	.columns-3 .column-item {
+	.columns-3 .column-item,
+	.columns-3 .entry {
 		width: 33.33%;
 	}
 
-	.columns-4 .column-item {
+	.columns-4 .column-item,
+	.columns-4 .entry {
 		width: 25%;
 	}
 
-	.columns-5 .column-item {
+	.columns-5 .column-item,
+	.columns-5 .entry {
 		width: 20%;
 	}
 
-	.columns-6 .column-item {
+	.columns-6 .column-item,
+	.columns-6 .entry {
 		width: 16.66%;
 	}
 }
