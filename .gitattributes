@@ -30,5 +30,7 @@
 .gitattributes export-ignore
 .gitignore export-ignore
 .jshintrc export-ignore
-composer.json export-ignore
+Gruntfile.js export-ignore
+package.json export-ignore
+package-lock.json export-ignore
 phpcs.xml.dist export-ignore
