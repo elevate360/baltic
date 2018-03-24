@@ -12,12 +12,10 @@ $description 	= get_theme_mod( 'baltic_homepage_latest_tweets_description' );
 $limit 			= get_theme_mod( 'baltic_homepage_latest_tweets_limit', 4 );
 $columns 		= get_theme_mod( 'baltic_homepage_latest_tweets_columns', 4 );
 $username 		= get_theme_mod( 'baltic_homepage_latest_tweets_handle' );
-$retweet 		= get_theme_mod( 'baltic_homepage_latest_tweets_retweet', false );
-$replies 		= get_theme_mod( 'baltic_homepage_latest_tweets_replies', false );
-$pop 			= get_theme_mod( 'baltic_homepage_latest_tweets_pop', 0 );
 
 ?>
 <div id="baltic-homepage-latest-tweets" class="baltic-homepage-latest-tweets homepage-twitter homepage-section <?php echo esc_attr( $display );?>" data-columns="<?php echo absint( $columns );?>">
+	<?php if( baltic_homepage_twitter() == true ) return;?>
 
 	<?php if( get_theme_mod( 'baltic_homepage_latest_tweets_layout', 'boxed' ) == 'boxed' ) : ?>
 	<div class="container">
@@ -34,17 +32,60 @@ $pop 			= get_theme_mod( 'baltic_homepage_latest_tweets_pop', 0 );
 		<?php
 
 		$args = [
-			'screen_name' 	=> 'mlover850',
-			'count'			=> 10
+			'screen_name' 	=> $username,
+			'count'			=> $limit
 		];
-
-		echo campaignkit_twitter_get_tweets_html( $args );
 
 		$tweets = campaignkit_twitter_get_tweets( $args );
 
-		echo '<pre>';
-		print_r( $tweets );
-		echo '</pre>';
+		$html = '';
+
+		if ( !empty( $username ) ) {
+
+			$html .= sprintf( '<div class="baltic-twitter columns columns-%s">', absint( $columns ) );
+
+			foreach ( $tweets as $tweet ) {
+
+				$html .= '<div class="column-item">';
+
+					$html .= '<div class="baltic-twitter__item" data-mh="twitter-item">';
+
+						$html .= '<div class="baltic-twitter__profile">';
+
+							$html .= sprintf( '<a href="%1$s" class="baltic-twitter__userpict" rel="nofollow"><img src="%2$s" alt="%3$s"></a>',
+								esc_url( 'https://twitter.com/' . esc_attr( $tweet['user']['screen_name'] ) ),
+								esc_url( $tweet['user']['profile_image_url_https'] ),
+								esc_attr( $tweet['user']['name'] )
+							);
+
+							$html .= sprintf( '<a href="%1$s" class="baltic-twitter__username" rel="nofollow"><span class="baltic-twitter__name">%2$s</span><span class="baltic-twitter__screen">@%3$s</span></a>',
+								esc_url( 'https://twitter.com/' . esc_attr( $tweet['user']['screen_name'] ) ),
+								esc_attr( $tweet['user']['name'] ),
+								esc_attr( $tweet['user']['screen_name'] )
+							);
+
+						$html .= '</div>';
+
+						$html .= '<div class="baltic-twitter__text">'. wp_kses_post( $tweet['ck_html_text'] ) .'</div>';
+
+						$html .= sprintf( '<a href="%1$s" class="baltic-twitter__date" target="_blank"><time datetime="%2$s">%3$s%4$s</time></a>',
+							esc_url( sprintf( 'https://twitter.com/%1$s/status/%2$s', esc_attr( $tweet['user']['screen_name'] ), $tweet['id'] ) ),
+							date_i18n( 'Y-m-d H:i:sO', strtotime( $tweet['created_at'] ) ),
+							baltic_get_svg( array( 'icon' => 'twitter' ) ),
+							esc_attr( $tweet['ck_created_at'] )
+						);
+
+					$html .= '</div>';
+
+				$html .= '</div>';
+
+			}
+
+			$html .= '</div>';
+
+		}
+
+		echo $html;
 
 		?>
 

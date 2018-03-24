@@ -269,12 +269,18 @@ module.exports = function (grunt) {
 		'cssmin'
 	]);
 
+	grunt.registerTask( 'js', [
+		'concat',
+		'uglify',
+		'jshint'
+	]);
+
 	grunt.registerTask( 'dist', [
 		'checktextdomain',
+		'js',
 		'replace',
 		'css',
-		'makepot',
-		'uglify'
+		'makepot'
 	]);
 
 };

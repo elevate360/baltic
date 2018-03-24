@@ -52,11 +52,12 @@ if ( ! function_exists( 'baltic_homepage_twitter' ) ) :
  */
 function baltic_homepage_twitter(){
 
-	if ( ! class_exists( 'Latest_Tweets_Widget' ) ) {
+	if ( ! defined( 'CAMPAIGNKIT_TWITTER_NAME' ) ) {
 
 		if ( is_customize_preview() ) {
 			echo '<div class="baltic-require-plugin">';
-			echo esc_html__( 'This homepage block require Latest Tweets Widget plugin', 'baltic' );
+			/** Translator: %s is a plugin name */
+			echo sprintf( esc_html__( 'This homepage block require %s plugin', 'baltic' ), CAMPAIGNKIT_TWITTER_NAME );
 			echo '</div>';
 		}
 

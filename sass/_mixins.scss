@@ -28,6 +28,11 @@
 	box-shadow: 0 8px 92px $color__alpha-dark;
 }
 
+@mixin radius-border(){
+	border: 1px solid $color__alpha-dark;
+	box-shadow: none;
+}
+
 // Column width with margin
 @mixin column-width($numberColumns: 3) {
 	width: map-get( $columns, $numberColumns );

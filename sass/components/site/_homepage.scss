@@ -14,6 +14,15 @@
 	margin-bottom: $gutter__width*3;
 }
 
+.homepage-title,
+.homepage-description {
+	@include respond-to( medium ) {
+		max-width: 60%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
 /** Slider */
 .baltic-homepage-slider {
 
@@ -207,17 +216,6 @@
 /** Products section */
 .homepage-products {
 
-	.baltic-slick-dots {
-		bottom: -1.5rem;
-	}
-
-	.baltic-slick-dots li button {
-		background-color: $color__text-main;
-		width: .5rem;
-		height: .5rem;
-		border-radius: .5rem;
-	}
-
 	ul.products li.product {
 		padding-top: $gutter__width;
 	}
@@ -230,5 +228,86 @@
 
 	.entry-title {
 		@include font-size(1.25);
+	}
+}
+
+
+/** Latest Tweets */
+.homepage-products,
+.homepage-twitter {
+
+	.baltic-slick-dots {
+		bottom: -1.5rem;
+	}
+
+	.baltic-slick-dots li button {
+		background-color: $color__text-main;
+		width: .5rem;
+		height: .5rem;
+		border-radius: .5rem;
+	}
+
+}
+
+.baltic-twitter__item {
+	background-color: $color__white;
+	padding: $gutter__width;
+	margin-bottom: $gutter__width;
+	@include radius-shadow();
+	.slick-slider & {
+		@include radius-border();
+	}
+	@include respond-to( medium ) {
+		padding: $gutter__width*2;
+		margin-bottom: $gutter__width*2;
+	}
+
+}
+
+.baltic-twitter__profile {
+	overflow: hidden;
+	margin-bottom: $gutter__width;
+}
+
+.baltic-twitter__username {
+	color: $color__text-main;
+	&:hover,
+	&:focus {
+		color: $color__link;
+	}
+	span {
+		display: block;
+	}
+}
+
+.baltic-twitter__userpict {
+	display: block;
+	float: left;
+	margin-right: $gutter__width;
+}
+
+.baltic-twitter__name {
+	font-weight: bold;
+}
+
+.baltic-twitter__screen {
+	color: $color__text-secondary;
+	@include font-size( 0.75 );
+}
+
+.baltic-twitter__text {
+	margin-bottom: 1rem;
+	word-wrap: break-word;
+}
+
+a.baltic-twitter__date {
+	@include font-size(0.875);
+	color: $color__text-secondary;
+	&:hover,
+	&:focus {
+		color: $color__link;
+	}
+	.icon {
+		margin-right: 5px;
 	}
 }

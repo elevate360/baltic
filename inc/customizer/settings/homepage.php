@@ -404,65 +404,12 @@ function baltic_customize_register_homepage() {
 			Kirki::add_field( 'baltic', array(
 				'type'        	=> 'text',
 				'settings'    	=> 'baltic_homepage_latest_tweets_handle',
-				'label'       	=> esc_attr__( 'Username', 'baltic' ),
+				'label'       	=> esc_attr__( 'Twitter Username', 'baltic' ),
 				'section'     	=> 'baltic_homepage_latest_tweets_section',
 				'default'     	=> '',
 				'transport'		=> 'auto',
 				'partial_refresh' => array(
 					'baltic_homepage_latest_tweets_handle' => array(
-						'selector'        		=> '.baltic-homepage-latest-tweets',
-						'render_callback' 		=> 'baltic_homepage_latest_tweets',
-						'container_inclusive' 	=> true
-					),
-				),
-			) );
-
-			Kirki::add_field( 'baltic', array(
-				'type'        => 'number',
-				'settings'    => 'baltic_homepage_latest_tweets_pop',
-				'label'       => esc_attr__( 'Maximum popularity', 'baltic' ),
-				'section'     => 'baltic_homepage_latest_tweets_section',
-				'default'     => 0,
-				'choices'     => array(
-					'min'  => 0,
-					'max'  => 999,
-					'step' => 1,
-				),
-				'transport'		=> 'auto',
-				'partial_refresh' => array(
-					'baltic_homepage_latest_tweets_pop' => array(
-						'selector'        		=> '.baltic-homepage-latest-tweets',
-						'render_callback' 		=> 'baltic_homepage_latest_tweets',
-						'container_inclusive' 	=> true
-					),
-				),
-			) );
-
-			Kirki::add_field( 'baltic', array(
-				'type'        => 'checkbox',
-				'settings'    => 'baltic_homepage_latest_tweets_retweet',
-				'label'       => esc_attr__( 'Show retweet', 'baltic' ),
-				'section'     => 'baltic_homepage_latest_tweets_section',
-				'default'     => false,
-				'transport'		=> 'auto',
-				'partial_refresh' => array(
-					'baltic_homepage_latest_tweets_retweet' => array(
-						'selector'        		=> '.baltic-homepage-latest-tweets',
-						'render_callback' 		=> 'baltic_homepage_latest_tweets',
-						'container_inclusive' 	=> true
-					),
-				),
-			) );
-
-			Kirki::add_field( 'baltic', array(
-				'type'        => 'checkbox',
-				'settings'    => 'baltic_homepage_latest_tweets_replies',
-				'label'       => esc_attr__( 'Show replies', 'baltic' ),
-				'section'     => 'baltic_homepage_latest_tweets_section',
-				'default'     => false,
-				'transport'		=> 'auto',
-				'partial_refresh' => array(
-					'baltic_homepage_latest_tweets_replies' => array(
 						'selector'        		=> '.baltic-homepage-latest-tweets',
 						'render_callback' 		=> 'baltic_homepage_latest_tweets',
 						'container_inclusive' 	=> true
@@ -602,7 +549,7 @@ function baltic_customize_register_homepage() {
 				),
 			) );
 
-			Kirki::add_field( 'theme_config_id', array(
+			Kirki::add_field( 'baltic', array(
 				'type'        		=> 'radio-buttonset',
 				'settings' 			=> 'baltic_homepage_' . $setting . '_alignment',
 				'section'  			=> 'baltic_homepage_' . $setting . '_description',

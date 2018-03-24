@@ -24,6 +24,7 @@
     "ajaxurl": false,
     "Balticl10n" : false,
     "BalticAdminl10n" : false,
-    "BalticNoticel10n" : false
+    "BalticNoticel10n" : false,
+    "jetpackLazyImagesModule" : false
   }
 }

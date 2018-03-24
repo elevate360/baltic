@@ -55,6 +55,13 @@ function baltic_register_required_plugins() {
 			'required'  => false,
 		),
 
+		array(
+			/* Recommended plugin name */
+			'name'      => __( 'Twitter Widget by Campaign Kit', 'baltic' ),
+			'slug'      => 'campaignkit-twitter',
+			'required'  => false,
+		),
+
 	);
 
 	/*

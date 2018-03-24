@@ -148,28 +148,28 @@
 			var bodyEl 		= $( 'body' ),
 				secondaryEl = $( '#secondary' );
 
-			if ( to == 'content-sidebar' ){
+			if ( to === 'content-sidebar' ){
 				bodyEl.removeClass( 'sidebar-content' );
 				bodyEl.removeClass( 'full-width' );
 				bodyEl.removeClass( 'narrow' );
 				bodyEl.addClass( 'content-sidebar' );
 				secondaryEl.css( 'display', 'block' );
 			}
-			else if ( to == 'sidebar-content' ){
+			else if ( to === 'sidebar-content' ){
 				bodyEl.removeClass( 'content-sidebar' );
 				bodyEl.removeClass( 'full-width' );
 				bodyEl.removeClass( 'narrow' );
 				bodyEl.addClass( 'sidebar-content' );
 				secondaryEl.css( 'display', 'block' );
 			}
-			else if ( to == 'full-width' ){
+			else if ( to === 'full-width' ){
 				bodyEl.removeClass( 'content-sidebar' );
 				bodyEl.removeClass( 'sidebar-content' );
 				bodyEl.removeClass( 'narrow' );
 				bodyEl.addClass( 'full-width' );
 				secondaryEl.css( 'display', 'none' );
 			}
-			else if ( to == 'narrow' ){
+			else if ( to === 'narrow' ){
 				bodyEl.removeClass( 'content-sidebar' );
 				bodyEl.removeClass( 'sidebar-content' );
 				bodyEl.removeClass( 'full-width' );
@@ -188,28 +188,28 @@
 			var bodyEl 		= $( 'body' ),
 				secondaryEl = $( '#secondary' );
 
-			if ( to == 'content-sidebar' ){
+			if ( to === 'content-sidebar' ){
 				bodyEl.removeClass( 'sidebar-content' );
 				bodyEl.removeClass( 'full-width' );
 				bodyEl.removeClass( 'narrow' );
 				bodyEl.addClass( 'content-sidebar' );
 				secondaryEl.css( 'display', 'block' );
 			}
-			else if ( to == 'sidebar-content' ){
+			else if ( to === 'sidebar-content' ){
 				bodyEl.removeClass( 'content-sidebar' );
 				bodyEl.removeClass( 'full-width' );
 				bodyEl.removeClass( 'narrow' );
 				bodyEl.addClass( 'sidebar-content' );
 				secondaryEl.css( 'display', 'block' );
 			}
-			else if ( to == 'full-width' ){
+			else if ( to === 'full-width' ){
 				bodyEl.removeClass( 'content-sidebar' );
 				bodyEl.removeClass( 'sidebar-content' );
 				bodyEl.removeClass( 'narrow' );
 				bodyEl.addClass( 'full-width' );
 				secondaryEl.css( 'display', 'none' );
 			}
-			else if ( to == 'narrow' ){
+			else if ( to === 'narrow' ){
 				bodyEl.removeClass( 'content-sidebar' );
 				bodyEl.removeClass( 'sidebar-content' );
 				bodyEl.removeClass( 'full-width' );
@@ -228,28 +228,28 @@
 			var bodyEl 		= $( 'body' ),
 				secondaryEl = $( '#secondary' );
 
-			if ( to == 'content-sidebar' ){
+			if ( to === 'content-sidebar' ){
 				bodyEl.removeClass( 'sidebar-content' );
 				bodyEl.removeClass( 'full-width' );
 				bodyEl.removeClass( 'narrow' );
 				bodyEl.addClass( 'content-sidebar' );
 				secondaryEl.css( 'display', 'block' );
 			}
-			else if ( to == 'sidebar-content' ){
+			else if ( to === 'sidebar-content' ){
 				bodyEl.removeClass( 'content-sidebar' );
 				bodyEl.removeClass( 'full-width' );
 				bodyEl.removeClass( 'narrow' );
 				bodyEl.addClass( 'sidebar-content' );
 				secondaryEl.css( 'display', 'block' );
 			}
-			else if ( to == 'full-width' ){
+			else if ( to === 'full-width' ){
 				bodyEl.removeClass( 'content-sidebar' );
 				bodyEl.removeClass( 'sidebar-content' );
 				bodyEl.removeClass( 'narrow' );
 				bodyEl.addClass( 'full-width' );
 				secondaryEl.css( 'display', 'none' );
 			}
-			else if ( to == 'narrow' ){
+			else if ( to === 'narrow' ){
 				bodyEl.removeClass( 'content-sidebar' );
 				bodyEl.removeClass( 'sidebar-content' );
 				bodyEl.removeClass( 'full-width' );
@@ -268,28 +268,28 @@
 			var bodyEl 		= $( 'body' ),
 				secondaryEl = $( '#secondary' );
 
-			if ( to == 'content-sidebar' ){
+			if ( to === 'content-sidebar' ){
 				bodyEl.removeClass( 'sidebar-content' );
 				bodyEl.removeClass( 'full-width' );
 				bodyEl.removeClass( 'narrow' );
 				bodyEl.addClass( 'content-sidebar' );
 				secondaryEl.css( 'display', 'block' );
 			}
-			else if ( to == 'sidebar-content' ){
+			else if ( to === 'sidebar-content' ){
 				bodyEl.removeClass( 'content-sidebar' );
 				bodyEl.removeClass( 'full-width' );
 				bodyEl.removeClass( 'narrow' );
 				bodyEl.addClass( 'sidebar-content' );
 				secondaryEl.css( 'display', 'block' );
 			}
-			else if ( to == 'full-width' ){
+			else if ( to === 'full-width' ){
 				bodyEl.removeClass( 'content-sidebar' );
 				bodyEl.removeClass( 'sidebar-content' );
 				bodyEl.removeClass( 'narrow' );
 				bodyEl.addClass( 'full-width' );
 				secondaryEl.css( 'display', 'none' );
 			}
-			else if ( to == 'narrow' ){
+			else if ( to === 'narrow' ){
 				bodyEl.removeClass( 'content-sidebar' );
 				bodyEl.removeClass( 'sidebar-content' );
 				bodyEl.removeClass( 'full-width' );

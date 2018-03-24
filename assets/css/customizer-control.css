@@ -1,28 +1,21 @@
 .iris-strip.iris-slider.iris-alpha-slider {
-	margin-left: 8px !important;
-}
+  margin-left: 8px !important; }
 
-#customize-controls .control-section-baltic_pro .accordion-section-title,
-#customize-controls .control-section-baltic_pro .accordion-section-title:hover,
-#customize-controls .control-section-baltic_pro .accordion-section-title:focus {
-	background-color: #fff !important;
-}
+#customize-controls .control-section-baltic_pro .accordion-section-title, #customize-controls .control-section-baltic_pro .accordion-section-title:hover, #customize-controls .control-section-baltic_pro .accordion-section-title:focus {
+  background-color: #fff !important; }
 
 .control-section-baltic_pro .accordion-section-title .button {
-	margin-top: -4px;
-	margin-left: 8px;
-	font-weight: 400;
-}
+  margin-top: -4px;
+  font-weight: 400;
+  margin-left: 8px; }
 
 .pro-description {
-	padding: 1rem;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1rem; }
 
 .rtl .control-section-baltic_pro .accordion-section-title .button {
-	margin-right: 8px;
-	margin-left: 0;
-}
+  margin-left: 0;
+  margin-right: 8px; }
 
 li#accordion-panel-baltic_homepage_slider_panel > h3.accordion-section-title:before,
 li#accordion-panel-baltic_homepage_product_categories_1_panel > h3.accordion-section-title:before,
@@ -36,18 +29,15 @@ li#accordion-panel-baltic_homepage_posts_1_panel > h3.accordion-section-title:be
 li#accordion-panel-baltic_homepage_posts_2_panel > h3.accordion-section-title:before,
 li#accordion-panel-baltic_homepage_latest_tweets_panel > h3.accordion-section-title:before,
 li#accordion-section-baltic_homepage_order > h3.accordion-section-title:before {
-	display: inline-block;
-	position: relative;
-	font-family: dashicons;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	vertical-align: top;
-	content: "\f180";
-
-	speak: none;
-}
+  font-family: dashicons;
+  content: "\f180";
+  position: relative;
+  display: inline-block;
+  speak: none;
+  text-align: center;
+  vertical-align: top;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased; }
 
 li#accordion-section-baltic_homepage_order > h3.accordion-section-title:before {
-	content: "\f333";
-}
+  content: "\f333"; }

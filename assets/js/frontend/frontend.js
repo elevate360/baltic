@@ -22,6 +22,7 @@
 		this.stickyOrder();
 		this.homepageSlider();
 		this.productsSlider();
+		this.tweetsSlider();
 		this.wcQuickView();
 		this.bind();
 
@@ -279,11 +280,10 @@
 				slidesToShow: columns,
 				autoplay: true,
 				autoplaySpeed: 5000,
-				arrows: true,
+				arrows: false,
 	            dots: true,
 	            pauseOnHover: false,
 	            dotsClass: 'baltic-slick-dots',
-	            arrows: false,
 				responsive: [
 					{
 						breakpoint: 788,
@@ -296,6 +296,48 @@
 			});
 
 		});
+
+	};
+
+	baltic.tweetsSlider = function() {
+
+		var $slider 	 = $( '.homepage-section.slider' );
+
+	    if ( 'undefined' === typeof $slider ) {
+	        return;
+	    }
+
+	    $slider.each( function() {
+
+			var $this 		 = $(this),
+				sliderID 	 = $this.attr('id'),
+				columns 	 = $this.data('columns');
+
+			$( '#' + sliderID + ' .baltic-twitter' ).not('.slick-initialized').slick({
+				lazyLoad: 'progressive',
+				infinite: true,
+				adaptiveHeight: true,
+				slidesToScroll: 1,
+				fade: false,
+				slidesToShow: columns,
+				autoplay: true,
+				autoplaySpeed: 5000,
+				arrows: false,
+	            dots: true,
+	            pauseOnHover: false,
+	            dotsClass: 'baltic-slick-dots',
+				responsive: [
+					{
+						breakpoint: 788,
+						settings: {
+							fade: false,
+							slidesToShow: 2
+						}
+					}
+				]
+			});
+
+	    });
 
 	};
 
@@ -408,6 +450,7 @@
 
 	            baltic.homepageSlider();
 	            baltic.productsSlider();
+	            baltic.tweetsSlider();
 	            baltic.matchHeight();
 
 	        }

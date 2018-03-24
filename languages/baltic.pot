@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Baltic 1.0.0\n"
 "Report-Msgid-Bugs-To: https://elevate360/contact\n"
-"POT-Creation-Date: 2018-03-23 15:54:54+00:00\n"
+"POT-Creation-Date: 2018-03-24 19:06:17+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -285,8 +285,8 @@ msgid "Hide"
 msgstr ""
 
 #: inc/customizer/settings/baltic-settings.php:137
-#: inc/customizer/settings/homepage.php:661
-#: inc/customizer/settings/homepage.php:668
+#: inc/customizer/settings/homepage.php:608
+#: inc/customizer/settings/homepage.php:615
 #: inc/customizer/settings/woocommerce.php:79
 msgid "Layout"
 msgstr ""
@@ -414,8 +414,8 @@ msgid "Header search icon color hover"
 msgstr ""
 
 #: inc/customizer/settings/colors.php:205
-#: inc/customizer/settings/homepage.php:706
-#: inc/customizer/settings/homepage.php:713
+#: inc/customizer/settings/homepage.php:653
+#: inc/customizer/settings/homepage.php:660
 msgid "Background"
 msgstr ""
 
@@ -500,7 +500,7 @@ msgid "Slides"
 msgstr ""
 
 #: inc/customizer/settings/homepage.php:27
-#: inc/customizer/settings/homepage.php:752
+#: inc/customizer/settings/homepage.php:699
 msgid "Slider"
 msgstr ""
 
@@ -542,7 +542,7 @@ msgstr ""
 
 #: inc/customizer/settings/homepage.php:58
 #: inc/customizer/settings/homepage.php:273
-#: inc/customizer/settings/homepage.php:579
+#: inc/customizer/settings/homepage.php:526
 msgid "Title"
 msgstr ""
 
@@ -551,8 +551,8 @@ msgid "Slide title"
 msgstr ""
 
 #: inc/customizer/settings/homepage.php:63
-#: inc/customizer/settings/homepage.php:570
-#: inc/customizer/settings/homepage.php:594
+#: inc/customizer/settings/homepage.php:517
+#: inc/customizer/settings/homepage.php:541
 msgid "Description"
 msgstr ""
 
@@ -728,115 +728,103 @@ msgid "Latest Tweets"
 msgstr ""
 
 #: inc/customizer/settings/homepage.php:407
-msgid "Username"
+msgid "Twitter Username"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:423
-msgid "Maximum popularity"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:444
-msgid "Show retweet"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:460
-msgid "Show replies"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:487
-#: inc/customizer/settings/homepage.php:495
+#: inc/customizer/settings/homepage.php:434
+#: inc/customizer/settings/homepage.php:442
 msgid "Display"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:498
+#: inc/customizer/settings/homepage.php:445
 msgid "Grid"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:499
+#: inc/customizer/settings/homepage.php:446
 msgid "Slideshow"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:515
+#: inc/customizer/settings/homepage.php:462
 msgid "Limit"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:536
+#: inc/customizer/settings/homepage.php:483
 msgid "Columns"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:609
+#: inc/customizer/settings/homepage.php:556
 msgid "Text and description aligment"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:613
+#: inc/customizer/settings/homepage.php:560
 msgid "Left"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:614
+#: inc/customizer/settings/homepage.php:561
 msgid "Center"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:615
+#: inc/customizer/settings/homepage.php:562
 msgid "Right"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:630
+#: inc/customizer/settings/homepage.php:577
 msgid "Text and description color"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:672
+#: inc/customizer/settings/homepage.php:619
 msgid "Boxed"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:673
+#: inc/customizer/settings/homepage.php:620
 msgid "Full width"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:689
+#: inc/customizer/settings/homepage.php:636
 msgid "Spacing"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:736
+#: inc/customizer/settings/homepage.php:683
 msgid "Homepage Order"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:753
+#: inc/customizer/settings/homepage.php:700
 msgid "Product Categories #1"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:754
+#: inc/customizer/settings/homepage.php:701
 msgid "Product Categories #2"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:755
+#: inc/customizer/settings/homepage.php:702
 msgid "Products #1"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:756
+#: inc/customizer/settings/homepage.php:703
 msgid "Products #2"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:757
+#: inc/customizer/settings/homepage.php:704
 msgid "Products #3"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:758
+#: inc/customizer/settings/homepage.php:705
 msgid "Products #4"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:759
+#: inc/customizer/settings/homepage.php:706
 msgid "Posts #1"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:760
+#: inc/customizer/settings/homepage.php:707
 msgid "Posts #2"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:761
+#: inc/customizer/settings/homepage.php:708
 msgid "Testimonial"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:762
+#: inc/customizer/settings/homepage.php:709
 msgid "Latest Tweet"
 msgstr ""
 
@@ -972,23 +960,23 @@ msgstr ""
 msgid "This homepage block require WooCommerce plugin"
 msgstr ""
 
-#: inc/functions/utility.php:59
-msgid "This homepage block require Latest Tweets Widget plugin"
-msgstr ""
-
-#: inc/functions/utility.php:311
-msgid "Content Sidebar"
+#: inc/functions/utility.php:60
+msgid "This homepage block require %s plugin"
 msgstr ""
 
 #: inc/functions/utility.php:312
-msgid "Sidebar Content"
+msgid "Content Sidebar"
 msgstr ""
 
 #: inc/functions/utility.php:313
-msgid "Full Width"
+msgid "Sidebar Content"
 msgstr ""
 
 #: inc/functions/utility.php:314
+msgid "Full Width"
+msgstr ""
+
+#: inc/functions/utility.php:315
 msgid "Narrow"
 msgstr ""
 
@@ -1483,6 +1471,10 @@ msgstr ""
 
 #: inc/vendor/vendor.php:53
 msgid "WP Term Images"
+msgstr ""
+
+#: inc/vendor/vendor.php:60
+msgid "Twitter Widget by Campaign Kit"
 msgstr ""
 
 #: woocommerce/wishlist-view.php:32
