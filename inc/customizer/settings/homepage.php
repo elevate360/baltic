@@ -654,26 +654,43 @@ function baltic_customize_register_homepage() {
 		    'panel' 		=> 'baltic_homepage_'. $setting . '_panel',
 		) );
 
-		Kirki::add_field( 'baltic', array(
-			'type'        => 'background',
-			'settings'    => 'baltic_homepage_'. $setting .'_background',
-			'label'       => esc_html__( 'Background', 'baltic' ),
-			'section'     => 'baltic_homepage_'. $setting .'_background',
-			'default'     => array(
-				'background-color'      => 'rgba(0,0,0,0)',
-				'background-image'      => '',
-				'background-repeat'     => 'repeat',
-				'background-position'   => 'center center',
-				'background-size'       => 'cover',
-				'background-attachment' => 'scroll',
-			),
-			'transport'		=> 'auto',
-			'output' => array(
-				array(
-					'element'  => '.baltic-homepage-' . str_replace( '_', '-', $setting )
+
+			Kirki::add_field( 'baltic', array(
+				'type'        	=> 'color',
+				'settings'    	=> 'baltic_homepage_'. $setting .'_overlay',
+				'label'       	=> __( 'Background overlay', 'baltic' ),
+				'section'     	=> 'baltic_homepage_'. $setting .'_background',
+				'default'     	=> 'rgba(0,0,0,0)',
+				'choices'     	=> array( 'alpha' => true ),
+				'transport'		=> 'auto',
+				'output'		=> array(
+					array(
+						'element'  => '.baltic-homepage-' . str_replace( '_', '-', $setting ) . ' .homepage-overlay',
+						'property' => 'background-color',
+					),
+				)
+			) );
+
+			Kirki::add_field( 'baltic', array(
+				'type'        => 'background',
+				'settings'    => 'baltic_homepage_'. $setting .'_background',
+				'label'       => esc_html__( 'Background', 'baltic' ),
+				'section'     => 'baltic_homepage_'. $setting .'_background',
+				'default'     => array(
+					'background-color'      => 'rgba(0,0,0,0)',
+					'background-image'      => '',
+					'background-repeat'     => 'repeat',
+					'background-position'   => 'center center',
+					'background-size'       => 'cover',
+					'background-attachment' => 'scroll',
 				),
-			),
-		) );
+				'transport'		=> 'auto',
+				'output' => array(
+					array(
+						'element'  => '.baltic-homepage-' . str_replace( '_', '-', $setting )
+					),
+				),
+			) );
 
 	}
 

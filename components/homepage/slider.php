@@ -9,7 +9,7 @@ $slides = get_theme_mod( 'baltic_homepage_slider' );
 $effect = get_theme_mod( 'baltic_homepage_slider_effect', 'true' );
 ?>
 <div id="baltic-homepage-slider" class="baltic-homepage-slider" data-fade="<?php echo esc_attr( $effect );?>">
-
+	<div class="homepage-overlay"></div>
 	<?php if( get_theme_mod( 'baltic_homepage_slider_layout', 'boxed' ) == 'boxed' ) : ?>
 	<div class="container">
 	<?php endif;?>

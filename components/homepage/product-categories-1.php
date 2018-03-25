@@ -8,6 +8,7 @@ $product_cats = get_theme_mod( 'baltic_homepage_product_categories_1', array() )
 ?>
 <div id="baltic-homepage-product-categories-1" class="baltic-homepage-product-categories-1 homepage-section">
 	<?php if( baltic_homepage_woocommerce() == true ) return;?>
+	<div class="homepage-overlay"></div>
 
 	<?php if( get_theme_mod( 'baltic_homepage_product_categories_1_layout', 'boxed' ) == 'boxed' ) : ?>
 	<div class="container">

@@ -23,6 +23,7 @@ $categories = !empty( $category ) ? ' category="'. $category . '"' : '';
 ?>
 <div id="baltic-homepage-products-1" class="baltic-homepage-products-1 homepage-products homepage-section <?php echo esc_attr( $display );?>" data-columns="<?php echo absint( $columns );?>">
 	<?php if( baltic_homepage_woocommerce() == true ) return;?>
+	<div class="homepage-overlay"></div>
 
 	<?php if( get_theme_mod( 'baltic_homepage_products_1_layout', 'boxed' ) == 'boxed' ) : ?>
 	<div class="container">

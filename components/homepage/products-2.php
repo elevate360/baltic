@@ -5,6 +5,8 @@
  * @package  Baltic
  */
 
+$display 	= get_theme_mod( 'baltic_homepage_products_2_display', 'grid' );
+$display 	= ( ! empty( $display ) ) ? $display : '';
 $title 		= get_theme_mod( 'baltic_homepage_products_2_title' );
 $description = get_theme_mod( 'baltic_homepage_products_2_description' );
 $limit 		= get_theme_mod( 'baltic_homepage_products_2_limit', 4 );
@@ -19,8 +21,9 @@ $category = implode(',', $category);
 $categories = !empty( $category ) ? ' category="'. $category . '"' : '';
 
 ?>
-<div id="baltic-homepage-products-2" class="baltic-homepage-products-2 homepage-products homepage-section" data-columns="<?php echo absint( $columns );?>">
+<div id="baltic-homepage-products-2" class="baltic-homepage-products-2 homepage-products homepage-section <?php echo esc_attr( $display );?>" data-columns="<?php echo absint( $columns );?>">
 	<?php if( baltic_homepage_woocommerce() == true ) return;?>
+	<div class="homepage-overlay"></div>
 
 	<?php if( get_theme_mod( 'baltic_homepage_products_2_layout', 'boxed' ) == 'boxed' ) : ?>
 	<div class="container">

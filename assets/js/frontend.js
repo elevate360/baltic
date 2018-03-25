@@ -185,10 +185,12 @@
 	baltic.matchHeight = function() {
 
 		var	$matchHeight 		= $( '.columns' ).find( '.entry-inner' ),
-			$matchHeightProduct = $( 'ul.products' ).find( '.entry-product' );
+			$matchHeightProduct = $( 'ul.products' ).find( '.entry-product' ),
+			$matchHeightTwitter = $( '.baltic-twitter' ).find( '.baltic-twitter__item' );
 
 		$matchHeight.matchHeight();
 		$matchHeightProduct.matchHeight();
+		$matchHeightTwitter.matchHeight();
 
 	};
 

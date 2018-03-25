@@ -3442,12 +3442,23 @@ a.more-link:focus .icon-stroke {
 }
 
 .homepage-section {
+	position: relative;
+	z-index: 0;
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
 
 .homepage-description {
 	margin-bottom: 30px;
+}
+
+.homepage-overlay {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 /** Slider */

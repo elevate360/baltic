@@ -1,10 +1,12 @@
 <?php
 /**
- * Baltic products #1
+ * Baltic products #4
  *
  * @package  Baltic
  */
 
+$display 	= get_theme_mod( 'baltic_homepage_products_4_display', 'grid' );
+$display 	= ( ! empty( $display ) ) ? $display : '';
 $title 		= get_theme_mod( 'baltic_homepage_products_4_title' );
 $description = get_theme_mod( 'baltic_homepage_products_4_description' );
 $limit 		= get_theme_mod( 'baltic_homepage_products_4_limit', 4 );
@@ -19,18 +21,19 @@ $category = implode(',', $category);
 $categories = !empty( $category ) ? ' category="'. $category . '"' : '';
 
 ?>
-<div id="baltic-homepage-products-4" class="baltic-homepage-products-4 homepage-products homepage-section" data-columns="<?php echo absint( $columns );?>">
+<div id="baltic-homepage-products-4" class="baltic-homepage-products-4 homepage-products homepage-section <?php echo esc_attr( $display );?>" data-columns="<?php echo absint( $columns );?>">
 	<?php if( baltic_homepage_woocommerce() == true ) return;?>
+	<div class="homepage-overlay"></div>
 
 	<?php if( get_theme_mod( 'baltic_homepage_products_4_layout', 'boxed' ) == 'boxed' ) : ?>
 	<div class="container">
 	<?php endif;?>
 
-		<?php if( ! empty( $title ) ) : ?>
+		<?php if( !empty( $title ) ) : ?>
 			<h3 class="homepage-title"><?php echo esc_attr( $title );?></h3>
 		<?php endif;?>
 
-		<?php if( ! empty( $description ) ) : ?>
+		<?php if( !empty( $description ) ) : ?>
 			<div class="homepage-description"><?php echo esc_attr( $description );?></div>
 		<?php endif;?>
 

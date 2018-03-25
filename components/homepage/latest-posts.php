@@ -18,6 +18,7 @@ $latest_posts = new WP_Query( $args );
 
 ?>
 <div id="baltic-homepage-latest-posts" class="baltic-homepage-latest-posts homepage-section">
+	<div class="homepage-overlay"></div>
 	<?php if( get_theme_mod( 'baltic_homepage_latest_posts_layout', 'boxed' ) == 'boxed' ) : ?>
 	<div class="container">
 	<?php endif;?>

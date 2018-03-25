@@ -7,6 +7,7 @@
 
 $display 		= get_theme_mod( 'baltic_homepage_latest_tweets_display', 'grid' );
 $display 		= ( ! empty( $display ) ) ? $display : '';
+$overlay 		= get_theme_mod( 'baltic_homepage_latest_tweets_overlay', 'rgba(0,0,0,0)' );
 $title 			= get_theme_mod( 'baltic_homepage_latest_tweets_title' );
 $description 	= get_theme_mod( 'baltic_homepage_latest_tweets_description' );
 $limit 			= get_theme_mod( 'baltic_homepage_latest_tweets_limit', 4 );
@@ -16,6 +17,7 @@ $username 		= get_theme_mod( 'baltic_homepage_latest_tweets_handle' );
 ?>
 <div id="baltic-homepage-latest-tweets" class="baltic-homepage-latest-tweets homepage-twitter homepage-section <?php echo esc_attr( $display );?>" data-columns="<?php echo absint( $columns );?>">
 	<?php if( baltic_homepage_twitter() == true ) return;?>
+	<div class="homepage-overlay"></div>
 
 	<?php if( get_theme_mod( 'baltic_homepage_latest_tweets_layout', 'boxed' ) == 'boxed' ) : ?>
 	<div class="container">
@@ -48,7 +50,7 @@ $username 		= get_theme_mod( 'baltic_homepage_latest_tweets_handle' );
 
 				$html .= '<div class="column-item">';
 
-					$html .= '<div class="baltic-twitter__item" data-mh="twitter-item">';
+					$html .= '<div class="baltic-twitter__item">';
 
 						$html .= '<div class="baltic-twitter__profile">';
 

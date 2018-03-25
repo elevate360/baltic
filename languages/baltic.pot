@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Baltic 1.0.0\n"
 "Report-Msgid-Bugs-To: https://elevate360/contact\n"
-"POT-Creation-Date: 2018-03-24 21:59:17+00:00\n"
+"POT-Creation-Date: 2018-03-25 11:48:13+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -109,7 +109,7 @@ msgstr ""
 msgid "Skip to secondary navigation"
 msgstr ""
 
-#: components/homepage/product-categories-1.php:25
+#: components/homepage/product-categories-1.php:26
 #: inc/customizer/settings/homepage.php:170
 msgid "Shop Now"
 msgstr ""
@@ -415,7 +415,7 @@ msgstr ""
 
 #: inc/customizer/settings/colors.php:205
 #: inc/customizer/settings/homepage.php:653
-#: inc/customizer/settings/homepage.php:660
+#: inc/customizer/settings/homepage.php:677
 msgid "Background"
 msgstr ""
 
@@ -500,7 +500,7 @@ msgid "Slides"
 msgstr ""
 
 #: inc/customizer/settings/homepage.php:27
-#: inc/customizer/settings/homepage.php:699
+#: inc/customizer/settings/homepage.php:716
 msgid "Slider"
 msgstr ""
 
@@ -784,47 +784,51 @@ msgstr ""
 msgid "Spacing"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:683
-msgid "Homepage Order"
+#: inc/customizer/settings/homepage.php:661
+msgid "Background overlay"
 msgstr ""
 
 #: inc/customizer/settings/homepage.php:700
+msgid "Homepage Order"
+msgstr ""
+
+#: inc/customizer/settings/homepage.php:717
 msgid "Product Categories #1"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:701
+#: inc/customizer/settings/homepage.php:718
 msgid "Product Categories #2"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:702
+#: inc/customizer/settings/homepage.php:719
 msgid "Products #1"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:703
+#: inc/customizer/settings/homepage.php:720
 msgid "Products #2"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:704
+#: inc/customizer/settings/homepage.php:721
 msgid "Products #3"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:705
+#: inc/customizer/settings/homepage.php:722
 msgid "Products #4"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:706
+#: inc/customizer/settings/homepage.php:723
 msgid "Posts #1"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:707
+#: inc/customizer/settings/homepage.php:724
 msgid "Posts #2"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:708
+#: inc/customizer/settings/homepage.php:725
 msgid "Testimonial"
 msgstr ""
 
-#: inc/customizer/settings/homepage.php:709
+#: inc/customizer/settings/homepage.php:726
 msgid "Latest Tweet"
 msgstr ""
 

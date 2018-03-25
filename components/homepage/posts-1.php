@@ -20,7 +20,7 @@ $featured = new WP_Query( $args );
 ?>
 
 <div id="baltic-homepage-posts-1" class="baltic-homepage-posts-1 homepage-posts homepage-section <?php echo esc_attr( $display );?>" data-columns="<?php echo absint( $columns );?>">
-
+	<div class="homepage-overlay"></div>
 	<?php if( get_theme_mod( 'baltic_homepage_posts_1_layout', 'boxed' ) == 'boxed' ) : ?>
 	<div class="container">
 	<?php endif;?>

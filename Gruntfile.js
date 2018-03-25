@@ -232,6 +232,14 @@ module.exports = function (grunt) {
 			}
 		},
 
+		wp_readme_to_markdown: {
+			your_target: {
+				files: {
+					'README.md': 'readme.txt'
+				}
+			}
+		},
+
 		// Replace text
 		replace: {
 			themeVersion: {
@@ -308,6 +316,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks( 'grunt-contrib-uglify' );
     grunt.loadNpmTasks( 'grunt-wp-css' );
     grunt.loadNpmTasks( 'grunt-wp-i18n' );
+    grunt.loadNpmTasks( 'grunt-wp-readme-to-markdown' );
 
 	grunt.registerTask( 'css', [
 		'sass',
