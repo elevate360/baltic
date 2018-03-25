@@ -125,6 +125,10 @@ function baltic_page_header_singular() {
 }
 add_action( 'baltic_page_header', 'baltic_page_header_singular' );
 
+/**
+ * [baltic_page_header_search description]
+ * @return [type] [description]
+ */
 function baltic_page_header_search() {
 
 	if ( is_search() ) {

@@ -3476,6 +3476,8 @@ a.more-link:focus .icon-stroke {
 	background-position: top center;
 	background-size: cover;
 	text-align: center;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
 
 	align-items: center;
 	-webkit-box-align: center;
@@ -4224,8 +4226,9 @@ a.custom-logo-link {
 		background-color: transparent;
 		-webkit-box-shadow: none;
 		box-shadow: none;
-		-webkit-transform: scale(1) rotateY(0deg);
-		transform: scale(1) rotateY(0deg);
+		-webkit-transform: scale(1);
+		-ms-transform: scale(1);
+		transform: scale(1);
 	}
 
 	.main-navigation ul.menu .menu-item.full-width-menu:hover > .sub-menu .sub-menu li,
@@ -4282,12 +4285,13 @@ a.custom-logo-link {
 		background-color: #263238;
 		-webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-		-webkit-transition: opacity ease-in-out 0.25s, -webkit-transform ease-in-out 0.35s;
-		transition: opacity ease-in-out 0.25s, -webkit-transform ease-in-out 0.35s;
-		transition: opacity ease-in-out 0.25s, transform ease-in-out 0.35s;
-		transition: opacity ease-in-out 0.25s, transform ease-in-out 0.35s, -webkit-transform ease-in-out 0.35s;
-		-webkit-transform: scale(0.5) rotateY(180deg);
-		transform: scale(0.5) rotateY(180deg);
+		-webkit-transition: opacity ease-in-out 0.25s, -webkit-transform ease-in-out 0.25s;
+		transition: opacity ease-in-out 0.25s, -webkit-transform ease-in-out 0.25s;
+		transition: opacity ease-in-out 0.25s, transform ease-in-out 0.25s;
+		transition: opacity ease-in-out 0.25s, transform ease-in-out 0.25s, -webkit-transform ease-in-out 0.25s;
+		-webkit-transform: scale(0.5);
+		-ms-transform: scale(0.5);
+		transform: scale(0.5);
 	}
 
 	.main-navigation ul.menu .sub-menu a {
@@ -4439,6 +4443,49 @@ a.custom-logo-link {
 	.slide-content {
 		padding-top: 0;
 		padding-bottom: 0;
+	}
+
+	.slide-title,
+	.slide-description,
+	.slide-button-1,
+	.slide-button-2 {
+		position: relative;
+		opacity: 0;
+		-webkit-transition: all 0.75s;
+		transition: all 0.75s;
+		-webkit-transition-delay: 0.5s;
+		transition-delay: 0.5s;
+		-webkit-transition-timing-function: ease-in-out;
+		transition-timing-function: ease-in-out;
+		-webkit-transform: scale(5) rotateX(360deg);
+		transform: scale(5) rotateX(360deg);
+	}
+
+	.slick-current .slide-title,
+	.slick-current
+	.slide-description,
+	.slick-current
+	.slide-button-1,
+	.slick-current
+	.slide-button-2 {
+		opacity: 1;
+		-webkit-transform: scale(1) rotateX(0deg);
+		transform: scale(1) rotateX(0deg);
+	}
+
+	.fade-true .slide-inner {
+		overflow: hidden;
+		-webkit-transition: all 0.5s;
+		transition: all 0.5s;
+		-webkit-transform: scale(5);
+		-ms-transform: scale(5);
+		transform: scale(5);
+	}
+
+	.fade-true .slick-current .slide-inner {
+		-webkit-transform: scale(1);
+		-ms-transform: scale(1);
+		transform: scale(1);
 	}
 
 	.product-categories__inner {

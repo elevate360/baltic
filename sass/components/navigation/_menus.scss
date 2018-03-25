@@ -169,7 +169,7 @@
 							    margin: 0;
 							    position: relative;
 							    opacity: 1;
-							    transform: scale(1) rotateY(0deg);
+							    transform: scale(1);
 							    left: auto;
 							    padding: 0;
 							    width: 100%;
@@ -224,8 +224,8 @@
 				padding: 0;
 				width: 240px;
 				z-index: 9999;
-				transition: opacity ease-in-out .25s, transform ease-in-out .35s;
-				transform: scale(0.5) rotateY(180deg);
+				transition: opacity ease-in-out .25s, transform ease-in-out .25s;
+				transform: scale(0.5);
 				opacity: 0;
 				border-radius: .25rem;
 				box-shadow: 0 8px 16px $color__alpha-dark;

@@ -224,7 +224,7 @@
 	baltic.homepageSlider = function() {
 
 		var $slide = $( '.baltic-homepage-slider-container' ),
-			effect = $slide.parent().data( 'fade' ),
+			effect = $( '.baltic-homepage-slider' ).data( 'fade' ),
 			headerHeight = baltic.$header.height();
 
 		if ( baltic.$window.width() > 768 ) {
@@ -232,7 +232,6 @@
 		}
 
 		$( '.baltic-homepage-slider-container' ).not('.slick-initialized').slick({
-			lazyLoad: 'progressive',
 			infinite: true,
 			adaptiveHeight: true,
 			slidesToScroll: 1,

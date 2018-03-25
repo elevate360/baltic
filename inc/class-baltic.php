@@ -35,9 +35,6 @@ class Baltic_Init {
 		add_action( 'wp_head', array( $this, 'javascript_detection'), 0 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'assets' ) );
 
-		/** Baltic theme constants */
-		add_action( 'baltic_init', array( $this, 'constants' ), 0 );
-
 		/** Includes files */
 		add_action( 'baltic_init', array( $this, 'includes' ) );
 		add_action( 'baltic_init', array( $this, 'integrations' ) );
@@ -205,23 +202,6 @@ class Baltic_Init {
 	}
 
 	/**
-	 * Baltic theme constants
-	 *
-	 * @return  void
-	 */
-	public function constants(){
-
-		$theme = wp_get_theme();
-		define( 'BALTIC_THEME_NAME', 				$theme->get( 'Name' ) );
-		define( 'BALTIC_THEME_URL', 				$theme->get( 'ThemeURI' ) );
-		define( 'BALTIC_THEME_DEVELOPER_AUTHOR', 	$theme->get( 'Author' ) );
-		define( 'BALTIC_THEME_DEVELOPER_URI', 		$theme->get( 'AuthorURI' ) );
-		define( 'BALTIC_THEME_VERSION', 			$theme->get( 'Version' ) );
-		define( 'BALTIC_THEME_DOMAIN', 				$theme->get( 'TextDomain' ) );
-
-	}
-
-	/**
 	 * Enqueue scripts and styles.
 	 *
 	 * @return  void
@@ -250,9 +230,10 @@ class Baltic_Init {
 		wp_enqueue_script( 'jquery-stickit', get_theme_file_uri( "/assets/js/stickit/jquery.stickit$suffix.js" ), array( 'jquery' ), '0.2.13', true );
 		wp_enqueue_script( 'jquery-match-height', get_theme_file_uri( "/assets/js/match-height/jquery.matchHeight$suffix.js" ), array( 'jquery' ), '0.7.2', true );
 		wp_enqueue_script( 'jquery-slick', get_theme_file_uri( "/assets/js/slick/slick$suffix.js" ), array( 'jquery' ), '1.8.0', true );
+		wp_enqueue_script( 'typist', get_theme_file_uri( "/assets/js/typist/typist$suffix.js" ), array(), '1.2', true );
 
 		// Main script
-		wp_enqueue_script( 'baltic-script', get_theme_file_uri( "/assets/js/frontend$suffix.js" ), array( 'jquery', 'flexslider' ), '20151215', true );
+		wp_enqueue_script( 'baltic-script', get_theme_file_uri( "/assets/js/frontend$suffix.js" ), array( 'jquery' ), '20151215', true );
 
 		$output = array(
 			'sliderPrevBtn'	=> '<button type="button" data-role="none" class="baltic-slick-prev" aria-label="Previous" tabindex="0" role="button">'. baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'chevron-left' ) ) .'</button>',
@@ -282,7 +263,7 @@ class Baltic_Init {
 
 		/** Theme classes */
 		require get_parent_theme_file_path( '/inc/class-breadcrumb.php' );
-		require get_parent_theme_file_path( '/inc/class-template-functions.php' );
+		require get_parent_theme_file_path( '/inc/class-theme-functions.php' );
 
 		/** Include theme functions */
 		require get_parent_theme_file_path( '/inc/functions/attr.php' );
@@ -295,13 +276,18 @@ class Baltic_Init {
 		require get_parent_theme_file_path( '/inc/customizer/customizer.php' );
 
 		/** Theme structures */
-		require get_parent_theme_file_path( '/inc/structure/header.php' );
-		require get_parent_theme_file_path( '/inc/structure/page-header.php' );
-		require get_parent_theme_file_path( '/inc/structure/content.php' );
-		require get_parent_theme_file_path( '/inc/structure/sidebar.php' );
-		require get_parent_theme_file_path( '/inc/structure/entry.php' );
-		require get_parent_theme_file_path( '/inc/structure/footer.php' );
-		require get_parent_theme_file_path( '/inc/structure/homepage.php' );
+		$structures = array(
+			'header',
+			'page-header',
+			'content',
+			'sidebar',
+			'entry',
+			'footer',
+			'homepage',
+		);
+		foreach ( $structures as $structure ) {
+			require get_parent_theme_file_path( "/inc/structure/{$structure}.php" );
+		}
 
 	}
 

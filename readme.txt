@@ -3,6 +3,7 @@
 Contributors: elevate360
 Requires at least: 4.7
 Tested up to: 4.9
+Requires PHP: 5.4
 Stable tag: 1.0.0
 Version: 1.2
 License: GNU General Public License v2 or later
@@ -37,42 +38,34 @@ Baltic is distributed under the terms of the GNU GPL
 
 Baltic bundles the following third-party resources:
 
-Based on Underscores, (C) 2012-2017 Automattic, Inc.
+* Based on [Underscores](http://underscores.me/), (C) 2012-2017 Automattic, Inc.
 **License:** GPLv2 or later
-Source: http://underscores.me/
 
-normalize.css, Copyright 2012-2016 Nicolas Gallagher and Jonathan Neal
+* [normalize.css](https://necolas.github.io/normalize.css/), Copyright 2012-2016 Nicolas Gallagher and Jonathan Neal
 **License:** MIT
-Source: https://necolas.github.io/normalize.css/
 
-html5shiv by [aFarkas](https://github.com/aFarkas)
+* [html5shiv](https://github.com/aFarkas/html5shiv) by [aFarkas](https://github.com/aFarkas)
 **License:** MIT and GPL-2.0
-Source: https://github.com/aFarkas/html5shiv
 
-nwmatcher by [dperini](https://github.com/dperini)
+* [nwmatcher](https://github.com/dperini/nwmatcher) by [dperini](https://github.com/dperini)
 **License:** MIT
-Source: https://github.com/dperini/nwmatcher
 
-Respond by [scottjehli](https://github.com/scottjehli)
+* [Respond](https://github.com/scottjehl/Respond) by [scottjehli](https://github.com/scottjehli)
 **License:** MIT
-Source: https://github.com/scottjehl/Respond
 
-selectivizr by [keithclark](https://github.com/keithclark)
+* [selectivizr](https://github.com/keithclark/selectivizr) by [keithclark](https://github.com/keithclark)
 **License:** MIT
-Source: https://github.com/keithclark/selectivizr
 
-Fitvids by [Chris Coyier](http://chriscoyier.net/) and [Paravel](http://paravelinc.com/)
+* [Fitvids](https://github.com/davatron5000/FitVids.js) by [Chris Coyier](http://chriscoyier.net/) and [Paravel](http://paravelinc.com/)
 **License:** WTFPL
-Source: https://github.com/davatron5000/FitVids.js
 
-Jquery Stickit by [emn178](https://github.com/emn178)
+* [Jquery Stickit](https://github.com/emn178/jquery-stickit) by [emn178](https://github.com/emn178)
 **License:** MIT
-Source: https://github.com/emn178/jquery-stickit
 
-TGM Plugin Activation by [Thomas Griffin](https://thomasgriffin.io/)
+* [TGM Plugin Activation](http://tgmpluginactivation.com/) by [Thomas Griffin](https://thomasgriffin.io/)
 **License:** GPL-2.0+
-Source: http://tgmpluginactivation.com/
 
-- Bundled header image, Pixabay
+* Bundled header image, Pixabay
 **License:** CC0 1.0 Universal (CC0 1.0)
-Source: https://www.pexels.com/photo/adventure-atmosphere-conifer-conifers-418831/
+ - https://www.pexels.com/photo/adventure-atmosphere-conifer-conifers-418831/
+ - https://www.pexels.com/photo/adventure-atmosphere-conifer-conifers-418831/

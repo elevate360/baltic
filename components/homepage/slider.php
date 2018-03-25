@@ -16,7 +16,7 @@ $effect = get_theme_mod( 'baltic_homepage_slider_effect', 'true' );
 
 	<?php if ( $slides ) : ?>
 
-		<div class="baltic-homepage-slider-container">
+		<div class="baltic-homepage-slider-container fade-<?php echo esc_attr( $effect );?>">
 
 		<?php
 		foreach ( $slides as $slide ) :

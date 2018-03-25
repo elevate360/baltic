@@ -7,6 +7,7 @@
 
 /**
  * Homepage section
+ *
  * @return void
  */
 function baltic_homepage_section() {
