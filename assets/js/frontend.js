@@ -223,25 +223,25 @@
 
 	baltic.homepageSlider = function() {
 
-		var $slide = $( '.baltic-homepage-slider-container' ),
-			effect = $( '.baltic-homepage-slider' ).data( 'fade' ),
-			headerHeight = baltic.$header.height();
-
-		if ( baltic.$window.width() > 768 ) {
-			$( '.slide-inner' ).css( 'min-height', 'calc( 100vh - '+ headerHeight +'px )' );
-		}
+		var $slider 		= $( '.baltic-homepage-slider' ),
+			effect  		= $slider.data( 'fade' ),
+			autoplay  		= $slider.data( 'autoplay' ),
+			autoplayspeed 	= $slider.data( 'autoplayspeed' ),
+			arrows 			= $slider.data( 'arrows' ),
+			dots 			= $slider.data( 'dots' ),
+			pauseonhover 	= $slider.data( 'pauseonhover' );
 
 		$( '.baltic-homepage-slider-container' ).not('.slick-initialized').slick({
 			infinite: true,
 			adaptiveHeight: true,
 			slidesToScroll: 1,
-			fade: effect,
 			slidesToShow: 1,
-			autoplay: true,
-			autoplaySpeed: 5000,
-			arrows: true,
-            dots: true,
-            pauseOnHover: false,
+			fade: effect,
+			autoplay: autoplay,
+			autoplaySpeed: autoplayspeed,
+			arrows: arrows,
+            dots: dots,
+            pauseOnHover: pauseonhover,
             dotsClass: 'baltic-slick-dots',
             prevArrow: Balticl10n.sliderPrevBtn,
             nextArrow: Balticl10n.sliderNextBtn,

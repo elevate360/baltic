@@ -3471,6 +3471,7 @@ a.more-link:focus .icon-stroke {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	min-height: calc( 100vh - 178px);
 	background-attachment: scroll;
 	background-position: center center;
 	background-position: top center;
@@ -3485,6 +3486,10 @@ a.more-link:focus .icon-stroke {
 	-ms-flex-align: center;
 	-ms-flex-pack: center;
 	justify-content: center;
+}
+
+.admin-bar .slide-inner {
+	min-height: calc( 100vh - 224px);
 }
 
 .slide-content {
@@ -4464,6 +4469,14 @@ a.custom-logo-link {
 		max-width: 60%;
 		margin-right: auto;
 		margin-left: auto;
+	}
+
+	.slide-inner {
+		min-height: calc( 100vh - 147px);
+	}
+
+	.admin-bar .slide-inner {
+		min-height: calc( 100vh - 179px);
 	}
 
 	.slide-content {

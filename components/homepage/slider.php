@@ -7,8 +7,26 @@
 
 $slides = get_theme_mod( 'baltic_homepage_slider' );
 $effect = get_theme_mod( 'baltic_homepage_slider_effect', 'true' );
+$autoplay = get_theme_mod( 'baltic_homepage_slider_autoplay', true );
+$autoplay = ( $autoplay == true ) ? 'true' : 'false';
+$autoplayspeed = get_theme_mod( 'baltic_homepage_slider_autoplayspeed', 5000 );
+$arrows = get_theme_mod( 'baltic_homepage_slider_arrows', true );
+$arrows = ( $arrows == true ) ? 'true' : 'false';
+$dots = get_theme_mod( 'baltic_homepage_slider_dots', true );
+$dots = ( $dots == true ) ? 'true' : 'false';
+$pauseonhover = get_theme_mod( 'baltic_homepage_slider_pauseonhover', false );
+$pauseonhover = ( $pauseonhover == true ) ? 'true' : 'false';
+
+printf( '<div id="baltic-homepage-slider" class="baltic-homepage-slider %1$s" %2$s %3$s %4$s %5$s %6$s %7$s>',
+	'fade-'. esc_attr( $effect ),
+	'data-fade="'. esc_attr( $effect ) .'"',
+	'data-autoplay="'. esc_attr( $autoplay ) .'"',
+	'data-autoplayspeed="'. esc_attr( $autoplayspeed ) .'"',
+	'data-arrows="'. esc_attr( $arrows ) .'"',
+	'data-dots="'. esc_attr( $dots ) .'"',
+	'data-pauseonhover="'. esc_attr( $pauseonhover ) .'"'
+);
 ?>
-<div id="baltic-homepage-slider" class="baltic-homepage-slider" data-fade="<?php echo esc_attr( $effect );?>">
 	<div class="homepage-overlay"></div>
 	<?php if( get_theme_mod( 'baltic_homepage_slider_layout', 'boxed' ) == 'boxed' ) : ?>
 	<div class="container">

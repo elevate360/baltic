@@ -53,6 +53,16 @@
     justify-content: center;
     text-align: center;
     transition: all .5s;
+    min-height: calc( 100vh - 178px );
+    @include respond-to( medium ) {
+		min-height: calc( 100vh - 147px );
+    }
+    .admin-bar & {
+    	min-height: calc( 100vh - 224px );
+    	@include respond-to( medium ) {
+			min-height: calc( 100vh - 179px );
+    	}
+    }
 }
 
 .slide-content {

@@ -143,6 +143,96 @@ function baltic_customize_register_homepage() {
 			),
 		) );
 
+		Kirki::add_field( 'baltic', array(
+			'type'        => 'checkbox',
+			'settings'    => 'baltic_homepage_slider_autoplay',
+			'label'       => __( 'Autoplay', 'baltic' ),
+			'section'     => 'baltic_homepage_slider_setting',
+			'default'     => true,
+			'priority'    => 10,
+			'transport'	=> 'auto',
+			'partial_refresh' => array(
+				'baltic_homepage_slider_autoplay' => array(
+					'selector'        		=> '.baltic-homepage-slider',
+					'render_callback' 		=> 'baltic_homepage_slider',
+					'container_inclusive' 	=> true
+				),
+			),
+		) );
+
+		Kirki::add_field( 'baltic', array(
+			'type'        => 'number',
+			'settings'    => 'baltic_homepage_slider_autoplayspeed',
+			'label'       => __( 'Autoplay Speed (in milisecond)', 'baltic' ),
+			'section'     => 'baltic_homepage_slider_setting',
+			'default'     => 5000,
+			'choices'     	=> array(
+				'min'  => 1,
+				'max'  => 9999999,
+				'step' => 1,
+			),
+			'priority'    => 10,
+			'transport'	=> 'auto',
+			'partial_refresh' => array(
+				'baltic_homepage_slider_autoplayspeed' => array(
+					'selector'        		=> '.baltic-homepage-slider',
+					'render_callback' 		=> 'baltic_homepage_slider',
+					'container_inclusive' 	=> true
+				),
+			),
+		) );
+
+		Kirki::add_field( 'baltic', array(
+			'type'        => 'checkbox',
+			'settings'    => 'baltic_homepage_slider_arrows',
+			'label'       => __( 'Display Arrows', 'baltic' ),
+			'section'     => 'baltic_homepage_slider_setting',
+			'default'     => true,
+			'priority'    => 10,
+			'transport'	=> 'auto',
+			'partial_refresh' => array(
+				'baltic_homepage_slider_arrows' => array(
+					'selector'        		=> '.baltic-homepage-slider',
+					'render_callback' 		=> 'baltic_homepage_slider',
+					'container_inclusive' 	=> true
+				),
+			),
+		) );
+
+		Kirki::add_field( 'baltic', array(
+			'type'        => 'checkbox',
+			'settings'    => 'baltic_homepage_slider_dots',
+			'label'       => __( 'Display Dots', 'baltic' ),
+			'section'     => 'baltic_homepage_slider_setting',
+			'default'     => true,
+			'priority'    => 10,
+			'transport'	=> 'auto',
+			'partial_refresh' => array(
+				'baltic_homepage_slider_dots' => array(
+					'selector'        		=> '.baltic-homepage-slider',
+					'render_callback' 		=> 'baltic_homepage_slider',
+					'container_inclusive' 	=> true
+				),
+			),
+		) );
+
+		Kirki::add_field( 'baltic', array(
+			'type'        => 'checkbox',
+			'settings'    => 'baltic_homepage_slider_pauseonhover',
+			'label'       => __( 'Pause on hover', 'baltic' ),
+			'section'     => 'baltic_homepage_slider_setting',
+			'default'     => false,
+			'priority'    => 10,
+			'transport'	=> 'auto',
+			'partial_refresh' => array(
+				'baltic_homepage_slider_pauseonhover' => array(
+					'selector'        		=> '.baltic-homepage-slider',
+					'render_callback' 		=> 'baltic_homepage_slider',
+					'container_inclusive' 	=> true
+				),
+			),
+		) );
+
 	$product_categories = array(
 		'product_categories_1',
 		'product_categories_2'
