@@ -2017,6 +2017,37 @@ ul.products:after,
 
 
 /*--------------------------------------------------------------
+## Typist
+--------------------------------------------------------------*/
+
+#baltic-hero-rotator {
+	display: inline-block;
+	position: relative;
+	height: 100%;
+	padding-right: 8px;
+	font-weight: bold;
+}
+
+#baltic-hero-rotator:after {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 4px;
+	height: 100%;
+	margin-right: 2px;
+	background-color: #06a44d;
+	content: " ";
+	-webkit-animation: blink 1s step-start 0s infinite;
+	animation: blink 1s step-start 0s infinite;
+}
+
+.selectedText {
+	display: none;
+}
+
+
+/*--------------------------------------------------------------
 # CF7
 --------------------------------------------------------------*/
 
@@ -3461,6 +3492,55 @@ a.more-link:focus .icon-stroke {
 	height: 100%;
 }
 
+/** Hero */
+
+.baltic-homepage-hero-wrap {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	min-height: calc( 100vh - 178px);
+	text-align: left;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+
+	align-items: center;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+	-ms-flex-align: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+.admin-bar .baltic-homepage-hero-wrap {
+	min-height: calc( 100vh - 224px);
+}
+
+.baltic-homepage-hero-inner {
+	width: 100%;
+}
+
+.baltic-homepage-hero-area {
+	display: inline-block;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.baltic-hero-title {
+	margin-bottom: 1.5rem;
+}
+
+.baltic-hero-description {
+	margin-bottom: 2rem;
+	font-size: 18px;
+	font-size: 1.125rem;
+}
+
+.hero-button-1,
+.hero-button-2 {
+	margin: 0 5px;
+	padding: 1rem 1.5rem;
+}
+
 /** Slider */
 
 .slide-item {
@@ -4471,6 +4551,24 @@ a.custom-logo-link {
 		margin-left: auto;
 	}
 
+	.baltic-homepage-hero-wrap {
+		min-height: calc( 100vh - 147px);
+	}
+
+	.admin-bar .baltic-homepage-hero-wrap {
+		min-height: calc( 100vh - 179px);
+	}
+
+	.baltic-homepage-hero-area {
+		max-width: 60%;
+	}
+
+	.baltic-hero-title {
+		font-size: 48px;
+		font-size: 3rem;
+		line-height: 1;
+	}
+
 	.slide-inner {
 		min-height: calc( 100vh - 147px);
 	}
@@ -5214,6 +5312,34 @@ a.custom-logo-link {
 		opacity: 0;
 		-webkit-transform: perspective(140px) rotateY(180deg);
 		transform: perspective(140px) rotateY(180deg);
+	}
+}
+
+@keyframes blink {
+	0% {
+		opacity: 1.0;
+	}
+
+	50% {
+		opacity: 0.0;
+	}
+
+	100% {
+		opacity: 1.0;
+	}
+}
+
+@-webkit-keyframes blink {
+	0% {
+		opacity: 1.0;
+	}
+
+	50% {
+		opacity: 0.0;
+	}
+
+	100% {
+		opacity: 1.0;
 	}
 }
 

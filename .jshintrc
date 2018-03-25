@@ -25,6 +25,7 @@
     "Balticl10n" : false,
     "BalticAdminl10n" : false,
     "BalticNoticel10n" : false,
-    "jetpackLazyImagesModule" : false
+    "jetpackLazyImagesModule" : false,
+    "Typist" : false
   }
 }

@@ -29,6 +29,14 @@ function baltic_homepage_section() {
 add_action( 'baltic_homepage', 'baltic_homepage_section' );
 
 /**
+ * Callback function for components/hero.php template part
+ * @return void
+ */
+function baltic_homepage_hero() {
+	get_template_part( 'components/homepage/hero' );
+}
+
+/**
  * Callback function for components/slider.php template part
  * @return void
  */

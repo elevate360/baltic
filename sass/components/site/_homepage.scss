@@ -34,6 +34,57 @@
 	z-index: -1;
 }
 
+/** Hero */
+.baltic-homepage-hero-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    transition: all .5s;
+    min-height: calc( 100vh - 178px );
+    @include respond-to( medium ) {
+		min-height: calc( 100vh - 147px );
+    }
+    .admin-bar & {
+    	min-height: calc( 100vh - 224px );
+    	@include respond-to( medium ) {
+			min-height: calc( 100vh - 179px );
+    	}
+    }
+}
+
+.baltic-homepage-hero-inner {
+	width: 100%;
+}
+
+.baltic-homepage-hero-area {
+	display: inline-block;
+	padding-top: $gutter__width*4;
+	padding-bottom: $gutter__width*4;
+    @include respond-to( medium ) {
+		max-width: 60%;
+    }
+}
+
+.baltic-hero-title {
+	margin-bottom: 1.5rem;
+	@include respond-to( medium ) {
+		@include font-size(3);
+		line-height: 1;
+	}
+}
+
+.baltic-hero-description {
+	@include font-size(1.125);
+	margin-bottom: 2rem;
+}
+
+.hero-button-1,
+.hero-button-2 {
+	padding: 1rem 1.5rem;
+	margin: 0 5px;
+}
+
 /** Slider */
 .baltic-homepage-slider {
 

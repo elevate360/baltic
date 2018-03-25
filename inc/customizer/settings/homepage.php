@@ -9,6 +9,151 @@ function baltic_customize_register_homepage() {
 
 	$default = baltic_setting_default();
 
+	/** Homepage Hero panel*/
+	Kirki::add_panel( 'baltic_homepage_hero_panel', array(
+	    'title' 			=> esc_html__( 'Homepage Hero', 'baltic' ),
+	    'priority'			=> 10,
+	    'active_callback'	=> 'baltic_is_homepage_template'
+	) );
+
+	/** Homepage Hero section*/
+	Kirki::add_section( 'baltic_homepage_hero_section', array(
+	    'title' 		=> esc_html__( 'Hero', 'baltic' ),
+	    'panel' 		=> 'baltic_homepage_hero_panel'
+	) );
+
+		Kirki::add_field( 'baltic', array(
+			'type'     => 'text',
+			'settings' => 'baltic_homepage_hero_prefix',
+			'label'    => esc_html__( 'Title prefix', 'baltic' ),
+			'section'  => 'baltic_homepage_hero_section',
+			'default'  => esc_attr__( 'This is a defualt value', 'baltic' ),
+			'priority' => 10,
+		) );
+
+		Kirki::add_field( 'baltic', array(
+			'type'     => 'textarea',
+			'settings' => 'baltic_homepage_hero_rotator',
+			'label'    => esc_html__( 'Title rotator', 'baltic' ),
+			'description' => esc_html__( 'Separate title by coma', 'baltic' ),
+			'section'  => 'baltic_homepage_hero_section',
+			'default'  => esc_attr__( 'This is a defualt value', 'baltic' ),
+			'priority' => 10,
+		) );
+
+		Kirki::add_field( 'baltic', array(
+			'type'     => 'text',
+			'settings' => 'baltic_homepage_hero_suffix',
+			'label'    => esc_html__( 'Title suffix', 'baltic' ),
+			'section'  => 'baltic_homepage_hero_section',
+			'default'  => esc_attr__( 'This is a defualt value', 'baltic' ),
+			'priority' => 10,
+		) );
+
+		Kirki::add_field( 'baltic', array(
+			'type'     => 'textarea',
+			'settings' => 'baltic_homepage_hero_description',
+			'label'    => esc_html__( 'Description', 'baltic' ),
+			'section'  => 'baltic_homepage_hero_section',
+			'default'  => esc_attr__( 'This is a defualt value', 'baltic' ),
+			'priority' => 10,
+		) );
+
+		Kirki::add_field( 'baltic', array(
+			'type'     => 'text',
+			'settings' => 'baltic_homepage_hero_btn_text_1',
+			'label'    => esc_html__( 'Button Text #1', 'baltic' ),
+			'section'  => 'baltic_homepage_hero_section',
+			'default'  => esc_attr__( 'Button #1', 'baltic' ),
+			'priority' => 10,
+		) );
+
+		Kirki::add_field( 'baltic', array(
+			'type'     => 'link',
+			'settings' => 'baltic_homepage_hero_btn_link_1',
+			'label'    => esc_html__( 'Button link #1', 'baltic' ),
+			'section'  => 'baltic_homepage_hero_section',
+			'default'  => '#',
+			'priority' => 10,
+		) );
+
+		Kirki::add_field( 'baltic', array(
+			'type'     => 'text',
+			'settings' => 'baltic_homepage_hero_btn_text_2',
+			'label'    => esc_html__( 'Button Text #2', 'baltic' ),
+			'section'  => 'baltic_homepage_hero_section',
+			'default'  => '',
+			'priority' => 10,
+		) );
+
+		Kirki::add_field( 'baltic', array(
+			'type'     => 'link',
+			'settings' => 'baltic_homepage_hero_btn_link_2',
+			'label'    => esc_html__( 'Button link #2', 'baltic' ),
+			'section'  => 'baltic_homepage_hero_section',
+			'default'  => '',
+			'priority' => 10,
+		) );
+
+	/** Homepage Hero section*/
+	Kirki::add_section( 'baltic_homepage_hero_appearance', array(
+	    'title' 		=> esc_html__( 'Hero', 'baltic' ),
+	    'panel' 		=> 'baltic_homepage_hero_panel'
+	) );
+
+		Kirki::add_field( 'baltic', array(
+			'type'        		=> 'radio-buttonset',
+			'settings' 			=> 'baltic_homepage_hero_alignment',
+			'section'  			=> 'baltic_homepage_hero_appearance',
+			'label'       		=> __( 'Hero text alignment', 'baltic' ),
+			'default'     		=> 'left',
+			'priority'    		=> 10,
+			'choices'     		=> array(
+				'left'   	=> esc_attr__( 'Left', 'baltic' ),
+				'center' 	=> esc_attr__( 'Center', 'baltic' ),
+				'right'  	=> esc_attr__( 'Right', 'baltic' ),
+			),
+			'transport' 		=> 'auto',
+			'output'			=> array(
+				array(
+					'element'  => '.baltic-homepage-hero-inner',
+					'property' => 'text-align',
+				)
+			)
+		) );
+
+		Kirki::add_field( 'baltic', array(
+			'type'        	=> 'color',
+			'settings'    	=> 'baltic_homepage_hero_color',
+			'label'       	=> __( 'Text color', 'baltic' ),
+			'section'     	=> 'baltic_homepage_hero_appearance',
+			'default'     	=> $default['color_text_primary'],
+			'choices'     	=> array( 'alpha' => true ),
+			'transport'		=> 'auto',
+			'output'		=> array(
+				array(
+					'element'  => '.baltic-homepage-hero-area',
+					'property' => 'color',
+				),
+			)
+		) );
+
+		Kirki::add_field( 'baltic', array(
+			'type'        	=> 'color',
+			'settings'    	=> 'baltic_homepage_hero_cursor_color',
+			'label'       	=> __( 'Cursor color', 'baltic' ),
+			'section'     	=> 'baltic_homepage_hero_appearance',
+			'default'     	=> '#06a44d',
+			'choices'     	=> array( 'alpha' => true ),
+			'transport'		=> 'auto',
+			'output'		=> array(
+				array(
+					'element'  => '#baltic-hero-rotator:after',
+					'property' => 'background-color',
+				),
+			)
+		) );
+
 	/** Homepage Slider panel*/
 	Kirki::add_panel( 'baltic_homepage_slider_panel', array(
 	    'title' 			=> esc_html__( 'Homepage Slider', 'baltic' ),
@@ -680,6 +825,7 @@ function baltic_customize_register_homepage() {
 
 	/** Background */
 	$backgrounds = array(
+		'hero',
 		'slider',
 		'product_categories_1',
 		'product_categories_2',
@@ -803,6 +949,7 @@ function baltic_customize_register_homepage() {
 				'posts-1'
 			),
 			'choices'     => array(
+				'hero'					=> esc_html__( 'Hero', 'baltic' ),
 				'slider'				=> esc_html__( 'Slider', 'baltic' ),
 				'product-categories-1'	=> esc_html__( 'Product Categories #1', 'baltic' ),
 				'product-categories-2'	=> esc_html__( 'Product Categories #2', 'baltic' ),

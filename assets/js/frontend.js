@@ -20,6 +20,7 @@
 		this.matchHeight();
 		this.returnToTop();
 		this.stickyOrder();
+		this.heroTypist();
 		this.homepageSlider();
 		this.productsSlider();
 		this.tweetsSlider();
@@ -221,6 +222,19 @@
 
 	};
 
+	baltic.heroTypist = function() {
+
+		var typist;
+
+		typist = document.querySelector( '#baltic-hero-rotator' );
+
+		new Typist( typist, {
+			letterInterval: 60,
+			textInterval: 3000
+		});
+
+	};
+
 	baltic.homepageSlider = function() {
 
 		var $slider 		= $( '.baltic-homepage-slider' ),
@@ -333,6 +347,13 @@
 						settings: {
 							fade: false,
 							slidesToShow: 2
+						}
+					},
+					{
+						breakpoint: 576,
+						settings: {
+							fade: false,
+							slidesToShow: 1
 						}
 					}
 				]

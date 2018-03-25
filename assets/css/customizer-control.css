@@ -24,6 +24,7 @@
 	margin-left: 0;
 }
 
+li#accordion-panel-baltic_homepage_hero_panel > h3.accordion-section-title:before,
 li#accordion-panel-baltic_homepage_slider_panel > h3.accordion-section-title:before,
 li#accordion-panel-baltic_homepage_product_categories_1_panel > h3.accordion-section-title:before,
 li#accordion-panel-baltic_homepage_product_categories_2_panel > h3.accordion-section-title:before,
