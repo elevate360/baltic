@@ -3652,6 +3652,40 @@ a.baltic-twitter__date .icon {
 
 
 /*--------------------------------------------------------------
+## 404
+--------------------------------------------------------------*/
+
+.error404 .site-content > .container {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.error404 .site-main {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	height: calc( 100vh - 147px);
+	text-align: center;
+
+	align-items: center;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+	-ms-flex-align: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+.error404.admin-bar .site-main {
+	height: calc( 100vh - 179px);
+}
+
+.error-404 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+
+/*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
 
@@ -4050,14 +4084,6 @@ a.custom-logo-link {
 .site-content > .container {
 	padding-top: 10px;
 	padding-bottom: 10px;
-}
-
-.error404 .site-content {
-	text-align: center;
-}
-
-.error404 .site-content > .container {
-	padding-bottom: 40px;
 }
 
 
@@ -4713,8 +4739,7 @@ a.custom-logo-link {
 		margin-left: 0;
 	}
 
-	.narrow #primary,
-	.error404 #primary {
+	.narrow #primary {
 		float: left;
 		width: 100%;
 		padding-right: 160px;

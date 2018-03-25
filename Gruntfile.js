@@ -332,12 +332,16 @@ module.exports = function (grunt) {
 		'jshint'
 	]);
 
-	grunt.registerTask( 'dist', [
+	grunt.registerTask( 'prepare', [
 		'checktextdomain',
 		'js',
 		'replace',
 		'css',
-		'makepot',
+		'makepot'
+	]);
+
+	grunt.registerTask( 'dist', [
+		'prepare',
 		'clean',
 		'copy',
 		'compress'

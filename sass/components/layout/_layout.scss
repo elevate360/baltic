@@ -56,13 +56,6 @@
 	}
 }
 
-.error404 .site-content {
-	text-align: center;
-	> .container {
-		padding-bottom: $gutter__width*4;
-	}
-}
-
 @include respond-to( medium ){
 
 	.content-sidebar {
@@ -92,8 +85,7 @@
 		}
 	}
 
-	.narrow,
-	.error404 {
+	.narrow {
 		#primary {
 			float: left;
 			width: 100%;
