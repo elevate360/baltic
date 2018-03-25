@@ -109,14 +109,6 @@ function baltic_homepage_posts_2() {
 }
 
 /**
- * Callback function for components/call-to-action.php template part
- * @return void
- */
-function baltic_homepage_call_to_action() {
-	get_template_part( 'components/homepage/call-to-action' );
-}
-
-/**
  * Callback function for components/testimonial.php template part
  * @return void
  */

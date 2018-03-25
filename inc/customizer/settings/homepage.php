@@ -29,6 +29,14 @@ function baltic_customize_register_homepage() {
 			'section'  => 'baltic_homepage_hero_section',
 			'default'  => esc_attr__( 'This is a defualt value', 'baltic' ),
 			'priority' => 10,
+			'transport'	=> 'auto',
+			'partial_refresh' => array(
+				'baltic_homepage_hero_prefix' => array(
+					'selector'        		=> '.baltic-homepage-hero',
+					'render_callback' 		=> 'baltic_homepage_hero',
+					'container_inclusive' 	=> true
+				),
+			),
 		) );
 
 		Kirki::add_field( 'baltic', array(
@@ -39,6 +47,14 @@ function baltic_customize_register_homepage() {
 			'section'  => 'baltic_homepage_hero_section',
 			'default'  => esc_attr__( 'This is a defualt value', 'baltic' ),
 			'priority' => 10,
+			'transport'	=> 'auto',
+			'partial_refresh' => array(
+				'baltic_homepage_hero_rotator' => array(
+					'selector'        		=> '.baltic-homepage-hero',
+					'render_callback' 		=> 'baltic_homepage_hero',
+					'container_inclusive' 	=> true
+				),
+			),
 		) );
 
 		Kirki::add_field( 'baltic', array(
@@ -48,6 +64,14 @@ function baltic_customize_register_homepage() {
 			'section'  => 'baltic_homepage_hero_section',
 			'default'  => esc_attr__( 'This is a defualt value', 'baltic' ),
 			'priority' => 10,
+			'transport'	=> 'auto',
+			'partial_refresh' => array(
+				'baltic_homepage_hero_suffix' => array(
+					'selector'        		=> '.baltic-homepage-hero',
+					'render_callback' 		=> 'baltic_homepage_hero',
+					'container_inclusive' 	=> true
+				),
+			),
 		) );
 
 		Kirki::add_field( 'baltic', array(
@@ -57,6 +81,14 @@ function baltic_customize_register_homepage() {
 			'section'  => 'baltic_homepage_hero_section',
 			'default'  => esc_attr__( 'This is a defualt value', 'baltic' ),
 			'priority' => 10,
+			'transport'	=> 'auto',
+			'partial_refresh' => array(
+				'baltic_homepage_hero_description' => array(
+					'selector'        		=> '.baltic-homepage-hero',
+					'render_callback' 		=> 'baltic_homepage_hero',
+					'container_inclusive' 	=> true
+				),
+			),
 		) );
 
 		Kirki::add_field( 'baltic', array(
@@ -66,6 +98,14 @@ function baltic_customize_register_homepage() {
 			'section'  => 'baltic_homepage_hero_section',
 			'default'  => esc_attr__( 'Button #1', 'baltic' ),
 			'priority' => 10,
+			'transport'	=> 'auto',
+			'partial_refresh' => array(
+				'baltic_homepage_hero_btn_text_1' => array(
+					'selector'        		=> '.baltic-homepage-hero',
+					'render_callback' 		=> 'baltic_homepage_hero',
+					'container_inclusive' 	=> true
+				),
+			),
 		) );
 
 		Kirki::add_field( 'baltic', array(
@@ -75,6 +115,14 @@ function baltic_customize_register_homepage() {
 			'section'  => 'baltic_homepage_hero_section',
 			'default'  => '#',
 			'priority' => 10,
+			'transport'	=> 'auto',
+			'partial_refresh' => array(
+				'baltic_homepage_hero_btn_link_1' => array(
+					'selector'        		=> '.baltic-homepage-hero',
+					'render_callback' 		=> 'baltic_homepage_hero',
+					'container_inclusive' 	=> true
+				),
+			),
 		) );
 
 		Kirki::add_field( 'baltic', array(
@@ -84,6 +132,14 @@ function baltic_customize_register_homepage() {
 			'section'  => 'baltic_homepage_hero_section',
 			'default'  => '',
 			'priority' => 10,
+			'transport'	=> 'auto',
+			'partial_refresh' => array(
+				'baltic_homepage_hero_btn_text_2' => array(
+					'selector'        		=> '.baltic-homepage-hero',
+					'render_callback' 		=> 'baltic_homepage_hero',
+					'container_inclusive' 	=> true
+				),
+			),
 		) );
 
 		Kirki::add_field( 'baltic', array(
@@ -93,6 +149,14 @@ function baltic_customize_register_homepage() {
 			'section'  => 'baltic_homepage_hero_section',
 			'default'  => '',
 			'priority' => 10,
+			'transport'	=> 'auto',
+			'partial_refresh' => array(
+				'baltic_homepage_hero_suffix' => array(
+					'selector'        		=> '.baltic-homepage-hero',
+					'render_callback' 		=> 'baltic_homepage_hero',
+					'container_inclusive' 	=> true
+				),
+			),
 		) );
 
 	/** Homepage Hero section*/

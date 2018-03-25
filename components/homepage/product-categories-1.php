@@ -18,14 +18,13 @@ $product_cats = get_theme_mod( 'baltic_homepage_product_categories_1', array() )
 
 		<?php
 		$count = 0;
-		foreach ( $product_cats as $product_cat ) : ?>
+		foreach ( $product_cats as $product_cat ) :
 
-			<?php
 			$count++;
 			$cat_id 	= $product_cat;
 			$btn_text 	= get_theme_mod( 'baltic_homepage_product_categories_1_btn_text', esc_html__( 'Shop Now', 'baltic' ) );
 
-			if ( ! empty( $cat_id ) ) {
+			if ( ! empty( $cat_id ) ) :
 
 				$term 		= get_term( $cat_id, 'product_cat' );
 		    	$image_id 	= get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
@@ -51,7 +50,7 @@ $product_cats = get_theme_mod( 'baltic_homepage_product_categories_1', array() )
 				</div>
 				<?php
 
-			}
+			endif;
 
 			?>
 		<?php endforeach;?>
