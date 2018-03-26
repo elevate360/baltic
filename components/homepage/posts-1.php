@@ -33,8 +33,16 @@ $featured = new WP_Query( $args );
 
 				<article id="latest-post-<?php the_ID(); ?>" <?php post_class( 'column-item' ); ?>>
 					<div class="entry-inner">
+						<?php if( has_post_thumbnail() ) : ?>
+						<div class="entry-thumbnail">
+							<a href="<?php echo esc_url( get_permalink() );?>" class="entry-thumbnail-link">
+								<?php the_post_thumbnail( $size = 'post-thumbnail' );?>
+							</a>
+						</div>
+						<?php endif;?>
 						<header class="entry-header">
 							<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+							<?php Baltic_Components::entry_meta();?>
 						</header>
 						<div class="entry-summary">
 							<?php the_excerpt();?>

@@ -3651,6 +3651,10 @@ a.more-link:focus .icon-stroke {
 	font-size: 1.25rem;
 }
 
+.homepage-posts a.more-link {
+	margin-bottom: 0;
+}
+
 /** Latest Tweets */
 
 .homepage-products .baltic-slick-dots,

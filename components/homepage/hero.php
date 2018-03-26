@@ -4,14 +4,14 @@
  *
  * @package  Baltic
  */
-$hero_prefix 		= get_theme_mod( 'baltic_homepage_hero_prefix', 'This website is' );
-$hero_rotator 		= get_theme_mod( 'baltic_homepage_hero_rotator', 'good, awesome, beautiful, splendid' );
-$hero_suffix 		= get_theme_mod( 'baltic_homepage_hero_suffix', 'in the eye of meh' );
-$hero_description 	= get_theme_mod( 'baltic_homepage_hero_description', 'Title' );
-$btn_text_1 		= get_theme_mod( 'baltic_homepage_hero_btn_text_1', 'Title' );
+$hero_prefix 		= get_theme_mod( 'baltic_homepage_hero_prefix', esc_html__( 'Baltic theme is suitable for', 'baltic' ) );
+$hero_rotator 		= get_theme_mod( 'baltic_homepage_hero_rotator', esc_html__( 'small business, founder, startup', 'baltic' ) );
+$hero_suffix 		= get_theme_mod( 'baltic_homepage_hero_suffix', '.' );
+$hero_description 	= get_theme_mod( 'baltic_homepage_hero_description', '' );
+$btn_text_1 		= get_theme_mod( 'baltic_homepage_hero_btn_text_1', 'Button Text #1' );
 $btn_link_1 		= get_theme_mod( 'baltic_homepage_hero_btn_text_1', '#' );
-$btn_text_2 		= get_theme_mod( 'baltic_homepage_hero_btn_text_2', 'Title' );
-$btn_link_2 		= get_theme_mod( 'baltic_homepage_hero_btn_text_2', '#' );
+$btn_text_2 		= get_theme_mod( 'baltic_homepage_hero_btn_text_2', '' );
+$btn_link_2 		= get_theme_mod( 'baltic_homepage_hero_btn_text_2', '' );
 ?>
 
 <div id="baltic-homepage-hero" class="baltic-homepage-hero homepage-section">

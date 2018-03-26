@@ -474,6 +474,7 @@
 	            baltic.productsSlider();
 	            baltic.tweetsSlider();
 	            baltic.matchHeight();
+				baltic.heroTypist();
 
 	        }
 

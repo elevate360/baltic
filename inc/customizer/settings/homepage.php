@@ -5,6 +5,10 @@
  * @package Baltic
  */
 
+/**
+ * [baltic_customize_register_homepage description]
+ * @return [type] [description]
+ */
 function baltic_customize_register_homepage() {
 
 	$default = baltic_setting_default();
@@ -27,7 +31,7 @@ function baltic_customize_register_homepage() {
 			'settings' => 'baltic_homepage_hero_prefix',
 			'label'    => esc_html__( 'Title prefix', 'baltic' ),
 			'section'  => 'baltic_homepage_hero_section',
-			'default'  => esc_attr__( 'This is a defualt value', 'baltic' ),
+			'default'  => esc_html__( 'Baltic theme is suitable for', 'baltic' ),
 			'priority' => 10,
 			'transport'	=> 'auto',
 			'partial_refresh' => array(
@@ -45,7 +49,7 @@ function baltic_customize_register_homepage() {
 			'label'    => esc_html__( 'Title rotator', 'baltic' ),
 			'description' => esc_html__( 'Separate title by coma', 'baltic' ),
 			'section'  => 'baltic_homepage_hero_section',
-			'default'  => esc_attr__( 'This is a defualt value', 'baltic' ),
+			'default'  => esc_html__( 'small business, founder, startup', 'baltic' ),
 			'priority' => 10,
 			'transport'	=> 'auto',
 			'partial_refresh' => array(
@@ -62,7 +66,7 @@ function baltic_customize_register_homepage() {
 			'settings' => 'baltic_homepage_hero_suffix',
 			'label'    => esc_html__( 'Title suffix', 'baltic' ),
 			'section'  => 'baltic_homepage_hero_section',
-			'default'  => esc_attr__( 'This is a defualt value', 'baltic' ),
+			'default'  => '.',
 			'priority' => 10,
 			'transport'	=> 'auto',
 			'partial_refresh' => array(
@@ -79,7 +83,7 @@ function baltic_customize_register_homepage() {
 			'settings' => 'baltic_homepage_hero_description',
 			'label'    => esc_html__( 'Description', 'baltic' ),
 			'section'  => 'baltic_homepage_hero_section',
-			'default'  => esc_attr__( 'This is a defualt value', 'baltic' ),
+			'default'  => '',
 			'priority' => 10,
 			'transport'	=> 'auto',
 			'partial_refresh' => array(
@@ -161,7 +165,7 @@ function baltic_customize_register_homepage() {
 
 	/** Homepage Hero section*/
 	Kirki::add_section( 'baltic_homepage_hero_appearance', array(
-	    'title' 		=> esc_html__( 'Hero', 'baltic' ),
+	    'title' 		=> esc_html__( 'Hero Appearance', 'baltic' ),
 	    'panel' 		=> 'baltic_homepage_hero_panel'
 	) );
 

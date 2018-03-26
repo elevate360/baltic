@@ -334,6 +334,10 @@
 	.entry-title {
 		@include font-size(1.25);
 	}
+
+	a.more-link {
+		margin-bottom: 0;
+	}
 }
 
 
