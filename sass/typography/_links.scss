@@ -1,0 +1,21 @@
+a {
+	color: $color__link;
+	text-decoration: none;
+	transition-property: background, color, opacity, box-shadow;
+	transition-duration: 0.25s;
+	transition-timing-function: ease-in-out;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color__link-hover;
+		text-decoration: none;
+	}
+	&:focus {
+		outline: thin dotted;
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}

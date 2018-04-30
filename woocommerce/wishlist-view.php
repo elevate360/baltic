@@ -14,9 +14,9 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 
 <?php do_action( 'yith_wcwl_before_wishlist_form', $wishlist_meta ); ?>
 
-<form id="yith-wcwl-form" action="<?php echo $form_action ?>" method="post" class="woocommerce">
+<form id="yith-wcwl-form" action="<?php echo $form_action; ?>" method="post" class="woocommerce">
 
-    <?php wp_nonce_field( 'yith-wcwl-form', 'yith_wcwl_form_nonce' ) ?>
+	<?php wp_nonce_field( 'yith-wcwl-form', 'yith_wcwl_form_nonce' ); ?>
 
     <!-- TITLE -->
     <?php

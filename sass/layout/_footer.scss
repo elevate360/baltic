@@ -1,0 +1,133 @@
+/** Sidebar footer */
+#tertiary {
+	background-color: $color__white;
+	border-top: 1px solid $color__alpha-dark05;
+	padding-top: $gutter__width*4;
+	.widget > div {
+		color: $color__text-secondary;
+		a {
+			color: $color__text-main;
+			&:hover,
+			&:focus {
+				color: $color__link-hover;
+			}
+		}
+	}
+}
+
+/** Payment Icons */
+.footer-payments-card {
+	background-color: $color__site-footer;
+	border-top: 1px solid $color__alpha-dark05;
+	padding-top: $gutter__width;
+	padding-bottom: $gutter__width;
+	text-align: center;
+}
+
+/** Site Footer */
+.site-footer {
+	background-color: $color__site-footer;
+	border-top: 1px solid $color__alpha-dark05;
+	color: $color__text-secondary;
+	@include font-size(0.875);
+	padding-top: $gutter__width*4;
+	padding-bottom: $gutter__width*4;
+	position: relative;
+	text-align: center;
+	a {
+		color: $color__text-main;
+		&:hover,
+		&:focus {
+			color: $color__link-hover;
+		}
+	}
+	@include respond-to( medium ) {
+		text-align: left;
+	}
+}
+
+.site-info {
+	margin-bottom: $gutter__width;
+	p {
+		margin-bottom: $gutter__width/2;
+	}
+	@include respond-to( medium ) {
+		margin-bottom: 0;
+	}
+}
+
+.site-designer {
+	margin-top: $gutter__width/2;
+	.icon-campaignkit {
+		fill: $color__campaign-kit!important;
+	}
+	a {
+		font-weight: bold;
+	}
+}
+
+.baltic__payment-icons {
+
+	&,
+	li {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+	}
+	li {
+		display: inline-block;
+		margin: 0.25rem;
+	}
+}
+
+/** Return to top */
+.return-to-top {
+    background-color: rgba( 255,255,255,.5 );
+    border: 1px solid $color__text-main;
+    color: $color__text-main;
+    width: 48px;
+    height: 48px;
+	line-height: 44px;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    text-align: center;
+    z-index: 9;
+    opacity: 0;
+   	transform: scale(0);
+    border-radius: 48px;
+    transition: all 0.5s ease-in-out;
+	&:after {
+		background-color: transparent;
+		content: " ";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 100%;
+		z-index: 8;
+		transition: all .4s ease-in-out;
+	}
+	&.off {
+	    opacity: 0;
+	    transform: scale(0) rotate(360deg);
+	}
+	&.on {
+	    opacity: 1;
+	    transform: scale(1) rotate(0deg);
+	}
+    &:hover,
+    &:focus {
+    	background-color: $color__link;
+    	border-color: $color__link;
+    	color: #fff;
+    	box-shadow: 0 8px 16px rgba( 0,0,0,.25 );
+    	transform: scale(1) rotate(360deg);
+		&:after {
+		    background-color: $color__link;
+		    opacity: 0;
+		    transform: scale(1.5);
+		}
+    }
+}

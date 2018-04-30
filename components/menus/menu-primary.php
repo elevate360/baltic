@@ -8,11 +8,11 @@
 $menu_location = apply_filters( 'baltic_primary_menu', 'menu-1' );
 ?>
 <?php if( has_nav_menu( $menu_location ) ) :?>
-	<nav <?php baltic_attr( 'main-navigation' );?>>
+	<nav <?php Baltic_Markup::attr( 'main-navigation' );?>>
 		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 			<?php
-			echo baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'menu' ) );
-			echo baltic_get_svg( array( 'class' => 'icon-stroke', 'icon' => 'close' ) );
+			echo Baltic_Icons::get_svg( array( 'class' => 'icon-stroke', 'icon' => 'menu' ) );
+			echo Baltic_Icons::get_svg( array( 'class' => 'icon-stroke', 'icon' => 'close' ) );
 			esc_html_e( 'Menu', 'baltic' );
 			?>
 		</button>

@@ -8,12 +8,11 @@
  */
 
 $sidebar = apply_filters( 'baltic_sidebar_primary', 'sidebar-1' );
-
-if ( ! is_active_sidebar( $sidebar ) ) {
+if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
 ?>
 
-<aside <?php baltic_attr( 'secondary' );?>>
+<aside <?php Baltic_Markup::attr( 'secondary' );?>>
 	<?php dynamic_sidebar( $sidebar ); ?>
 </aside><!-- #secondary -->

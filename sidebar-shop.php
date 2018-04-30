@@ -14,6 +14,6 @@ if ( ! is_active_sidebar( $sidebar ) ) {
 }
 ?>
 
-<aside <?php baltic_attr( 'secondary' );?>>
+<aside <?php Baltic_Markup::attr( 'secondary' );?>>
 	<?php dynamic_sidebar( $sidebar ); ?>
 </aside><!-- #secondary -->

@@ -1,42 +1,16 @@
 @import "variables";
 @import "mixins";
 
-/**
- * Shop tables
- */
-@import "plugins/woocommerce/tables";
+@import "shop/tables";
 
-/**
- * Products
- */
-@import "plugins/woocommerce/products";
+@import "shop/products";
 
-/**
- * Single product
- */
-@import "plugins/woocommerce/single-product";
+@import "shop/single-product";
 
-/**
- * Checkout
- */
-@import "plugins/woocommerce/checkout";
+@import "shop/checkout";
 
-/**
- * My Account
- */
-@import "plugins/woocommerce/my-account";
+@import "shop/my-account";
 
-/**
- * General WooCommerce components
- */
-@import "plugins/woocommerce/components";
+@import "shop/components";
 
-/**
- * WooCommerce widgets
- */
-@import "plugins/woocommerce/widgets";
-
-/**
- * WooCommerce extra
- */
-@import "plugins/woocommerce/extra";
+@import "shop/widgets";

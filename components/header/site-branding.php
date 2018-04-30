@@ -4,6 +4,7 @@
  *
  * @package Baltic
  */
+
 ?>
 <div class="site-branding">
 	<?php

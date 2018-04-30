@@ -12,22 +12,28 @@
  * @package Baltic
  */
 
-get_header(); ?>
+get_header();
+get_template_part( 'components/jumbotron', 'archive' );
+?>
 
 <div class="container">
-	<div <?php baltic_attr( 'columns' );?>>
+	<div class="columns">
 
-		<?php do_action( 'baltic_content_area_before' );?>
-		<div <?php baltic_attr( 'primary' );?>>
+		<?php do_action( 'baltic_primary_before' );?>
 
-			<?php do_action( 'baltic_loop_before' );?>
+		<div <?php Baltic_Markup::attr( 'primary' );?>>
 
-			<?php do_action( 'baltic_loop' );?>
+			<main <?php Baltic_Markup::attr( 'site-main' );?>>
 
-			<?php do_action( 'baltic_loop_after' );?>
+			<?php get_template_part( 'components/loop', 'index' );?>
+
+			</main><!-- #main -->
+
+			<?php get_template_part( 'components/menus/nav', 'posts' );?>
 
 		</div><!-- #primary -->
-		<?php do_action( 'baltic_content_area_after' );?>
+
+		<?php do_action( 'baltic_primary_after' );?>
 
 	</div><!-- .columns -->
 </div><!-- .container -->

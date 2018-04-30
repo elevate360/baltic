@@ -1,10 +1,10 @@
-# <!=Copyright (C) 2018 Elevate360
+# <!=Copyright (C) 2018 Campaign Kit
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
 "Project-Id-Version: Baltic 1.0.0\n"
-"Report-Msgid-Bugs-To: https://elevate360/contact\n"
-"POT-Creation-Date: 2018-03-26 19:32:12+00:00\n"
+"Report-Msgid-Bugs-To: https://campaignkit.co/contact\n"
+"POT-Creation-Date: 2018-04-30 17:24:11+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,30 +13,39 @@ msgstr ""
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "X-Generator: grunt-wp-i18n1.0.2\n"
 
-#: 404.php:20
+#: 404.php:23
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: 404.php:24
+#: 404.php:27
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the "
 "links below or a search?"
 msgstr ""
 
-#: comments.php:34
+#: 404.php:36
+msgid "Most Used Categories"
+msgstr ""
+
+#: 404.php:52
+#. translators: %1$s: smiley
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: comments.php:35
 #. translators: 1: title.
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
-#: comments.php:49 comments.php:64
+#: comments.php:51 comments.php:68
 msgid "&larr; previous comment"
 msgstr ""
 
-#: comments.php:50 comments.php:65
+#: comments.php:52 comments.php:69
 msgid "next comment &rarr;"
 msgstr ""
 
-#: comments.php:70
+#: comments.php:75
 msgid "Comments are closed."
 msgstr ""
 
@@ -44,12 +53,12 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: components/content-none.php:26
+#: components/content-none.php:25
 #. translators: 1: link to WP admin new post page.
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: components/content-none.php:39
+#: components/content-none.php:38
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
@@ -61,11 +70,54 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: components/footer/footer-copyright.php:12
+#: components/entry/meta-categories.php:9
+#. translators: used between list items, there is a space after the comma
+msgid ", "
+msgstr ""
+
+#: components/entry/meta-categories.php:12
+#. translators: %s: list of categories.
+msgid "Posted in"
+msgstr ""
+
+#: components/entry/meta-comments.php:15
+#. translators: %s: post title
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#: components/entry/meta-edit_link.php:12
+#. translators: %s: Name of current post. Only visible to screen readers
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: components/entry/meta-posted_by.php:10
+msgid "by"
+msgstr ""
+
+#: components/entry/meta-posted_on.php:22
+msgid "Posted on"
+msgstr ""
+
+#: components/entry/meta-tags.php:12
+#. translators: 1: list of tags.
+msgid "Tagged"
+msgstr ""
+
+#: components/entry/post-content.php:11
+#. translators: %s: Name of current post. Only visible to screen readers
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: components/entry/post-content.php:22
+msgid "Pages:"
+msgstr ""
+
+#: components/footer/footer-copyright.php:13
 msgid "Y"
 msgstr ""
 
-#: components/footer/footer-copyright.php:20
+#: components/footer/footer-copyright.php:24
+#. Translators: %1$s: Theme designer logo, %2$s: Theme designer site link
 msgid "Theme design by %1$s %2$s."
 msgstr ""
 
@@ -73,1496 +125,1149 @@ msgstr ""
 msgid "Return to top of page"
 msgstr ""
 
-#: components/header/header-search.php:23
+#: components/header/header-search.php:21
 msgid "All Categories"
 msgstr ""
 
-#: components/header/header-search.php:40 woocommerce/product-searchform.php:25
-msgid "Search for:"
-msgstr ""
-
-#: components/header/header-search.php:42 woocommerce/product-searchform.php:27
+#: components/header/header-search.php:40 woocommerce/product-searchform.php:27
 msgid "Search products&hellip;"
 msgstr ""
 
-#: components/header/header-search.php:48
+#: components/header/header-search.php:46
 msgid "All Products"
+msgstr ""
+
+#: components/header/header-toggle.php:13
+msgid "Toggle Main Navigation"
 msgstr ""
 
 #: components/header/skip-links.php:10
 msgid "Skip to navigation"
 msgstr ""
 
-#: components/header/skip-links.php:13
+#: components/header/skip-links.php:12
 msgid "Skip to content"
 msgstr ""
 
-#: components/header/skip-links.php:16
+#: components/header/skip-links.php:14
 msgid "Skip to Sidebar"
 msgstr ""
 
-#: components/header/skip-links.php:20
+#: components/header/skip-links.php:17
 msgid "Skip to Footer"
 msgstr ""
 
-#: components/header/skip-links.php:24
+#: components/header/skip-links.php:20
 msgid "Skip to secondary navigation"
-msgstr ""
-
-#: components/homepage/hero.php:7 inc/customizer/settings/homepage.php:34
-msgid "Baltic theme is suitable for"
-msgstr ""
-
-#: components/homepage/hero.php:8 inc/customizer/settings/homepage.php:52
-msgid "small business, founder, startup"
-msgstr ""
-
-#: components/homepage/product-categories-1.php:25
-#: inc/customizer/settings/homepage.php:473
-msgid "Shop Now"
 msgstr ""
 
 #: components/menus/menu-primary.php:16
 msgid "Menu"
 msgstr ""
 
-#: components/post/entry-biography.php:26
-msgid "About"
+#: components/menus/nav-image.php:11
+msgid "&larr; previous image"
 msgstr ""
 
-#: components/post/entry-content.php:11 inc/class-theme-functions.php:151
-#. translators: %s: Name of current post. Only visible to screen readers
-#. translators: %s: Name of current post
-msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+#: components/menus/nav-image.php:14
+msgid "next image &rarr;"
 msgstr ""
 
-#: components/post/entry-content.php:22
-msgid "Pages:"
-msgstr ""
-
-#: components/posts-navigation.php:19
-msgid "Previous Page"
-msgstr ""
-
-#: components/posts-navigation.php:20
-msgid "Next Page"
-msgstr ""
-
-#: components/posts-navigation.php:21
-#: inc/plugins/woocommerce/wc-template.php:331
-msgid "Page"
-msgstr ""
-
-#: inc/class-baltic.php:61
-msgid ""
-"Baltic theme requires at least WordPress version 4.7. You are running "
-"version %s. Please upgrade and try again."
-msgstr ""
-
-#: inc/class-baltic.php:100
-msgid "Primary"
-msgstr ""
-
-#: inc/class-baltic.php:101
-msgid "Secondary"
-msgstr ""
-
-#: inc/class-baltic.php:102
-msgid "Social Link"
-msgstr ""
-
-#: inc/class-breadcrumb.php:36
-msgid "Home"
-msgstr ""
-
-#: inc/class-breadcrumb.php:37
-msgid " <span aria-label=\"breadcrumb separator\" class=\"separator\">/</span> "
-msgstr ""
-
-#: inc/class-template-tags.php:30 inc/structure/entry.php:60
-msgid "Posted on"
-msgstr ""
-
-#: inc/class-template-tags.php:36 inc/structure/entry.php:66
-msgid "by"
-msgstr ""
-
-#: inc/class-template-tags.php:50 inc/structure/entry.php:80
-#. translators: %s: post title
-msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
-msgstr ""
-
-#: inc/class-template-tags.php:78 inc/structure/entry.php:114
-#. translators: used between list items, there is a space after the comma
-msgid ", "
-msgstr ""
-
-#: inc/class-template-tags.php:81 inc/structure/entry.php:117
-#. translators: 1: list of categories.
-msgid "Posted in"
-msgstr ""
-
-#: inc/class-template-tags.php:90 inc/structure/entry.php:126
-#. translators: 1: list of tags.
-msgid "Tagged"
-msgstr ""
-
-#: inc/class-template-tags.php:100 inc/structure/entry.php:136
-#. translators: %s: Name of current post. Only visible to screen readers
-msgid "Edit <span class=\"screen-reader-text\">%s</span>"
-msgstr ""
-
-#: inc/class-theme-functions.php:120
-#. Translators: Used as a placeholder for untitled posts on non-singular views.
-msgid "(Untitled)"
-msgstr ""
-
-#: inc/customizer/customizer.php:49
-msgid "Campaign Kit"
-msgstr ""
-
-#: inc/customizer/customizer.php:50
-msgid "Learn More"
-msgstr ""
-
-#: inc/customizer/customizer.php:56
-msgid "Theme Settings"
-msgstr ""
-
-#: inc/customizer/customizer.php:61
-msgid "Typography"
-msgstr ""
-
-#: inc/customizer/customizer.php:66 inc/customizer/settings/woocommerce.php:12
-msgid "Colors"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:12
-msgid "Preloader"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:19
-msgid "Enable Preloader"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:24
-#: inc/customizer/settings/baltic-settings.php:341
-#: inc/customizer/settings/baltic-settings.php:354
-msgid "On"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:25
-#: inc/customizer/settings/baltic-settings.php:342
-#: inc/customizer/settings/baltic-settings.php:355
-msgid "Off"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:32
-msgid "Preloader Effect"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:37
-msgid "rotating-plane"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:38
-msgid "double-bounce"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:39
-msgid "wave"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:40
-msgid "wandering-cubes"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:41
-msgid "pulse"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:42
-msgid "chasing-dots"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:43
-msgid "three-bounce"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:44
-msgid "circle"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:45
-msgid "cube-grid"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:46
-msgid "fading-circle"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:47
-msgid "folding-cube"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:70
-msgid "Preloader background color"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:94
-msgid "Preloader color"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:118
-msgid "Preview Preloader"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:130
-msgid "Show"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:131
-msgid "Hide"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:137
-#: inc/customizer/settings/homepage.php:912
-#: inc/customizer/settings/homepage.php:919
-#: inc/customizer/settings/woocommerce.php:79
-msgid "Layout"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:145
-msgid "Archives Layout"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:155
-msgid "Single Post/Page Layout"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:164
-msgid "Blog Post"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:172
-msgid "Display Date?"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:181
-msgid "Display Author?"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:190
-msgid "Display Comments?"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:199
-msgid "Display Categories?"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:208
-msgid "Display Tags?"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:217
-msgid "Display Author Profile?"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:226
-msgid "Excerpt Length"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:248
-msgid "More Link Text"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:257
-msgid "Posts Navigation Type"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:262
-#: inc/customizer/settings/woocommerce.php:150
-msgid "Previous/Next"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:263
-#: inc/customizer/settings/woocommerce.php:151
-msgid "Pagination"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:279
-msgid "Previous Post Text"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:295
-msgid "Next Post Text"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:311
-msgid "Footer"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:319
-msgid "Footer Text"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:336
-msgid "Display theme designer?"
-msgstr ""
-
-#: inc/customizer/settings/baltic-settings.php:349
-msgid "Enable return to top link?"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:12
-msgid "Header"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:19
-msgid "Header Background Color"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:34
-msgid "Header search background color"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:50
-msgid "Header search background color focus"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:66
-msgid "Header search text color"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:102
-msgid "Header search text color focus"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:138
-msgid "Header search button color"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:154
-msgid "Header search button color hover"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:174
-msgid "Header search icon color"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:190
-msgid "Header search icon color hover"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:205
-#: inc/customizer/settings/homepage.php:957
-#: inc/customizer/settings/homepage.php:981
-msgid "Background"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:211
-msgid "Selection"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:218
-msgid "Color Background Highlight"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:237
-msgid "Color Text Highlight"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:255
-msgid "Text"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:262
-msgid "Primary Text Color"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:290
-msgid "Secondary Text Color"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:308
-msgid "TextField"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:315
-msgid "Text Field Color"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:346
-msgid "Text Field Focus Color"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:360
-msgid "Link"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:367
-msgid "Color Link"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:394
-msgid "Color Link Hover"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:412
-msgid "Button"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:419
-msgid "Color Text Button"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:434
-msgid "Color Background Button"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:453
-msgid "Color Button Hover"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:470
-msgid "Border"
-msgstr ""
-
-#: inc/customizer/settings/colors.php:477
-msgid "Color Border"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:18
-msgid "Homepage Hero"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:25
-#: inc/customizer/settings/homepage.php:1020
-msgid "Hero"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:32
-msgid "Title prefix"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:49
-msgid "Title rotator"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:50
-msgid "Separate title by coma"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:67
-msgid "Title suffix"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:84
-#: inc/customizer/settings/homepage.php:276
-#: inc/customizer/settings/homepage.php:820
-#: inc/customizer/settings/homepage.php:844
-msgid "Description"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:101
-#: inc/customizer/settings/homepage.php:286
-msgid "Button Text #1"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:103
-msgid "Button #1"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:118
-msgid "Button link #1"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:135
-#: inc/customizer/settings/homepage.php:296
-msgid "Button Text #2"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:152
-msgid "Button link #2"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:168
-msgid "Hero Appearance"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:176
-msgid "Hero text alignment"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:180
-#: inc/customizer/settings/homepage.php:863
-msgid "Left"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:181
-#: inc/customizer/settings/homepage.php:864
-msgid "Center"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:182
-#: inc/customizer/settings/homepage.php:865
-msgid "Right"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:196
-#: inc/customizer/settings/homepage.php:324
-msgid "Text color"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:212
-msgid "Cursor color"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:227
-msgid "Homepage Slider"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:234
-msgid "Slides"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:240
-#: inc/customizer/settings/homepage.php:1021
-msgid "Slider"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:245
-msgid "slide"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:250
-msgid "Slide title #1"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:251
-msgid "Slide description #1"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:253
-msgid "Button text #1A"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:255
-msgid "Button text #1B"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:259
-msgid "Slide title #2"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:260
-msgid "Slide description #2"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:262
-msgid "Button text #2A"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:264
-msgid "Button text #2B"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:271
-#: inc/customizer/settings/homepage.php:576
-#: inc/customizer/settings/homepage.php:829
-msgid "Title"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:272
-msgid "Slide title"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:277
-msgid "Slide description"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:281
-msgid "Image"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:287
-#: inc/customizer/settings/homepage.php:471
-msgid "Button text"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:291
-msgid "Button Link #1"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:301
-msgid "Button Link #2"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:317
-msgid "Slides Setting"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:340
-msgid "Effect"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:346
-msgid "Fade"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:347
-msgid "Slide"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:362
-msgid "Autoplay"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:379
-msgid "Autoplay Speed (in milisecond)"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:401
-msgid "Display Arrows"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:418
-msgid "Display Dots"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:435
-msgid "Pause on hover"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:458
-msgid "Product Categories #%s"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:464
-msgid "Product categories"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:489
-#: inc/customizer/settings/homepage.php:508
-msgid "Product Categories"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:535
-msgid "Products #%s"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:541
-msgid "Property"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:549
-#: inc/customizer/settings/homepage.php:670
-#: inc/customizer/settings/homepage.php:678
-msgid "Categories"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:567
-msgid "Orderby"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:570
-msgid "Date"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:571
-msgid "ID"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:572
-msgid "Menu Order"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:573
-msgid "Popularity"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:574
-msgid "Random"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:575
-msgid "Rating"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:592
-msgid "Order"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:595
-msgid "Lowest to highest"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:596
-msgid "Highest to lowest"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:612
-msgid "Visibility"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:615
-msgid "Visible"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:616
-msgid "Catalog"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:617
-#: woocommerce/product-searchform.php:31
-msgid "Search"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:618
-msgid "Hidden"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:619
-msgid "Featured"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:635
-#: inc/vendor/class-tgm-plugin-activation.php:2554
-msgid "Status"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:638 inc/plugins/demo-import.php:24
-msgid "Default"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:639
-msgid "On Sale"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:640
-msgid "Best Selling"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:641
-msgid "Top Rated"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:664
-msgid "Posts #%s"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:697
-#: inc/customizer/settings/homepage.php:703
-msgid "Latest Tweets"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:710
-msgid "Twitter Username"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:737
-#: inc/customizer/settings/homepage.php:745
-msgid "Display"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:748
-msgid "Grid"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:749
-msgid "Slideshow"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:765
-msgid "Limit"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:786
-msgid "Columns"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:859
-msgid "Text and description aligment"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:880
-msgid "Text and description color"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:923
-msgid "Boxed"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:924
-msgid "Full width"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:940
-msgid "Spacing"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:965
-msgid "Background overlay"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:1004
-msgid "Homepage Order"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:1022
-msgid "Product Categories #1"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:1023
-msgid "Product Categories #2"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:1024
-msgid "Products #1"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:1025
-msgid "Products #2"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:1026
-msgid "Products #3"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:1027
-msgid "Products #4"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:1028
-msgid "Posts #1"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:1029
-msgid "Posts #2"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:1030
-msgid "Testimonial"
-msgstr ""
-
-#: inc/customizer/settings/homepage.php:1031
-msgid "Latest Tweet"
-msgstr ""
-
-#: inc/customizer/settings/typography.php:10
-msgid "Body"
-msgstr ""
-
-#: inc/customizer/settings/typography.php:17
-msgid "Body Fonts"
-msgstr ""
-
-#: inc/customizer/settings/typography.php:38
-msgid "Heading"
-msgstr ""
-
-#: inc/customizer/settings/typography.php:45
-msgid "Heading Fonts"
-msgstr ""
-
-#: inc/customizer/settings/typography.php:66
-msgid "H1 size"
-msgstr ""
-
-#: inc/customizer/settings/typography.php:84
-msgid "H2 size"
-msgstr ""
-
-#: inc/customizer/settings/typography.php:102
-msgid "H3 size"
-msgstr ""
-
-#: inc/customizer/settings/typography.php:120
-msgid "H4 size"
-msgstr ""
-
-#: inc/customizer/settings/typography.php:138
-msgid "H5 size"
-msgstr ""
-
-#: inc/customizer/settings/typography.php:156
-msgid "H6 size"
-msgstr ""
-
-#: inc/customizer/settings/typography.php:172
-msgid "Blockquote"
-msgstr ""
-
-#: inc/customizer/settings/typography.php:179
-msgid "Blockquote Fonts"
-msgstr ""
-
-#: inc/customizer/settings/typography.php:201
-msgid "Code"
-msgstr ""
-
-#: inc/customizer/settings/typography.php:208
-msgid "Code Fonts"
-msgstr ""
-
-#: inc/customizer/settings/woocommerce.php:20
-msgid "Price color"
-msgstr ""
-
-#: inc/customizer/settings/woocommerce.php:35
-msgid "Sale Badge Text Color"
-msgstr ""
-
-#: inc/customizer/settings/woocommerce.php:50
-msgid "Sale Badge Background Color"
-msgstr ""
-
-#: inc/customizer/settings/woocommerce.php:65
-msgid "Stars Rating Color"
-msgstr ""
-
-#: inc/customizer/settings/woocommerce.php:86
-msgid "Product Archive Layout"
-msgstr ""
-
-#: inc/customizer/settings/woocommerce.php:96
-msgid "Single Product Layout"
-msgstr ""
-
-#: inc/customizer/settings/woocommerce.php:107
-msgid "Products per page"
-msgstr ""
-
-#: inc/customizer/settings/woocommerce.php:120
-msgid "Products Columns"
-msgstr ""
-
-#: inc/customizer/settings/woocommerce.php:133
-msgid "Enable product quick view?"
-msgstr ""
-
-#: inc/customizer/settings/woocommerce.php:137
-msgid "Yes"
-msgstr ""
-
-#: inc/customizer/settings/woocommerce.php:138
-msgid "No"
-msgstr ""
-
-#: inc/customizer/settings/woocommerce.php:145
-msgid "Products Navigation Type"
-msgstr ""
-
-#: inc/customizer/settings/woocommerce.php:167
-msgid "Previous Product Text"
-msgstr ""
-
-#: inc/customizer/settings/woocommerce.php:192
-msgid "Next Product Text"
-msgstr ""
-
-#: inc/functions/icons.php:39
-msgid "Please define default parameters in the form of an array."
-msgstr ""
-
-#: inc/functions/icons.php:44
-msgid "Please define an SVG icon filename."
-msgstr ""
-
-#: inc/functions/options.php:163
-msgid "Continue reading"
-msgstr ""
-
-#: inc/functions/options.php:168
-msgid "Copyright &copy; 2016-[YEAR] [SITE]. Proudly powered by [WP]."
-msgstr ""
-
-#: inc/functions/utility.php:39
-msgid "This homepage block require WooCommerce plugin"
-msgstr ""
-
-#: inc/functions/utility.php:60
-msgid "This homepage block require %s plugin"
-msgstr ""
-
-#: inc/functions/utility.php:312
-msgid "Content Sidebar"
-msgstr ""
-
-#: inc/functions/utility.php:313
-msgid "Sidebar Content"
-msgstr ""
-
-#: inc/functions/utility.php:314
-msgid "Full Width"
-msgstr ""
-
-#: inc/functions/utility.php:315
-msgid "Narrow"
-msgstr ""
-
-#: inc/functions/widgets.php:16
-msgid "Sidebar"
-msgstr ""
-
-#: inc/functions/widgets.php:18 inc/functions/widgets.php:27
-#: inc/functions/widgets.php:37
-msgid "Add widgets here."
-msgstr ""
-
-#: inc/functions/widgets.php:25
-msgid "Sidebar Footer"
-msgstr ""
-
-#: inc/functions/widgets.php:35
-msgid "Sidebar Shop"
-msgstr ""
-
-#: inc/plugins/demo-import.php:19
-msgid "Free"
-msgstr ""
-
-#: inc/plugins/demo-import.php:20
-msgid "Premium"
-msgstr ""
-
-#: inc/plugins/demo-import.php:30 inc/plugins/demo-import.php:40
-#: inc/plugins/demo-import.php:50
-msgid "After you import this demo, you will have to setup the slider separately."
-msgstr ""
-
-#: inc/plugins/demo-import.php:34
-msgid "Minimal"
-msgstr ""
-
-#: inc/plugins/demo-import.php:44
-msgid "Jewelry Store"
-msgstr ""
-
-#: inc/plugins/woocommerce/class-quick-view.php:65
-msgid "Close"
-msgstr ""
-
-#: inc/plugins/woocommerce/class-wc.php:204
-msgid "Search results for &ldquo;"
-msgstr ""
-
-#: inc/plugins/woocommerce/class-wc.php:255
-msgid "Products tagged &ldquo;"
-msgstr ""
-
-#: inc/plugins/woocommerce/wc-template.php:302
-msgid "Quick View"
-msgstr ""
-
-#: inc/plugins/woocommerce/wc-template.php:329
-msgid "Previous Product"
-msgstr ""
-
-#: inc/plugins/woocommerce/wc-template.php:330
-msgid "Next Product"
-msgstr ""
-
-#: inc/plugins/woocommerce/wc-template.php:364
-msgid "Wishlist"
-msgstr ""
-
-#: inc/plugins/woocommerce/wc-template.php:366
-msgid "Cart"
-msgstr ""
-
-#: inc/plugins/woocommerce/wc-template.php:477
-msgid "My Account"
-msgstr ""
-
-#: inc/plugins/woocommerce/wc-template.php:486
-msgid "Login"
-msgstr ""
-
-#: inc/structure/entry.php:201
+#: components/menus/nav-post.php:9
 msgid "<span>&larr; previous post</span> %title"
 msgstr ""
 
-#: inc/structure/entry.php:202
+#: components/menus/nav-post.php:10
 msgid "<span>next post &rarr;</span> %title"
 msgstr ""
 
-#: inc/structure/entry.php:203
+#: components/menus/nav-post.php:11
 msgid "Continue Reading"
 msgstr ""
 
-#: inc/structure/page-header.php:137
-msgid "Search Results for: %s"
+#: components/menus/nav-posts.php:19
+msgid "Previous Page"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:327
+#: components/menus/nav-posts.php:20
+msgid "Next Page"
+msgstr ""
+
+#: components/menus/nav-posts.php:21 components/menus/nav-products.php:21
+msgid "Page"
+msgstr ""
+
+#: components/menus/nav-products.php:19
+msgid "Previous Product"
+msgstr ""
+
+#: components/menus/nav-products.php:20
+msgid "Next Product"
+msgstr ""
+
+#: inc/class-baltic-init.php:108
+#. Translators: %1$s: Theme name, %2$s: Current WordPress version
+msgid ""
+"%1$s theme requires at least WordPress version 4.7. You are running version "
+"%2$s. Please upgrade and try again."
+msgstr ""
+
+#: inc/connect/woocommerce/class-baltic-connect-woocommerce.php:240
+msgid "Search results for &ldquo;"
+msgstr ""
+
+#: inc/connect/woocommerce/class-baltic-connect-woocommerce.php:291
+msgid "Products tagged &ldquo;"
+msgstr ""
+
+#: inc/connect/woocommerce/class-baltic-woocommerce-template.php:178
+msgid "My Account"
+msgstr ""
+
+#: inc/connect/woocommerce/class-baltic-woocommerce-template.php:187
+msgid "Login"
+msgstr ""
+
+#: inc/customizer/class-baltic-customizer.php:147
+msgid "Learn More"
+msgstr ""
+
+#: inc/customizer/class-baltic-customizer.php:153
+msgid "Theme Settings"
+msgstr ""
+
+#: inc/customizer/class-baltic-customizer.php:158
+msgid "Typography"
+msgstr ""
+
+#: inc/customizer/class-baltic-customizer.php:163
+#: inc/customizer/settings/class-baltic-settings-woocommerce.php:73
+msgid "Colors"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:78
+msgid "Header"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:85
+msgid "Header Background Color"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:100
+msgid "Header search background color"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:116
+msgid "Header search background color focus"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:132
+msgid "Header search text color"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:168
+msgid "Header search text color focus"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:204
+msgid "Header search button color"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:220
+msgid "Header search button color hover"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:240
+msgid "Header search icon color"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:256
+msgid "Header search icon color hover"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:279
+msgid "Selection"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:286
+msgid "Color Background Highlight"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:305
+msgid "Color Text Highlight"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:331
+msgid "Text"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:338
+msgid "Primary Text Color"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:366
+msgid "Secondary Text Color"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:393
+msgid "TextField"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:400
+msgid "Text Field Color"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:431
+msgid "Text Field Focus Color"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:453
+msgid "Link"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:460
+msgid "Color Link"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:487
+msgid "Color Link Hover"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:513
+msgid "Button"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:520
+msgid "Color Text Button"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:535
+msgid "Color Background Button"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:554
+msgid "Color Button Hover"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:580
+msgid "Border"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-color.php:587
+msgid "Color Border"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:112
+msgid "Preloader"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:119
+msgid "Enable Preloader"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:124
+#: inc/customizer/settings/class-baltic-settings-general.php:499
+msgid "On"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:125
+#: inc/customizer/settings/class-baltic-settings-general.php:500
+msgid "Off"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:132
+msgid "Preloader Effect"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:137
+msgid "rotating-plane"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:138
+msgid "double-bounce"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:139
+msgid "wave"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:140
+msgid "wandering-cubes"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:141
+msgid "pulse"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:142
+msgid "chasing-dots"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:143
+msgid "three-bounce"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:144
+msgid "circle"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:145
+msgid "cube-grid"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:146
+msgid "fading-circle"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:147
+msgid "folding-cube"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:169
+msgid "Preloader background color"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:193
+msgid "Preloader color"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:217
+msgid "Preview Preloader"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:229
+msgid "Show"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:230
+msgid "Hide"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:244
+#: inc/customizer/settings/class-baltic-settings-woocommerce.php:143
+msgid "Layout"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:252
+msgid "Archives Layout"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:262
+msgid "Single Post Layout"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:272
+msgid "Single Page Layout"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:289
+msgid "Blog Post"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:297
+msgid "Post thumbnail placeholder"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:308
+msgid "Display Date?"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:317
+msgid "Display Author?"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:326
+msgid "Display Comments?"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:335
+msgid "Display Categories?"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:344
+msgid "Display Tags?"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:353
+msgid "Display Author Profile?"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:362
+msgid "Excerpt Length"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:382
+msgid "More Link Text"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:391
+msgid "Posts Navigation Type"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:396
+#: inc/customizer/settings/class-baltic-settings-woocommerce.php:205
+msgid "Previous/Next"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:397
+#: inc/customizer/settings/class-baltic-settings-woocommerce.php:206
+msgid "Pagination"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:411
+msgid "Previous Post Text"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:427
+msgid "Next Post Text"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:450
+msgid "Footer"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:458
+msgid "Footer widgets columns"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:479
+msgid "Footer Text"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:494
+msgid "Display theme designer?"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-general.php:507
+msgid "Payment icons"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-typography.php:64
+msgid "Body"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-typography.php:71
+msgid "Body Fonts"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-typography.php:101
+msgid "Heading"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-typography.php:108
+msgid "Heading Fonts"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-typography.php:129
+msgid "H1 size"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-typography.php:147
+msgid "H2 size"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-typography.php:165
+msgid "H3 size"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-typography.php:183
+msgid "H4 size"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-typography.php:201
+msgid "H5 size"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-typography.php:219
+msgid "H6 size"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-typography.php:244
+msgid "Blockquote"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-typography.php:251
+msgid "Blockquote Fonts"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-typography.php:281
+msgid "Code"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-typography.php:288
+msgid "Code Fonts"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-woocommerce.php:81
+msgid "Price color"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-woocommerce.php:96
+msgid "Sale Badge Text Color"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-woocommerce.php:111
+msgid "Sale Badge Background Color"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-woocommerce.php:126
+msgid "Stars Rating Color"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-woocommerce.php:150
+msgid "Product Archive Layout"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-woocommerce.php:160
+msgid "Single Product Layout"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-woocommerce.php:174
+msgid "Products per page"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-woocommerce.php:187
+msgid "Products Columns"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-woocommerce.php:200
+msgid "Products Navigation Type"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-woocommerce.php:220
+msgid "Previous Product Text"
+msgstr ""
+
+#: inc/customizer/settings/class-baltic-settings-woocommerce.php:243
+msgid "Next Product Text"
+msgstr ""
+
+#: inc/extras/class-baltic-breadcrumb.php:33
+msgid "Home"
+msgstr ""
+
+#: inc/extras/class-baltic-breadcrumb.php:34
+msgid " <span aria-label=\"breadcrumb separator\" class=\"separator\">/</span> "
+msgstr ""
+
+#: inc/extras/class-tgm-plugin-activation.php:327
 msgid "Install Required Plugins"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:328
+#: inc/extras/class-tgm-plugin-activation.php:328
 msgid "Install Plugins"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:330
+#: inc/extras/class-tgm-plugin-activation.php:330
 #. translators: %s: plugin name.
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:332
+#: inc/extras/class-tgm-plugin-activation.php:332
 #. translators: %s: plugin name.
 msgid "Updating Plugin: %s"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:333
+#: inc/extras/class-tgm-plugin-activation.php:333
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:370
+#: inc/extras/class-tgm-plugin-activation.php:370
 #. translators: 1: plugin name(s).
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:375
+#: inc/extras/class-tgm-plugin-activation.php:375
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:380
+#: inc/extras/class-tgm-plugin-activation.php:380
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:385
+#: inc/extras/class-tgm-plugin-activation.php:385
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:386
-#: inc/vendor/class-tgm-plugin-activation.php:827
-#: inc/vendor/class-tgm-plugin-activation.php:2533
-#: inc/vendor/class-tgm-plugin-activation.php:3580
+#: inc/extras/class-tgm-plugin-activation.php:386
+#: inc/extras/class-tgm-plugin-activation.php:827
+#: inc/extras/class-tgm-plugin-activation.php:2533
+#: inc/extras/class-tgm-plugin-activation.php:3580
 msgid "Return to the Dashboard"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:387
-#: inc/vendor/class-tgm-plugin-activation.php:3159
+#: inc/extras/class-tgm-plugin-activation.php:387
+#: inc/extras/class-tgm-plugin-activation.php:3159
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:388
-#: inc/vendor/class-tgm-plugin-activation.php:2952
+#: inc/extras/class-tgm-plugin-activation.php:388
+#: inc/extras/class-tgm-plugin-activation.php:2952
 msgid "The following plugin was activated successfully:"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:390
+#: inc/extras/class-tgm-plugin-activation.php:390
 #. translators: 1: plugin name.
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:392
+#: inc/extras/class-tgm-plugin-activation.php:392
 #. translators: 1: plugin name.
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
 "Please update the plugin."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:394
+#: inc/extras/class-tgm-plugin-activation.php:394
 #. translators: 1: dashboard link.
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:395
+#: inc/extras/class-tgm-plugin-activation.php:395
 msgid "Dismiss this notice"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:396
+#: inc/extras/class-tgm-plugin-activation.php:396
 msgid ""
 "There are one or more required or recommended plugins to install, update or "
 "activate."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:397
+#: inc/extras/class-tgm-plugin-activation.php:397
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:522
+#: inc/extras/class-tgm-plugin-activation.php:522
 msgid "This plugin needs to be updated to be compatible with your theme."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:523
+#: inc/extras/class-tgm-plugin-activation.php:523
 msgid "Update Required"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:934
+#: inc/extras/class-tgm-plugin-activation.php:934
 msgid ""
 "The remote plugin package does not contain a folder with the desired slug "
 "and renaming did not work."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:934
-#: inc/vendor/class-tgm-plugin-activation.php:937
+#: inc/extras/class-tgm-plugin-activation.php:934
+#: inc/extras/class-tgm-plugin-activation.php:937
 msgid ""
 "Please contact the plugin provider and ask them to package their plugin "
 "according to the WordPress guidelines."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:937
+#: inc/extras/class-tgm-plugin-activation.php:937
 msgid ""
 "The remote plugin package consists of more than one file, but the files are "
 "not packaged in a folder."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:1982
+#: inc/extras/class-tgm-plugin-activation.php:1982
 #. translators: %s: version number
 msgid "TGMPA v%s"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2273
+#: inc/extras/class-tgm-plugin-activation.php:2273
 msgid "Required"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2276
+#: inc/extras/class-tgm-plugin-activation.php:2276
 msgid "Recommended"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2292
+#: inc/extras/class-tgm-plugin-activation.php:2292
 msgid "WordPress Repository"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2295
+#: inc/extras/class-tgm-plugin-activation.php:2295
 msgid "External Source"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2298
+#: inc/extras/class-tgm-plugin-activation.php:2298
 msgid "Pre-Packaged"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2315
+#: inc/extras/class-tgm-plugin-activation.php:2315
 msgid "Not Installed"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2319
+#: inc/extras/class-tgm-plugin-activation.php:2319
 msgid "Installed But Not Activated"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2321
+#: inc/extras/class-tgm-plugin-activation.php:2321
 msgid "Active"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2327
+#: inc/extras/class-tgm-plugin-activation.php:2327
 msgid "Required Update not Available"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2330
+#: inc/extras/class-tgm-plugin-activation.php:2330
 msgid "Requires Update"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2333
+#: inc/extras/class-tgm-plugin-activation.php:2333
 msgid "Update recommended"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2392
+#: inc/extras/class-tgm-plugin-activation.php:2392
 #. translators: 1: number of plugins.
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2396
+#: inc/extras/class-tgm-plugin-activation.php:2396
 #. translators: 1: number of plugins.
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2400
+#: inc/extras/class-tgm-plugin-activation.php:2400
 #. translators: 1: number of plugins.
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2490
+#: inc/extras/class-tgm-plugin-activation.php:2490
 msgid "Installed version:"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2498
+#: inc/extras/class-tgm-plugin-activation.php:2498
 msgid "Minimum required version:"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2510
+#: inc/extras/class-tgm-plugin-activation.php:2510
 msgid "Available version:"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2533
+#: inc/extras/class-tgm-plugin-activation.php:2533
 msgid "No plugins to install, update or activate."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2547
+#: inc/extras/class-tgm-plugin-activation.php:2547
 msgid "Plugin"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2548
+#: inc/extras/class-tgm-plugin-activation.php:2548
 msgid "Source"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2549
+#: inc/extras/class-tgm-plugin-activation.php:2549
 msgid "Type"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2553
+#: inc/extras/class-tgm-plugin-activation.php:2553
 msgid "Version"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2603
+#: inc/extras/class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr ""
+
+#: inc/extras/class-tgm-plugin-activation.php:2603
 #. translators: %2$s: plugin name in screen reader markup
 msgid "Install %2$s"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2608
+#: inc/extras/class-tgm-plugin-activation.php:2608
 #. translators: %2$s: plugin name in screen reader markup
 msgid "Update %2$s"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2614
+#: inc/extras/class-tgm-plugin-activation.php:2614
 #. translators: %2$s: plugin name in screen reader markup
 msgid "Activate %2$s"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2684
+#: inc/extras/class-tgm-plugin-activation.php:2684
 msgid "Upgrade message from the plugin author:"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2717
+#: inc/extras/class-tgm-plugin-activation.php:2717
 msgid "Install"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2723
+#: inc/extras/class-tgm-plugin-activation.php:2723
 msgid "Update"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2726
+#: inc/extras/class-tgm-plugin-activation.php:2726
 msgid "Activate"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2757
+#: inc/extras/class-tgm-plugin-activation.php:2757
 msgid "No plugins were selected to be installed. No action taken."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2759
+#: inc/extras/class-tgm-plugin-activation.php:2759
 msgid "No plugins were selected to be updated. No action taken."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2800
+#: inc/extras/class-tgm-plugin-activation.php:2800
 msgid "No plugins are available to be installed at this time."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2802
+#: inc/extras/class-tgm-plugin-activation.php:2802
 msgid "No plugins are available to be updated at this time."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2908
+#: inc/extras/class-tgm-plugin-activation.php:2908
 msgid "No plugins were selected to be activated. No action taken."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2934
+#: inc/extras/class-tgm-plugin-activation.php:2934
 msgid "No plugins are available to be activated at this time."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:3158
+#: inc/extras/class-tgm-plugin-activation.php:3158
 msgid "Plugin activation failed."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:3498
+#: inc/extras/class-tgm-plugin-activation.php:3498
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:3501
+#: inc/extras/class-tgm-plugin-activation.php:3501
 #. translators: 1: plugin name, 2: error message.
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:3503
+#: inc/extras/class-tgm-plugin-activation.php:3503
 #. translators: 1: plugin name.
 msgid "The installation of %1$s failed."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:3507
+#: inc/extras/class-tgm-plugin-activation.php:3507
 msgid ""
 "The installation and activation process is starting. This process may take "
 "a while on some hosts, so please be patient."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:3509
+#: inc/extras/class-tgm-plugin-activation.php:3509
 #. translators: 1: plugin name.
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:3509
-#: inc/vendor/class-tgm-plugin-activation.php:3517
+#: inc/extras/class-tgm-plugin-activation.php:3509
+#: inc/extras/class-tgm-plugin-activation.php:3517
 msgid "Show Details"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:3509
-#: inc/vendor/class-tgm-plugin-activation.php:3517
+#: inc/extras/class-tgm-plugin-activation.php:3509
+#: inc/extras/class-tgm-plugin-activation.php:3517
 msgid "Hide Details"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:3510
+#: inc/extras/class-tgm-plugin-activation.php:3510
 msgid "All installations and activations have been completed."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:3512
+#: inc/extras/class-tgm-plugin-activation.php:3512
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:3515
+#: inc/extras/class-tgm-plugin-activation.php:3515
 msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:3517
+#: inc/extras/class-tgm-plugin-activation.php:3517
 #. translators: 1: plugin name.
 msgid "%1$s installed successfully."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:3518
+#: inc/extras/class-tgm-plugin-activation.php:3518
 msgid "All installations have been completed."
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:3520
+#: inc/extras/class-tgm-plugin-activation.php:3520
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: inc/vendor/vendor.php:25
+#: inc/theme/class-baltic-icons.php:227
+msgid "Please define default parameters in the form of an array."
+msgstr ""
+
+#: inc/theme/class-baltic-icons.php:232
+msgid "Please define an SVG icon filename."
+msgstr ""
+
+#: inc/theme/class-baltic-options.php:114
+msgid "Continue reading"
+msgstr ""
+
+#: inc/theme/class-baltic-options.php:121
+msgid "Copyright &copy; 2017-[YEAR] [SITE]. Proudly powered by [WP]."
+msgstr ""
+
+#: inc/theme/class-baltic-options.php:149
+msgid "Baltic theme is suitable for"
+msgstr ""
+
+#: inc/theme/class-baltic-options.php:150
+msgid "online shop, small business, startup"
+msgstr ""
+
+#: inc/theme/class-baltic-options.php:153
+msgid "Button Text #1"
+msgstr ""
+
+#: inc/theme/class-baltic-options.php:178
+msgid "Slide title #1"
+msgstr ""
+
+#: inc/theme/class-baltic-options.php:179
+msgid "Slide description #1"
+msgstr ""
+
+#: inc/theme/class-baltic-options.php:181
+msgid "Button text #1A"
+msgstr ""
+
+#: inc/theme/class-baltic-options.php:184
+msgid "Button text #1B"
+msgstr ""
+
+#: inc/theme/class-baltic-options.php:189
+msgid "Slide title #2"
+msgstr ""
+
+#: inc/theme/class-baltic-options.php:190
+msgid "Slide description #2"
+msgstr ""
+
+#: inc/theme/class-baltic-options.php:192
+msgid "Button text #2A"
+msgstr ""
+
+#: inc/theme/class-baltic-options.php:195
+msgid "Button text #2B"
+msgstr ""
+
+#: inc/theme/class-baltic-options.php:226
+#: inc/theme/class-baltic-options.php:252
+msgid "More from our blog"
+msgstr ""
+
+#: inc/theme/class-baltic-setup.php:128 inc/theme/class-baltic-utility.php:166
+msgid "Primary"
+msgstr ""
+
+#: inc/theme/class-baltic-setup.php:129 inc/theme/class-baltic-utility.php:167
+msgid "Secondary"
+msgstr ""
+
+#: inc/theme/class-baltic-setup.php:130
+msgid "Social Link"
+msgstr ""
+
+#: inc/theme/class-baltic-setup.php:338
+msgid "Sidebar"
+msgstr ""
+
+#: inc/theme/class-baltic-setup.php:340 inc/theme/class-baltic-setup.php:349
+#: inc/theme/class-baltic-setup.php:359
+msgid "Add widgets here."
+msgstr ""
+
+#: inc/theme/class-baltic-setup.php:347
+msgid "Sidebar Footer"
+msgstr ""
+
+#: inc/theme/class-baltic-setup.php:357
+msgid "Sidebar Shop"
+msgstr ""
+
+#: inc/theme/class-baltic-setup.php:469
+#. Translators: Used as a placeholder for untitled posts on non-singular views.
+msgid "(Untitled)"
+msgstr ""
+
+#: inc/theme/class-baltic-setup.php:560
+msgid "Baltic Kit"
+msgstr ""
+
+#: inc/theme/class-baltic-setup.php:566
 msgid "Kirki Toolkit"
 msgstr ""
 
-#: inc/vendor/vendor.php:32
-msgid "Elementor"
-msgstr ""
-
-#: inc/vendor/vendor.php:39
+#: inc/theme/class-baltic-setup.php:572
 msgid "WooCommerce"
 msgstr ""
 
-#: inc/vendor/vendor.php:46
-msgid "YITH WooCommerce Wishlist"
-msgstr ""
-
-#: inc/vendor/vendor.php:53
-msgid "WP Term Images"
-msgstr ""
-
-#: inc/vendor/vendor.php:60
+#: inc/theme/class-baltic-setup.php:578
 msgid "Twitter Widget by Campaign Kit"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:73
+msgid "This homepage block require WooCommerce plugin"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:93
+msgid "This homepage block require Campaignkit Twitter plugin"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:131
+msgid "Content Sidebar"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:132
+msgid "Sidebar Content"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:133
+msgid "Full Width"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:134
+msgid "Narrow"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:149
+msgid "Default"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:150
+msgid "Grid"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:151
+msgid "Zig Zag"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:168
+msgid "Success"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:169
+msgid "Danger"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:170
+msgid "Warning"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:171
+msgid "Info"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:172
+msgid "White"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:173
+msgid "Primary Outline"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:174
+msgid "Secondary Outline"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:175
+msgid "Success Outline"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:176
+msgid "Danger Outline"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:177
+msgid "Warning Outline"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:178
+msgid "Info Outline"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:179
+msgid "White Outline"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:194
+msgid "Alipay"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:195
+msgid "Amex"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:196
+msgid "Diners"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:197
+msgid "Discover"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:198
+msgid "Elo"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:199
+msgid "Hipercard"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:200
+msgid "JCB"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:201
+msgid "Maestro"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:202
+msgid "Mastercard"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:203
+msgid "Paypal"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:204
+msgid "Unionpay"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:205
+msgid "Verve"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:206
+msgid "Visa"
+msgstr ""
+
+#: inc/theme/class-baltic-utility.php:356
+#: inc/theme/class-baltic-utility.php:372
+#. Translators: %s is a plugin name
+msgid "This homepage block require %s plugin."
+msgstr ""
+
+#: search.php:22
+#. translators: %s: search query.
+msgid "Search Results for: %s"
+msgstr ""
+
+#: woocommerce/product-searchform.php:25
+msgid "Search for:"
+msgstr ""
+
+#: woocommerce/product-searchform.php:31
+msgid "Search"
 msgstr ""
 
 #: woocommerce/wishlist-view.php:32
@@ -1658,19 +1363,19 @@ msgid "Baltic"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://baltic.elevatethemes.com.au/"
+msgid "https://campaignkit.co/wordpress-themes/baltic"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Baltic WooCommerce Theme"
+msgid "WooCommerce theme"
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Elevate360"
+msgid "Campaign Kit"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://campaignkit.co/"
+msgid "https://campaignkit.co"
 msgstr ""
 
 #. Template Name of the plugin/theme
@@ -1681,7 +1386,7 @@ msgstr ""
 msgid "Baltic - Homepage"
 msgstr ""
 
-#: comments.php:40
+#: comments.php:41
 #. translators: 1: comment count number, 2: title.
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
@@ -1689,46 +1394,47 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: components/header/header-search.php:16 searchform.php:14
-msgctxt "label"
-msgid "Search for:"
-msgstr ""
-
-#: components/header/header-search.php:18 searchform.php:16
-msgctxt "placeholder"
-msgid "Search &hellip;"
-msgstr ""
-
-#: components/header/header-search.php:32
-#: components/header/header-search.php:57 searchform.php:19
-msgctxt "submit button"
-msgid "Search"
-msgstr ""
-
-#: inc/class-template-tags.php:87 inc/structure/entry.php:123
+#: components/entry/meta-tags.php:9
 #. translators: used between list items, there is a space after the comma
 msgctxt "list item separator"
 msgid ", "
 msgstr ""
 
-#: inc/plugins/woocommerce/class-wc.php:255
+#: components/header/header-search.php:14
+#: components/header/header-search.php:38 searchform.php:14
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: components/header/header-search.php:16 searchform.php:16
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: components/header/header-search.php:30
+#: components/header/header-search.php:55 searchform.php:19
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: inc/connect/woocommerce/class-baltic-connect-woocommerce.php:291
 msgctxt "endquote"
 msgid "&rdquo;"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:1121
-#: inc/vendor/class-tgm-plugin-activation.php:2948
+#: inc/extras/class-tgm-plugin-activation.php:1121
+#: inc/extras/class-tgm-plugin-activation.php:2948
 msgctxt "plugin A *and* plugin B"
 msgid "and"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2342
+#: inc/extras/class-tgm-plugin-activation.php:2342
 #. translators: 1: install status, 2: update status
 msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
 msgstr ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2388
+#: inc/extras/class-tgm-plugin-activation.php:2388
 #. translators: 1: number of plugins.
 msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
@@ -1736,7 +1442,7 @@ msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/vendor/class-tgm-plugin-activation.php:2482
+#: inc/extras/class-tgm-plugin-activation.php:2482
 msgctxt "as in: \"version nr unknown\""
 msgid "unknown"
 msgstr ""

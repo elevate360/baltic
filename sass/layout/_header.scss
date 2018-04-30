@@ -1,0 +1,282 @@
+/** Site Header */
+.site-header {
+	background-color: $color__site-header;
+	background-attachment: scroll;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	z-index: 5;
+	transition: all .25s ease-in-out;
+	> .container {
+		position: relative;
+	}
+	@include respond-to(medium) {
+		.admin-bar &.stick {
+			top: 32px !important;
+		}
+		&.stick {
+			box-shadow: 0 16px 64px 16px rgba( 0,0,0,.1 );
+			.main-navigation {
+				display: none;
+				&.show {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+.header-menu-toggle {
+    background-color: transparent;
+    border-color: transparent;
+    position: absolute;
+    color: $color__text-main;
+    cursor: pointer;
+    padding: 0;
+    top: 16px;
+    left: 16px;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    transform: scale(0);
+    z-index: 5;
+
+    &:hover,
+    &:focus,
+    &:active {
+    	background-color: transparent;
+		border-color: transparent;
+		color: $color__text-main;
+		box-shadow: none;
+    }
+
+	.icon-stroke {
+	    width: 2rem;
+	    height: 2rem;
+	}
+
+	&.toggled .icon-menu,
+    .icon-close {
+    	display: none;
+    }
+
+    &.toggled .icon-close {
+    	display: block;
+    }
+
+    .stick & {
+    	transform: scale(1);
+    	opacity: 1;
+    }
+}
+
+/** Site Branding */
+.site-branding {
+	position: relative;
+	padding: $gutter__width;
+	float: left;
+	left: 0;
+	max-width: 60%;
+	z-index: 1;
+	transition: all .25s ease-in-out;
+	&,
+	a {
+		color: $color__text-main;
+		&:hover,
+		&:focus {
+			color: $color__text-main;
+		}
+	}
+	@include respond-to(medium) {
+		max-width: 220px;
+		padding-top: $gutter__width*2;
+		padding-bottom: $gutter__width*2;
+		padding-left: 24px;
+		.stick & {
+			padding-top: $gutter__width;
+			padding-bottom: $gutter__width;
+			left: 40px;
+		}
+	}
+}
+
+.site-title,
+.site-description {
+	line-height: 1;
+	margin: 0;
+}
+
+.site-title {
+	@include font-size(2);
+	font-weight: bold;
+	margin-bottom: .25rem;
+}
+
+.site-description {
+	color: $color__text-main;
+	display: block;
+	@include font-size(0.75);
+	opacity: 0.5;
+}
+
+a.custom-logo-link {
+	display: inline-block;
+	max-width: 180px;
+	max-height: 48px;
+}
+
+/** Header search */
+.header-search-area {
+	clear: both;
+	padding-left: $gutter__width;
+	padding-right: $gutter__width;
+	margin-bottom: $gutter__width;
+	transition: all .25s ease-in-out;
+	label {
+		margin: 0;
+	}
+	input[type="search"]{
+		border-right-width: 0;
+		width: 50%;
+		height: 50px;
+	}
+	.search-filter {
+		border-right-width: 1px;
+		float: left;
+		width: 50%;
+	    height: 50px;
+	    border-top-left-radius: 0;
+	    border-bottom-left-radius: 0;
+	}
+	.search-submit {
+		background-color: rgba( 255,255,255,.5 );
+		border-color: $color__alpha-dark;
+		display: none;
+		height: 50px;
+		width: 50px;
+		.icon-stroke {
+			stroke: $color__text-main;
+		}
+		&:hover,
+		&:focus {
+			background-color: $color__button-hover;
+			border-color: $color__button-hover;
+			.icon-stroke {
+				stroke: $color__white;
+			}
+		}
+	}
+
+	@include respond-to( small ) {
+		input[type="search"] {
+			width: calc( 100% - 200px );
+		}
+		.search-filter {
+			border-right-width: 0;
+			width: 150px;
+		}
+		.search-submit {
+			display: block;
+		}
+	}
+
+	@include respond-to( medium ){
+	    position: absolute;
+	    top: 0;
+	    right: $gutter__width*2;
+	    width: 100%;
+	    padding-top: $gutter__width*2;
+	    padding-right: 160px;
+	    padding-left: 260px;
+	    .stick & {
+	    	padding-top: $gutter__width;
+	    	padding-left: 280px;
+	    }
+		.search-filter {
+		    border-top-right-radius: 0;
+		    border-bottom-right-radius: 0;
+		}
+	}
+}
+
+.search-filter {
+	background-position:
+		calc(100% - 15px) calc(1em + 7px),
+		calc(100% - 10px) calc(1em + 7px);
+}
+
+/** Jumbotron Header */
+.jumbotron-header {
+	background-color: $color__alpha-dark05;
+	position: relative;
+	overflow: hidden;
+	z-index: 0;
+	transition: all ease-in-out .25s;
+	&.has-archive-thumbnail {
+		color: $color__white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		text-shadow: 0 4px 8px rgba( 0,0,0,.5 );
+	}
+}
+
+.jumbotron-header-inner {
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+	@include respond-to( medium ){
+		max-width: 60%;
+		.has-archive-thumbnail &{
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+
+.jumbotron-header-thumbnail {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: -1;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+	&:after {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    content: " ";
+	    box-shadow: inset 0 1px 0 rgba( 255,255,255,.25 );
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.9+0,0.3+100 */
+		background: -moz-linear-gradient(left, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(left, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.3) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to right, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6000000', endColorstr='#4d000000',GradientType=1 ); /* IE6-9 */
+	}
+	@include respond-to( medium ) {
+		background-attachment: fixed;
+	}
+}
+
+.jumbotron-title {
+	@include font-size(2);
+	font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1;
+    @include respond-to( medium ) {
+		@include font-size(3);
+    }
+    .has-archive-thumbnail & {
+    	margin-bottom: 1rem;
+    }
+}

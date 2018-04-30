@@ -1,0 +1,233 @@
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background-color: $color__button;
+	border: 1px solid $color__button;
+	color: $color__white;
+	cursor: pointer;
+    display: inline-block;
+    @include font-size(1);
+    font-weight: 400;
+	line-height: 1;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+	padding: .75rem 1rem;
+	position: relative;
+	vertical-align: top;
+	transition-property: background, color, opacity, transform, box-shadow;
+	transition-duration: 0.25s;
+	transition-timing-function: ease-in-out;
+	border-radius: .25rem;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: $color__button-hover;
+		border-color: $color__button-hover;
+		color: #fff;
+	}
+
+	&:focus {
+		box-shadow: 0 0 0 4px rgba( 0, 0, 0, .05 );
+		outline: none;
+		z-index: 1;
+	}
+
+}
+
+.btn-cta {
+	display: block;
+    font-weight: 400;
+    @include font-size(1.125);
+    text-align: center;
+    margin-bottom: $gutter__width;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 2px solid transparent;
+    padding: .75rem .5rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    box-shadow: 0 8px 16px rgba(0,0,0,.1);
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+	@include respond-to( medium ) {
+		display: inline-block;
+		padding: .75rem 2rem;
+	}
+}
+
+
+.btn-cta__white {
+    color: $color__text-main;
+    background-color: $color__white;
+    border-color: $color__white;
+    &:hover,
+    &:focus {
+		background-color: $color__text-main;
+		border-color: $color__text-main;
+		color: $color__white;
+    }
+}
+
+.btn-cta__primary {
+    color: $color__white;
+    background-color: $color__btn-primary;
+    border-color: $color__btn-primary;
+    &:hover,
+    &:focus {
+		background-color: lighten( $color__btn-primary, 15% );
+		border-color: lighten( $color__btn-primary, 15% );
+		color: $color__white;
+    }
+}
+
+.btn-cta__secondary {
+    color: $color__white;
+    background-color: $color__btn-secondary;
+    border-color: $color__btn-secondary;
+    &:hover,
+    &:focus {
+		background-color: lighten( $color__btn-secondary, 15% );
+		border-color: lighten( $color__btn-secondary, 15% );
+		color: $color__white;
+    }
+}
+
+.btn-cta__success {
+    color: $color__white;
+    background-color: $color__btn-success;
+    border-color: $color__btn-success;
+    &:hover,
+    &:focus {
+		background-color: lighten( $color__btn-success, 15% );
+		border-color: lighten( $color__btn-success, 15% );
+		color: $color__white;
+    }
+}
+
+.btn-cta__danger {
+    color: $color__white;
+    background-color: $color__btn-danger;
+    border-color: $color__btn-danger;
+    &:hover,
+    &:focus {
+		background-color: lighten( $color__btn-danger, 15% );
+		border-color: lighten( $color__btn-danger, 15% );
+		color: $color__white;
+    }
+}
+
+.btn-cta__warning {
+    color: $color__white;
+    background-color: $color__btn-warning;
+    border-color: $color__btn-warning;
+    &:hover,
+    &:focus {
+		background-color: lighten( $color__btn-warning, 15% );
+		border-color: lighten( $color__btn-warning, 15% );
+		color: $color__white;
+    }
+}
+
+.btn-cta__info {
+    color: $color__white;
+    background-color: $color__btn-info;
+    border-color: $color__btn-info;
+    &:hover,
+    &:focus {
+		background-color: lighten( $color__btn-info, 15% );
+		border-color: lighten( $color__btn-info, 15% );
+		color: $color__white;
+    }
+}
+
+.btn-cta__outline-white {
+    color: $color__white;
+    background-color: transparent;
+    border-color: $color__white;
+    &:hover,
+    &:focus {
+		background-color: $color__white;
+		border-color: $color__white;
+		color: $color__text-main;
+    }
+}
+
+.btn-cta__outline-primary {
+    color: $color__btn-primary;
+    background-color: transparent;
+    border-color: $color__btn-primary;
+    &:hover,
+    &:focus {
+		background-color: lighten( $color__btn-primary, 15% );
+		border-color: lighten( $color__btn-primary, 15% );
+		color: $color__white;
+    }
+}
+
+.btn-cta__outline-secondary {
+    color: $color__btn-secondary;
+    background-color: transparent;
+    border-color: $color__btn-secondary;
+    &:hover,
+    &:focus {
+		background-color: lighten( $color__btn-secondary, 15% );
+		border-color: lighten( $color__btn-secondary, 15% );
+		color: $color__white;
+    }
+}
+
+.btn-cta__outline-success {
+    color: $color__btn-success;
+    background-color: transparent;
+    border-color: $color__btn-success;
+    &:hover,
+    &:focus {
+		background-color: lighten( $color__btn-success, 15% );
+		border-color: lighten( $color__btn-success, 15% );
+		color: $color__white;
+    }
+}
+
+.btn-cta__outline-danger {
+    color: $color__btn-danger;
+    background-color: transparent;
+    border-color: $color__btn-danger;
+    &:hover,
+    &:focus {
+		background-color: lighten( $color__btn-danger, 15% );
+		border-color: lighten( $color__btn-danger, 15% );
+		color: $color__white;
+    }
+}
+
+.btn-cta__outline-warning {
+    color: $color__btn-warning;
+    background-color: transparent;
+    border-color: $color__btn-warning;
+    &:hover,
+    &:focus {
+		background-color: lighten( $color__btn-warning, 15% );
+		border-color: lighten( $color__btn-warning, 15% );
+		color: $color__white;
+    }
+}
+
+.btn-cta__outline-info {
+    color: $color__btn-info;
+    background-color: transparent;
+    border-color: $color__btn-info;
+    &:hover,
+    &:focus {
+		background-color: lighten( $color__btn-info, 15% );
+		border-color: lighten( $color__btn-info, 15% );
+		color: $color__white;
+    }
+}
+
+.btn-cta__rounded {
+	border-radius: 5rem;
+}

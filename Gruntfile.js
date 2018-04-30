@@ -3,6 +3,8 @@ module.exports = function (grunt) {
 
 	'use strict';
 
+	grunt.util.linefeed = '\n';
+
 	// Project configuration.
 	grunt.initConfig({
 
@@ -45,7 +47,7 @@ module.exports = function (grunt) {
 				type: 'wp-theme',
 				domainPath: 'languages',
 				potHeaders: {
-					'report-msgid-bugs-to': 'https://elevate360/contact',
+					'report-msgid-bugs-to': 'https://campaignkit.co/contact',
 					'language-team': 'LANGUAGE <EMAIL@ADDRESS>'
 				}
 			},
@@ -68,11 +70,10 @@ module.exports = function (grunt) {
 					sourceMap: false
 				},
 				files: [{
-					'style.css': 'sass/style.scss',
-					'assets/css/admin.css': 'sass/admin.scss',
-					'assets/css/customizer-control.css': 'sass/customizer-control.scss',
-					'assets/css/editor-style.css': 'sass/editor-style.scss',
-					'assets/css/woocommerce.css': 'sass/woocommerce.scss'
+					'style.css' : 'sass/style.scss',
+					'assets/css/editor-style.css' : 'sass/editor-style.scss',
+					'assets/css/woocommerce.css' : 'sass/woocommerce.scss',
+					'assets/css/customizer-control.css' : 'sass/customizer-control.scss'
 				}]
 			}
 		},
@@ -83,49 +84,35 @@ module.exports = function (grunt) {
 				logFile: false
 			},
 			media: {
-				files: {
-					'style.css': ['style.css'],
-					'assets/css/admin.css': ['inc/admin/assets/css/admin.css'],
-					'assets/css/customizer-control.css': ['assets/css/customizer-control.css'],
-					'assets/css/editor-style.css': ['assets/css/editor-style.css'],
-					'assets/css/woocommerce.css': ['assets/css/woocommerce.css']
-				}
+				files: [{
+					'style.css' : 'style.css',
+					'assets/css/editor-style.css' : 'assets/css/editor-style.css',
+					'assets/css/woocommerce.css' : 'assets/css/woocommerce.css',
+					'assets/css/customizer-control.css' : 'assets/css/customizer-control.css'
+				}]
 			}
 		},
 
+		// Autoprefixer.
 		postcss: {
 			options: {
 				processors: [
 					require( 'autoprefixer' )({
 						browsers: [
-							'> 1%',
-							'last 2 versions',
-							'Firefox ESR',
-							'Opera 12.1',
+							'> 0.1%',
+							'ie 8',
 							'ie 9'
 						]
 					})
 				]
 			},
-			theme: {
-				src: 'style.css',
-				dest: 'style.css'
-			},
-			admin: {
-				src: 'inc/admin/assets/css/admin.css',
-				dest: 'inc/admin/assets/css/admin.css'
-			},
-			customizer: {
-				src: 'assets/css/customizer-control.css',
-				dest: 'assets/css/customizer-control.css'
-			},
-			editor: {
-				src: 'assets/css/editor-style.css',
-				dest: 'assets/css/editor-style.css'
-			},
-			woocommerce: {
-				src: 'assets/css/woocommerce.css',
-				dest: 'assets/css/woocommerce.css'
+			dist: {
+				src: [
+					'style.css',
+					'!style.min.css',
+					'assets/css/*.css',
+					'!assets/css/*.css'
+				]
 			}
 		},
 
@@ -134,15 +121,29 @@ module.exports = function (grunt) {
 	            options: {
 	                commentSpacing: true
 	            },
-	            files: {
-	            	'style.css': ['style.css'],
-	            	'assets/css/admin.css': ['assets/css/admin.css'],
-	            	'assets/css/customizer-control.css': ['assets/css/customizer-control.css'],
-	            	'assets/css/editor-style.css': ['assets/css/editor-style.css'],
-	            	'assets/css/woocommerce.css': ['assets/css/woocommerce.css']
-	            }
+				files: [{
+					'style.css' : 'style.css',
+					'assets/css/editor-style.css' : 'assets/css/editor-style.css',
+					'assets/css/woocommerce.css' : 'assets/css/woocommerce.css',
+					'assets/css/customizer-control.css' : 'assets/css/customizer-control.css'
+				}]
 	        }
 	    },
+
+		// RTLCSS
+		rtlcss: {
+			main: {
+				options: {},
+				expand: true,
+				ext: '-rtl.css',
+				src: [
+					'style.css',
+					'assets/css/editor-style.css',
+					'assets/css/woocommerce.css',
+					'assets/css/customizer-control.css'
+				]
+			}
+		},
 
 		cssmin: {
 			target: {
@@ -178,6 +179,15 @@ module.exports = function (grunt) {
 			}
 		},
 
+		jsbeautifier: {
+		    files : [
+		    	'assets/js/*.js',
+		    	'!assets/js/*.min.js'
+		    ],
+		    options : {
+		    }
+		},
+
 		uglify: {
 			options: {
 				preserveComments: 'some'
@@ -211,8 +221,7 @@ module.exports = function (grunt) {
 			},
 			frontend: {
 				files: [
-					'assets/js/frontend/*.js',
-					'assets/js/baltic-wishlist.js'
+					'assets/js/frontend/*.js'
 				],
 				tasks: [
 					'concat',
@@ -232,14 +241,6 @@ module.exports = function (grunt) {
 			}
 		},
 
-		wp_readme_to_markdown: {
-			your_target: {
-				files: {
-					'README.md': 'readme.txt'
-				}
-			}
-		},
-
 		// Replace text
 		replace: {
 			themeVersion: {
@@ -251,6 +252,24 @@ module.exports = function (grunt) {
 					from: /^.*Version:.*$/m,
 					to: 'Version: <%= pkg.version %>'
 				} ]
+			},
+			readme: {
+				src: [
+					'readme.txt'
+				],
+				overwrite: true,
+				replacements: [ {
+					from: /^.*Stable tag:.*$/m,
+					to: 'Stable tag: <%= pkg.version %>'
+				} ]
+			}
+		},
+
+		wp_readme_to_markdown: {
+			your_target: {
+				files: {
+					'README.md': 'readme.txt'
+				}
 			}
 		},
 
@@ -271,7 +290,10 @@ module.exports = function (grunt) {
 					'!dist/**',
 					'!orig/**',
 					'!.git/**',
+					'!vendor/**',
 					'!Gruntfile.js',
+					'!composer.json',
+					'!composer.lock',
 					'!package.json',
 					'!package-lock.json',
 					'!phpcs.xml.dist',
@@ -301,7 +323,6 @@ module.exports = function (grunt) {
 
 	});
 
-	grunt.loadNpmTasks( 'grunt-postcss' );
     grunt.loadNpmTasks( 'grunt-checktextdomain' );
     grunt.loadNpmTasks( 'grunt-combine-media-queries' );
     grunt.loadNpmTasks( 'grunt-contrib-clean' );
@@ -310,10 +331,13 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks( 'grunt-contrib-copy' );
     grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
     grunt.loadNpmTasks( 'grunt-contrib-jshint' );
+    grunt.loadNpmTasks( 'grunt-contrib-uglify' );
     grunt.loadNpmTasks( 'grunt-contrib-watch' );
+    grunt.loadNpmTasks( 'grunt-jsbeautifier' );
+    grunt.loadNpmTasks( 'grunt-postcss' );
+    grunt.loadNpmTasks( 'grunt-rtlcss' );
     grunt.loadNpmTasks( 'grunt-sass' );
     grunt.loadNpmTasks( 'grunt-text-replace' );
-    grunt.loadNpmTasks( 'grunt-contrib-uglify' );
     grunt.loadNpmTasks( 'grunt-wp-css' );
     grunt.loadNpmTasks( 'grunt-wp-i18n' );
     grunt.loadNpmTasks( 'grunt-wp-readme-to-markdown' );
@@ -323,13 +347,15 @@ module.exports = function (grunt) {
 		'cmq',
 		'postcss',
 		'wpcss',
+		'rtlcss',
 		'cssmin'
 	]);
 
 	grunt.registerTask( 'js', [
 		'concat',
-		'uglify',
-		'jshint'
+		'jsbeautifier',
+		'jshint',
+		'uglify'
 	]);
 
 	grunt.registerTask( 'prepare', [
@@ -337,6 +363,7 @@ module.exports = function (grunt) {
 		'js',
 		'replace',
 		'css',
+		'wp_readme_to_markdown',
 		'makepot'
 	]);
 

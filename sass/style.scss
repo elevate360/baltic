@@ -1,38 +1,40 @@
-/*!
+/*
 Theme Name: Baltic
-Theme URI: https://baltic.elevatethemes.com.au/
-Author: Elevate360
-Author URI: https://campaignkit.co/
-Description: Baltic WooCommerce Theme
+Theme URI: https://campaignkit.co/wordpress-themes/baltic
+Author: Campaign Kit
+Author URI: https://campaignkit.co
+Description: WooCommerce theme
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: baltic
-Tags: custom-background, custom-header, custom-logo, custom-colors, custom-menu, e-commerce, editor-style, featured-images, footer-widgets, full-width-template, microformats, theme-options, blog, left-sidebar, right-sidebar, threaded-comments, translation-ready
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
 Baltic is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Bootstrap Reboot
-# Elements
+# Normalize
 # Typography
+# Elements
 # Forms
-# Accessibility
-# Alignments
-# Clearings
+# Modules
+	## Accessibility
+	## Alignments
+	## Clearings
 # Vendor
 	## Preloader
 	## Slick
-# Media
-	## Captions
-	## Galleries
+	## Typist
 # Navigation
 	## Menu Toggles
 	## Menus
@@ -42,7 +44,11 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 # Site
 	## Posts and pages
 	## Comments
-	## Widgets
+	## Homepage
+# Widgets
+# Media
+	## Captions
+	## Galleries
 # Layout
 # Media Queries
 --------------------------------------------------------------*/
@@ -50,39 +56,29 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 @import "mixins";
 
 /*--------------------------------------------------------------
-# Bootstrap reboot
+# Normalize
 --------------------------------------------------------------*/
-@import "base/bootstrap-reboot";
-
-/*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
-@import "base/elements/elements";
+@import "normalize";
 
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-@import "base/typography/typography";
+@import "typography/typography";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "elements/elements";
 
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-@import "base/forms/forms";
+@import "forms/forms";
 
 /*--------------------------------------------------------------
-# Accessibility
+# Modules
 --------------------------------------------------------------*/
-@import "base/modules/accessibility";
-
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-@import "base/modules/alignments";
-
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-@import "base/modules/clearings";
+@import "modules/modules";
 
 /*--------------------------------------------------------------
 # Vendor
@@ -90,29 +86,29 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 @import "vendor/vendor";
 
 /*--------------------------------------------------------------
-# CF7
---------------------------------------------------------------*/
-@import "plugins/cf7";
-
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
-@import "components/media/media";
-
-/*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
-@import "components/navigation/navigation";
+@import "navigation/navigation";
 
 /*--------------------------------------------------------------
 # Site
 --------------------------------------------------------------*/
-@import "components/site/site";
+@import "site/site";
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+@import "site/secondary/widgets";
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "media/media";
 
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
-@import "components/layout/layout";
+@import "layout/layout";
 
 /*--------------------------------------------------------------
 # Media Queries

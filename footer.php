@@ -10,20 +10,25 @@
  */
 
 ?>
-	<?php do_action( 'baltic_inner_after' );?>
+		<?php do_action( 'baltic_site_inner_after' );?>
+	</div><!-- #content -->
 
 	<?php do_action( 'baltic_footer_before' );?>
-	<footer <?php baltic_attr( 'site-footer' );?>>
+
+	<footer <?php Baltic_Markup::attr( 'site-footer' );?>>
 		<div class="container">
 			<div class="columns columns-2">
+
 				<?php do_action( 'baltic_footer' );?>
+
 			</div><!-- .columns -->
 		</div><!-- .container -->
 	</footer><!-- #colophon -->
-	<?php do_action( 'baltic_footer_after' );?>
 
+	<?php do_action( 'baltic_footer_after' );?>
 </div><!-- #page -->
-<?php do_action( 'baltic_after' );?>
+
 <?php wp_footer(); ?>
+
 </body>
 </html>

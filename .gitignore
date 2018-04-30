@@ -24,9 +24,17 @@ nbproject
 *.sublime-workspace
 .idea
 
+
 # Folders to ignore
 .sass-cache
-node_modules
 dist
 orig
+
+# Grunt
+node_modules
+npm-debug.log
+
+# Composer
+composer.lock
 vendor
+

@@ -33,7 +33,7 @@
 	box-shadow: none;
 }
 
-// Column width with margin
+// Column width
 @mixin column-width($numberColumns: 3) {
 	width: map-get( $columns, $numberColumns );
 }
