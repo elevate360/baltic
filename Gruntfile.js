@@ -297,6 +297,7 @@ module.exports = function (grunt) {
 					'!package.json',
 					'!package-lock.json',
 					'!phpcs.xml.dist',
+					'!yarn.lock',
 					'!.gitignore',
 					'!.gitmodules',
 					'!**/Gruntfile.js',
