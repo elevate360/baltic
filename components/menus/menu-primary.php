@@ -11,8 +11,8 @@ $menu_location = apply_filters( 'baltic_primary_menu', 'menu-1' );
 	<nav <?php Baltic_Markup::attr( 'main-navigation' );?>>
 		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 			<?php
-			echo Baltic_Icons::get_svg( array( 'class' => 'icon-stroke', 'icon' => 'menu' ) );
-			echo Baltic_Icons::get_svg( array( 'class' => 'icon-stroke', 'icon' => 'close' ) );
+			Baltic_Icons::svg( array( 'class' => 'icon-stroke', 'icon' => 'menu' ) );
+			Baltic_Icons::svg( array( 'class' => 'icon-stroke', 'icon' => 'close' ) );
 			esc_html_e( 'Menu', 'baltic' );
 			?>
 		</button>

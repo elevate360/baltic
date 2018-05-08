@@ -101,7 +101,7 @@ class Baltic_WooCommerce_Thumbnail {
 	 */
 	public function thumbnail_markup_open(){
 
-		echo sprintf( '<a href="%s" class="baltic-product-thumbnail">', get_permalink( get_the_id() ) );
+		echo sprintf( '<a href="%s" class="baltic-product-thumbnail">', esc_url( get_permalink( absint( get_the_id() ) ) ) );
 
 	}
 

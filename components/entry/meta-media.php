@@ -11,7 +11,7 @@ switch ( get_post_format() ) {
 	case 'audio':
 
 		echo '<div class="entry-media">';
-			echo Baltic_Components::get_media( array('type' => 'audio', 'split_media' => true ) );
+			Baltic_Components::media( array('type' => 'audio', 'split_media' => true ) );
 		echo '</div>';
 
 	break;
@@ -19,7 +19,7 @@ switch ( get_post_format() ) {
 	case 'video':
 
 		echo '<div class="entry-media">';
-			echo Baltic_Components::get_media( array('type' => 'video', 'split_media' => true ) );
+			Baltic_Components::media( array('type' => 'video', 'split_media' => true ) );
 		echo '</div>';
 
 	break;
@@ -31,7 +31,7 @@ switch ( get_post_format() ) {
 	default:
 
 		echo '<div class="post-thumbnail">';
-			echo '<a href="'. get_permalink() .'" aria-hidden="true">';
+			echo '<a href="'. esc_url( get_permalink() ) .'" aria-hidden="true">';
 
 			if ( has_post_thumbnail() ) {
 				the_post_thumbnail( 'post-thumbnail', array(
@@ -46,7 +46,7 @@ switch ( get_post_format() ) {
 						'echo' => false,
 					) ),
 				) );
-				echo $image;
+				echo $image; /* WPCS: xss ok. */
 			}
 
 			echo '</a>';

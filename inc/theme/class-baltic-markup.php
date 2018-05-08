@@ -73,7 +73,7 @@ class Baltic_Markup {
 	 */
 	public static function attr( $slug, $context = '', $attr = array()  ) {
 
-		echo self::get_attr( esc_attr( $slug ), esc_attr( $context ), $attr );
+		echo self::get_attr( esc_attr( $slug ), esc_attr( $context ), $attr ); // WPCS: XSS ok.
 
 	}
 

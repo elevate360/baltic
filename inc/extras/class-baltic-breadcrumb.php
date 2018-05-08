@@ -96,7 +96,7 @@ class Baltic_Breadcrumb {
 	 */
 	public function output( $args = array() ) {
 
-		echo $this->get_output( $args );
+		echo $this->get_output( $args ); // WPCS: XSS ok.
 
 	}
 

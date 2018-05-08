@@ -22,6 +22,11 @@
 	padding-top: $gutter__width;
 	padding-bottom: $gutter__width;
 	text-align: center;
+	position: relative;
+}
+
+.payment-card-text {
+	@include font-size(0.875);
 }
 
 /** Site Footer */

@@ -21,7 +21,9 @@
 	if ( Baltic_Options::get_option( 'footer_credits' ) ) {
 		echo '<div class="site-designer">';
 		// Translators: %1$s: Theme designer logo, %2$s: Theme designer site link
-		printf( esc_html__( 'Theme design by %1$s %2$s.', 'baltic' ), Baltic_Icons::get_svg( array( 'icon' => 'campaignkit' ) ), '<a href="https://campaignkit.co/" target="_blank">Campaign Kit</a>' );
+		printf( esc_html__( 'Theme design by %1$s %2$s.', 'baltic' ), // WPCS: XSS ok.
+			Baltic_Icons::get_svg( array( 'icon' => 'campaignkit' ) ),
+			'<a href="https://campaignkit.co/" target="_blank">Campaign Kit</a>' );
 		echo '</div>';
 	}
 ?>

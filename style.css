@@ -2361,37 +2361,6 @@ span.wpcf7-list-item {
 
 
 /*--------------------------------------------------------------
-## Typist
---------------------------------------------------------------*/
-
-.text__rotator {
-	display: inline-block;
-	position: relative;
-	height: 100%;
-	padding-right: 8px;
-	font-weight: 600;
-}
-
-.text__rotator:after {
-	display: inline-block;
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 4px;
-	height: 100%;
-	margin-right: 2px;
-	background-color: #06a44d;
-	content: " ";
-	-webkit-animation: blink 1s step-start 0s infinite;
-	animation: blink 1s step-start 0s infinite;
-}
-
-.selectedText {
-	display: none;
-}
-
-
-/*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
 
@@ -3961,11 +3930,17 @@ a.custom-logo-link {
 /** Payment Icons */
 
 .footer-payments-card {
+	position: relative;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	border-top: 1px solid rgba(0, 0, 0, 0.05);
 	background-color: #fff;
 	text-align: center;
+}
+
+.payment-card-text {
+	font-size: 14px;
+	font-size: 0.875rem;
 }
 
 /** Site Footer */
@@ -5035,34 +5010,6 @@ a.custom-logo-link {
 		opacity: 0;
 		-webkit-transform: perspective(140px) rotateY(180deg);
 		transform: perspective(140px) rotateY(180deg);
-	}
-}
-
-@keyframes blink {
-	0% {
-		opacity: 1.0;
-	}
-
-	50% {
-		opacity: 0.0;
-	}
-
-	100% {
-		opacity: 1.0;
-	}
-}
-
-@-webkit-keyframes blink {
-	0% {
-		opacity: 1.0;
-	}
-
-	50% {
-		opacity: 0.0;
-	}
-
-	100% {
-		opacity: 1.0;
 	}
 }
 

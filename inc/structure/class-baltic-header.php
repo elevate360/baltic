@@ -66,7 +66,7 @@ class Baltic_Header {
 
 		if ( Baltic_Options::get_option( 'preloader' ) === true ) {
 			echo '<div class="site-preloader">';
-			echo Baltic_Components::get_preloader();
+			Baltic_Components::preloader();
 			echo '</div>';
 		}
 

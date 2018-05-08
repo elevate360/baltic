@@ -290,16 +290,11 @@ class Baltic_Setup {
 			'0.7.2',
 			true
 		);
+
 		wp_enqueue_script( 'jquery-slick',
 			BALTIC_URI . "/assets/js/slick/slick{$this->suffix}.js",
 			array( 'jquery' ),
 			'1.8.0',
-			true
-		);
-		wp_enqueue_script( 'typist',
-			BALTIC_URI . "/assets/js/typist/typist{$this->suffix}.js",
-			array(),
-			'1.2',
 			true
 		);
 

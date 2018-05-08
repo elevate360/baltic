@@ -17,7 +17,7 @@
 				$image 		= wp_get_attachment_image_src( $image_id, 'full' );
 
 				echo sprintf( '<h1 class="jumbotron-title">%s</h1>',
-					get_the_archive_title()
+					esc_html( get_the_archive_title() )
 				);
 
 				echo sprintf( '<div class="jumbotron-description">%s</div>',
@@ -39,7 +39,7 @@
 					get_the_title( absint( $blog_id ) )
 				);
 				echo sprintf( '<div class="jumbotron-description">%s</div>',
-					wpautop( get_post_field( 'post_content', absint( $blog_id ) ) )
+					wp_kses_post( wpautop( get_post_field( 'post_content', absint( $blog_id ) ) ) )
 				);
 
 				if ( has_post_thumbnail( $blog_id ) ) {

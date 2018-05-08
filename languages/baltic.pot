@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Baltic 1.0.0\n"
 "Report-Msgid-Bugs-To: https://campaignkit.co/contact\n"
-"POT-Creation-Date: 2018-04-30 18:15:19+00:00\n"
+"POT-Creation-Date: 2018-05-08 18:22:45+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -75,8 +75,9 @@ msgstr ""
 msgid ", "
 msgstr ""
 
-#: components/entry/meta-categories.php:12
-#. translators: %s: list of categories.
+#: components/entry/meta-categories.php:14
+#. translators: %1$s: Category SVG icon, %3$s: Posted in screen reader text,
+#. %3$s: list of categories,
 msgid "Posted in"
 msgstr ""
 
@@ -98,8 +99,9 @@ msgstr ""
 msgid "Posted on"
 msgstr ""
 
-#: components/entry/meta-tags.php:12
-#. translators: 1: list of tags.
+#: components/entry/meta-tags.php:14
+#. translators: %1$s: Tags SVG icon, %3$s: Tagged screen reader text, %3$s:
+#. list of tags,
 msgid "Tagged"
 msgstr ""
 
@@ -1000,11 +1002,11 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: inc/theme/class-baltic-icons.php:227
+#: inc/theme/class-baltic-icons.php:244
 msgid "Please define default parameters in the form of an array."
 msgstr ""
 
-#: inc/theme/class-baltic-icons.php:232
+#: inc/theme/class-baltic-icons.php:249
 msgid "Please define an SVG icon filename."
 msgstr ""
 
@@ -1016,53 +1018,8 @@ msgstr ""
 msgid "Copyright &copy; 2017-[YEAR] [SITE]. Proudly powered by [WP]."
 msgstr ""
 
-#: inc/theme/class-baltic-options.php:149
-msgid "Baltic theme is suitable for"
-msgstr ""
-
-#: inc/theme/class-baltic-options.php:150
-msgid "online shop, small business, startup"
-msgstr ""
-
-#: inc/theme/class-baltic-options.php:153
-msgid "Button Text #1"
-msgstr ""
-
-#: inc/theme/class-baltic-options.php:178
-msgid "Slide title #1"
-msgstr ""
-
-#: inc/theme/class-baltic-options.php:179
-msgid "Slide description #1"
-msgstr ""
-
-#: inc/theme/class-baltic-options.php:181
-msgid "Button text #1A"
-msgstr ""
-
-#: inc/theme/class-baltic-options.php:184
-msgid "Button text #1B"
-msgstr ""
-
-#: inc/theme/class-baltic-options.php:189
-msgid "Slide title #2"
-msgstr ""
-
-#: inc/theme/class-baltic-options.php:190
-msgid "Slide description #2"
-msgstr ""
-
-#: inc/theme/class-baltic-options.php:192
-msgid "Button text #2A"
-msgstr ""
-
-#: inc/theme/class-baltic-options.php:195
-msgid "Button text #2B"
-msgstr ""
-
-#: inc/theme/class-baltic-options.php:226
-#: inc/theme/class-baltic-options.php:252
-msgid "More from our blog"
+#: inc/theme/class-baltic-options.php:124
+msgid "We Accept"
 msgstr ""
 
 #: inc/theme/class-baltic-setup.php:128 inc/theme/class-baltic-utility.php:166
@@ -1077,41 +1034,41 @@ msgstr ""
 msgid "Social Link"
 msgstr ""
 
-#: inc/theme/class-baltic-setup.php:338
+#: inc/theme/class-baltic-setup.php:333
 msgid "Sidebar"
 msgstr ""
 
-#: inc/theme/class-baltic-setup.php:340 inc/theme/class-baltic-setup.php:349
-#: inc/theme/class-baltic-setup.php:359
+#: inc/theme/class-baltic-setup.php:335 inc/theme/class-baltic-setup.php:344
+#: inc/theme/class-baltic-setup.php:354
 msgid "Add widgets here."
 msgstr ""
 
-#: inc/theme/class-baltic-setup.php:347
+#: inc/theme/class-baltic-setup.php:342
 msgid "Sidebar Footer"
 msgstr ""
 
-#: inc/theme/class-baltic-setup.php:357
+#: inc/theme/class-baltic-setup.php:352
 msgid "Sidebar Shop"
 msgstr ""
 
-#: inc/theme/class-baltic-setup.php:469
+#: inc/theme/class-baltic-setup.php:464
 #. Translators: Used as a placeholder for untitled posts on non-singular views.
 msgid "(Untitled)"
 msgstr ""
 
-#: inc/theme/class-baltic-setup.php:560
+#: inc/theme/class-baltic-setup.php:555
 msgid "Baltic Kit"
 msgstr ""
 
-#: inc/theme/class-baltic-setup.php:566
+#: inc/theme/class-baltic-setup.php:561
 msgid "Kirki Toolkit"
 msgstr ""
 
-#: inc/theme/class-baltic-setup.php:572
+#: inc/theme/class-baltic-setup.php:567
 msgid "WooCommerce"
 msgstr ""
 
-#: inc/theme/class-baltic-setup.php:578
+#: inc/theme/class-baltic-setup.php:573
 msgid "Twitter Widget by Campaign Kit"
 msgstr ""
 
@@ -1268,94 +1225,6 @@ msgstr ""
 
 #: woocommerce/product-searchform.php:31
 msgid "Search"
-msgstr ""
-
-#: woocommerce/wishlist-view.php:32
-msgid "Edit title"
-msgstr ""
-
-#: woocommerce/wishlist-view.php:41
-msgid "Save"
-msgstr ""
-
-#: woocommerce/wishlist-view.php:45
-msgid "Cancel"
-msgstr ""
-
-#: woocommerce/wishlist-view.php:82
-msgid "Product Name"
-msgstr ""
-
-#: woocommerce/wishlist-view.php:89
-msgid "Unit Price"
-msgstr ""
-
-#: woocommerce/wishlist-view.php:102 woocommerce/wishlist-view.php:175
-msgid "Stock Status"
-msgstr ""
-
-#: woocommerce/wishlist-view.php:152 woocommerce/wishlist-view.php:229
-msgid "Remove this product"
-msgstr ""
-
-#: woocommerce/wishlist-view.php:163
-msgid "Product"
-msgstr ""
-
-#: woocommerce/wishlist-view.php:169
-msgid "Price"
-msgstr ""
-
-#: woocommerce/wishlist-view.php:170
-msgid "Free!"
-msgstr ""
-
-#: woocommerce/wishlist-view.php:176
-msgid "Out of Stock"
-msgstr ""
-
-#: woocommerce/wishlist-view.php:176
-msgid "In Stock"
-msgstr ""
-
-#: woocommerce/wishlist-view.php:185
-msgid "Added on : %s"
-msgstr ""
-
-#: woocommerce/wishlist-view.php:197
-msgid "Move"
-msgstr ""
-
-#: woocommerce/wishlist-view.php:209
-msgid "Shared"
-msgstr ""
-
-#: woocommerce/wishlist-view.php:212
-msgid "Private"
-msgstr ""
-
-#: woocommerce/wishlist-view.php:215
-msgid "Public"
-msgstr ""
-
-#: woocommerce/wishlist-view.php:229
-msgid "Remove"
-msgstr ""
-
-#: woocommerce/wishlist-view.php:239
-msgid "No products were added to the wishlist"
-msgstr ""
-
-#: woocommerce/wishlist-view.php:256
-msgid "Add the selected products to the cart"
-msgstr ""
-
-#: woocommerce/wishlist-view.php:264 woocommerce/wishlist-view.php:310
-msgid "Ask for an estimate"
-msgstr ""
-
-#: woocommerce/wishlist-view.php:300
-msgid "Your email"
 msgstr ""
 
 #. Theme Name of the plugin/theme

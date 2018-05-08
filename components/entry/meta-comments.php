@@ -7,7 +7,7 @@
 
 if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) :
 echo '<span class="comments-link">';
-echo Baltic_Icons::get_svg( array( 'class' => 'icon-stroke', 'icon' => 'msg' ) );
+Baltic_Icons::svg( array( 'class' => 'icon-stroke', 'icon' => 'msg' ) );
 comments_popup_link(
 	sprintf(
 		wp_kses(

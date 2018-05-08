@@ -28,7 +28,7 @@ if ( post_password_required() || is_attachment() ) {
 					'echo' => false,
 				) ),
 			) );
-			echo $image;
+			echo $image; // WPCS: XSS ok.
 		}
 
 		?>

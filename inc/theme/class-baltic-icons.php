@@ -208,6 +208,23 @@ class Baltic_Icons {
 	}
 
 	/**
+	 * Echo SVG Markup.
+	 *
+	 * @param array $args {
+	 *     Parameters needed to display an SVG.
+	 *
+	 *     @type string $class Optional SVG class.
+	 *     @type string $icon  Required SVG icon filename.
+	 *     @type string $title Optional SVG title.
+	 *     @type string $desc  Optional SVG description.
+	 * }
+	 * @return string SVG markup.
+	 */
+	public static function svg( $args = array() ) {
+		echo self::get_svg( $args ); // WPCS: XSS ok.
+	}
+
+	/**
 	 * Return SVG markup.
 	 *
 	 * @param array $args {

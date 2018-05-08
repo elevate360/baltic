@@ -15,16 +15,14 @@ if ( isset( $gallery['ids'] ) ) {
 
 $ids = explode( ",", $gallery['ids'] );
 echo '<div class="entry-media">';
-	echo '<div id="gallery-'. get_the_id() .'" class="entry-gallery">';
+	echo '<div id="gallery-'. absint( get_the_id() ) .'" class="entry-gallery">';
 	foreach( $ids as $id ) {
-		$image = wp_get_attachment_image( $id, 'post-thumbnail', array(
+		$image = wp_get_attachment_image( absint( $id ), 'post-thumbnail', array(
 					'alt' => the_title_attribute( array(
 						'echo' => false,
 					) ),
 				 ) );
-		echo sprintf( '<div class="gallery__item">%s</div>',
-			$image
-		);
+		echo sprintf( '<div class="gallery__item">%s</div>', $image ); // WPCS: XSS ok.
 	}
 	echo '</div>';
 echo '</div>';

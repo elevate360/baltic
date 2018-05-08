@@ -13,7 +13,7 @@
 
 		<?php if ( ! post_password_required() ) : ?>
 		<div class="entry-media">
-			<?php echo Baltic_Components::get_media( array( 'type' => 'audio', 'split_media' => true ) );?>
+			<?php Baltic_Components::media( array( 'type' => 'audio', 'split_media' => true ) );?>
 		</div>
 		<?php endif;?>
 

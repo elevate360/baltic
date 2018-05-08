@@ -55,7 +55,7 @@ class Baltic_Components {
 			yoast_breadcrumb( '<div class="breadcrumb">', '</div>' );
 		}
 		else {
-			echo self::get_breadcrumb();
+			echo self::get_breadcrumb(); // WPCS: XSS ok.
 		}
 
 	}
@@ -72,6 +72,10 @@ class Baltic_Components {
 
 		return $media->get_output( $args );
 
+	}
+
+	public static function media( $args = array() ) {
+		echo self::get_media( $args ); // WPCS: XSS ok.
 	}
 
 	/**
@@ -230,6 +234,15 @@ class Baltic_Components {
 	 */
 	public static function payment_icons() {
 		get_template_part( 'components/footer/payment', 'icons' );
+	}
+
+	/**
+	 * Preloader.
+	 *
+	 * @return string
+	 */
+	public static function preloader() {
+		echo self::get_preloader(); // WPCS: XSS ok.
 	}
 
 	/**

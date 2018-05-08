@@ -23,4 +23,4 @@ $posted_on = sprintf( '%s <span class="screen-reader-text">%s</span> %s',
 	'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 );
 
-echo '<span class="posted-on">' . $posted_on . '</span>';
+echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS ok.
