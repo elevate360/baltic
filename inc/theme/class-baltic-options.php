@@ -121,7 +121,6 @@ class Baltic_Options {
 			'footer_text'				=> esc_html__( 'Copyright &copy; 2017-[YEAR] [SITE]. Proudly powered by [WP].', 'baltic' ),
 			'footer_credits'			=> true,
 			'return_top'				=> true,
-			'payment_text'				=> esc_html__( 'We Accept', 'baltic' ),
 			'payment_icons'				=> '',
 
 			// WooCommerce
