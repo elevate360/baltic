@@ -102,8 +102,6 @@ class Baltic_Setup {
 		 * Translations can be filed in the /languages/ directory.
 		 */
 		load_theme_textdomain( 'baltic', trailingslashit( WP_LANG_DIR ) . 'themes/' );
-		load_theme_textdomain( 'baltic', get_stylesheet_directory() . '/languages' );
-		load_theme_textdomain( 'baltic', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );

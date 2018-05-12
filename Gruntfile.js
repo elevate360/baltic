@@ -42,27 +42,6 @@ module.exports = function (grunt) {
 			}
 		},
 
-		makepot: {
-			options: {
-				type: 'wp-theme',
-				domainPath: 'languages',
-				potHeaders: {
-					'report-msgid-bugs-to': 'https://campaignkit.co/contact',
-					'language-team': 'LANGUAGE <EMAIL@ADDRESS>'
-				}
-			},
-			frontend: {
-				options: {
-					potFilename: '<%= pkg.name %>.pot',
-					exclude: [
-						'node_modules/.*',
-						'dist/.*',
-						'orig/.*'
-					]
-				}
-			}
-		},
-
 		// Compile all .scss files.
 		sass: {
 			dist: {
@@ -340,7 +319,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks( 'grunt-sass' );
     grunt.loadNpmTasks( 'grunt-text-replace' );
     grunt.loadNpmTasks( 'grunt-wp-css' );
-    grunt.loadNpmTasks( 'grunt-wp-i18n' );
     grunt.loadNpmTasks( 'grunt-wp-readme-to-markdown' );
 
 	grunt.registerTask( 'css', [
@@ -364,8 +342,7 @@ module.exports = function (grunt) {
 		'js',
 		'replace',
 		'css',
-		'wp_readme_to_markdown',
-		'makepot'
+		'wp_readme_to_markdown'
 	]);
 
 	grunt.registerTask( 'dist', [
