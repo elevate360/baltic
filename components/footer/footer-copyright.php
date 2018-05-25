@@ -23,7 +23,7 @@
 		// Translators: %1$s: Theme designer logo, %2$s: Theme designer site link
 		printf( esc_html__( 'Theme design by %1$s %2$s.', 'baltic' ), // WPCS: XSS ok.
 			Baltic_Icons::get_svg( array( 'icon' => 'campaignkit' ) ),
-			'<a href="https://campaignkit.co/" target="_blank">Campaign Kit</a>' );
+			'<a href="'. esc_url( 'https://campaignkit.co/' ) .'" target="_blank">Campaign Kit</a>' );
 		echo '</div>';
 	}
 ?>
