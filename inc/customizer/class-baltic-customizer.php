@@ -59,7 +59,6 @@ class Baltic_Customizer {
 		add_action( 'customize_preview_init', array( $this, 'preview_js' ) );
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'controls_script' ), 15 );
 
-		add_action( 'customize_register', array( $this, 'register_controls' ) );
 		add_action( 'customize_register', array( $this, 'register' ) );
 
 		$this->init_settings();
@@ -106,13 +105,6 @@ class Baltic_Customizer {
 	 */
 	public function controls_script() {
 
-		wp_enqueue_style( 'baltic-customizer-control',
-			BALTIC_URI . "/assets/css/customizer-control{$this->suffix}.css",
-			array(),
-			BALTIC_THEME_VERSION,
-			'all'
-		);
-
 		wp_enqueue_script( 'baltic-customizer-control',
 			BALTIC_URI . "/assets/js/customizer-control{$this->suffix}.js",
 			array(),
@@ -123,31 +115,12 @@ class Baltic_Customizer {
 	}
 
 	/**
-	 * Register custom customizer control.
-	 *
-	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
-	 * @return void
-	 */
-	public function register_controls( $wp_customize ) {
-
-		$wp_customize->register_section_type( 'Baltic_Control_Pro' );
-
-	}
-
-	/**
 	 * Change default customizer panels, sections and transport.
 	 *
 	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
 	 * @return void
 	 */
 	public function register( $wp_customize ) {
-
-		$wp_customize->add_section( new Baltic_Control_Pro( $wp_customize, 'baltic-pro', array(
-			'title'    			=> esc_attr( 'Campaign Kit' ),
-			'pro_text' 			=> esc_html__( 'Learn More', 'baltic' ),
-			'pro_url'  			=> esc_url( 'https://campaignkit.co/' ),
-			'priority'			=> 0
-		) ) );
 
 		$wp_customize->add_panel( 'baltic_setting_panel', array(
 			'title' 		=> esc_html__( 'Theme Settings', 'baltic' ),

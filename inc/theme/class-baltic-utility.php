@@ -56,7 +56,7 @@ class Baltic_Utility {
 	 * @return boolean [description]
 	 */
 	public static function is_homepage_template() {
-		return (bool) is_page_template( 'templates/homepage.php' );
+		return (bool) is_page_template( 'baltic-homepage.php' );
 	}
 
 	/**
@@ -252,86 +252,6 @@ class Baltic_Utility {
 		// Build the array.
 		foreach ( $terms as $term ) {
 			$items[ $term->slug ] = $term->name;
-		}
-
-		return $items;
-
-	}
-
-	/**
-	 * Get categories transient.
-	 *
-	 * @return array Categories transient cache
-	 */
-	public static function get_categories() {
-
-		$items = array();
-
-		if ( false === ( $items = get_transient( 'baltic_get_categories' ) ) ) {
-
-			$cats = self::get_terms( 'category' );
-
-			set_transient( 'baltic_get_categories', $cats, 12 * HOUR_IN_SECONDS );
-		}
-
-		return $items;
-
-	}
-
-	/**
-	 * Get categories transient.
-	 *
-	 * @return array Categories transient cache
-	 */
-	public static function get_slug_categories() {
-
-		$items = array();
-
-		if ( false === ( $items = get_transient( 'baltic_get_slug_categories' ) ) ) {
-
-			$cats = self::get_terms_slug( 'category' );
-
-			set_transient( 'baltic_get_slug_categories', $cats, 12 * HOUR_IN_SECONDS );
-		}
-
-		return $items;
-
-	}
-
-	/**
-	 * Get product categories transient.
-	 *
-	 * @return array Categories transient cache
-	 */
-	public static function get_product_cats() {
-
-		$items = array();
-
-		if ( false === ( $items = get_transient( 'baltic_get_product_cats' ) ) ) {
-
-			$cats = self::get_terms( 'category' );
-
-			set_transient( 'baltic_get_product_cats', $cats, 12 * HOUR_IN_SECONDS );
-		}
-
-		return $items;
-
-	}
-
-	/**
-	 * Get categories transient.
-	 *
-	 * @return array Categories transient cache
-	 */
-	public static function get_slug_product_cats() {
-
-		$items = array();
-
-		if ( false === ( $items = get_transient( 'baltic_get_slug_product_cats' ) ) ) {
-
-			$cats = self::get_terms_slug( 'product_cat' );
-
-			set_transient( 'baltic_get_slug_product_cats', $cats, 12 * HOUR_IN_SECONDS );
 		}
 
 		return $items;

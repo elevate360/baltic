@@ -51,8 +51,7 @@ module.exports = function (grunt) {
 				files: [{
 					'style.css' : 'sass/style.scss',
 					'assets/css/editor-style.css' : 'sass/editor-style.scss',
-					'assets/css/woocommerce.css' : 'sass/woocommerce.scss',
-					'assets/css/customizer-control.css' : 'sass/customizer-control.scss'
+					'assets/css/woocommerce.css' : 'sass/woocommerce.scss'
 				}]
 			}
 		},
@@ -66,8 +65,7 @@ module.exports = function (grunt) {
 				files: [{
 					'style.css' : 'style.css',
 					'assets/css/editor-style.css' : 'assets/css/editor-style.css',
-					'assets/css/woocommerce.css' : 'assets/css/woocommerce.css',
-					'assets/css/customizer-control.css' : 'assets/css/customizer-control.css'
+					'assets/css/woocommerce.css' : 'assets/css/woocommerce.css'
 				}]
 			}
 		},
@@ -103,8 +101,7 @@ module.exports = function (grunt) {
 				files: [{
 					'style.css' : 'style.css',
 					'assets/css/editor-style.css' : 'assets/css/editor-style.css',
-					'assets/css/woocommerce.css' : 'assets/css/woocommerce.css',
-					'assets/css/customizer-control.css' : 'assets/css/customizer-control.css'
+					'assets/css/woocommerce.css' : 'assets/css/woocommerce.css'
 				}]
 	        }
 	    },
@@ -118,8 +115,7 @@ module.exports = function (grunt) {
 				src: [
 					'style.css',
 					'assets/css/editor-style.css',
-					'assets/css/woocommerce.css',
-					'assets/css/customizer-control.css'
+					'assets/css/woocommerce.css'
 				]
 			}
 		},
@@ -156,15 +152,6 @@ module.exports = function (grunt) {
 				src: ['assets/js/frontend/*.js'],
 				dest: 'assets/js/frontend.js'
 			}
-		},
-
-		jsbeautifier: {
-		    files : [
-		    	'assets/js/*.js',
-		    	'!assets/js/*.min.js'
-		    ],
-		    options : {
-		    }
 		},
 
 		uglify: {
@@ -211,8 +198,7 @@ module.exports = function (grunt) {
 				files: [
 					'assets/js/admin.js',
 					'assets/js/notice.js',
-					'assets/js/customizer.js',
-					'assets/js/customizer-control.js'
+					'assets/js/customizer.js'
 				],
 				tasks: [
 					'uglify'
@@ -313,7 +299,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks( 'grunt-contrib-jshint' );
     grunt.loadNpmTasks( 'grunt-contrib-uglify' );
     grunt.loadNpmTasks( 'grunt-contrib-watch' );
-    grunt.loadNpmTasks( 'grunt-jsbeautifier' );
     grunt.loadNpmTasks( 'grunt-postcss' );
     grunt.loadNpmTasks( 'grunt-rtlcss' );
     grunt.loadNpmTasks( 'grunt-sass' );
@@ -332,7 +317,6 @@ module.exports = function (grunt) {
 
 	grunt.registerTask( 'js', [
 		'concat',
-		'jsbeautifier',
 		'jshint',
 		'uglify'
 	]);

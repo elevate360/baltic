@@ -10,9 +10,9 @@
 <?php
 	$footer_text = Baltic_Options::get_option( 'footer_text' );
 	if ( ! empty( $footer_text ) ) {
-		$footer_text = str_replace( '[YEAR]', date_i18n( __( 'Y', 'baltic' ) ), $footer_text );
-		$footer_text = str_replace( '[SITE]', '<a href="'. esc_url( home_url('/') ) .'">'. esc_attr( get_bloginfo( 'name' ) ) .'</a>', $footer_text );
-		$footer_text = str_replace( '[WP]', '<a href="'. esc_url( 'https://wordpress.org/' ) .'">WordPress</a>', $footer_text );
+		$footer_text = str_replace( '{{YEAR}}', date_i18n( __( 'Y', 'baltic' ) ), $footer_text );
+		$footer_text = str_replace( '{{SITE}}', '<a href="'. esc_url( home_url('/') ) .'">'. esc_attr( get_bloginfo( 'name' ) ) .'</a>', $footer_text );
+		$footer_text = str_replace( '{{WP}}', '<a href="'. esc_url( __( 'https://wordpress.org/', 'baltic' ) ) .'">WordPress</a>', $footer_text );
 		echo '<div class="site-copyright">';
 		echo wp_kses_post( $footer_text );
 		echo '</div>';

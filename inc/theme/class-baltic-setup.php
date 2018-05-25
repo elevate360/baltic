@@ -562,6 +562,12 @@ class Baltic_Setup {
 			),
 
 			array(
+				'name'      => esc_html__( 'WP Term Images', 'baltic' ),
+				'slug'      => 'wp-term-images',
+				'required'  => false
+			),
+
+			array(
 				'name'      => esc_html__( 'WooCommerce', 'baltic' ),
 				'slug'      => 'woocommerce',
 				'required'  => false

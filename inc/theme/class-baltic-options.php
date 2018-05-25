@@ -118,7 +118,7 @@ class Baltic_Options {
 
 			// Footer
 			'footer_widgets_col'		=> 4,
-			'footer_text'				=> esc_html__( 'Copyright &copy; 2017-[YEAR] [SITE]. Proudly powered by [WP].', 'baltic' ),
+			'footer_text'				=> esc_html__( 'Copyright &copy; 2017-{{YEAR}} {{SITE}}. Proudly powered by {{WP}}.', 'baltic' ),
 			'footer_credits'			=> true,
 			'return_top'				=> true,
 			'payment_icons'				=> '',
