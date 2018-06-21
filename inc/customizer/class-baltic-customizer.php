@@ -64,6 +64,7 @@ class Baltic_Customizer {
 		$this->init_settings();
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'inline_style' ) );
+		add_filter( 'tiny_mce_before_init', array( $this, 'editor_style' ) );
 
 	}
 
@@ -241,6 +242,39 @@ class Baltic_Customizer {
 		if ( ! empty( $css ) ) {
 			wp_add_inline_style( 'baltic-style', apply_filters( 'baltic_inline_style', trim( $css ) ) );
 		}
+
+	}
+
+	/**
+	 * Print dynamic style for the editor.
+	 *
+	 * @return string css
+	 */
+	public function editor_style( $mceInit ) {
+
+		$color_text_primary 	= Baltic_Options::get_option( 'color_text_primary' );
+		$color_text_secondary 	= Baltic_Options::get_option( 'color_text_secondary' );
+		$color_link_primary 	= Baltic_Options::get_option( 'color_link_primary' );
+		$color_link_secondary 	= Baltic_Options::get_option( 'color_link_secondary' );
+		$color_bg_highlight 	= Baltic_Options::get_option( 'color_bg_highlight' );
+		$color_text_highlight 	= Baltic_Options::get_option( 'color_text_highlight' );
+
+		$styles = '';
+		$styles .= 'body.mce-content-body { color: ' . esc_attr( $color_text_primary ) . '; }';
+		$styles .= 'body.mce-content-body a{ color: ' . esc_attr( $color_link_primary ) . '; }';
+		$styles .= 'body.mce-content-body a:hover, .mce-content-body a:focus{ color: ' . esc_attr( $color_link_secondary ) . '; }';
+		$styles .= 'body.mce-content-body ::selection{ background-color: ' . esc_attr( $color_bg_highlight ) . '; color: '. esc_attr( $color_text_highlight ) .' }';
+		$styles .= 'body.mce-content-body ::-mozselection{ background-color: ' . esc_attr( $color_bg_highlight ) . '; color: '. esc_attr( $color_text_highlight ) .' }';
+
+		$styles = str_replace( array( "\n", "\t", "\r" ), '', $styles );
+
+		if ( ! isset( $mceInit['content_style'] ) ) {
+			$mceInit['content_style'] = trim( $styles ) . ' ';
+		} else {
+			$mceInit['content_style'] .= ' ' . trim( $styles ) . ' ';
+		}
+
+		return $mceInit;
 
 	}
 

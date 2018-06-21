@@ -194,7 +194,7 @@ class Baltic_Setup {
 		 * This theme styles the visual editor to resemble the theme style,
 		 * specifically font, colors, icons, and column width.
 		 */
-		add_editor_style( array( 'assets/css/editor-style.min.css' ) );
+		add_editor_style( array( "assets/css/editor-style{$this->suffix}.css" ) );
 
 		// This theme uses its own gallery styles.
 		add_filter( 'use_default_gallery_style', '__return_false' );

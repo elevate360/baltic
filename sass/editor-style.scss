@@ -1,0 +1,108 @@
+@import "variables";
+@import "mixins";
+
+body,
+button,
+input,
+select,
+textarea {
+	color: $color__text-main;
+	font-family: $font__main;
+	@include font-size(1);
+	line-height: $font__line-height-body;
+}
+
+body.mce-content-body {
+	max-width: 720px;
+	margin: 1.5rem;
+}
+
+/* Main column width */
+body.gutenberg-editor-page .editor-post-title__block,
+body.gutenberg-editor-page .editor-default-block-appender,
+body.gutenberg-editor-page .editor-block-list__block {
+    max-width: 720px;
+	color: $color__text-main;
+	font-family: $font__main;
+	@include font-size(1);
+	line-height: $font__line-height-body;
+}
+
+/* Main column width */
+body.gutenberg-editor-page .editor-post-title__block,
+body.gutenberg-editor-page .editor-default-block-appender,
+body.gutenberg-editor-page .editor-block-list__block {
+    max-width: 720px;
+}
+
+/* Width of "wide" blocks */
+body.gutenberg-editor-page .editor-block-list__block[data-align="wide"] {
+    max-width: 1080px;
+}
+
+/* Width of "full-wide" blocks */
+body.gutenberg-editor-page .editor-block-list__block[data-align="full"] {
+    max-width: none;
+}
+
+
+blockquote, q {
+	quotes: "" "";
+
+	&:before,
+	&:after {
+		content: "";
+	}
+}
+
+hr {
+	background-color: $color__background-hr;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+figure {
+	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+::-webkit-input-placeholder {
+	color: $color__text-input;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+	color: $color__text-input;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+	color: $color__text-input;
+}
+
+:-ms-input-placeholder {
+	color: $color__text-input;
+}
+
+::selection {
+	background: $color__link;
+	color: #fff;
+}
+::-moz-selection {
+	background: $color__link;
+	color: #fff;
+}
+
+@import "elements/lists";
+@import "elements/tables";
+
+@import "typography/headings";
+
+@import "typography/copy";
+
+@import "typography/links";
+
+@import "media/media";
