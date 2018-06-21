@@ -60,15 +60,15 @@ class Baltic_Settings_Typography {
 	 */
 	public function base() {
 
-		Baltic_Kirki::add_section( 'baltic_body_font_section', array(
-		    'title'          => esc_attr__( 'Body', 'baltic' ),
+		Kirki::add_section( 'baltic_body_font_section', array(
+		    'title'          => esc_html__( 'Body', 'baltic' ),
 		    'panel'          => 'baltic_typograhy_panel',
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        => 'typography',
 			'settings'    => 'body_font',
-			'label'       => esc_attr__( 'Body Fonts', 'baltic' ),
+			'label'       => esc_html__( 'Body Fonts', 'baltic' ),
 			'section'     => 'baltic_body_font_section',
 			'default'     => array(
 				'font-family'    => 'Poppins',
@@ -97,136 +97,146 @@ class Baltic_Settings_Typography {
 	 */
 	public function heading() {
 
-		Baltic_Kirki::add_section( 'baltic_heading_font_section', array(
-		    'title'          => esc_attr__( 'Heading', 'baltic' ),
+		Kirki::add_section( 'baltic_heading_font_section', array(
+		    'title'          => esc_html__( 'Heading', 'baltic' ),
 		    'panel'          => 'baltic_typograhy_panel',
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+
+		Kirki::add_field( 'baltic', array(
 			'type'        => 'typography',
-			'settings'    => 'heading_font',
-			'label'       => esc_attr__( 'Heading Fonts', 'baltic' ),
+			'settings'    => 'heading_1',
+			'label'       => esc_html__( 'H1', 'baltic' ),
 			'section'     => 'baltic_heading_font_section',
 			'default'     => array(
 				'font-family'    => 'Poppins',
 				'variant'        => '500',
 				'letter-spacing' => '0',
 				'subsets'        => '',
+				'font-size'      => '2.5rem',
+				'line-height'    => '1.2',
 				'text-transform' => 'none',
 			),
 			'transport'   => 'auto',
 			'priority'    => 10,
 			'output' => array(
 				array(
-					'element'  => 'h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6'
+					'element'  => 'h1, .h1'
 				)
 			),
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        => 'typography',
-			'settings'    => 'heading1_size',
-			'label'       => esc_attr__( 'H1 size', 'baltic' ),
+			'settings'    => 'heading_2',
+			'label'       => esc_html__( 'H2', 'baltic' ),
 			'section'     => 'baltic_heading_font_section',
 			'default'     => array(
-				'font-size'      => '2.5rem',
-				'line-height'    => '1.2',
-			),
-			'transport'   => 'auto',
-			'priority'    => 10,
-			'output' => array(
-				array(
-					'element'  => 'h1'
-				)
-			),
-		) );
-
-		Baltic_Kirki::add_field( 'baltic', array(
-			'type'        => 'typography',
-			'settings'    => 'heading2_size',
-			'label'       => esc_attr__( 'H2 size', 'baltic' ),
-			'section'     => 'baltic_heading_font_section',
-			'default'     => array(
+				'font-family'    => 'Poppins',
+				'variant'        => '500',
+				'letter-spacing' => '0',
+				'subsets'        => '',
 				'font-size'      => '2rem',
 				'line-height'    => '1.2',
+				'text-transform' => 'none',
 			),
 			'transport'   => 'auto',
 			'priority'    => 10,
 			'output' => array(
 				array(
-					'element'  => 'h2'
+					'element'  => 'h2, .h2'
 				)
 			),
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        => 'typography',
-			'settings'    => 'heading3_size',
-			'label'       => esc_attr__( 'H3 size', 'baltic' ),
+			'settings'    => 'heading_3',
+			'label'       => esc_html__( 'H3', 'baltic' ),
 			'section'     => 'baltic_heading_font_section',
 			'default'     => array(
+				'font-family'    => 'Poppins',
+				'variant'        => '500',
+				'letter-spacing' => '0',
+				'subsets'        => '',
 				'font-size'      => '1.75rem',
 				'line-height'    => '1.2',
+				'text-transform' => 'none',
 			),
 			'transport'   => 'auto',
 			'priority'    => 10,
 			'output' => array(
 				array(
-					'element'  => 'h3'
+					'element'  => 'h3, .h3'
 				)
 			),
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        => 'typography',
-			'settings'    => 'heading4_size',
-			'label'       => esc_attr__( 'H4 size', 'baltic' ),
+			'settings'    => 'heading_4',
+			'label'       => esc_html__( 'H4', 'baltic' ),
 			'section'     => 'baltic_heading_font_section',
 			'default'     => array(
+				'font-family'    => 'Poppins',
+				'variant'        => '500',
+				'letter-spacing' => '0',
+				'subsets'        => '',
 				'font-size'      => '1.5rem',
 				'line-height'    => '1.2',
+				'text-transform' => 'none',
 			),
 			'transport'   => 'auto',
 			'priority'    => 10,
 			'output' => array(
 				array(
-					'element'  => 'h4'
+					'element'  => 'h4, .h4'
 				)
 			),
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        => 'typography',
-			'settings'    => 'heading5_size',
-			'label'       => esc_attr__( 'H5 size', 'baltic' ),
+			'settings'    => 'heading_5',
+			'label'       => esc_html__( 'H5', 'baltic' ),
 			'section'     => 'baltic_heading_font_section',
 			'default'     => array(
+				'font-family'    => 'Poppins',
+				'variant'        => '500',
+				'letter-spacing' => '0',
+				'subsets'        => '',
 				'font-size'      => '1.25rem',
 				'line-height'    => '1.2',
+				'text-transform' => 'none',
 			),
 			'transport'   => 'auto',
 			'priority'    => 10,
 			'output' => array(
 				array(
-					'element'  => 'h5'
+					'element'  => 'h5, .h5'
 				)
 			),
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        => 'typography',
-			'settings'    => 'heading6_size',
-			'label'       => esc_attr__( 'H6 size', 'baltic' ),
+			'settings'    => 'heading_6',
+			'label'       => esc_html__( 'H6', 'baltic' ),
 			'section'     => 'baltic_heading_font_section',
 			'default'     => array(
+				'font-family'    => 'Poppins',
+				'variant'        => '500',
+				'letter-spacing' => '0',
+				'subsets'        => '',
 				'font-size'      => '1rem',
-				'line-height'    => '1.2',
+				'line-height'    => '1.5',
+				'text-transform' => 'none',
 			),
 			'transport'   => 'auto',
 			'priority'    => 10,
 			'output' => array(
 				array(
-					'element'  => 'h6'
+					'element'  => 'h6, .h6'
 				)
 			),
 		) );
@@ -240,15 +250,15 @@ class Baltic_Settings_Typography {
 	 */
 	public function blockquote() {
 
-		Baltic_Kirki::add_section( 'baltic_blockquote_font_section', array(
-		    'title'          => esc_attr__( 'Blockquote', 'baltic' ),
+		Kirki::add_section( 'baltic_blockquote_font_section', array(
+		    'title'          => esc_html__( 'Blockquote', 'baltic' ),
 		    'panel'          => 'baltic_typograhy_panel',
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        => 'typography',
 			'settings'    => 'blockquote_font',
-			'label'       => esc_attr__( 'Blockquote Fonts', 'baltic' ),
+			'label'       => esc_html__( 'Blockquote Fonts', 'baltic' ),
 			'section'     => 'baltic_blockquote_font_section',
 			'default'     => array(
 				'font-family'    => 'sans-serif',
@@ -277,15 +287,15 @@ class Baltic_Settings_Typography {
 	 */
 	public function code() {
 
-		Baltic_Kirki::add_section( 'baltic_code_font_section', array(
-		    'title'          => esc_attr__( 'Code', 'baltic' ),
+		Kirki::add_section( 'baltic_code_font_section', array(
+		    'title'          => esc_html__( 'Code', 'baltic' ),
 		    'panel'          => 'baltic_typograhy_panel',
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        => 'typography',
 			'settings'    => 'code_font',
-			'label'       => esc_attr__( 'Code Fonts', 'baltic' ),
+			'label'       => esc_html__( 'Code Fonts', 'baltic' ),
 			'section'     => 'baltic_code_font_section',
 			'default'     => array(
 				'font-family'    => 'Monaco,"Lucida Sans Typewriter","Lucida Typewriter","Courier New",Courier,monospace',

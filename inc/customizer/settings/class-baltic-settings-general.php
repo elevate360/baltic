@@ -94,7 +94,7 @@ class Baltic_Settings_General {
 	 */
 	public function add_config() {
 
-		Baltic_Kirki::add_config( 'baltic', array(
+		Kirki::add_config( 'baltic', array(
 			'capability'  => 'edit_theme_options',
 			'option_type' => 'theme_mod',
 		) );
@@ -108,43 +108,43 @@ class Baltic_Settings_General {
 	 */
 	public function preloader() {
 
-		Baltic_Kirki::add_section( 'baltic_preloader_section', array(
-		    'title'         => esc_attr__( 'Preloader', 'baltic' ),
+		Kirki::add_section( 'baltic_preloader_section', array(
+		    'title'         => esc_html__( 'Preloader', 'baltic' ),
 		    'panel'         => 'baltic_setting_panel',
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type' 			=> 'switch',
 			'settings'    	=> 'preloader',
-			'label'       	=> __( 'Enable Preloader', 'baltic' ),
+			'label'       	=> esc_html__( 'Enable Preloader', 'baltic' ),
 			'section'     	=> 'baltic_preloader_section',
 			'default'     	=> '1',
 			'priority'    	=> 10,
 			'choices'     	=> array(
-				'on'  => esc_attr__( 'On', 'baltic' ),
-				'off' => esc_attr__( 'Off', 'baltic' ),
+				'on'  => esc_html__( 'On', 'baltic' ),
+				'off' => esc_html__( 'Off', 'baltic' ),
 			),
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        => 'select',
 			'settings'    => 'preloader_type',
-			'label'       => __( 'Preloader Effect', 'baltic' ),
+			'label'       => esc_html__( 'Preloader Effect', 'baltic' ),
 			'section'     => 'baltic_preloader_section',
 			'default'     => $this->default['preloader_type'],
 			'multiple'    => 1,
 			'choices'     => array(
-				"rotating-plane"	=> esc_attr__( 'rotating-plane', 'baltic' ),
-				"double-bounce"		=> esc_attr__( 'double-bounce', 'baltic' ),
-				"wave"				=> esc_attr__( 'wave', 'baltic' ),
-				"wandering-cubes"	=> esc_attr__( 'wandering-cubes', 'baltic' ),
-				"pulse"				=> esc_attr__( 'pulse', 'baltic' ),
-				"chasing-dots"		=> esc_attr__( 'chasing-dots', 'baltic' ),
-				"three-bounce"		=> esc_attr__( 'three-bounce', 'baltic' ),
-				"circle"			=> esc_attr__( 'circle', 'baltic' ),
-				"cube-grid"			=> esc_attr__( 'cube-grid', 'baltic' ),
-				"fading-circle"		=> esc_attr__( 'fading-circle', 'baltic' ),
-				"folding-cube"		=> esc_attr__( 'folding-cube', 'baltic' ),
+				"rotating-plane"	=> esc_html__( 'rotating-plane', 'baltic' ),
+				"double-bounce"		=> esc_html__( 'double-bounce', 'baltic' ),
+				"wave"				=> esc_html__( 'wave', 'baltic' ),
+				"wandering-cubes"	=> esc_html__( 'wandering-cubes', 'baltic' ),
+				"pulse"				=> esc_html__( 'pulse', 'baltic' ),
+				"chasing-dots"		=> esc_html__( 'chasing-dots', 'baltic' ),
+				"three-bounce"		=> esc_html__( 'three-bounce', 'baltic' ),
+				"circle"			=> esc_html__( 'circle', 'baltic' ),
+				"cube-grid"			=> esc_html__( 'cube-grid', 'baltic' ),
+				"fading-circle"		=> esc_html__( 'fading-circle', 'baltic' ),
+				"folding-cube"		=> esc_html__( 'folding-cube', 'baltic' ),
 			),
 			'active_callback'    => array(
 				array(
@@ -163,10 +163,10 @@ class Baltic_Settings_General {
 			),
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'preloader_bg_color',
-			'label'       	=> __( 'Preloader background color', 'baltic' ),
+			'label'       	=> esc_html__( 'Preloader background color', 'baltic' ),
 			'section'     	=> 'baltic_preloader_section',
 			'default'     	=> $this->default['preloader_bg_color'],
 			'priority'    	=> 10,
@@ -187,10 +187,10 @@ class Baltic_Settings_General {
 			),
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'preloader_color',
-			'label'       	=> __( 'Preloader color', 'baltic' ),
+			'label'       	=> esc_html__( 'Preloader color', 'baltic' ),
 			'section'     	=> 'baltic_preloader_section',
 			'default'     	=> $this->default['preloader_color'],
 			'priority'    	=> 10,
@@ -211,10 +211,10 @@ class Baltic_Settings_General {
 			),
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'switch',
 			'settings'    	=> 'show_preloader',
-			'label'       	=> __( 'Preview Preloader', 'baltic' ),
+			'label'       	=> esc_html__( 'Preview Preloader', 'baltic' ),
 			'section'     	=> 'baltic_preloader_section',
 			'default'     	=> false,
 			'transport'		=> 'postMessage',
@@ -226,8 +226,8 @@ class Baltic_Settings_General {
 				),
 			),
 			'choices'     => array(
-				'on'  => esc_attr__( 'Show', 'baltic' ),
-				'off' => esc_attr__( 'Hide', 'baltic' ),
+				'on'  => esc_html__( 'Show', 'baltic' ),
+				'off' => esc_html__( 'Hide', 'baltic' ),
 			),
 		) );
 
@@ -240,36 +240,36 @@ class Baltic_Settings_General {
 	 */
 	public function layout() {
 
-		Baltic_Kirki::add_section( 'baltic_layout_section', array(
-		    'title'         => esc_attr__( 'Layout', 'baltic' ),
+		Kirki::add_section( 'baltic_layout_section', array(
+		    'title'         => esc_html__( 'Layout', 'baltic' ),
 		    'panel'         => 'baltic_setting_panel',
 		    'priority' 		=> 99
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'select',
 			'settings'    	=> 'layout_archive',
-			'label'       	=> __( 'Archives Layout', 'baltic' ),
+			'label'       	=> esc_html__( 'Archives Layout', 'baltic' ),
 			'section'     	=> 'baltic_layout_section',
 			'default'     	=> $this->default['layout_archive'],
 			'transport'		=> 'postMessage',
 			'choices' 		=> Baltic_Utility::get_main_layout(),
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'select',
 			'settings'    	=> 'layout_post',
-			'label'       	=> __( 'Single Post Layout', 'baltic' ),
+			'label'       	=> esc_html__( 'Single Post Layout', 'baltic' ),
 			'section'     	=> 'baltic_layout_section',
 			'default'     	=> $this->default['layout_post'],
 			'transport'		=> 'postMessage',
 			'choices' 		=> Baltic_Utility::get_main_layout(),
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'select',
 			'settings'    	=> 'layout_page',
-			'label'       	=> __( 'Single Page Layout', 'baltic' ),
+			'label'       	=> esc_html__( 'Single Page Layout', 'baltic' ),
 			'section'     	=> 'baltic_layout_section',
 			'default'     	=> $this->default['layout_page'],
 			'transport'		=> 'postMessage',
@@ -285,16 +285,16 @@ class Baltic_Settings_General {
 	 */
 	public function blog_post() {
 
-		Baltic_Kirki::add_section( 'baltic_blog_section', array(
-		    'title'         => esc_attr__( 'Blog Post', 'baltic' ),
+		Kirki::add_section( 'baltic_blog_section', array(
+		    'title'         => esc_html__( 'Blog Post', 'baltic' ),
 		    'panel'         => 'baltic_setting_panel',
 		    'priority' 		=> 99
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        => 'image',
 			'settings'    => 'thumb_placeholder',
-			'label'       => esc_attr__( 'Post thumbnail placeholder', 'baltic' ),
+			'label'       => esc_html__( 'Post thumbnail placeholder', 'baltic' ),
 			'section'     => 'baltic_blog_section',
 			'default'     => '',
 			'choices'     => array(
@@ -302,64 +302,64 @@ class Baltic_Settings_General {
 			),
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'checkbox',
 			'settings'    	=> 'meta_date',
-			'label'       	=> esc_attr__( 'Display Date?', 'baltic' ),
+			'label'       	=> esc_html__( 'Display Date?', 'baltic' ),
 			'section'     	=> 'baltic_blog_section',
 			'default'     	=> $this->default['meta_date'],
 			'transport'		=> 'postMessage',
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'checkbox',
 			'settings'    	=> 'meta_author',
-			'label'       	=> esc_attr__( 'Display Author?', 'baltic' ),
+			'label'       	=> esc_html__( 'Display Author?', 'baltic' ),
 			'section'     	=> 'baltic_blog_section',
 			'default'     	=> $this->default['meta_author'],
 			'transport'		=> 'postMessage',
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'checkbox',
 			'settings'    	=> 'meta_comment',
-			'label'       	=> esc_attr__( 'Display Comments?', 'baltic' ),
+			'label'       	=> esc_html__( 'Display Comments?', 'baltic' ),
 			'section'     	=> 'baltic_blog_section',
 			'default'     	=> $this->default['meta_comment'],
 			'transport'		=> 'postMessage',
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'checkbox',
 			'settings'    	=> 'meta_categories',
-			'label'       	=> esc_attr__( 'Display Categories?', 'baltic' ),
+			'label'       	=> esc_html__( 'Display Categories?', 'baltic' ),
 			'section'     	=> 'baltic_blog_section',
 			'default'     	=> $this->default['meta_categories'],
 			'transport'		=> 'postMessage',
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'checkbox',
 			'settings'    	=> 'meta_tags',
-			'label'       	=> esc_attr__( 'Display Tags?', 'baltic' ),
+			'label'       	=> esc_html__( 'Display Tags?', 'baltic' ),
 			'section'     	=> 'baltic_blog_section',
 			'default'     	=> $this->default['meta_tags'],
 			'transport'		=> 'postMessage',
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'checkbox',
 			'settings'    	=> 'author_profile',
-			'label'       	=> esc_attr__( 'Display Author Profile?', 'baltic' ),
+			'label'       	=> esc_html__( 'Display Author Profile?', 'baltic' ),
 			'section'     	=> 'baltic_blog_section',
 			'default'     	=> $this->default['author_profile'],
 			'transport'		=> 'postMessage',
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'number',
 			'settings'    	=> 'excerpt_length',
-			'label'       	=> esc_attr__( 'Excerpt Length', 'baltic' ),
+			'label'       	=> esc_html__( 'Excerpt Length', 'baltic' ),
 			'section'     	=> 'baltic_blog_section',
 			'default'     	=> $this->default['excerpt_length'],
 			'choices'     	=> array(
@@ -376,25 +376,25 @@ class Baltic_Settings_General {
 			),
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'text',
 			'settings'    	=> 'more_link_text',
-			'label'       	=> esc_attr__( 'More Link Text', 'baltic' ),
+			'label'       	=> esc_html__( 'More Link Text', 'baltic' ),
 			'section'     	=> 'baltic_blog_section',
 			'default'     	=> $this->default['more_link_text'],
 			'transport'		=> 'postMessage',
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'select',
 			'settings'    	=> 'nav_posts',
-			'label'       	=> __( 'Posts Navigation Type', 'baltic' ),
+			'label'       	=> esc_html__( 'Posts Navigation Type', 'baltic' ),
 			'section'     	=> 'baltic_blog_section',
 			'default'     	=> $this->default['nav_posts'],
 			'transport'		=> 'postMessage',
 			'choices' 		=> array(
-				'posts_navigation'  => esc_attr__( 'Previous/Next', 'baltic' ),
-				'posts_pagination' 	=> esc_attr__( 'Pagination', 'baltic' ),
+				'posts_navigation'  => esc_html__( 'Previous/Next', 'baltic' ),
+				'posts_pagination' 	=> esc_html__( 'Pagination', 'baltic' ),
 			),
 			'partial_refresh' => array(
 				'nav_posts' => array(
@@ -405,10 +405,10 @@ class Baltic_Settings_General {
 			),
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'text',
 			'settings'    	=> 'nav_posts_prev',
-			'label'       	=> esc_attr__( 'Previous Post Text', 'baltic' ),
+			'label'       	=> esc_html__( 'Previous Post Text', 'baltic' ),
 			'section'     	=> 'baltic_blog_section',
 			'default'     	=> $this->default['nav_posts_prev'],
 			'transport'		=> 'postMessage',
@@ -421,10 +421,10 @@ class Baltic_Settings_General {
 			),
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'text',
 			'settings'    	=> 'nav_posts_next',
-			'label'       	=> esc_attr__( 'Next Post Text', 'baltic' ),
+			'label'       	=> esc_html__( 'Next Post Text', 'baltic' ),
 			'section'     	=> 'baltic_blog_section',
 			'default'     	=> $this->default['nav_posts_next'],
 			'transport'		=> 'postMessage',
@@ -446,16 +446,16 @@ class Baltic_Settings_General {
 	 */
 	public function footer() {
 
-		Baltic_Kirki::add_section( 'baltic_footer_section', array(
-		    'title'         => esc_attr__( 'Footer', 'baltic' ),
+		Kirki::add_section( 'baltic_footer_section', array(
+		    'title'         => esc_html__( 'Footer', 'baltic' ),
 		    'panel'         => 'baltic_setting_panel',
 		    'priority' 		=> 99
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'number',
 			'settings'    	=> 'footer_widgets_col',
-			'label'       	=> esc_attr__( 'Footer widgets columns', 'baltic' ),
+			'label'       	=> esc_html__( 'Footer widgets columns', 'baltic' ),
 			'section'     	=> 'baltic_footer_section',
 			'default'     	=> $this->default['footer_widgets_col'],
 			'choices'     	=> array(
@@ -473,10 +473,10 @@ class Baltic_Settings_General {
 			),
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        => 'textarea',
 			'settings'    => 'footer_text',
-			'label'       => esc_attr__( 'Footer Text', 'baltic' ),
+			'label'       => esc_html__( 'Footer Text', 'baltic' ),
 			'section'     => 'baltic_footer_section',
 			'default'     => $this->default['footer_text'],
 			'partial_refresh' => array(
@@ -488,23 +488,23 @@ class Baltic_Settings_General {
 			),
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type' 			=> 'switch',
 			'settings'    	=> 'footer_credits',
-			'label'       	=> __( 'Display theme designer?', 'baltic' ),
+			'label'       	=> esc_html__( 'Display theme designer?', 'baltic' ),
 			'section'     	=> 'baltic_footer_section',
 			'default'     	=> $this->default['footer_credits'],
 			'transport'		=> 'postMessage',
 			'choices'     	=> array(
-				'on'  => esc_attr__( 'On', 'baltic' ),
-				'off' => esc_attr__( 'Off', 'baltic' ),
+				'on'  => esc_html__( 'On', 'baltic' ),
+				'off' => esc_html__( 'Off', 'baltic' ),
 			)
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'select',
 			'settings'    	=> 'payment_icons',
-			'label'       	=> __( 'Payment icons', 'baltic' ),
+			'label'       	=> esc_html__( 'Payment icons', 'baltic' ),
 			'section'     	=> 'baltic_footer_section',
 			'default'     	=> '',
 			'multiple'    	=> 13,

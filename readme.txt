@@ -96,6 +96,18 @@ Source: https://github.com/justintadlock/hybrid-core/blob/master/inc/functions-a
 **License:** GPL-2.0+
 Source: http://tgmpluginactivation.com/
 
+- Bytesize Icons by [Dan Klammer](https://github.com/danklammer)
+**License:** MIT
+Source: https://github.com/danklammer/bytesize-icons
+
+- Social Media Icons by (FortAwesome)(https://github.com/FortAwesome/Font-Awesome/tree/master/advanced-options/raw-svg/brands)
+**License:** CC BY 4.0
+Source: https://github.com/danklammer/bytesize-icons
+
+- Credit Card Icons by [Stuart Colville](https://github.com/muffinresearch)
+**License:** MPL2.0
+Source: https://github.com/muffinresearch/payment-icons
+
 * Screenshot image: Photo by bruce mars from Pexels
 **License:** CC0
 Source: https://www.pexels.com/photo/woman-holding-two-white-and-beige-shopping-paper-bags-in-building-974911/

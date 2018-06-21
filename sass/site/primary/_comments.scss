@@ -212,6 +212,13 @@
 	}
 }
 
+p.akismet_comment_form_privacy_notice {
+	color: $color__text-label;
+	display: block;
+	@include font-size(0.875);
+	margin-bottom: .25rem;
+}
+
 @include respond-to( medium ){
 	p.comment-form-email {
 		float: left;

@@ -8,7 +8,7 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: baltic
-Tags:  one-column, two-columns, custom-background, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-width-template, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-Commerce
+Tags:  one-column, two-columns, custom-background, custom-menu, custom-logo, editor-style, featured-images, full-width-template, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-Commerce
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -3376,6 +3376,14 @@ a.more-link:focus .icon-stroke {
 	background-position: center center;
 	background-size: 50% 50%;
 	content: "";
+}
+
+p.akismet_comment_form_privacy_notice {
+	display: block;
+	margin-bottom: 0.25rem;
+	color: #909090;
+	font-size: 14px;
+	font-size: 0.875rem;
 }
 
 

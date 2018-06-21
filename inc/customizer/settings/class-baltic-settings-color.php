@@ -74,15 +74,15 @@ class Baltic_Settings_Color {
 	public function header() {
 
 		/** Header */
-		Baltic_Kirki::add_section( 'baltic_header_color_section', array(
-		    'title'          => esc_attr__( 'Header', 'baltic' ),
+		Kirki::add_section( 'baltic_header_color_section', array(
+		    'title'          => esc_html__( 'Header', 'baltic' ),
 		    'panel'          => 'baltic_colors_panel',
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_bg_header',
-			'label'       	=> __( 'Header Background Color', 'baltic' ),
+			'label'       	=> esc_html__( 'Header Background Color', 'baltic' ),
 			'section'     	=> 'baltic_header_color_section',
 			'default'     	=> $this->default['color_bg_header'],
 			'transport'		=> 'auto',
@@ -94,10 +94,10 @@ class Baltic_Settings_Color {
 			)
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_header_input',
-			'label'       	=> __( 'Header search background color', 'baltic' ),
+			'label'       	=> esc_html__( 'Header search background color', 'baltic' ),
 			'section'     	=> 'baltic_header_color_section',
 			'default'     	=> $this->default['color_header_input'],
 			'choices'     	=> array( 'alpha' => true ),
@@ -110,10 +110,10 @@ class Baltic_Settings_Color {
 			)
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_header_input_focus',
-			'label'       	=> __( 'Header search background color focus', 'baltic' ),
+			'label'       	=> esc_html__( 'Header search background color focus', 'baltic' ),
 			'section'     	=> 'baltic_header_color_section',
 			'default'     	=> $this->default['color_header_input_focus'],
 			'choices'     	=> array( 'alpha' => true ),
@@ -126,10 +126,10 @@ class Baltic_Settings_Color {
 			)
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_header_textfield',
-			'label'       	=> __( 'Header search text color', 'baltic' ),
+			'label'       	=> esc_html__( 'Header search text color', 'baltic' ),
 			'section'     	=> 'baltic_header_color_section',
 			'default'     	=> $this->default['color_header_textfield'],
 			'choices'     	=> array( 'alpha' => true ),
@@ -162,10 +162,10 @@ class Baltic_Settings_Color {
 			)
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_header_textfield_focus',
-			'label'       	=> __( 'Header search text color focus', 'baltic' ),
+			'label'       	=> esc_html__( 'Header search text color focus', 'baltic' ),
 			'section'     	=> 'baltic_header_color_section',
 			'default'     	=> $this->default['color_header_textfield_focus'],
 			'choices'     	=> array( 'alpha' => true ),
@@ -198,10 +198,10 @@ class Baltic_Settings_Color {
 			)
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_header_btn',
-			'label'       	=> __( 'Header search button color', 'baltic' ),
+			'label'       	=> esc_html__( 'Header search button color', 'baltic' ),
 			'section'     	=> 'baltic_header_color_section',
 			'default'     	=> $this->default['color_header_btn'],
 			'choices'     	=> array( 'alpha' => true ),
@@ -214,10 +214,10 @@ class Baltic_Settings_Color {
 			)
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_header_btn_hover',
-			'label'       	=> __( 'Header search button color hover', 'baltic' ),
+			'label'       	=> esc_html__( 'Header search button color hover', 'baltic' ),
 			'section'     	=> 'baltic_header_color_section',
 			'default'     	=> $this->default['color_header_btn_hover'],
 			'choices'     	=> array( 'alpha' => true ),
@@ -234,10 +234,10 @@ class Baltic_Settings_Color {
 			)
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_header_btn_icon',
-			'label'       	=> __( 'Header search icon color', 'baltic' ),
+			'label'       	=> esc_html__( 'Header search icon color', 'baltic' ),
 			'section'     	=> 'baltic_header_color_section',
 			'default'     	=> $this->default['color_header_btn_icon'],
 			'choices'     	=> array( 'alpha' => true ),
@@ -250,10 +250,10 @@ class Baltic_Settings_Color {
 			)
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_header_btn_icon_hover',
-			'label'       	=> __( 'Header search icon color hover', 'baltic' ),
+			'label'       	=> esc_html__( 'Header search icon color hover', 'baltic' ),
 			'section'     	=> 'baltic_header_color_section',
 			'default'     	=> $this->default['color_header_btn_icon_hover'],
 			'choices'     	=> array( 'alpha' => true ),
@@ -275,15 +275,15 @@ class Baltic_Settings_Color {
 	 */
 	public function selection() {
 
-		Baltic_Kirki::add_section( 'baltic_selection_color_section', array(
-		    'title'          => esc_attr__( 'Selection', 'baltic' ),
+		Kirki::add_section( 'baltic_selection_color_section', array(
+		    'title'          => esc_html__( 'Selection', 'baltic' ),
 		    'panel'          => 'baltic_colors_panel',
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        => 'color',
 			'settings'    => 'color_bg_highlight',
-			'label'       => __( 'Color Background Highlight', 'baltic' ),
+			'label'       => esc_html__( 'Color Background Highlight', 'baltic' ),
 			'section'     => 'baltic_selection_color_section',
 			'default'     => $this->default['color_bg_highlight'],
 			'transport'		=> 'auto',
@@ -299,10 +299,10 @@ class Baltic_Settings_Color {
 			)
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        => 'color',
 			'settings'    => 'color_text_highlight',
-			'label'       => __( 'Color Text Highlight', 'baltic' ),
+			'label'       => esc_html__( 'Color Text Highlight', 'baltic' ),
 			'section'     => 'baltic_selection_color_section',
 			'default'     => $this->default['color_text_highlight'],
 			'transport'		=> 'auto',
@@ -327,15 +327,15 @@ class Baltic_Settings_Color {
 	 */
 	public function text() {
 
-		Baltic_Kirki::add_section( 'baltic_text_color_section', array(
-		    'title'          => esc_attr__( 'Text', 'baltic' ),
+		Kirki::add_section( 'baltic_text_color_section', array(
+		    'title'          => esc_html__( 'Text', 'baltic' ),
 		    'panel'          => 'baltic_colors_panel',
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_text_primary',
-			'label'       	=> __( 'Primary Text Color', 'baltic' ),
+			'label'       	=> esc_html__( 'Primary Text Color', 'baltic' ),
 			'section'     	=> 'baltic_text_color_section',
 			'default'     	=> $this->default['color_text_primary'],
 			'transport'		=> 'auto',
@@ -360,10 +360,10 @@ class Baltic_Settings_Color {
 			)
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_text_secondary',
-			'label'       	=> __( 'Secondary Text Color', 'baltic' ),
+			'label'       	=> esc_html__( 'Secondary Text Color', 'baltic' ),
 			'section'     	=> 'baltic_text_color_section',
 			'default'     	=> $this->default['color_text_secondary'],
 			'transport'		=> 'auto',
@@ -389,15 +389,15 @@ class Baltic_Settings_Color {
 	 */
 	public function textfield() {
 
-		Baltic_Kirki::add_section( 'baltic_textfield_color_section', array(
-		    'title'          => esc_attr__( 'TextField', 'baltic' ),
+		Kirki::add_section( 'baltic_textfield_color_section', array(
+		    'title'          => esc_html__( 'TextField', 'baltic' ),
 		    'panel'          => 'baltic_colors_panel',
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_text_field',
-			'label'       	=> __( 'Text Field Color', 'baltic' ),
+			'label'       	=> esc_html__( 'Text Field Color', 'baltic' ),
 			'section'     	=> 'baltic_textfield_color_section',
 			'default'     	=> $this->default['color_text_field'],
 			'transport'		=> 'auto',
@@ -425,10 +425,10 @@ class Baltic_Settings_Color {
 			)
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_text_field_focus',
-			'label'       	=> __( 'Text Field Focus Color', 'baltic' ),
+			'label'       	=> esc_html__( 'Text Field Focus Color', 'baltic' ),
 			'section'     	=> 'baltic_textfield_color_section',
 			'default'     	=> $this->default['color_text_field_focus'],
 			'transport'		=> 'auto',
@@ -449,15 +449,15 @@ class Baltic_Settings_Color {
 	 */
 	public function link() {
 
-		Baltic_Kirki::add_section( 'baltic_link_color_section', array(
-		    'title'          => esc_attr__( 'Link', 'baltic' ),
+		Kirki::add_section( 'baltic_link_color_section', array(
+		    'title'          => esc_html__( 'Link', 'baltic' ),
 		    'panel'          => 'baltic_colors_panel',
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_link_primary',
-			'label'       	=> __( 'Color Link', 'baltic' ),
+			'label'       	=> esc_html__( 'Color Link', 'baltic' ),
 			'section'     	=> 'baltic_link_color_section',
 			'default'     	=> $this->default['color_link_primary'],
 			'transport'		=> 'auto',
@@ -481,10 +481,10 @@ class Baltic_Settings_Color {
 			)
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_link_secondary',
-			'label'       	=> __( 'Color Link Hover', 'baltic' ),
+			'label'       	=> esc_html__( 'Color Link Hover', 'baltic' ),
 			'section'     	=> 'baltic_link_color_section',
 			'default'     	=> $this->default['color_link_secondary'],
 			'transport'		=> 'auto',
@@ -509,15 +509,15 @@ class Baltic_Settings_Color {
 	 */
 	public function buttons() {
 
-		Baltic_Kirki::add_section( 'baltic_button_color_section', array(
-		    'title'          => esc_attr__( 'Button', 'baltic' ),
+		Kirki::add_section( 'baltic_button_color_section', array(
+		    'title'          => esc_html__( 'Button', 'baltic' ),
 		    'panel'          => 'baltic_colors_panel',
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_text_button',
-			'label'       	=> __( 'Color Text Button', 'baltic' ),
+			'label'       	=> esc_html__( 'Color Text Button', 'baltic' ),
 			'section'     	=> 'baltic_button_color_section',
 			'default'     	=> $this->default['color_text_button'],
 			'transport'		=> 'auto',
@@ -529,10 +529,10 @@ class Baltic_Settings_Color {
 			)
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_button',
-			'label'       	=> __( 'Color Background Button', 'baltic' ),
+			'label'       	=> esc_html__( 'Color Background Button', 'baltic' ),
 			'section'     	=> 'baltic_button_color_section',
 			'default'     	=> $this->default['color_button'],
 			'transport'		=> 'auto',
@@ -548,10 +548,10 @@ class Baltic_Settings_Color {
 			)
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_button_hover',
-			'label'       	=> __( 'Color Button Hover', 'baltic' ),
+			'label'       	=> esc_html__( 'Color Button Hover', 'baltic' ),
 			'section'     	=> 'baltic_button_color_section',
 			'default'     	=> $this->default['color_button_hover'],
 			'transport'		=> 'auto',
@@ -576,15 +576,15 @@ class Baltic_Settings_Color {
 	 */
 	public function borders() {
 
-		Baltic_Kirki::add_section( 'baltic_border_color_section', array(
-		    'title'          => esc_attr__( 'Border', 'baltic' ),
+		Kirki::add_section( 'baltic_border_color_section', array(
+		    'title'          => esc_html__( 'Border', 'baltic' ),
 		    'panel'          => 'baltic_colors_panel',
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_border',
-			'label'       	=> __( 'Color Border', 'baltic' ),
+			'label'       	=> esc_html__( 'Color Border', 'baltic' ),
 			'section'     	=> 'baltic_border_color_section',
 			'default'     	=> $this->default['color_border'],
 			'choices'     	=> array( 'alpha' => true ),

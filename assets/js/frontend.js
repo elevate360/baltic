@@ -7,6 +7,7 @@
 		baltic.$body 	= $( document.body ),
 		baltic.$window 	= $( window ),
 		baltic.$html 	= $( 'html' ),
+		baltic.$body	= $( 'body'),
 		baltic.$header  = $( '.site-header' );
 
 		this.inlineSVG();
@@ -43,7 +44,7 @@
 	baltic.preloader = function() {
 
 		$( '.site-preloader' ).fadeOut(500);
-		$( '.preloader-enabled' ).delay(500).css({ 'overflow':'visible' });
+		baltic.$body.removeClass('preloader-enabled');
 
 	};
 
@@ -264,6 +265,13 @@
 		baltic.$body.on( 'afterChange', function () {
 			baltic.matchHeight();
 		});
+
+	   baltic.$body.on( 'customize-preview-menu-refreshed', function( e, params ) {
+	   		e.preventDefault();
+	    	if( 'menu-1' === params.wpNavMenuArgs.theme_location ) {
+				baltic.subMenuToggle();
+	    	}
+	    });
 
 		baltic.$body.on( 'afterChange', function () {
 		    if ( 'undefined' === typeof jetpackLazyImagesModule ) {

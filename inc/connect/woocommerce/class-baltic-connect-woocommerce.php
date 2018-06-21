@@ -326,7 +326,7 @@ class Baltic_Connect_WooCommerce {
 				$crumb .= Baltic_Utility::get_breadcrumb_link( get_term_link( $term->slug, 'product_cat' ), $term->name, $term->name, $args['sep'] );
 			endif;
 
-			$crumb .= get_the_title();
+			$crumb .= '<span>'. get_the_title() .'</span>';
 
 		}
 

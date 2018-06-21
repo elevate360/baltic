@@ -69,13 +69,13 @@ class Baltic_Settings_WooCommerce {
 	public function colors() {
 
 		/** Colors */
-		Baltic_Kirki::add_section( 'baltic_wc_color_section', array(
+		Kirki::add_section( 'baltic_wc_color_section', array(
 		    'title' 		=> esc_html__( 'Colors', 'baltic' ),
 		    'panel' 		=> 'woocommerce',
 		    'priority'		=> 100
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_price',
 			'label'       	=> esc_html__( 'Price color', 'baltic' ),
@@ -90,7 +90,7 @@ class Baltic_Settings_WooCommerce {
 			)
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_sale_text',
 			'label'       	=> esc_html__( 'Sale Badge Text Color', 'baltic' ),
@@ -105,7 +105,7 @@ class Baltic_Settings_WooCommerce {
 			)
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_sale',
 			'label'       	=> esc_html__( 'Sale Badge Background Color', 'baltic' ),
@@ -120,7 +120,7 @@ class Baltic_Settings_WooCommerce {
 			)
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'color',
 			'settings'    	=> 'color_stars',
 			'label'       	=> esc_html__( 'Stars Rating Color', 'baltic' ),
@@ -139,12 +139,12 @@ class Baltic_Settings_WooCommerce {
 
 	public function layout() {
 
-		Baltic_Kirki::add_section( 'baltic_wc_layout_section', array(
+		Kirki::add_section( 'baltic_wc_layout_section', array(
 		    'title' 		=> esc_html__( 'Layout', 'baltic' ),
 		    'panel' 		=> 'woocommerce',
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'select',
 			'settings'    	=> 'layout_products',
 			'label'       	=> esc_html__( 'Product Archive Layout', 'baltic' ),
@@ -154,7 +154,7 @@ class Baltic_Settings_WooCommerce {
 			'choices' 		=> Baltic_Utility::get_main_layout(),
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'select',
 			'settings'    	=> 'layout_product',
 			'label'       	=> esc_html__( 'Single Product Layout', 'baltic' ),
@@ -168,7 +168,7 @@ class Baltic_Settings_WooCommerce {
 
 	public function catalog() {
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'number',
 			'settings'    	=> 'products_per_page',
 			'label'       	=> esc_html__( 'Products per page', 'baltic' ),
@@ -181,7 +181,7 @@ class Baltic_Settings_WooCommerce {
 			),
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'number',
 			'settings'    	=> 'products_columns',
 			'label'       	=> esc_html__( 'Products Columns', 'baltic' ),
@@ -194,10 +194,10 @@ class Baltic_Settings_WooCommerce {
 			),
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'select',
 			'settings'    	=> 'products_nav',
-			'label'       	=> __( 'Products Navigation Type', 'baltic' ),
+			'label'       	=> esc_html__( 'Products Navigation Type', 'baltic' ),
 			'section'     	=> 'woocommerce_product_catalog',
 			'default'     	=> $this->default['products_nav'],
 			'transport'		=> 'postMessage',
@@ -214,7 +214,7 @@ class Baltic_Settings_WooCommerce {
 			),
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'text',
 			'settings'    	=> 'products_nav_prev',
 			'label'       	=> esc_html__( 'Previous Product Text', 'baltic' ),
@@ -237,7 +237,7 @@ class Baltic_Settings_WooCommerce {
 			),
 		) );
 
-		Baltic_Kirki::add_field( 'baltic', array(
+		Kirki::add_field( 'baltic', array(
 			'type'        	=> 'text',
 			'settings'    	=> 'products_nav_next',
 			'label'       	=> esc_html__( 'Next Product Text', 'baltic' ),
