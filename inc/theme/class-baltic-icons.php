@@ -45,6 +45,7 @@ class Baltic_Icons {
 		/** Icons */
 		add_action( 'wp_footer', array( $this, 'include_svg_icons' ), 9999 );
 		add_filter( 'walker_nav_menu_start_el', array( $this, 'social_menu_icons' ), 10, 4 );
+		add_filter( 'nav_menu_link_attributes', array( $this, 'social_link' ), 10, 3 );
 		add_filter( 'nav_menu_item_title', array( $this, 'dropdown_menu_icons' ), 10, 4 );
 
 	}
@@ -115,6 +116,24 @@ class Baltic_Icons {
 		}
 
 		return $item_output;
+	}
+
+	/**
+	 * Add itemprop "sameAs" at anchor link.
+	 *
+	 * @param  array   $atts   	Menu attributes.
+	 * @param  WP_Post $item 	Menu item object.
+	 * @param  array   $args 	wp_nav_menu() arguments.
+	 * @return string  $atts 	The menu item output with social icon.
+	 */
+	public function social_link( $atts, $item, $args ) {
+
+		if ( 'menu-3' === $args->theme_location ) {
+		    $atts['itemprop'] = 'sameAs';
+		    return $atts;
+		}
+		return $atts;
+
 	}
 
 	/**
