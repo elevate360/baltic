@@ -467,11 +467,11 @@ class Baltic_Settings_Color {
 					'property' 	=> 'color',
 				),
 				array(
-					'element' 	=> '.screen-reader-text:focus, .widget_layered_nav_filters ul li.chosen:before, .woocommerce-widget-layered-nav-list li.chosen:before',
+					'element' 	=> '.screen-reader-text:focus, .widget_layered_nav_filters ul li.chosen:before, .woocommerce-widget-layered-nav-list li.chosen:before, .site-header__extra .total, .comment-body>.reply a:focus, .comment-body>.reply a:hover',
 					'property'	=> 'background-color'
 				),
 				array(
-					'element'	=> '.widget_layered_nav_filters ul li:before, .woocommerce-widget-layered-nav-list li:before, .widget_layered_nav_filters ul li.chosen:before, .woocommerce-widget-layered-nav-list li.chosen:before',
+					'element'	=> '.widget_layered_nav_filters ul li:before, .woocommerce-widget-layered-nav-list li:before, .widget_layered_nav_filters ul li.chosen:before, .woocommerce-widget-layered-nav-list li.chosen:before, .woocommerce-tabs ul.tabs li.active, .comment-body>.reply a:focus, .comment-body>.reply a:hover',
 					'property'	=> 'border-color'
 				),
 				array(

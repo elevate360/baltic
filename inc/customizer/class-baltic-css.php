@@ -83,7 +83,8 @@ class Baltic_CSS {
 			.widget_tag_cloud a,
 			.widget_product_tag_cloud a,
 			ul.products li.product .button,
-			#tertiary .widget>div
+			#tertiary .widget>div,
+			.woocommerce-privacy-policy-text
 		';
 
 		return apply_filters( 'baltic_css_color_text_secondary', $css );
@@ -172,7 +173,9 @@ class Baltic_CSS {
 			ul.products li.product .button:focus,
 			ul.products li.product .button:hover,
 			.widget_price_filter .ui-slider .ui-slider-handle,
-			.widget_price_filter .ui-slider .ui-slider-range
+			.widget_price_filter .ui-slider .ui-slider-range,
+			.comment-form-cookies-consent input[type=checkbox]:checked~label::before,
+			.comment-subscription-form input[type=checkbox]:checked~label::before
 		';
 
 		return apply_filters( 'baltic_css_color_button', $css );

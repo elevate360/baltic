@@ -715,36 +715,29 @@ a.reset_variations {
 }
 
 .woocommerce-cart-form .coupon input[type="text"],
-.woocommerce-cart-form .coupon input[type="submit"] {
-	float: right;
-	width: 50%;
+.woocommerce-cart-form .coupon .button {
+	width: 100%;
+	margin-top: 0.5rem;
 }
 
-.woocommerce-cart-form .coupon input[type="text"] {
-	border-left-width: 0;
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
-}
-
-.woocommerce-cart-form .coupon input[type="submit"] {
-	padding-left: 0;
-	padding-right: 0;
-	border-right-width: 0;
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-}
-
-.woocommerce-cart-form input[type="submit"] {
+.woocommerce-cart-form .button {
 	width: 100%;
 }
 
-.woocommerce-cart-form input[type="submit"][disabled] {
-	opacity: 0.75;
+.woocommerce-cart-form .button[disabled] {
+	border-color: #ff5722;
+	opacity: 0.5;
+	background-color: #ff5722;
 	cursor: not-allowed;
+}
+
+#ship-to-different-address {
+	margin-bottom: 1.5rem;
 }
 
 #ship-to-different-address label {
 	font-weight: 300;
+	line-height: 2;
 	cursor: pointer;
 }
 
@@ -986,6 +979,22 @@ a.wcppec-checkout-buttons__button {
 	font-size: 18px;
 	font-size: 1.125rem;
 	text-align: center;
+}
+
+.woocommerce-privacy-policy-text {
+	overflow: hidden;
+	margin-bottom: 1rem;
+	padding: 1rem;
+	border-radius: 0.25rem;
+	color: #909090;
+	background-color: rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+	font-size: 14px;
+	font-size: 0.875rem;
+}
+
+.woocommerce-privacy-policy-text p:last-child {
+	margin-bottom: 0;
 }
 
 .woocommerce-MyAccount-navigation {
@@ -1894,16 +1903,23 @@ input[type="submit"].woocommerce-widget-layered-nav-dropdown__submit {
 
 	.place-order {
 		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.woocommerce-cart-form .coupon input[type="text"],
+	.woocommerce-cart-form .coupon .button {
+		float: right;
+		width: 50%;
+		margin-top: 0;
 	}
 
 	.woocommerce-cart-form .coupon {
 		float: right;
-		width: 40%;
+		width: 50%;
 		margin-bottom: 0;
-		padding-left: 10px;
 	}
 
-	.woocommerce-cart-form input[type="submit"] {
+	.woocommerce-cart-form .button {
 		float: left;
 		width: auto;
 	}

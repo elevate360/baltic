@@ -97,6 +97,7 @@ class Baltic_Connect_WooCommerce {
 		wp_enqueue_style( 'baltic-woocommerce-style',
 			BALTIC_URI . "/assets/css/woocommerce$suffix.css"
 		);
+		wp_style_add_data( 'baltic-woocommerce-style', 'rtl', 'replace' );
 
 		$font_path   	= WC()->plugin_url() . '/assets/fonts/';
 		$images_path 	= WC()->plugin_url() . '/assets/images/';
