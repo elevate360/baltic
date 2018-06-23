@@ -76,10 +76,13 @@ class Baltic_Customizer {
 	public function init_settings() {
 
 		Baltic_Kirki::instance();
-		Baltic_Settings_General::instance();
-		Baltic_Settings_Color::instance();
-		Baltic_Settings_Typography::instance();
-		Baltic_Settings_WooCommerce::instance();
+
+		if ( class_exists( 'Kirki' ) ) {
+			Baltic_Settings_General::instance();
+			Baltic_Settings_Color::instance();
+			Baltic_Settings_Typography::instance();
+			Baltic_Settings_WooCommerce::instance();
+		}
 
 	}
 
