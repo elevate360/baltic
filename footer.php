@@ -28,6 +28,7 @@
 	<?php do_action( 'baltic_footer_after' );?>
 </div><!-- #page -->
 
+<?php do_action( 'baltic_after' );?>
 <?php wp_footer(); ?>
 
 </body>

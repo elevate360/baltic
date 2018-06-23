@@ -1,0 +1,150 @@
+/** Product Categories */
+.product-cats {
+	display: grid;
+	justify-content: stretch;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.product-cats__item {
+	background-color: $color__text-main;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	z-index: 0;
+	.product-cats2 & {
+		margin-bottom: $gutter__width*2;
+	}
+}
+
+.product-cats2.slick-slider {
+	margin-bottom: 3rem;
+	.baltic-slick-dots {
+		bottom: -1.5rem;
+	}
+}
+
+.product-cats__inner {
+	color: $color__white;
+	padding: $gutter__width*2;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
+	background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+	@include respond-to( medium ) {
+		padding: $gutter__width*4;
+	}
+}
+
+.product-cats__thumbnail {
+	background-position: top center;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+@include respond-to( medium ) {
+
+	@for $i from 2 through 6 {
+		.total-items-#{$i} {
+			grid-template-columns: repeat( #{$i}, 1fr );
+		}
+	}
+
+	.product-cats {
+		&.total-items-3 .item-1{
+		    grid-column-start: 1;
+		    grid-column-end: 3;
+		    grid-row-start: 1;
+		    grid-row-end: 3;
+		}
+		&.total-items-4 {
+			.item-1 {
+			    grid-column-start: 1;
+			    grid-column-end: 2;
+			    grid-row-start: 1;
+			    grid-row-end: 3;
+			}
+			.item-2 {
+			    grid-column-start: 2;
+			    grid-column-end: 4;
+			    grid-row-start: 1;
+			    grid-row-end: 2;
+			}
+			.item-3 {
+			    grid-column-start: 2;
+			    grid-column-end: 4;
+			    grid-row-start: 2;
+			    grid-row-end: 3;
+			}
+			.item-4 {
+			    grid-column-start: 4;
+			    grid-column-end: 5;
+			    grid-row-start: 1;
+			    grid-row-end: 3;
+			}
+		}
+
+		&.total-items-5 {
+			.item-1 {
+			    grid-column-start: 1;
+			    grid-column-end: 4;
+			    grid-row-start: 1;
+			    grid-row-end: 3;
+			}
+			.item-2,
+			.item-3 {
+    			grid-column-start: 4;
+    			grid-column-end: 6;
+			}
+			.item-4 {
+				grid-column-start: 1;
+				grid-column-end: 3;
+			}
+			.item-5 {
+				grid-column-start: 3;
+				grid-column-end: 6;
+			}
+		}
+
+		&.total-items-6 {
+			.item-1 {
+			    grid-column-start: 1;
+			    grid-column-end: 4;
+			    grid-row-start: 1;
+			    grid-row-end: 3;
+			}
+			.item-2 {
+			    grid-column-start: 4;
+			    grid-column-end: 7;
+			    grid-row-start: 1;
+			    grid-row-end: 2;
+			}
+			.item-3 {
+			    grid-column-start: 4;
+			    grid-column-end: 7;
+			    grid-row-start: 2;
+			    grid-row-end: 3;
+			}
+			.item-4 {
+			    grid-column-start: 1;
+			    grid-column-end: 3;
+			}
+			.item-5 {
+			    grid-column-start: 3;
+			    grid-column-end: 5;
+			}
+			.item-6 {
+			    grid-column-start: 5;
+			    grid-column-end: 7;
+			}
+		}
+
+	}
+
+}

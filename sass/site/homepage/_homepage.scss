@@ -7,8 +7,6 @@
 
 .homepage-overlay {
 	position: relative;
-	padding-top: $gutter__width*2;
-	padding-bottom: $gutter__width*2;
 	z-index: 0;
 }
 
@@ -39,14 +37,14 @@
 	}
 }
 
-.homepage-overlay {
+@import "hero";
 
-}
+@import "slider";
 
-@import "homepage/hero";
+@import "posts";
 
-@import "homepage/slider";
+@import "latest-tweets";
 
-@import "homepage/posts";
+@import "product-cats";
 
-@import "homepage/latest-tweets";
+@import "products";

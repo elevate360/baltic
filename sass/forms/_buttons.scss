@@ -73,7 +73,7 @@ input[type="submit"] {
 }
 
 .btn-cta__primary {
-    color: $color__white;
+    color: $color__white!important;
     background-color: $color__btn-primary;
     border-color: $color__btn-primary;
     &:hover,
@@ -85,7 +85,7 @@ input[type="submit"] {
 }
 
 .btn-cta__secondary {
-    color: $color__white;
+    color: $color__white!important;
     background-color: $color__btn-secondary;
     border-color: $color__btn-secondary;
     &:hover,
@@ -97,7 +97,7 @@ input[type="submit"] {
 }
 
 .btn-cta__success {
-    color: $color__white;
+    color: $color__white!important;
     background-color: $color__btn-success;
     border-color: $color__btn-success;
     &:hover,
@@ -109,7 +109,7 @@ input[type="submit"] {
 }
 
 .btn-cta__danger {
-    color: $color__white;
+    color: $color__white!important;
     background-color: $color__btn-danger;
     border-color: $color__btn-danger;
     &:hover,
@@ -121,7 +121,7 @@ input[type="submit"] {
 }
 
 .btn-cta__warning {
-    color: $color__white;
+    color: $color__white!important;
     background-color: $color__btn-warning;
     border-color: $color__btn-warning;
     &:hover,
@@ -133,7 +133,7 @@ input[type="submit"] {
 }
 
 .btn-cta__info {
-    color: $color__white;
+    color: $color__white!important;
     background-color: $color__btn-info;
     border-color: $color__btn-info;
     &:hover,
@@ -145,7 +145,7 @@ input[type="submit"] {
 }
 
 .btn-cta__outline-white {
-    color: $color__white;
+    color: $color__white!important;
     background-color: transparent;
     border-color: $color__white;
     &:hover,

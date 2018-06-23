@@ -56,7 +56,7 @@ class Baltic_Settings_General {
 		$this->default = Baltic_Options::defaults();
 
 		add_filter( 'kirki_config', array( $this, 'config' ) );
-		//add_filter( 'kirki_dynamic_css_method', array( $this, 'use_css_file' ) );
+		add_filter( 'kirki_dynamic_css_method', array( $this, 'use_css_file' ) );
 		add_action( 'init', array( $this, 'add_config' ) );
 
 		add_action( 'init', array( $this, 'preloader' ) );

@@ -101,7 +101,7 @@ class Baltic_Setup {
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 */
-		load_theme_textdomain( 'baltic', trailingslashit( WP_LANG_DIR ) . 'themes/' );
+		load_theme_textdomain( 'baltic' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -437,14 +437,10 @@ class Baltic_Setup {
 			add_filter( 'excerpt_length', array( $this, 'excerpt_length' ), 999 );
 			add_filter( 'excerpt_more', array( $this, 'excerpt_more' ) );
 			add_filter( 'the_content_more_link', array( $this, 'excerpt_more' ), 10, 2 );
-			//add_filter( 'embed_defaults', array( $this, 'default_embed_size' ) );
-			//add_filter( 'embed_oembed_html', array( $this, 'mixcloud_oembed_parameter' ), 10, 3 );
 		}
 
 		if ( is_singular() ) {
 			add_filter( 'the_title', array( $this, 'untitled_post' ) );
-			//add_filter( 'embed_defaults', array( $this, 'default_embed_size' ) );
-			//add_filter( 'embed_oembed_html', array( $this, 'mixcloud_oembed_parameter' ), 10, 3 );
 		}
 
 	}
