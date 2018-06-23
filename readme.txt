@@ -5,7 +5,7 @@ Tags:  one-column, two-columns, custom-background, custom-colors, custom-menu, c
 
 Requires at least: 4.7
 Tested up to: 4.9.6
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -29,6 +29,11 @@ Baltic is an ultra-powerful theme that combines enterprise-level functionality w
 Baltic includes support for WooCommerce.
 
 == Changelog ==
+
+= 1.0.1 - June 24 2018 =
+* Added Homepage template to match theme screenshot [55130](https://themes.trac.wordpress.org/ticket/55130#comment:6)
+* Updates homepage styling
+* Fixed styling for comment consent WP 4.9.6
 
 = 1.0.0 - May 25 2018 =
 * Initial release
