@@ -5,7 +5,7 @@
 
 **Requires at least:** 4.7  
 **Tested up to:** 4.9.6  
-**Stable tag:** 1.0.1  
+**Stable tag:** 1.0.2  
 **Version:** 1.0.0  
 **License:** GNU General Public License v2 or later  
 **License URI:** LICENSE  
@@ -29,6 +29,9 @@ Baltic is an ultra-powerful theme that combines enterprise-level functionality w
 Baltic includes support for WooCommerce.
 
 ## Changelog ##
+
+### 1.0.2 - June 25 2018 ###
+* Updated Theme URI [55130#11](https://themes.trac.wordpress.org/ticket/55130#comment:11)
 
 ### 1.0.1 - June 24 2018 ###
 * Added Homepage template to match theme screenshot [55130](https://themes.trac.wordpress.org/ticket/55130#comment:6)
