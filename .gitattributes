@@ -27,8 +27,9 @@
 # Omit during export.
 /sass export-ignore
 /vendor export-ignore
-composer.json
-composer.lock
+composer.json export-ignore
+composer.lock export-ignore
+yarn.lock export-ignore
 .editorconfig export-ignore
 .gitattributes export-ignore
 .gitignore export-ignore
