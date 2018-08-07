@@ -7,13 +7,11 @@
  * @package Baltic
  */
 
-$sidebar = apply_filters( 'baltic_sidebar_shop', 'sidebar-3' );
-
-if ( ! is_active_sidebar( $sidebar ) ) {
+if ( ! is_active_sidebar( 'sidebar-3' ) ) {
 	return;
 }
 ?>
 
-<aside <?php Baltic_Markup::attr( 'secondary' );?>>
-	<?php dynamic_sidebar( $sidebar ); ?>
+<aside id="secondary" class="widget-area">
+	<?php dynamic_sidebar( 'sidebar-3' ); ?>
 </aside><!-- #secondary -->

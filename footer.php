@@ -10,26 +10,17 @@
  */
 
 ?>
-		<?php do_action( 'baltic_site_inner_after' );?>
+		<?php do_action( 'baltic_site_content_bottom' );?>
 	</div><!-- #content -->
-
-	<?php do_action( 'baltic_footer_before' );?>
-
-	<footer <?php Baltic_Markup::attr( 'site-footer' );?>>
-		<div class="container">
-			<div class="columns columns-2">
-
-				<?php do_action( 'baltic_footer' );?>
-
-			</div><!-- .columns -->
-		</div><!-- .container -->
+	<?php do_action( 'baltic_footer_before'); ?>
+	<footer id="colophon" class="site-footer">
+		<?php do_action( 'baltic_footer');?>
 	</footer><!-- #colophon -->
-
-	<?php do_action( 'baltic_footer_after' );?>
+	<?php do_action( 'baltic_footer_after');?>
 </div><!-- #page -->
-
-<?php do_action( 'baltic_after' );?>
-<?php wp_footer(); ?>
+<?php
+do_action( 'baltic_after' );
+wp_footer(); ?>
 
 </body>
 </html>

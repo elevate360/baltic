@@ -1,5 +1,33 @@
 h1, h2, h3, h4, h5, h6 {
+	font-family: var(--heading__family);
+	font-weight: var(--heading__weight);
+	text-transform: var(--heading__transform);
+	line-height: var(--heading__line-height);
 	margin-top: 0;
-	margin-bottom: 0.5rem;
-	font-weight: 500
+	margin-bottom: 1rem;
+}
+
+h1 {
+	font-size: var(--h1__size-px);
+	font-size: var(--h1__size)
+}
+h2 {
+	font-size: var(--h2__size-px);
+	font-size: var(--h2__size)
+}
+h3 {
+	font-size: var(--h3__size-px);
+	font-size: var(--h3__size)
+}
+h4 {
+	font-size: var(--h4__size-px);
+	font-size: var(--h4__size)
+}
+h5 {
+	font-size: var(--h5__size-px);
+	font-size: var(--h5__size)
+}
+h6 {
+	font-size: var(--h6__size-px);
+	font-size: var(--h6__size)
 }

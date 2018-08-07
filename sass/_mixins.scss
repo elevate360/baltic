@@ -25,30 +25,28 @@
 
 @mixin radius-shadow(){
 	border-radius: .25rem;
-	box-shadow: 0 8px 92px $color__alpha-dark;
+	box-shadow: 0 8px 64px $color__alpha-dark;
 }
 
-@mixin radius-border(){
-	border: 1px solid $color__alpha-dark;
-	box-shadow: none;
-}
-
-// Column width
+// Column width with margin
 @mixin column-width($numberColumns: 3) {
 	width: map-get( $columns, $numberColumns );
 }
 
-@mixin respond-to($media) {
-	@if $media == small {
-		@media (min-width: $media__small) { @content; }
+@mixin respond-to( $media ) {
+	@if $media == mobile {
+		@media (min-width: $mobile) { @content; }
 	}
-	@else if $media == medium {
-		@media (min-width: $media__medium) { @content; }
+	@else if $media == tablet {
+		@media (min-width: $tablet) { @content; }
 	}
-	@else if $media == large {
-		@media (min-width: $media__large) { @content; }
+	@else if $media == desktop {
+		@media (min-width: $desktop) { @content; }
 	}
-	@else if $media == extra-large {
-		@media (min-width: $media__extra-large) { @content; }
+	@else if $media == widescreen {
+		@media (min-width: $widescreen) { @content; }
+	}
+	@else if $media == fullhd {
+		@media (min-width: $fullhd) { @content; }
 	}
 }

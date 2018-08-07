@@ -1,3 +1,12 @@
+#secondary a{
+	color: var(--color__text-secondary);
+	&:hover,
+	&:focus {
+		color: var(--color__link-hover);
+	}
+}
+
+
 .widget {
 	margin: 0 0 1.5rem;
 
@@ -8,14 +17,14 @@
 }
 
 .widget-title {
-	@include font-size( 1.125 );
-	padding-bottom: $gutter__width*2;
-	margin-bottom: $gutter__width*2;
+	@include font-size(1);
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
 	position: relative;
 	&:after {
-		background-color: $color__text-main;
+		background-color: var(--color__text-primary);
 		content: " ";
-		width: $gutter__width*2;
+		width: 1rem;
 		height: 2px;
 		position: absolute;
 		bottom: -1px;
@@ -48,37 +57,8 @@
 	}
 }
 
-.tagcloud {
-	margin-left: -2px;
-	margin-right: -2px;
-	overflow: hidden;
-}
-
-.widget_tag_cloud a,
-.widget_product_tag_cloud a {
-    background-color: transparent;
-    border: 1px solid $color__text-secondary;
-    color: $color__text-secondary;
-    display: inline-block;
-    @include font-size(0.875);
-    font-weight: normal;
-    line-height: 1;
-    padding: 5px 10px;
-    margin: 2px 2px;
-    float: left;
-    text-transform: none;
-    position: relative;
-    border-radius: .25rem;
-	&:hover,
-	&:focus {
-	    background-color: $color__link;
-	    border-color: $color__link;
-	    color: #fff!important;
-	    text-decoration: none;
-	}
-}
-
 .widget_meta,
+.widget_rss,
 .widget_pages,
 .widget_categories,
 .widget_archive,
@@ -100,29 +80,111 @@
 	ul ul {
 		border-left: 2px solid $color__alpha-dark;
 		margin-top: .5rem;
+		margin-left: .4rem;
 		padding-left: 1rem;
 	}
+	.icon-stroke {
+		margin-right: .5rem;
+	}
 }
 
-#secondary {
+.tagcloud {
+	margin-left: -2px;
+	margin-right: -2px;
+	overflow: hidden;
+}
 
-	a {
-		color: $color__text-secondary;
+.widget_tag_cloud a,
+.widget_product_tag_cloud a {
+    background-color: transparent;
+    border: 1px solid var(--color__text-secondary);
+    color: var(--color__text-secondary);
+    display: inline-block;
+    @include font-size(0.875);
+    font-weight: normal;
+    line-height: 1;
+    padding: 5px 10px;
+    margin: 2px 2px;
+    float: left;
+    text-transform: none;
+    position: relative;
+    border-radius: .25rem;
+	&:hover,
+	&:focus {
+	    background-color: var(--color__link);
+	    border-color: var(--color__link);
+	    color: #fff!important;
+	    text-decoration: none;
+	}
+	#tertiary & {
+		border-color: var(--color__footer-text);
+		color: var(--color__footer-text);
 		&:hover,
 		&:focus {
-			color: $color__link-hover;
+		    background-color: var(--color__footer-link-hover);
+		    border-color: var(--color__footer-link-hover);
 		}
 	}
-
 }
 
-#tertiary {
+.widget_calendar {
+	th,
+	td {
+		padding: .5rem;
+	}
+}
 
-	.widget_calendar {
-		th,
-		td {
-			padding: .5rem;
-		}
+.null-instagram-feed {
+	ul,
+	li {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
 	}
 
+	ul {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		margin-left: -1px;
+		margin-right: -1px;
+		margin-bottom: 1px;
+		min-width: 100%;
+	}
+
+	li {
+		display: flex;
+		flex-grow: 1;
+		flex-direction: column;
+		position: relative;
+		min-height: 1px;
+		padding-right: 1px;
+		padding-left: 1px;
+		margin: 0 0 2px;
+		width: 33.33%;
+		a {
+			display: block;
+			&:hover,
+			&:focus {
+				opacity: 0.5;
+			}
+		}
+		img {
+			display: block;
+			vertical-align: middle;
+		}
+	}
+	p.clear a {
+		background-color: var(--color__button);
+		color: var(--color__button-text)!important;
+		display: block;
+		text-align: center;
+		padding: .5rem;
+		&:hover,
+		&:focus {
+			background-color: var(--color__button-hover);
+			color: var(--color__button-text-hover)!important;
+		}
+	}
 }

@@ -25,11 +25,10 @@
 *.woff2 binary
 
 # Omit during export.
+/docs export-ignore
+/data export-ignore
 /sass export-ignore
 /vendor export-ignore
-composer.json export-ignore
-composer.lock export-ignore
-yarn.lock export-ignore
 .editorconfig export-ignore
 .gitattributes export-ignore
 .gitignore export-ignore
@@ -37,4 +36,6 @@ yarn.lock export-ignore
 Gruntfile.js export-ignore
 package.json export-ignore
 package-lock.json export-ignore
+yarn.lock export-ignore
 phpcs.xml.dist export-ignore
+README.md export-ignore

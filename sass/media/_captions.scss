@@ -1,7 +1,7 @@
 .wp-caption {
-	background-color: rgba( 255,255,255,.5 );
-	border: 1px solid $color__alpha-dark;
+	border: 1px solid var(--color__border);
 	padding: .5rem;
+	margin-top: 0;
 	margin-bottom: 1.5rem;
 	max-width: 100%;
 	overflow: hidden;

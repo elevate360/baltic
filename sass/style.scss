@@ -4,11 +4,11 @@ Theme URI: https://elevate360.github.io/baltic/
 Author: Campaign Kit
 Author URI: https://campaignkit.co
 Description: Baltic is an ultra-powerful theme that combines enterprise-level functionality with impeccable ecommerce design. Featuring live search, advanced filtering, customizable promotion tiles and sales-focused display options, Baltic is purpose-built for large catalog and high-volume stores. Boost conversions and expand your e-commerce business  with a theme that is as stylish as it is scalable.
-Version: 1.0.2
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: baltic
-Tags:  one-column, two-columns, custom-background, custom-menu, custom-logo, editor-style, featured-images, full-width-template, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-Commerce
+Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, full-width-template, footer-widgets, post-formats, sticky-post, rtl-language-support, theme-options, threaded-comments, translation-ready, blog, e-Commerce
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -27,30 +27,20 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Typography
 # Elements
 # Forms
-# Modules
-	## Accessibility
-	## Alignments
-	## Clearings
-# Vendor
-	## Preloader
-	## Slick
-	## Typist
 # Navigation
-	## Menu Toggles
+	## Links
 	## Menus
-	## Social Links
-	## Breadcrumb
-	## Posts Navigation
-# Site
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
 	## Posts and pages
 	## Comments
-	## Homepage
-# Widgets
+# Infinite scroll
 # Media
 	## Captions
 	## Galleries
-# Layout
-# Media Queries
 --------------------------------------------------------------*/
 @import "variables";
 @import "mixins";
@@ -81,24 +71,19 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "modules/modules";
 
 /*--------------------------------------------------------------
-# Vendor
---------------------------------------------------------------*/
-@import "vendor/vendor";
-
-/*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
 @import "navigation/navigation";
 
 /*--------------------------------------------------------------
-# Site
---------------------------------------------------------------*/
-@import "site/site";
-
-/*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
 @import "site/secondary/widgets";
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+@import "site/site";
 
 /*--------------------------------------------------------------
 # Media
@@ -109,7 +94,3 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Layout
 --------------------------------------------------------------*/
 @import "layout/layout";
-
-/*--------------------------------------------------------------
-# Media Queries
---------------------------------------------------------------*/

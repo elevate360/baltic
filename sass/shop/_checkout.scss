@@ -17,35 +17,38 @@
 		@include font-size(1.5);
 		margin-bottom: 1.25rem;
 	}
-	@include respond-to( medium ) {
+	@include respond-to( tablet ) {
 		.cross-sells {
 			float: left;
 			width: 50%;
-			padding-right: $gutter__width;
+			padding-right: 1rem;
 		}
 		.cart_totals {
 			float: right;
 			width: 50%;
-			padding-left: $gutter__width;
+			padding-left: 1rem;
 		}
 	}
 }
 
 .woocommerce-billing-fields h3,
-#order_review_heading {
-	@include font-size(1.125);
-	margin-bottom: $gutter__width*2;
+#order_review_heading,
+.woocommerce-additional-fields h3 {
+	font-size: var(--h5__size-px);
+	font-size: var(--h5__size);
+	margin-bottom: 2rem;
 }
 
 .woocommerce .woocommerce-checkout {
-	padding-top: $gutter__width*2;
+	padding-top: 2rem;
 }
 
 .place-order {
-	margin-top: $gutter__width;
-	@include respond-to( medium ){
-		margin-top: $gutter__width*2;
-		margin-bottom: $gutter__width*2;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	@include respond-to( tablet ) {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
 	}
 }
 
@@ -61,14 +64,14 @@
 		.button {
 			width: 100%;
 			margin-top: .5rem;
-			@include respond-to( medium ) {
+			@include respond-to( tablet ) {
 				margin-top: 0;
 				float: left;
 				width: 50%;
 			}
 		}
 
-		@include respond-to( medium ) {
+		@include respond-to( tablet ) {
 			float: left;
 			width: 50%;
 			margin-bottom: 0;
@@ -78,12 +81,12 @@
 	.button {
 		width: 100%;
 		&[disabled] {
-			background-color: $color__button;
-			border-color: $color__button;
+			background-color: var(--color__button);
+			border-color: var(--color__button);
 			cursor: not-allowed;
 			opacity: .5;
 		}
-		@include respond-to( medium ) {
+		@include respond-to( tablet ) {
 			float: right;
 			width: auto;
 		}
@@ -106,8 +109,8 @@
 				display: block;
 				height: 16px;
 				width: 30px;
-				border: 2px solid $color__text-main;
-				background: $color__text-main;
+				border: 2px solid var(--color__text-primary);
+				background: var(--color__text-primary);
 				border-radius: 13em;
 				box-sizing: content-box;
 				transition: all ease-in-out .3s;
@@ -121,7 +124,7 @@
 				display: block;
 				width: 14px;
 				height: 14px;
-				background: white;
+				background: var(--color__container);
 				position: absolute;
 				top: 7px;
 				right: 17px;
@@ -139,8 +142,8 @@
 		}
 
 		input[type=checkbox]:checked + span:before {
-			border-color: $color__text-main;
-			background: $color__text-main;
+			border-color: var(--color__text-primary);
+			background: var(--color__text-primary);
 		}
 	}
 }
@@ -151,8 +154,8 @@
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
 	tfoot {
-		border-top: 2px solid $color__alpha-dark05;
-		border-bottom: 1px solid $color__alpha-dark05;
+		border-top: 2px solid var(--color__border);
+		border-bottom: 1px solid var(--color__border);
 		th {
 			text-align: right;
 		}
@@ -163,15 +166,11 @@
 	}
 }
 
-.woocommerce-checkout-payment {
-	background-color: $color__white;
-}
-
 .wc_payment_methods {
-	box-shadow: 0 0 0 1px $color__alpha-dark, 0 4px 12px $color__alpha-dark;
 	border-bottom-left-radius: .25rem;
 	border-bottom-right-radius: .25rem;
 	overflow: hidden;
+	box-shadow: inset 0 -1px 0 1px var(--color__border);
 	&,
 	.li {
 		padding: 0;
@@ -179,15 +178,14 @@
 		list-style-type: none;
 	}
 	li {
-		background-color: $color__white;
-		border-bottom: 1px solid $color__alpha-dark;
+		border-bottom: 1px solid var(--color__border);
 		&:last-child {
 			border-bottom-width: 0;
 		}
 	}
 	.payment_box {
 		background-color: $color__alpha-dark05;
-		border-top: 1px solid $color__alpha-dark;
+		border-top: 1px solid var(--color__border);
 		@include font-size(0.875);
 		overflow: hidden;
 		padding: 1rem;
@@ -243,9 +241,9 @@
 				display: inline-block;
 				width: 16px;
 				height: 16px;
-				border: 2px solid white;
-				box-shadow: 0 0 0 2px $color__text-main;
-				background: white;
+				border: 2px solid var(--color__container);
+				box-shadow: 0 0 0 2px var(--color__text-primary);
+				background: var(--color__container);
 				margin-left: 4px;
 				margin-right: .5em;
 				border-radius: 100%;
@@ -255,7 +253,7 @@
 
 		&:checked + label {
 			&:before {
-				background: $color__text-main;
+				background: var(--color__text-primary);
 			}
 		}
 	}
@@ -278,17 +276,17 @@
 .wc-terms-and-conditions {
 	margin-top: .75rem;
 	margin-bottom: .75rem;
-	@include respond-to( medium ){
+	@include respond-to( tablet ) {
 		float: left;
 	}
 }
 
 .woocommerce-terms-and-conditions {
 	background-color: $color__alpha-dark05;
-	border: 1px solid $color__alpha-dark;
+	border: 1px solid $color__border;
 	@include font-size(0.875);
-	padding: $gutter__width*2;
-	margin-bottom: $gutter__width*2;
+	padding: 2rem;
+	margin-bottom: 2rem;
 	border-radius: .25rem;
 }
 
@@ -331,9 +329,10 @@ a.wcppec-checkout-buttons__button {
 	text-align: center;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
+	margin-bottom: 1.5rem;
 }
 
-@include respond-to( medium ) {
+@include respond-to( tablet ) {
 	.col2-set {
 		.form-row-first {
 			float: left;
@@ -349,17 +348,7 @@ a.wcppec-checkout-buttons__button {
 			@include column-width(2);
 		}
 	}
-	#customer_details {
-		float: left;
-		width: 50%;
-		padding-right: $gutter__width;
-	}
-	#order_review_heading,
-	#order_review {
-		float: right;
-		width: 50%;
-		padding-left: $gutter__width;
-	}
+
 	.place-order {
 		.button {
 			display: inline-block;
@@ -375,16 +364,33 @@ a.wcppec-checkout-buttons__button {
 	}
 
 	.form-row-first {
-		padding-right: $gutter__width;
+		padding-right: 1rem;
 	}
 	.form-row-last {
-		padding-left: $gutter__width;
+		padding-left: 1rem;
 	}
+
+	.full-width {
+
+		#customer_details {
+			float: left;
+			width: 50%;
+			padding-right: 1rem;
+		}
+		#order_review_heading,
+		#order_review {
+			float: right;
+			width: 50%;
+			padding-left: 1rem;
+		}
+
+	}
+
 }
 
 .woocommerce-privacy-policy-text {
     background-color: $color__alpha-dark05;
-    color: $color__text-secondary;
+    color: var(--color__text-secondary);
     padding: 1rem;
 	@include font-size(0.875);
     margin-bottom: 1rem;

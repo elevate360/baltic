@@ -3,20 +3,28 @@
 .aligncenter {
 	clear: both;
 	@include center-block;
+	margin-bottom: 1.5rem;
+	img {
+		margin: 0;
+	}
 }
 
-@include respond-to( small ){
+@include respond-to( mobile ) {
 	.alignleft,
 	.alignright {
 		clear: none;
 		display: inline;
 	}
 	.alignleft {
+		/*rtl:ignore*/
 		float: left;
-		margin-right: 1.5em;
+		/*rtl:ignore*/
+		margin-right: 1em;
 	}
 	.alignright {
+		/*rtl:ignore*/
 		float: right;
-		margin-left: 1.5em;
+		/*rtl:ignore*/
+		margin-left: 1em;
 	}
 }

@@ -4,9 +4,9 @@ Contributors: elevate360
 Tags:  one-column, two-columns, custom-background, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-width-template, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-Commerce
 
 Requires at least: 4.7
-Tested up to: 4.9.6
-Version: 1.0.2
-Version: 1.0.0
+Tested up to: 4.9.8
+Stable tag: 1.1.0
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -30,15 +30,33 @@ Baltic includes support for WooCommerce.
 
 == Changelog ==
 
+= 1.1.0 - August 6 2018 =
+* Added Theme minimum requirement
+* Added Custom customizer control
+* Added Demo import compatibility
+* Updated Move all dynamic css into CSS variables
+* Updated frontend script with vanilla javascript
+* Fixed RTL style load
+* Removed Kirki plugin dependency
+
+= 1.0.3 - July 6 2018 =
+
+* Added one click demo import compatibility plugin
+* Fixed header text color
+* Fixed RTL style load
+
 = 1.0.2 - June 25 2018 =
+
 * Updated Theme URI [55130#11](https://themes.trac.wordpress.org/ticket/55130#comment:11)
 
 = 1.0.1 - June 24 2018 =
+
 * Added Homepage template to match theme screenshot [55130](https://themes.trac.wordpress.org/ticket/55130#comment:6)
 * Updates homepage styling
 * Fixed styling for comment consent WP 4.9.6
 
 = 1.0.0 - May 25 2018 =
+
 * Initial release
 
 == Credits ==
@@ -60,49 +78,33 @@ Source: https://necolas.github.io/normalize.css/
 **License:** MIT and GPL-2.0
 Source: https://github.com/aFarkas/html5shiv
 
-- nwmatcher by [dperini](https://github.com/dperini)
+- CSS vars ponyfill by [John Hildenbiddle](http://hildenbiddle.com)
 **License:** MIT
-Source: https://github.com/dperini/nwmatcher
-
-- Respond by [scottjehli](https://github.com/scottjehli)
-**License:** MIT
-Source: https://github.com/scottjehl/Respond
-
-- selectivizr by [keithclark](https://github.com/keithclark)
-**License:** MIT
-Source: https://github.com/keithclark/selectivizr
+Source: https://github.com/jhildenbiddle/css-vars-ponyfill
 
 - Fitvids by [Chris Coyier](http://chriscoyier.net/) and [Paravel](http://paravelinc.com/)
 **License:** WTFPL
 Source: https://github.com/davatron5000/FitVids.js
 
-- Jquery Stickit by [emn178](https://github.com/emn178)
+- Web Font Loader by Adobe Systems Incorporated, Google Incorporated
+**License:** Apache-2.0
+Source: https://github.com/typekit/webfontloader
+
+- WP Color picker alpha by [Sergio kallookoo](https://dsergio.com)
+**License:** GPLv2
+Source: https://github.com/kallookoo/wp-color-picker-alpha
+
+- selectWoo by [WooCommerce](https://woocommerce.com)
 **License:** MIT
-Source: https://github.com/emn178/jquery-stickit
-
-- Jquery Stickit by [emn178](https://github.com/emn178)
-**License:** MIT
-Source: https://github.com/emn178/jquery-stickit
-
-- Jquery MatchHeight by [liabru](https://github.com/liabru)
-**License:** MIT
-Source: https://github.com/liabru/jquery-match-height
-
-- SlickJs by [kenwheeler](http://kenwheeler.github.io/)
-**License:** MIT
-Source: http://kenwheeler.github.io/slick/
-
-- Media Grabber by [Justin Tadlock](https://justintadlock.com/)
-**License:** GPLv2 or later
-Source: https://github.com/justintadlock/hybrid-core/blob/master/inc/class-media-grabber.php
-
-- HTML attribute functions and filters by [Justin Tadlock](https://justintadlock.com/)
-**License:** GPLv2 or later
-Source: https://github.com/justintadlock/hybrid-core/blob/master/inc/functions-attr.php
+Source: https://github.com/woocommerce/selectWoo
 
 - TGM Plugin Activation by [Thomas Griffin](https://thomasgriffin.io/), [Gary Jones](https://github.com/GaryJones), and [Juliette Reinders Folmer](https://github.com/jrfnl)
 **License:** GPL-2.0+
 Source: http://tgmpluginactivation.com/
+
+- Breadcrumb trail by [Justin Tadlock](http://justintadlock.com/)
+**License:** GPL-2.0+
+Source: https://github.com/justintadlock/breadcrumb-trail
 
 - Bytesize Icons by [Dan Klammer](https://github.com/danklammer)
 **License:** MIT

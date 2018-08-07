@@ -3,6 +3,7 @@ module.exports = function (grunt) {
 
 	'use strict';
 
+	var sass = require('node-sass');
 	grunt.util.linefeed = '\n';
 
 	// Project configuration.
@@ -44,14 +45,17 @@ module.exports = function (grunt) {
 
 		// Compile all .scss files.
 		sass: {
+			options: {
+				implementation: sass,
+				sourceMap: false
+			},
 			dist: {
-				options: {
-					sourceMap: false
-				},
 				files: [{
 					'style.css' : 'sass/style.scss',
+					'assets/css/admin.css' : 'sass/admin.scss',
+					'assets/css/woocommerce.css' : 'sass/woocommerce.scss',
 					'assets/css/editor-style.css' : 'sass/editor-style.scss',
-					'assets/css/woocommerce.css' : 'sass/woocommerce.scss'
+					'assets/css/customizer-control.css' : 'sass/customizer-control.scss'
 				}]
 			}
 		},
@@ -64,8 +68,10 @@ module.exports = function (grunt) {
 			media: {
 				files: [{
 					'style.css' : 'style.css',
+					'assets/css/admin.css' : 'assets/css/admin.css',
+					'assets/css/woocommerce.css' : 'assets/css/woocommerce.css',
 					'assets/css/editor-style.css' : 'assets/css/editor-style.css',
-					'assets/css/woocommerce.css' : 'assets/css/woocommerce.css'
+					'assets/css/customizer-control.css' : 'assets/css/customizer-control.css'
 				}]
 			}
 		},
@@ -88,7 +94,7 @@ module.exports = function (grunt) {
 					'style.css',
 					'!style.min.css',
 					'assets/css/*.css',
-					'!assets/css/*.css'
+					'!assets/css/*.min.css'
 				]
 			}
 		},
@@ -100,8 +106,10 @@ module.exports = function (grunt) {
 	            },
 				files: [{
 					'style.css' : 'style.css',
+					'assets/css/admin.css' : 'assets/css/admin.css',
+					'assets/css/woocommerce.css' : 'assets/css/woocommerce.css',
 					'assets/css/editor-style.css' : 'assets/css/editor-style.css',
-					'assets/css/woocommerce.css' : 'assets/css/woocommerce.css'
+					'assets/css/customizer-control.css' : 'assets/css/customizer-control.css'
 				}]
 	        }
 	    },
@@ -114,8 +122,10 @@ module.exports = function (grunt) {
 				ext: '-rtl.css',
 				src: [
 					'style.css',
+					'assets/css/admin.css',
+					'assets/css/woocommerce.css',
 					'assets/css/editor-style.css',
-					'assets/css/woocommerce.css'
+					'assets/css/customizer-control.css'
 				]
 			}
 		},
@@ -142,15 +152,29 @@ module.exports = function (grunt) {
 			},
 			all: [
 				'Gruntfile.js',
-				'assets/js/*.js',
-				'!assets/js/*.min.js'
+				'assets/js/admin.js',
+				'assets/js/customizer.js',
+				'assets/js/frontend/frontend.js',
+				'assets/js/frontend/navigation.js'
 			]
 		},
 
 		concat: {
 			frontend: {
-				src: ['assets/js/frontend/*.js'],
+				src: [
+				'assets/js/frontend/smoothScroll.js',
+				'assets/js/frontend/fitvids.js',
+				'assets/js/frontend/skip-link-focus-fix.js',
+				'assets/js/frontend/navigation.js',
+				'assets/js/frontend/frontend.js'
+				],
 				dest: 'assets/js/frontend.js'
+			},
+			control: {
+				src: [
+					'assets/js/customizer-control/*.js'
+				],
+				dest: 'assets/js/customizer-control.js'
 			}
 		},
 
@@ -182,6 +206,7 @@ module.exports = function (grunt) {
 				],
 				tasks: [
 					'sass',
+					'rtlcss',
 					'cssmin'
 				]
 			},
@@ -197,10 +222,11 @@ module.exports = function (grunt) {
 			js: {
 				files: [
 					'assets/js/admin.js',
-					'assets/js/notice.js',
-					'assets/js/customizer.js'
+					'assets/js/customizer.js',
+					'assets/js/customizer-control/*.js'
 				],
 				tasks: [
+					'concat',
 					'uglify'
 				]
 			}
@@ -234,7 +260,7 @@ module.exports = function (grunt) {
 				],
 				overwrite: true,
 				replacements: [ {
-					from: /^.*Stable tag:.*$/m,
+					from: /^.*Version:.*$/m,
 					to: 'Version: <%= pkg.version %>'
 				} ]
 			}

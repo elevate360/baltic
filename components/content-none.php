@@ -11,11 +11,11 @@
 
 <section class="no-results not-found">
 	<div class="entry-inner">
-		<header class="page-header">
+		<header class="entry-header">
 			<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'baltic' ); ?></h1>
 		</header><!-- .page-header -->
 
-		<div class="page-content">
+		<div class="entry-content">
 			<?php
 			if ( is_home() && current_user_can( 'publish_posts' ) ) :
 

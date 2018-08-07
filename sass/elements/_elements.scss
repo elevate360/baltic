@@ -16,10 +16,10 @@ body {
 }
 
 hr {
-	background-color: $color__background-hr;
+	background-color: var(--color__hr);
 	border: 0;
 	height: 1px;
-	margin-bottom: 1.5rem;
+	margin-bottom: 1.5em;
 }
 
 @import "lists";
@@ -30,16 +30,63 @@ img {
 }
 
 figure {
-	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+	margin: 0; /* Extra wide images within figure tags don't overflow the content area. */
 }
 
 ::selection {
-	background: $color__link;
-	color: #fff;
+	background: var(--color__selection-background);
+	color: var(--color__selection-text);
 }
 ::-moz-selection {
-	background: $color__link;
-	color: #fff;
+	background: var(--color__selection-background);
+	color: var(--color__selection-text);
+}
+
+@-webkit-keyframes spin {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+@keyframes balticZoomOut {
+	0% {
+		visibility: visible;
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	100% {
+		visibility: hidden;
+		opacity: 0;
+		transform: scale(0);
+	}
+}
+
+@keyframes balticZoomIn {
+	0% {
+		visibility: hidden;
+		opacity: 0;
+		transform: scale(0);
+	}
+
+	100% {
+		visibility: visible;
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes balticSlideDown {
+	0% {
+		top: -100%;
+	}
+	100% {
+		top: 0;
+	}
 }
 
 @import "tables";

@@ -1,19 +1,67 @@
-.breadcrumb {
-	@include font-size( 0.875 );
-	.separator {
-		color: $color__text-secondary;
+.breadcrumbs {
+	margin-top: 1rem;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	@include respond-to( mobile ) {
+		overflow-x: unset;
 	}
-	a {
-		color: $color__text-secondary;
-		&:hover,
-		&:focus {
-			color: $color__link;
+	ul,
+	li {
+		@include font-size( 0.875 );
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+	}
+	ul {
+		display: table;
+		.narrow &,
+		.full-width &,
+		.page-header-has-thumbnail & {
+			margin-left: auto;
+			margin-right: auto;
+			padding: 0 .5rem;
+			border-radius: .25rem;
+		}
+		.page-header-has-thumbnail & {
+			background-color: rgba( 0,0,0,.25 );
 		}
 	}
-	.has-archive-thumbnail &{
-		background-color: rgba( 0,0,0,.25 );
+	li {
+		display: table-cell;
+		position: relative;
+		padding: .25rem 1.75rem .25rem .25rem;
+		&:last-child {
+			padding-right: .25rem;
+		}
+		@include respond-to( mobile ) {
+			display: inline-block;
+		}
+	}
+	a {
+		color: var(--color__text-secondary);
+		display: block;
+		position: relative;
+		&:after {
+			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='none' stroke='%23fff' stroke-width='2' stroke-miterlimit='4' stroke-linecap='round' stroke-linejoin='round' d='M12 30 L24 16 12 2'/%3E%3C/svg%3E");
+			background-repeat: no-repeat;
+			background-position: center center;
+			content: " ";
+			width: 16px;
+			height: 16px;
+			position: absolute;
+		    top: 0.2rem;
+		    right: -1.5rem;
+		    [dir="rtl"] & {
+		    	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='none' stroke='%23fff' stroke-width='2' stroke-miterlimit='4' stroke-linecap='round' stroke-linejoin='round' d='M20 30 L8 16 20 2'/%3E%3C/svg%3E");
+		    }
+		}
+		&:hover,
+		&:focus {
+			color: var(--color__link);
+		}
+	}
+	span {
 		display: inline-block;
-		padding: .25rem 1rem;
-		border-radius: .25rem;
+		white-space: nowrap;
 	}
 }

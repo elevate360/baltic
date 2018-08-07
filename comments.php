@@ -20,7 +20,7 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div <?php Baltic_Markup::attr( 'comments-area' );?>>
+<div id="comments" class="comments-area">
 
 	<?php
 	// You can start editing here -- including this comment!
@@ -48,8 +48,8 @@ if ( post_password_required() ) {
 
 		<?php
 		the_comments_navigation( array(
-		    'prev_text'                  => esc_html__( '&larr; previous comment', 'baltic' ),
-		    'next_text'                  => esc_html__( 'next comment &rarr;', 'baltic' )
+		    'prev_text' => esc_html__( '&larr; previous comment', 'baltic' ),
+		    'next_text' => esc_html__( 'next comment &rarr;', 'baltic' )
 		) );
 		?>
 
@@ -65,8 +65,8 @@ if ( post_password_required() ) {
 
 		<?php
 		the_comments_navigation( array(
-		    'prev_text'                  => esc_html__( '&larr; previous comment', 'baltic' ),
-		    'next_text'                  => esc_html__( 'next comment &rarr;', 'baltic' )
+		    'prev_text' => esc_html__( '&larr; previous comment', 'baltic' ),
+		    'next_text' => esc_html__( 'next comment &rarr;', 'baltic' )
 		) );
 
 		// If comments are closed and there are comments, let's leave a little note, shall we?

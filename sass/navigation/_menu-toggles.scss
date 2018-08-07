@@ -1,7 +1,50 @@
+.header-menu-toggle {
+    background-color: transparent;
+    border-color: transparent;
+    position: absolute;
+    color: var(--color__header-text);
+    cursor: pointer;
+    padding: 0;
+    top: 1.5rem;
+    left: 1rem;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    transform: scale(0);
+    z-index: 5;
+
+    &:hover,
+    &:focus,
+    &:active {
+    	background-color: transparent;
+		border-color: transparent;
+		color: var(--color__header-text);
+		box-shadow: none;
+    }
+
+	.icon-stroke {
+	    width: 2rem;
+	    height: 2rem;
+	}
+
+	&.toggled .icon-menu,
+    .icon-close {
+    	display: none;
+    }
+
+    &.toggled .icon-close {
+    	display: block;
+    }
+
+    .sticky & {
+    	transform: scale(1);
+    	opacity: 1;
+    }
+}
+
 .menu-toggle {
-	background-color: $color__white;
-	border: $color__white;
-	color: $color__text-main;
+	background-color: var(--color__header-background);
+	border: var(--color__header-background);
+	color: var(--color__header-text);
 	@include font-size(1);
 	font-weight: bold;
 	width: 100%;
@@ -14,9 +57,9 @@
     .toggled &,
 	&:hover,
 	&:focus {
-		background-color: $color__white;
-		border-color: $color__white;
-		color: $color__text-main;
+		background-color: var(--color__header-background);
+		border-color: var(--color__header-background);
+		color: var(--color__header-text);
 		box-shadow: none;
 	}
 	.icon-stroke {
@@ -37,6 +80,7 @@
 .sub-menu-toggle {
 	background-color: transparent;
 	border: none;
+	border-left: 1px solid rgba(255,255,255,.025);
 	width: 48px;
 	height: 48px;
 	position: absolute;
@@ -49,7 +93,7 @@
 		display: inline-block;
 		width: 1rem;
 		height: 1rem;
-		stroke: $color__white;
+		stroke: var(--color__submenu-text);
 		margin: 0!important;
 	}
 
@@ -72,7 +116,7 @@
 
 }
 
-@include respond-to( medium ){
+@include respond-to( tablet ) {
 	.menu-toggle,
 	.sub-menu-toggle {
 		display: none;

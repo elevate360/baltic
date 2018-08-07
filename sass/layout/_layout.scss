@@ -1,105 +1,152 @@
 @import "header";
-
 @import "footer";
 
-.site {
+.overflow-hidden {
 	overflow: hidden;
 }
 
-.wrap {
-	position: relative;
+.site-content {
+	padding: 1rem 0;
+	@include respond-to( tablet ) {
+		padding: 2rem 0;
+	}
+	@include respond-to( widescreen ) {
+		padding: 3rem 0;
+	}
+	.elementor-page & {
+		padding: 0;
+	}
+}
+
+.boxed-layout {
+
+	.site {
+		background-color: var(--color__container);
+		margin-left: auto;
+		margin-right: auto;
+		@include respond-to( tablet ) {
+			box-shadow: 0 32px 64px rgba( 38, 50, 56, .15 );
+		}
+		@include respond-to( desktop ) {
+			max-width: 1000px;
+		}
+		@include respond-to( widescreen ) {
+			max-width: $widescreen;
+		}
+		@include respond-to( fullhd ) {
+			max-width: $fullhd;
+		}
+	}
+
 }
 
 .container {
 	width: 100%;
-	padding-right: $gutter__width;
-	padding-left: $gutter__width;
+	padding-right: 1rem;
+	padding-left: 1rem;
 	margin-right: auto;
 	margin-left: auto;
-	@include respond-to( large ) {
+	@include respond-to( desktop ) {
 		max-width: 960px;
 	}
-	@include respond-to( extra-large ){
+	@include respond-to( widescreen ) {
 		max-width: 1140px;
 	}
 }
 
 .columns {
-	margin-right: -$gutter__width;
-	margin-left: -$gutter__width;
+	margin-right: -1rem;
+	margin-left: -1rem;
 
 	.column-item {
 		float: left;
 		width: 100%;
-		padding-left: $gutter__width;
-		padding-right: $gutter__width;
+		padding-left: 1rem;
+		padding-right: 1rem;
 	}
 
 }
 
-#primary,
-#secondary {
-	padding-left: $gutter__width;
-	padding-right: $gutter__width;
-	width: 100%;
-}
-
-.site-content > .container {
-	padding-top: $gutter__width;
-	padding-bottom: $gutter__width;
-
-	@include respond-to( medium ){
-		padding-top: $gutter__width*2;
-		padding-bottom: $gutter__width*2;
-	}
-	@include respond-to( large ){
-		padding-top: $gutter__width*3;
-	}
-	@include respond-to( extra-large ){
-		padding-top: $gutter__width*4;
+@for $i from 2 through 6 {
+	.columns-#{$i} {
+		.column-item {
+			@include column-width( $i );
+		}
 	}
 }
 
-@include respond-to( medium ){
+@include respond-to( mobile ) {
+
+	@for $i from 2 through 6 {
+		.columns-sm-#{$i} {
+			.column-item {
+				@include column-width( $i );
+			}
+		}
+	}
+
+}
+
+@include respond-to( tablet ) {
 
 	.content-sidebar {
 		#primary {
-			float: left;
 			width: 100%;
-			padding-right: 320px;
+			/*rtl:begin:ignore*/
+			float: left;
+			padding-right: 332px;
+			/*rtl:end:ignore*/
 		}
 		#secondary {
-			float: right;
 			width: 300px;
-			margin-left: -330px;
+			/*rtl:begin:ignore*/
+			float: right;
+			margin-left: -332px;
+			/*rtl:end:ignore*/
 		}
 	}
 
 	.sidebar-content {
 		#primary {
-			float: right;
 			width: 100%;
-			padding-left: 320px;
+			/*rtl:begin:ignore*/
+			float: right;
+			padding-left: 332px;
+			/*rtl:end:ignore*/
 		}
 		#secondary {
-			float: left;
 			width: 300px;
-			margin-right: -330px;
+			/*rtl:begin:ignore*/
+			float: left;
+			margin-right: -332px;
 			margin-left: 0;
+			/*rtl:end:ignore*/
 		}
 	}
 
 	.narrow {
 		#primary {
-			float: left;
 			width: 100%;
-			padding-left: 160px;
-			padding-right: 160px;
+			max-width: 776px;
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 
 	@for $i from 2 through 6 {
-		.columns-#{$i} {
+		.columns-md-#{$i} {
+			.column-item {
+				@include column-width( $i );
+			}
+		}
+	}
+
+}
+
+@include respond-to( desktop ) {
+
+	@for $i from 2 through 6 {
+		.columns-lg-#{$i} {
 			.column-item {
 				@include column-width( $i );
 			}

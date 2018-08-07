@@ -8,13 +8,13 @@
  */
 
 ?>
-<article <?php Baltic_Markup::attr( 'post' );?>>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="entry-inner">
 
-		<?php get_template_part( 'components/entry/post', 'thumbnail' );?>
+		<?php get_template_part( 'components/post', 'thumbnail' );?>
 
 		<header class="entry-header">
-
 			<?php
 			if ( is_singular() ) :
 				the_title( '<h1 class="entry-title">', '</h1>' );
@@ -23,37 +23,30 @@
 			endif;
 
 			if ( 'post' === get_post_type() ) :
-				?>
+			?>
 				<div class="entry-meta">
-				<?php
-				if ( ! Baltic_Utility::is_sticky() ) {
-					get_template_part( 'components/entry/meta', 'posted_on' );
-				}
-				get_template_part( 'components/entry/meta', 'posted_by' );
-				get_template_part( 'components/entry/meta', 'comments' );
-				?>
+					<?php
+					get_template_part( 'components/meta', 'posted_on' );
+					get_template_part( 'components/meta', 'posted_by' );
+					get_template_part( 'components/meta', 'comments' );
+					?>
 				</div><!-- .entry-meta -->
 			<?php endif; ?>
-
 		</header><!-- .entry-header -->
 
 		<div class="entry-content">
-			<?php
-				if ( post_password_required() ) {
-					get_template_part( 'components/entry/post', 'content' );
-				} else {
-					the_excerpt();
-				}
-			?>
+			<?php get_template_part( 'components/post', 'content' );?>
 		</div><!-- .entry-content -->
 
+		<?php if ( 'post' === get_post_type() ) :?>
 		<footer class="entry-footer">
 			<?php
-			get_template_part( 'components/entry/meta', 'categories' );
-			get_template_part( 'components/entry/meta', 'tags' );
-			get_template_part( 'components/entry/meta', 'edit_link' );
+			get_template_part( 'components/meta', 'categories' );
+			get_template_part( 'components/meta', 'tags' );
+			get_template_part( 'components/meta', 'edit_link' );
 			?>
 		</footer><!-- .entry-footer -->
+		<?php endif; ?>
 
 	</div><!-- .entry-inner -->
 </article><!-- #post-<?php the_ID(); ?> -->

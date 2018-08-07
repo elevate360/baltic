@@ -1,19 +1,9 @@
 .single-product,
 .quick-view__content {
 	div.product {
-		background-color: #fff;
+		background-color: var(--color__container);
 		position: relative;
 		max-width: 100%;
-		padding: $gutter__width;
-		@include radius-shadow();
-
-		@include respond-to( medium ){
-			padding: $gutter__width*2;
-		}
-
-		@include respond-to( large ){
-			padding: $gutter__width*3;
-		}
 
 		div.images img {
 		    display: block;
@@ -40,15 +30,15 @@
 			margin-bottom: 1.5rem;
 			position: relative;
 			cursor: crosshair;
-			@include respond-to( medium ) {
+			@include respond-to( tablet ) {
 				margin-bottom: 0;
 			}
 
 			.woocommerce-product-gallery__trigger {
 			    position: absolute;
 			    cursor: pointer;
-			    top: $gutter__width;
-			    right: $gutter__width*2;
+			    top: 1rem;
+			    right: 2rem;
 			    font-size: 2rem;
 			    z-index: 1;
 			    width: 36px;
@@ -84,7 +74,7 @@
 				}
 				&:hover,
 				&:focus {
-					background-color: $color__text-main;
+					background-color: var(--color__text-primary);
 				}
 			}
 
@@ -139,18 +129,65 @@
 		}
 	}
 
-	@include respond-to( medium ){
+	.entry-summary {
+		.yith-wcwl-add-to-wishlist {
+			margin-bottom: 1rem;
+		}
+		a.add_to_wishlist {
+			background-color: var(--color__button);
+			color: var(--color__button-text);
+			display: inline-block;
+			@include font-size(0.875);
+			padding: .25rem .5rem;
+			&:hover,
+			&:focus {
+				background-color: var(--color__button-hover);
+				color: var(--color__button-text-hover);
+			}
+			&:before {
+				background-image: url( "data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZlcnNpb249JzEuMScgdmlld0JveD0nMCAwIDMyIDMyJyB3aWR0aD0nMTYnIGhlaWdodD0nMTYnIGZpbGw9JyNmZmZmZmYnPjxwYXRoIGQ9J000IDE2IEMxIDEyIDIgNiA3IDQgMTIgMiAxNSA2IDE2IDggMTcgNiAyMSAyIDI2IDQgMzEgNiAzMSAxMiAyOCAxNiAyNSAyMCAxNiAyOCAxNiAyOCAxNiAyOCA3IDIwIDQgMTYgWicgLz48L3N2Zz4=" );
+				background-repeat: no-repeat;
+				background-position: center center;
+				content: " ";
+				display: inline-block;
+				width: 1rem;
+				height: 1rem;
+				top: 3px;
+				position: relative;
+			}
+		}
+	}
+
+	@include respond-to( desktop ) {
 		.woocommerce-product-gallery,
 		.entry-summary {
 			width: 50%;
 			float: left;
 		}
 		.woocommerce-product-gallery {
-			padding-right: $gutter__width;
+			padding-right: 1rem;
 		}
 		.entry-summary {
-			padding-left: $gutter__width;
+			padding-left: 1rem;
 		}
+	}
+}
+
+.single-product div.product {
+	margin-bottom: 1.5rem;
+}
+
+.full-layout,
+.quick-view__content {
+	div.product {
+		padding: 1rem;
+		@include radius-shadow();
+	}
+}
+
+.full-layout div.product {
+	@include respond-to( desktop ) {
+		padding: 2rem 2rem 1rem;
 	}
 }
 
@@ -214,7 +251,14 @@ table.group_table {
 		margin: 0;
 	}
 	tbody tr:nth-of-type(even) {
-	    background-color: $color__white;
+	    background-color: var(--color__container);
+	}
+}
+
+table.group_table {
+	.button {
+		padding: .25rem;
+		margin-right: .5rem;
 	}
 }
 
@@ -252,16 +296,16 @@ a.reset_variations {
 		padding-left: 64px;
 	}
 
-	@include respond-to( medium ){
+	@include respond-to( tablet ) {
 		p.comment-form-author {
 			float: left;
 			width: 50%;
-			padding-right: $gutter__width;
+			padding-right: 1rem;
 		}
 		p.comment-form-email {
 		    float: right;
 		    padding-right: 0;
-		    padding-left: $gutter__width;
+		    padding-left: 1rem;
 		}
 	}
 
@@ -280,13 +324,13 @@ a.reset_variations {
 .related.products {
 	> h2 {
 		@include font-size(1.125);
-		padding-bottom: $gutter__width*2;
-		margin-bottom: $gutter__width*2;
+		padding-bottom: 1rem;
+		margin-bottom: 1rem;
 		position: relative;
 		&:after {
-			background-color: $color__text-main;
+			background-color: var(--color__text-primary);
 			content: " ";
-			width: $gutter__width*2;
+			width: 2rem;
 			height: 2px;
 			position: absolute;
 			bottom: -1px;
@@ -294,15 +338,11 @@ a.reset_variations {
 			border-radius: 2px;
 		}
 	}
-	.entry-product {
-		border: 1px solid $color__alpha-dark;
-		box-shadow: none;
-	}
 	ul.products li.product .button {
 		box-shadow: none;
 	}
 
-	@include respond-to( large ) {
+	@include respond-to( desktop ) {
 		@for $i from 2 through 4 {
 			ul.products.columns-#{$i} {
 				li.product {

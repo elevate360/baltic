@@ -1,0 +1,117 @@
+.customize-control-baltic-responsive-spacing {
+	/* Unit Screen wrap */
+}
+
+.customize-control-baltic-responsive-spacing .customize-control-title {
+	display: inline-block;
+}
+
+.customize-control-baltic-responsive-spacing .baltic-spacing-responsive-outer-wrapper {
+	display: flex;
+	position: relative;
+}
+
+.customize-control-baltic-responsive-spacing .baltic-spacing-responsive-buttons > li {
+	display: none;
+}
+
+.customize-control-baltic-responsive-spacing .baltic-spacing-responsive-buttons > li.active {
+	display: inline-block;
+}
+
+.customize-control-baltic-responsive-spacing .baltic-spacing-responsive-buttons button[type="button"] {
+	padding: 0;
+	cursor: pointer;
+	background: none;
+	border: none;
+	opacity: .75;
+	outline: none;
+}
+
+.customize-control-baltic-responsive-spacing .baltic-spacing-responsive-buttons button[type="button"] > i {
+	width: 15px;
+	height: 15px;
+	font-size: 15px;
+	margin-top: 1px;
+}
+
+.customize-control-baltic-responsive-spacing .baltic-spacing-responsive-units {
+	position: absolute;
+	transform: translateY(-100%);
+	font-size: 11px;
+	text-transform: uppercase;
+	top: 0;
+	right: 24px;
+}
+
+.customize-control-baltic-responsive-spacing .baltic-spacing-responsive-units li.single-unit {
+	display: inline-block;
+	margin-left: 6px;
+	width: 16px;
+	text-align: center;
+	user-select: none;
+	opacity: 0.7;
+}
+
+.customize-control-baltic-responsive-spacing .baltic-spacing-responsive-units li.single-unit.active {
+	font-weight: bold;
+	text-decoration: underline;
+	opacity: 1;
+}
+
+.customize-control-baltic-responsive-spacing .input-wrapper .baltic-spacing-wrapper {
+	display: none;
+}
+
+.customize-control-baltic-responsive-spacing .input-wrapper .baltic-spacing-wrapper li {
+	text-align: center;
+	-webkit-box-flex: 1;
+	-ms-flex: auto;
+	flex: auto;
+}
+
+.customize-control-baltic-responsive-spacing .input-wrapper .baltic-spacing-wrapper li input.baltic-spacing-input {
+	text-align: center;
+	padding-right: 0;
+}
+
+.customize-control-baltic-responsive-spacing .input-wrapper .baltic-spacing-wrapper.active {
+	display: flex;
+}
+
+.customize-control-baltic-responsive-spacing .input-wrapper .baltic-spacing-wrapper span.baltic-spacing-title {
+	text-transform: uppercase;
+	font-size: 10px;
+	opacity: .75;
+	font-weight: bold;
+}
+
+.customize-control-baltic-responsive-spacing .input-wrapper .baltic-spacing-wrapper .baltic-spacing-input-item-link .baltic-spacing-connected {
+	display: none;
+}
+
+.customize-control-baltic-responsive-spacing .input-wrapper .baltic-spacing-wrapper .baltic-spacing-input-item-link.disconnected .baltic-spacing-disconnected {
+	display: none;
+}
+
+.customize-control-baltic-responsive-spacing .input-wrapper .baltic-spacing-wrapper .baltic-spacing-input-item-link.disconnected .baltic-spacing-connected {
+	display: block;
+}
+
+.customize-control-baltic-responsive-spacing .input-wrapper .baltic-spacing-wrapper .baltic-spacing-input-item-link span {
+	width: 35px;
+	height: 38px;
+	line-height: 40px;
+	font-size: 14px;
+	border: 1px solid #ddd;
+	@include respond-to( tablet ) {
+		height: 26px;
+		line-height: 28px;
+	}
+}
+
+.baltic-spacing-responsive-units-screen-wrap {
+	position: absolute;
+	top: -20px;
+	right: 0;
+}

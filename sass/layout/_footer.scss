@@ -1,68 +1,73 @@
+#tertiary,
+#footer-payments-card,
+#colophon,
+#social-links {
+	background-color: var(--color__footer-background);
+	color: var(--color__footer-text);
+	box-shadow: inset 0 1px 0 $color__alpha-dark05;
+	a {
+		color: var(--color__footer-link);
+		&:hover,
+		&:focus {
+			color: var(--color__footer-link-hover);
+		}
+	}
+}
+
 /** Sidebar footer */
 #tertiary {
-	background-color: $color__white;
-	border-top: 1px solid $color__alpha-dark05;
-	padding-top: $gutter__width*4;
-	.widget > div {
-		color: $color__text-secondary;
-		a {
-			color: $color__text-main;
-			&:hover,
-			&:focus {
-				color: $color__link-hover;
-			}
-		}
+	padding-top: 3rem;
+	.widget-title {
+		color: var(--color__footer-title);
+	}
+	.widget-title:after {
+		background-color: var(--color__footer-title);
 	}
 }
 
 /** Payment Icons */
 .footer-payments-card {
-	background-color: $color__site-footer;
-	border-top: 1px solid $color__alpha-dark05;
-	padding-top: $gutter__width;
-	padding-bottom: $gutter__width;
 	text-align: center;
 	position: relative;
-}
-
-.payment-card-text {
-	@include font-size(0.875);
+	ul,
+	li {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+	}
+	ul {
+		padding: 1rem 0;
+	}
+	li {
+		display: inline-block;
+		padding: .25rem;
+	}
 }
 
 /** Site Footer */
-.site-footer {
-	background-color: $color__site-footer;
-	border-top: 1px solid $color__alpha-dark05;
-	color: $color__text-secondary;
+#colophon {
 	@include font-size(0.875);
-	padding-top: $gutter__width*4;
-	padding-bottom: $gutter__width*4;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
 	position: relative;
 	text-align: center;
-	a {
-		color: $color__text-main;
-		&:hover,
-		&:focus {
-			color: $color__link-hover;
-		}
-	}
-	@include respond-to( medium ) {
+	@include respond-to( tablet ) {
 		text-align: left;
 	}
 }
 
 .site-info {
-	margin-bottom: $gutter__width;
+	margin-bottom: 1.5rem;
 	p {
-		margin-bottom: $gutter__width/2;
+		margin-bottom: 1.5rem;
 	}
-	@include respond-to( medium ) {
+	@include respond-to( tablet ) {
 		margin-bottom: 0;
 	}
 }
 
 .site-designer {
-	margin-top: $gutter__width/2;
+	margin-top: .5rem;
 	.icon-campaignkit {
 		fill: $color__campaign-kit!important;
 	}
@@ -71,25 +76,11 @@
 	}
 }
 
-.baltic__payment-icons {
-
-	&,
-	li {
-		padding: 0;
-		margin: 0;
-		list-style-type: none;
-	}
-	li {
-		display: inline-block;
-		margin: 0.25rem;
-	}
-}
-
 /** Return to top */
-.return-to-top {
-    background-color: rgba( 255,255,255,.5 );
-    border: 1px solid $color__text-main;
-    color: $color__text-main;
+#skip-to-top {
+    background-color: var(--color__button);
+    border: 1px solid var(--color__button-border);
+    color: var(--color__button-text);
     width: 48px;
     height: 48px;
 	line-height: 44px;
@@ -101,7 +92,10 @@
     opacity: 0;
    	transform: scale(0);
     border-radius: 48px;
-    transition: all 0.5s ease-in-out;
+    box-shadow: 0 8px 16px rgba( 0,0,0,.25 );
+    @include respond-to( tablet ) {
+    	transition: all 0.5s ease-in-out;
+    }
 	&:after {
 		background-color: transparent;
 		content: " ";
@@ -112,25 +106,22 @@
 		height: 100%;
 		border-radius: 100%;
 		z-index: 8;
-		transition: all .4s ease-in-out;
-	}
-	&.off {
-	    opacity: 0;
-	    transform: scale(0) rotate(360deg);
+		@include respond-to( tablet ) {
+			transition: all .25s ease-in-out;
+		}
 	}
 	&.on {
 	    opacity: 1;
-	    transform: scale(1) rotate(0deg);
+	    transform: scale(1);
 	}
     &:hover,
     &:focus {
-    	background-color: $color__link;
-    	border-color: $color__link;
-    	color: #fff;
-    	box-shadow: 0 8px 16px rgba( 0,0,0,.25 );
-    	transform: scale(1) rotate(360deg);
+    	background-color: var(--color__button-hover);
+    	border-color: var(--color__button-border-hover);
+    	color: var(--color__button-text);
+    	transform: scale(1);
 		&:after {
-		    background-color: $color__link;
+		    background-color: var(--color__button);
 		    opacity: 0;
 		    transform: scale(1.5);
 		}

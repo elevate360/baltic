@@ -9,36 +9,29 @@
 
 ?>
 
-<article <?php Baltic_Markup::attr( 'post' );?>>
-	<div class="entry-inner">
-		<?php Baltic_Components::post_thumbnail();?>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<header class="entry-header">
+		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-		<header class="entry-header">
-			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-			<?php if ( 'post' === get_post_type() ) : ?>
-			<div class="entry-meta">
-				<?php
-				if ( ! Baltic_Utility::is_sticky() ) {
-					get_template_part( 'components/entry/meta', 'posted_on' );
-				}
-				get_template_part( 'components/entry/meta', 'posted_by' );
-				get_template_part( 'components/entry/meta', 'comments' );
-				?>
-			</div><!-- .entry-meta -->
-			<?php endif; ?>
-		</header><!-- .entry-header -->
-
-		<div class="entry-summary">
-			<?php the_excerpt(); ?>
-		</div><!-- .entry-summary -->
-
-		<footer class="entry-footer">
+		<?php if ( 'post' === get_post_type() ) : ?>
+		<div class="entry-meta">
 			<?php
-			get_template_part( 'components/entry/meta', 'categories' );
-			get_template_part( 'components/entry/meta', 'tags' );
-			get_template_part( 'components/entry/meta', 'edit_link' );
+			baltic_posted_on();
+			baltic_posted_by();
 			?>
-		</footer><!-- .entry-footer -->
-	</div><!-- .entry-inner -->
+		</div><!-- .entry-meta -->
+		<?php endif; ?>
+	</header><!-- .entry-header -->
+
+	<?php baltic_post_thumbnail(); ?>
+
+	<div class="entry-summary">
+		<?php the_excerpt(); ?>
+	</div><!-- .entry-summary -->
+
+	<?php if ( 'post' === get_post_type() ) : ?>
+	<footer class="entry-footer">
+		<?php baltic_entry_footer(); ?>
+	</footer><!-- .entry-footer -->
+	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -1,31 +1,24 @@
 {
-  "boss": true,
-  "curly": true,
-  "eqeqeq": true,
-  "eqnull": true,
-  "es3": true,
-  "expr": true,
-  "immed": true,
-  "noarg": true,
-  "onevar": true,
-  "quotmark": "single",
-  "trailing": true,
-  "undef": true,
-  "unused": false,
-  "sub": true,
+	"boss": true,
+	"curly": true,
+	"eqeqeq": true,
+	"eqnull": true,
+	"es3": true,
+	"expr": true,
+	"immed": true,
+	"noarg": true,
+	"onevar": true,
+	"quotmark": "single",
+	"trailing": true,
+	"undef": true,
+	"unused": true,
 
-  "browser": true,
+	"browser": true,
 
-  "globals": {
-    "_": false,
-    "Backbone": false,
-    "jQuery": false,
-    "wp": false,
-    "ajaxurl": false,
-    "Balticl10n" : false,
-    "BalticAdminl10n" : false,
-    "BalticNoticel10n" : false,
-    "jetpackLazyImagesModule" : false,
-    "Typist" : false
-  }
+	"globals": {
+		"_": false,
+		"Backbone": false,
+		"jQuery": false,
+		"wp": false
+	}
 }

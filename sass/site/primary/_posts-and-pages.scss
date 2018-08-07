@@ -2,55 +2,56 @@
 	display: block;
 }
 
-.entry-inner {
-	background-color: $color__white;
-	padding: $gutter__width;
-	margin-bottom: $gutter__width;
-	position: relative;
-	word-wrap: break-word;
-	@include radius-shadow();
-	transition: all .25s ease-in-out;
-	.sticky &{
-		background-color: #673ab7;
-		color: rgba( 255,255,255,.5 );
-	}
-
-	@include respond-to( medium ){
-		padding: $gutter__width*2;
-		margin-bottom: $gutter__width*2;
-	}
-
-	@include respond-to( large ){
-		padding: $gutter__width*3;
-	}
-
-	@include respond-to( extra-large ){
-		padding: $gutter__width*4;
-	}
-
-}
-
 .updated:not(.published) {
 	display: none;
 }
 
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5rem 0 0;
+}
+
+.entry-inner {
+	margin-bottom: 1rem;
+	position: relative;
+	word-wrap: break-word;
+
+	@include respond-to( desktop ) {
+		margin-bottom: 1.5rem;
+	}
+
+	.full-layout &,
+	.boxed-layout .sticky &  {
+		background-color: var(--color__container);
+		padding: 1rem;
+		@include radius-shadow();
+		@include respond-to( desktop ) {
+			padding: 2rem;
+			margin-bottom: 1.5rem;
+		}
+	}
+
+	.full-layout .sticky &,
+	.boxed-layout .sticky & {
+		background-color: var(--color__sticky);
+		color: rgba( 255,255,255,.5 );
+	}
+
+}
+
 .post-thumbnail {
-	background-color: $color__text-main;
+	background-color: var(--color__text-primary);
 	display: block;
 	position: relative;
 	overflow: hidden;
-	margin-top: -$gutter__width;
-	margin-left: -$gutter__width;
-	margin-right: -$gutter__width;
 	margin-bottom: 1.5rem;
-	border-top-left-radius: .25rem;
-	border-top-right-radius: .25rem;
 	img {
 		display: block;
 		vertical-align: bottom;
 		transition: all ease-in-out .25s;
 	}
-	.icon {
+	.thumbnail-placeholder {
 		display: block;
 		width: 100%;
 		height: auto;
@@ -77,137 +78,90 @@
 		&:hover,
 		&.focus {
 			img,
-			.icon {
+			.thumbnail-placeholder {
 				transform: scale(1.1);
 			}
 		}
 	}
 
-	&.alignleft {
-		max-width: 40%;
-		margin-top: -$gutter__width;
-		margin-left: -$gutter__width;
-		margin-bottom: -$gutter__width;
-		@include respond-to( medium ) {
-			max-width: 100%;
+	.full-layout &,
+	.boxed-layout .sticky & {
+		border-top-left-radius: .25rem;
+		border-top-right-radius: .25rem;
+		margin-top: -1rem;
+		margin-left: -1rem;
+		margin-right: -1rem;
+		@include respond-to( desktop ) {
+			margin-top: -2rem;
+			margin-left: -2rem;
+			margin-right: -2rem;
 		}
 	}
 
-	@include respond-to( medium ){
-		margin-top: -$gutter__width*2;
-		margin-left: -$gutter__width*2;
-		margin-right: -$gutter__width*2;
-	}
-
-	@include respond-to( large ){
-		margin-top: -$gutter__width*3;
-		margin-left: -$gutter__width*3;
-		margin-right: -$gutter__width*3;
-		margin-bottom: $gutter__width*3;
-	}
-
-	@include respond-to( extra-large ){
-		margin-top: -$gutter__width*4;
-		margin-left: -$gutter__width*4;
-		margin-right: -$gutter__width*4;
-	}
-}
-
-.entry-media {
-	background-color: $color__text-main;
-	display: block;
-	position: relative;
-	overflow: hidden;
-	margin-top: -$gutter__width;
-	margin-left: -$gutter__width;
-	margin-right: -$gutter__width;
-	margin-bottom: 1.5rem;
-	border-top-left-radius: .25rem;
-	border-top-right-radius: .25rem;
-
-	iframe {
-		display: block;
-		vertical-align: top;
-	}
-
-	@include respond-to( medium ){
-		margin-top: -$gutter__width*2;
-		margin-left: -$gutter__width*2;
-		margin-right: -$gutter__width*2;
-	}
-
-	@include respond-to( large ){
-		margin-top: -$gutter__width*3;
-		margin-left: -$gutter__width*3;
-		margin-right: -$gutter__width*3;
-		margin-bottom: $gutter__width*3;
-	}
-
-	@include respond-to( extra-large ){
-		margin-top: -$gutter__width*4;
-		margin-left: -$gutter__width*4;
-		margin-right: -$gutter__width*4;
-	}
 }
 
 .entry-title {
-	color: $color__text-main;
+	color: var(--color__text-primary);
 	@include font-size(1.125);
 	margin-bottom: 1rem;
-	line-height: 1;
 	position: relative;
+
 	a {
-		color: $color__text-main;
+		color: var(--color__text-primary);
 		&:hover,
 		&:focus {
-			color: $color__link-hover;
+			color: var(--color__link-hover);
 		}
 		.sticky & {
 			color: $color__white;
 			&:hover,
 			&:focus {
-				color: $color__link-hover;
+				color: var(--color__link-hover);
 			}
 		}
 	}
 
-	@include respond-to( medium ){
+	@include respond-to( tablet ) {
 		@include font-size( 1.75);
 	}
+
 }
 
 .page-links {
 	background-color: $color__alpha-dark05;
 	clear: both;
-	margin: 0 0 1rem;
+	margin: 0 0 1.5rem;
 	text-align: center;
 	overflow: hidden;
     border-radius: .25rem;
     font-size: 0;
 	a,
 	.page-number {
-		color: $color__text-main;
 		display: inline-block;
 	}
 	.page-number {
-		background-color: $color__white;
+		background-color: var(--color__button);
+		color: var(--color__button-text);
 		padding: 1rem 1.5rem;
 		@include font-size(1);
 	}
 	a {
+		&,
 		.page-number {
 			background-color: transparent;
+			color: var(--color__text-primary);
 		}
 		&:hover,
 		&:focus {
-			background-color: $color__white;
+			background-color: var(--color__button-hover);
+			color: var(--color__button-text-hover);
 		}
 	}
 }
 
 a.more-link {
-	border: 1px solid $color__text-main;
-	color: $color__text-main;
+	border: 1px solid var(--color__text-primary);
+	color: var(--color__text-primary);
 	display: inline-block;
 	padding: .5rem 1.25rem;
 	padding-right: 0;
@@ -220,9 +174,9 @@ a.more-link {
 	}
 	&:hover,
 	&:focus {
-		background-color: $color__link;
-		border-color: $color__link;
-		color: $color__white;
+		background-color: var(--color__button);
+		border-color: var(--color__button);
+		color: var(--color__button-text);
 		padding-right: 1rem;
 		box-shadow: 0 8px 16px rgba( 0,0,0,.25 );
 		.icon-stroke {
@@ -235,8 +189,9 @@ a.more-link {
 		color: $color__white;
 		&:hover,
 		&:focus {
-			background-color: $color__link;
-			border-color: $color__link;
+			background-color: var(--color__button);
+			border-color: var(--color__button);
+			color: var(--color__button-text);
 		}
 	}
 }
@@ -244,6 +199,9 @@ a.more-link {
 .entry-meta {
 	margin-bottom: 1.5rem;
 	@include font-size( 0.875 );
+	span {
+		display: inline-block;
+	}
 	.posted-on,
 	.author {
 		margin-right: .5rem;
@@ -252,92 +210,94 @@ a.more-link {
 		margin-right: .25rem;
 	}
 	a {
-		color: rgba( 0,0,0,.5);
+		color: var(--color__text-secondary);
 		&:hover,
 		&:focus {
-			color: $color__link-hover;
+			color: var(--color__link-hover);
 		}
 		.sticky & {
 			color: $color__white;
 			&:hover,
 			&:focus {
-				color: $color__link-hover;
+				color: var(--color__link-hover);
 			}
 		}
 	}
 }
 
 .entry-footer {
-	background-color: rgba( 0,0,0,.025 );
-	border-top: 1px solid $color__alpha-dark;
+	border-top: 2px solid $color__alpha-dark;
 	@include font-size(0.875);
-	margin: -$gutter__width;
-	margin-top: 1rem;
-	padding: $gutter__width;
 	overflow: hidden;
+	padding: 1rem 0;
+	span {
+		display: inline-block;
+	}
 
 	.icon-stroke {
 		margin-right: .25rem;
 	}
 
 	a {
-		color: rgba( 0,0,0,.5);
+		color: var(--color__text-secondary);
 		&:hover,
 		&:focus {
-			color: $color__link-hover;
+			color: var(--color__link-hover);
 		}
 
 		.sticky & {
 			color: $color__white;
 			&:hover,
 			&:focus {
-				color: $color__link-hover;
+				color: var(--color__link-hover);
 			}
 		}
 	}
 
-	a.post-edit-link {
-		border: 1px solid rgba( 0,0,0,.5);
-		display: inline-block;
+	span.edit-link {
 		float: right;
-		padding: 0 1rem;
-		border-radius: .25rem;
-		&:hover,
-		&:focus {
-			background-color: $color__link-hover;
-			border-color: $color__link-hover;
-			color: $color__white;
-		}
-		.sticky & {
-			background-color: transparent;
-			border-color: $color__white;
-			color: $color__white;
+		a {
+			border: 1px solid rgba( 0,0,0,.5);
+			display: inline-block;
+			float: right;
+			padding: 0 1rem;
+			border-radius: .25rem;
 			&:hover,
 			&:focus {
-				background-color: $color__link-hover;
-				border-color: $color__link-hover;
+				background-color: var(--color__link-hover);
+				border-color: var(--color__link-hover);
 				color: $color__white;
 			}
+			.sticky & {
+				background-color: transparent;
+				border-color: $color__white;
+				color: $color__white;
+				&:hover,
+				&:focus {
+					background-color: var(--color__link-hover);
+					border-color: var(--color__link-hover);
+					color: $color__white;
+				}
+			}
 		}
 	}
 
-	@include respond-to( medium ){
-		padding: $gutter__width*2;
-		margin: -$gutter__width*2;
-		margin-top: $gutter__width*1;
+	.full-layout &,
+	.boxed-layout .sticky & {
+		background-color: rgba( 0,0,0,.025 );
+		border-top: 1px solid $color__alpha-dark;
+		padding: 1rem;
+		margin-left: -1rem;
+		margin-right: -1rem;
+		margin-bottom: -1rem;
+		@include respond-to( desktop ) {
+			padding: 1rem 2rem;
+			margin-left: -2rem;
+			margin-right: -2rem;
+			margin-bottom: -2rem;
+		}
 	}
 
-	@include respond-to( large ){
-		margin: -$gutter__width*3;
-		margin-top: $gutter__width*1;
-		padding: $gutter__width*2 $gutter__width*3;
-	}
-
-	@include respond-to( extra-large ){
-		margin: -$gutter__width*4;
-		margin-top: $gutter__width*2;
-		padding: $gutter__width*2 $gutter__width*4;
-	}
 }
 
 .cat-links,
@@ -346,23 +306,32 @@ a.more-link {
 }
 
 .author-info {
-	background-color: $color__white;
-	padding: $gutter__width;
-	padding-top: $gutter__width*2;
-	margin-bottom: $gutter__width;
+	background-color: var(--color__container);
+	padding: 1rem 0;
+	margin-bottom: 1rem;
 	overflow: hidden;
 	text-align: center;
-	@include radius-shadow();
-	@include respond-to( medium ){
-		padding: $gutter__width*3;
-		padding-top: $gutter__width*3;
-		margin-bottom: $gutter__width*2;
+
+	@include respond-to( tablet ) {
+		padding: 2rem 0;
+		padding-top: 2rem;
+		margin-bottom: 1.5rem;
 		text-align: left;
 	}
+
+	.full-layout & {
+		padding: 1rem;
+		border-radius: .25rem;
+		box-shadow: 0 16px 32px $color__alpha-dark05;
+		@include respond-to( tablet ) {
+			padding: 2rem;
+		}
+	}
+
 }
 
 .author-detail {
-	@include respond-to( medium ){
+	@include respond-to( tablet ) {
 		padding-left: 84px;
 	}
 }
@@ -372,13 +341,46 @@ a.more-link {
 	overflow: hidden;
 	width: 64px;
 	border-radius: 64px;
-	margin-bottom: $gutter__width;
-	@include respond-to(medium){
+	margin-bottom: 1rem;
+	img {
+		display: block;
+		vertical-align: middle;
+	}
+	@include respond-to( tablet ) {
 		float: left;
 	}
 }
 
-.author-title {
-	@include font-size(1.25);
+h2.author-title {
+	@include font-size(1.125);
 	line-height: 1;
+}
+
+.author-description p:last-child {
+	margin-bottom: 0;
+}
+
+// 404
+.error404 {
+	.site-content {
+		min-height: calc( 100vh - 172px );
+		text-align: center;
+		padding: 0;
+	    display: -webkit-box;
+	    display: flex;
+	    text-align: center;
+	    align-items: center;
+	    -webkit-box-align: center;
+	    -webkit-box-pack: center;
+	    justify-content: center;
+	}
+	h1.404-title {
+		@include font-size(3);
+		text-transform: uppercase;
+	}
+}
+
+.error-404 {
+	padding-top: 2rem;
+	padding-bottom: 1rem;
 }

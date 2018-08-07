@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<input type="search" id="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>" class="search-field" placeholder="<?php echo esc_attr__( 'Search products&hellip;', 'baltic' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
 	<input type="hidden" name="post_type" value="product" />
 	<button type="submit" class="search-submit">
-		<?php Baltic_Icons::svg( array( 'class' => 'icon-stroke', 'icon' => 'search' ) ); ?>
+		<?php Baltic\Icons::svg( [ 'class' => 'icon-stroke', 'icon' => 'search' ] ); ?>
 		<span class="screen-reader-text"><?php esc_html_e( 'Search', 'baltic' ); ?></span>
 	</button>
 </form>

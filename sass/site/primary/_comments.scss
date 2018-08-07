@@ -1,19 +1,15 @@
 .comments-area {
-	background-color: $color__white;
-	border-top: 1px solid $color__alpha-dark05;
+	background-color: var(--color__container);
 	clear: both;
-	padding: $gutter__width;
-	margin-bottom: $gutter__width;
-	@include radius-shadow();
-
-	@include respond-to( medium ){
-		padding: $gutter__width*2;
-		margin-bottom: $gutter__width*2;
-	}
-
-	@include respond-to( large ){
-		padding: $gutter__width*3;
-		margin-bottom: $gutter__width*4;
+	margin-bottom: 1rem;
+	padding-top: 1rem;
+	.full-layout & {
+		padding: 1rem;
+		@include radius-shadow();
+		@include respond-to( tablet ) {
+			padding: 2rem;
+			margin-bottom: 2rem;
+		}
 	}
 }
 
@@ -27,7 +23,7 @@
 	margin-bottom: 1rem;
 	position: relative;
 	&:before {
-		background-color: $color__text-secondary;
+		background-color: var(--color__text-primary);
 		content: " ";
 		position: absolute;
 		bottom: -1px;
@@ -49,7 +45,7 @@
 			list-style-type: none;
 			padding-left: 0;
 			.comment {
-				border-left: 4px solid $color__alpha-dark05;
+				border-left: 4px solid var(--color__border);
 				padding-left: 1.5rem;
 			}
 		}
@@ -67,7 +63,7 @@
 	}
 
 	.pingback {
-		border-bottom: 4px solid $color__alpha-dark05;
+		border-bottom: 4px solid var(--color__text-secondary);
 		padding-top: 1.5rem;
 		padding-bottom: 1.5rem;
 	}
@@ -83,12 +79,12 @@
 .comment-meta {
 	position: relative;
 	a {
-		color: $color__text-main;
+		color: var(--color__text-primary);
 		@include font-size(1.125);
 		font-weight: bold;
 		&:hover,
 		&:focus {
-			color: $color__link;
+			color: var(--color__link);
 		}
 	}
 	.edit-link {
@@ -99,7 +95,7 @@
 }
 
 .comment-metadata a {
-	color: $color__text-secondary;
+	color: var(--color__text-secondary);
 	@include font-size(0.75);
 }
 
@@ -113,20 +109,19 @@
 
 .comment-body > .reply a {
 	background: transparent;
-	border: 1px solid $color__text-secondary;
-	color: $color__text-secondary;
+	border: 1px solid var(--color__text-secondary);
+	color: var(--color__text-secondary);
 	display: inline-block;
 	@include font-size(0.875);
 	line-height: 1;
-	padding: .5rem 1.5em;
+	padding: .5rem 1.5rem;
 	margin-bottom: 1.5rem;
 	border-radius: .25rem;
 	&:hover,
 	&:focus {
-		background-color: $color__link;
-		border-color: $color__link;
+		background-color: var(--color__link);
+		border-color: var(--color__link);
 		color: $color__white;
-		box-shadow: 0 4px 8px rgba( 0,0,0,.2 );
 	}
 }
 
@@ -139,15 +134,16 @@
 
 #cancel-comment-reply-link {
 	background-color: transparent;
-	border: 1px solid $color__text-secondary;
-	color: $color__text-secondary;
+	border: 1px solid var(--color__text-secondary);
+	color: var(--color__text-secondary);
 	padding: .25rem .5rem;
 	margin-left: .5rem;
+	border-radius: .25rem;
 	&:hover,
 	&:focus {
-		background-color: $color__link;
-		border-color: $color__link;
-		color: $color__white;
+		background-color: var(--color__button-hover);
+		border-color: var(--color__button-hover);
+		color: var(--color__button-text-hover);
 	}
 }
 
@@ -172,8 +168,8 @@
 	    	box-shadow: 0 0 0 4px rgba( 0,0,0,.05 );
 	    }
 	    &:checked~label::before {
-	    	background-color: $color__link;
-	    	border-color: $color__link;
+	    	background-color: var(--color__link);
+	    	border-color: var(--color__link);
 	    }
 	    &:checked~label::after {
 	    	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
@@ -185,7 +181,7 @@
 		margin-bottom: 1.5rem;
 		&:before {
 			background-color: transparent;
-			border: 1px solid $color__border-input;
+			border: 1px solid var(--color__input-border);
 			position: absolute;
 			top: .25rem;
 			left: 0;
@@ -213,13 +209,13 @@
 }
 
 p.akismet_comment_form_privacy_notice {
-	color: $color__text-label;
+	color: var(--color__text-secondary);
 	display: block;
 	@include font-size(0.875);
 	margin-bottom: .25rem;
 }
 
-@include respond-to( medium ){
+@include respond-to( tablet ) {
 	p.comment-form-email {
 		float: left;
 		width: 50%;

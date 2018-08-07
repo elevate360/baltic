@@ -8,9 +8,9 @@
 	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 
 	&:focus {
-		background-color: $color__background-screen;
+		background-color: var(--color__button);
 		clip: auto !important;
-		color: #fff;
+		color: var(--color__button-text);
 		display: block;
 		@include font-size(0.875);
 		font-weight: bold;

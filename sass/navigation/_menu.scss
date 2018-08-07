@@ -1,0 +1,273 @@
+.main-navigation {
+	color: var(--color__header-text);
+	clear: both;
+	display: block;
+	position: relative;
+	transition: all ease-in-out .25s;
+	margin-left: -1rem;
+	margin-right: -1rem;
+
+	> .wrap {
+		background-color: var(--color__submenu-background);
+		clear: both;
+		display: none;
+		margin: 0;
+		padding: 0;
+		opacity: 0;
+		position: relative;
+		max-width: 100%;
+	}
+
+	.icon-dropdown {
+		display: none;
+	}
+
+	&.toggled {
+		> .wrap {
+			display: block;
+			opacity: 1;
+		}
+	}
+
+	.sub-menu,
+	.children {
+		display: none;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		text-align: left;
+		padding: 0;
+		li {
+			padding: 0;
+			box-shadow: inset 0 1px 0 rgba(255,255,255,.025);
+		}
+		ul {
+			background-color: rgba( 0,0,0,.1 );
+		}
+	}
+
+	a {
+		color: var(--color__submenu-text);
+		display: block;
+		@include font-size(0.875);
+		line-height: 1.7143;
+		padding: .75rem;
+		text-decoration: none;
+		position: relative;
+		opacity: 0.65;
+	}
+
+	.icon-user {
+		margin-right: .5rem;
+	}
+
+	a:hover,
+	a:focus,
+	ul > :hover > a,
+	ul > .focus > a,
+	li.current_page_item > a,
+	li.current-menu-item > a,
+	li.current_page_ancestor > a,
+	li.current-menu-ancestor > a {
+		color: var(--color__submenu-text);
+		opacity: 1;
+	}
+
+	@include respond-to( tablet ) {
+		float: none;
+		clear: both;
+
+		> .wrap {
+			clear: none;
+			display: block;
+			background-color: transparent;
+			margin-left: auto;
+			margin-right: auto;
+			box-shadow: none;
+			opacity: 1;
+		}
+
+		ul {
+			display: block;
+			padding: 0;
+		}
+
+		.icon-dropdown {
+			display: block;
+			width: .5rem;
+			height: .5rem;
+			position: absolute;
+			top: 50%;
+			right: 0;
+			margin-top: -.25rem;
+		}
+
+		ul ul .icon-dropdown {
+			right: 1rem;
+			transform: rotate(-90deg);
+		}
+
+		ul.menu {
+			display: block;
+			float: left;
+			color: var(--color__header-text);
+			line-height: 1.5;
+			width: 100%;
+
+			> li {
+				box-shadow: none;
+			}
+
+			.menu-item {
+				border: none;
+				display: block;
+				float: left;
+				&:hover,
+				&.focus {
+					> .sub-menu {
+						visibility: visible;
+						opacity: 1;
+						transform: scale(1);
+					}
+				}
+
+				&.menu-right {
+					float: right;
+					.sub-menu {
+						right: 0;
+					}
+					&:hover,
+					&.focus {
+						> .sub-menu {
+							left: auto;
+						}
+					}
+				}
+
+			}
+
+			a {
+				color: var(--color__header-text);
+				display: block;
+				padding: 1rem 1.25rem;
+				position: relative;
+			}
+
+			a:hover,
+			a:focus,
+			.menu-item:hover > a,
+			.menu-item:focus > a,
+			.menu-item.focus > a,
+			.current-menu-item > a,
+			li.current_page_item > a,
+			li.current-menu-item > a,
+			li.current_page_ancestor > a,
+			li.current-menu-ancestor > a {
+				color: var(--color__header-text);
+			}
+
+			> .menu-item > a {
+				@include font-size(1);
+			}
+
+			.sub-menu {
+				background-color: var(--color__submenu-background);
+				border: none;
+				display: block!important;
+				visibility: hidden;
+				height: auto;
+				left: auto;
+				margin: 0;
+				position: absolute;
+				padding: 0;
+				width: 240px;
+				transform: scale(0);
+				transition: all .25s ease-in-out;
+				opacity: 0;
+				border-radius: .25rem;
+				box-shadow: 0 8px 16px $color__alpha-dark;
+				z-index: 9999;
+
+				a {
+					color: var(--color__submenu-text);
+					font-weight: normal;
+					padding: .75rem 1.5rem;
+					margin: 0;
+					height: auto;
+					position: relative;
+					text-transform: none;
+					width: 240px;
+					z-index: 0;
+				}
+
+				li {
+					padding: 0;
+				}
+
+				.sub-menu { margin: -48px 0 0 240px }
+
+			}
+
+			> li.menu-right ul:before {
+				left: auto;
+				right: 15px;
+			}
+
+			.menu-item:hover > .sub-menu a,
+			.menu-item:focus > .sub-menu a,
+			.menu-item.focus > .sub-menu a {
+				color: var(--color__submenu-text);
+			}
+
+			.sub-menu .menu-item a:hover,
+			.sub-menu .menu-item a:focus {
+				color: var(--color__submenu-text);
+				opacity: 1;
+			}
+
+		}
+	}
+
+}
+
+.secondary-navigation {
+	ul,
+	li {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+	}
+
+	ul {
+		text-align: center;
+	}
+
+	li {
+		display: inline-block;
+		vertical-align: bottom;
+		position: relative;
+		&:before {
+			content: "\002F";
+			position: absolute;
+			top: 0;
+			right: -4px;
+		}
+		&:last-child:before {
+			display: none;
+		}
+	}
+
+	a {
+		display: block;
+		padding: 0 .25rem;
+	}
+
+	@include respond-to( tablet ) {
+		ul {
+			text-align: right;
+			float: right;
+		}
+	}
+}

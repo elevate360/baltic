@@ -15,7 +15,7 @@
 	</label>
 	<input type="search" id="<?php echo esc_attr( $unique_id ); ?>" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'baltic' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
 	<button type="submit" class="search-submit">
-		<?php Baltic_Icons::svg( array( 'class' => 'icon-stroke', 'icon' => 'search' ) ); ?>
+		<?php Baltic\Icons::svg( [ 'class' => 'icon-stroke', 'icon' => 'search' ] ); ?>
 		<span class="screen-reader-text"><?php echo esc_html_x( 'Search', 'submit button', 'baltic' ); ?></span>
 	</button>
 </form>
