@@ -34,11 +34,6 @@ if ( is_singular() || post_password_required() ) {
 
 	echo wp_kses_post( wpautop( strip_shortcodes( wp_trim_words( get_the_content(), absint( $num ), ' &hellip;' ) ) ) );
 
-	echo sprintf( '<p><a href="%1$s" class="more-link">%2$s %3$s %4$s</a></p>',
-		esc_url( get_the_permalink() ),
-		'<span class="more-link-text">'. esc_html( $more_link_text ) .'</span>',
-		'<span class="screen-reader-text">'. esc_html( get_the_title() ) .'</span>',
-		Baltic\Icons::get_svg( [ 'class'=>'icon-stroke', 'icon' => 'arrow-'. esc_attr( $rtl_arrow ) ] )
-	); // WPCS: XSS ok.
+	echo sprintf( '<p><a href="%1$s" class="more-link">%2$s %3$s %4$s</a></p>', esc_url( get_the_permalink() ), '<span class="more-link-text">'. esc_html( $more_link_text ) .'</span>', '<span class="screen-reader-text">'. esc_html( get_the_title() ) .'</span>', Baltic\Icons::get_svg( [ 'class'=>'icon-stroke', 'icon' => 'arrow-'. esc_attr( $rtl_arrow ) ] ) ); // WPCS: XSS ok.
 
 }

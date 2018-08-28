@@ -5,8 +5,8 @@
 
 **Requires at least:** 4.7  
 **Tested up to:** 4.9.8  
-**Stable tag:** 1.1.0  
-**Version:** 1.1.0  
+**Stable tag:** 1.1.2  
+**Version:** 1.1.2  
 **License:** GNU General Public License v2 or later  
 **License URI:** LICENSE  
 
@@ -30,7 +30,29 @@ Baltic includes support for WooCommerce.
 
 ## Changelog ##
 
+### 1.1.2 - August 25 2018 ###
+
+* Added Algolia search plugin compatibility
+* Added Jetpack infinite scroll support
+* Fixed Dynamic colors
+* Updated Demo import
+
+### 1.1.1 - August 14 2018 ###
+
+* Added Baltic canvas template at elementor library
+* Modified searchform with schema
+* Fixed search page
+* Fixed after import url
+
+### 1.1.1 - August 14 2018 ###
+
+* Added Baltic canvas template at elementor library
+* Modified searchform with schema
+* Fixed search page
+* Fixed after import url
+
 ### 1.1.0 - August 6 2018 ###
+
 * Added Theme minimum requirement
 * Added Custom customizer control
 * Added Demo import compatibility

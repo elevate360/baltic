@@ -11,7 +11,6 @@ class Plugins {
 
 	use Instance;
 
-	private $suffix;
 	private $demo_url;
 	private $data_url;
 	private $site_url;
@@ -19,8 +18,7 @@ class Plugins {
 
 	public function __construct() {
 
-		$this->version 	= BALTIC_VERSION;
-		$this->demo_url = esc_url( 'https://baltic.fourdesignstudio.com/' );
+		$this->demo_url = esc_url( "https://baltic.wpcampaignkit.com/" );
 		$this->data_url = esc_url( "https://gitlab.com/elevatethemes/baltic-demo/raw/master/" );
 		$this->site_url = esc_url( home_url('/') );
 		$this->upload_dir = wp_upload_dir();
@@ -151,6 +149,14 @@ class Plugins {
 				'import_preview_image_url'   => esc_url( $this->data_url . 'dark/screenshot.jpg' ),
 				'import_notice'              => esc_html__( 'Please make it sure to install all the recommended plugin before start the import progress.', 'baltic' ),
 			),
+			array(
+				'import_file_name'           => esc_html( 'Green' ),
+				'import_file_url'            => esc_url( $this->data_url . 'green/data.xml' ),
+				'import_widget_file_url'     => esc_url( $this->data_url . 'green/widgets.json' ),
+				'import_customizer_file_url' => esc_url( $this->data_url . 'green/customizer.dat' ),
+				'import_preview_image_url'   => esc_url( $this->data_url . 'green/screenshot.jpg' ),
+				'import_notice'              => esc_html__( 'Please make it sure to install all the recommended plugin before start the import progress.', 'baltic' ),
+			),
 		);
 
 		return apply_filters( 'baltic_import_data', $data );
@@ -189,10 +195,6 @@ class Plugins {
 	 */
 	public function after_import( $selected_import ) {
 
-		// Set custom logo
-		$logo = get_page_by_title( 'baltic-logo', OBJECT, 'attachment' );
-		set_theme_mod( 'custom_logo', $logo->ID );
-
 		// Assign menus to their locations.
 		$menu_1 = get_term_by( 'name', 'primary', 'nav_menu' );
 		$menu_2 = get_term_by( 'name', 'secondary', 'nav_menu' );
@@ -228,20 +230,54 @@ class Plugins {
 		update_option( 'woocommerce_terms_page_id', 	$terms_page->ID );
 		update_option( 'yith_wcwl_wishlist_page_id', 	$wishlist_page->ID );
 
+		// WooCommerce Options
+		update_option( 'woocommerce_enable_checkout_login_reminder', 'yes' );
+		update_option( 'woocommerce_enable_signup_and_login_from_checkout', 'yes' );
+		update_option( 'woocommerce_enable_myaccount_registration', 'yes' );
+		update_option( 'woocommerce_bacs_settings', [ 'enabled' => 'yes' ] );
+
+	    if ( function_exists( 'wc_delete_product_transients' ) ) {
+	        wc_delete_product_transients();
+	    }
+	    if ( function_exists( 'wc_delete_shop_order_transients' ) ) {
+	        wc_delete_shop_order_transients();
+	    }
+	    if ( function_exists( 'wc_delete_expired_transients' ) ) {
+	        wc_delete_expired_transients();
+	    }
+
 		// Disable Elementor default colors
 		update_option( 'elementor_disable_color_schemes', 'yes' );
 		update_option( 'elementor_disable_typography_schemes', 'yes' );
 
 		// Update URL
-		if ( class_exists( '\Elementor\Utils' ) ) {
-			if ( 'Default' === $selected_import['import_file_name'] ) {
+		if ( 'Default' === $selected_import['import_file_name'] ) {
+			// Set custom logo
+			$logo = get_page_by_title( 'baltic-logo', OBJECT, 'attachment' );
+			set_theme_mod( 'custom_logo', $logo->ID );
+			if ( class_exists( '\Elementor\Utils' ) ) {
+				\Elementor\Utils::replace_urls( esc_url( $this->demo_url . 'default/wp-content/uploads/sites/2/2018/08/' ), esc_url( trailingslashit( $this->upload_dir['url'] ) ) );
 				\Elementor\Utils::replace_urls( esc_url( $this->demo_url . 'default/' ), esc_url( $this->site_url ) );
-				Utils::widget_replace_url( 'About Baltic', esc_url( $this->demo_url . 'default/wp-content/uploads/sites/2/2018/08/' ), esc_url( trailingslashit( $this->upload_dir['url'] ) ) );
 			}
-			if ( 'Dark' === $selected_import['import_file_name'] ) {
+			Utils::widget_replace_content( 'About Baltic', esc_url( $this->demo_url . 'default/wp-content/uploads/sites/2/2018/08/' ), esc_url( trailingslashit( $this->upload_dir['url'] ) ) );
+		} elseif ( 'Dark' === $selected_import['import_file_name'] ) {
+			// Set custom logo
+			$logo = get_page_by_title( 'baltic-logo-light', OBJECT, 'attachment' );
+			set_theme_mod( 'custom_logo', $logo->ID );
+			if ( class_exists( '\Elementor\Utils' ) ) {
+				\Elementor\Utils::replace_urls( esc_url( $this->demo_url . 'dark/wp-content/uploads/sites/3/2018/08/' ), esc_url( trailingslashit( $this->upload_dir['url'] ) ) );
 				\Elementor\Utils::replace_urls( esc_url( $this->demo_url . 'dark/' ), esc_url( $this->site_url ) );
-				Utils::widget_replace_url( 'About Baltic', esc_url( $this->demo_url . 'dark/wp-content/uploads/sites/4/2018/08/' ), esc_url( trailingslashit( $this->upload_dir['url'] ) ) );
 			}
+			Utils::widget_replace_content( 'About Baltic', esc_url( $this->demo_url . 'dark/wp-content/uploads/sites/3/2018/08/' ), esc_url( trailingslashit( $this->upload_dir['url'] ) ) );
+		} elseif ( 'Green' === $selected_import['import_file_name'] ) {
+			// Set custom logo
+			$logo = get_page_by_title( 'baltic-logo-light', OBJECT, 'attachment' );
+			set_theme_mod( 'custom_logo', $logo->ID );
+			if ( class_exists( '\Elementor\Utils' ) ) {
+				\Elementor\Utils::replace_urls( esc_url( $this->demo_url . 'dark/wp-content/uploads/sites/4/2018/08/' ), esc_url( trailingslashit( $this->upload_dir['url'] ) ) );
+				\Elementor\Utils::replace_urls( esc_url( $this->demo_url . 'dark/' ), esc_url( $this->site_url ) );
+			}
+			Utils::widget_replace_content( 'About Baltic', esc_url( $this->demo_url . 'dark/wp-content/uploads/sites/4/2018/08/' ), esc_url( trailingslashit( $this->upload_dir['url'] ) ) );
 		}
 
 		// Update contact form
@@ -265,7 +301,6 @@ class Plugins {
 
 		}
 
-		wp_cache_flush();
 
 	}
 

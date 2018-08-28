@@ -28,7 +28,7 @@
 		}
 	}
 	li.is-active a{
-		background-color: $color__white;
+		background-color: var(--color__container);
 		border-left-color: var(--color__link);
 	}
 }

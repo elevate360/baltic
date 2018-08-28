@@ -924,4 +924,9 @@ function isArray (input) {
 		baltic.wishListTable();
 	});
 
+	$( document.body ).on( 'post-load', function() {
+		baltic.quickView();
+		baltic.wishListLoader();
+	});
+
 })( jQuery );

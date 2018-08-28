@@ -1,4 +1,4 @@
-#secondary a{
+#secondary a {
 	color: var(--color__text-secondary);
 	&:hover,
 	&:focus {
@@ -8,16 +8,13 @@
 
 
 .widget {
-	margin: 0 0 1.5rem;
-
-	/* Make sure select elements fit in widgets. */
+	margin: 0 0 2rem;
 	select {
 		max-width: 100%;
 	}
 }
 
 .widget-title {
-	@include font-size(1);
 	padding-bottom: 1rem;
 	margin-bottom: 1rem;
 	position: relative;
@@ -65,7 +62,8 @@
 .widget_nav_menu,
 .widget_recent_entries,
 .widget_recent_comments,
-.widget_product_categories {
+.widget_product_categories,
+.baltic-kit-featured-post {
 	ul,
 	li {
 		padding: 0;
@@ -186,5 +184,60 @@
 			background-color: var(--color__button-hover);
 			color: var(--color__button-text-hover)!important;
 		}
+	}
+}
+
+.baltic-kit-featured-post {
+
+	li.featured-post {
+		margin-bottom: 1rem;
+	}
+
+	.thumbnail-placeholder,
+	.wp-post-image {
+		width: 48px;
+		height: auto;
+		float: left;
+		margin-right: 1rem;
+	}
+
+	.featured-title {
+		margin-bottom: .5rem;
+	}
+	.featured-meta {
+		@include font-size(0.875);
+		a {
+			margin-right: .5rem;
+		}
+	}
+
+	.has-post-thumbnail {
+		.featured-title,
+		.featured-meta {
+			padding-left: 4rem;
+		}
+	}
+
+	.icon-stroke {
+		margin-right: 0;
+	}
+
+}
+
+a.baltic-more-link {
+	background-color: transparent;
+	color: var(--color__text-secondary);
+	border: 1px solid var(--color__text-secondary);
+	display: block;
+	margin-top: 1.5rem;
+	padding: .5rem;
+	width: 100%;
+	text-align: center;
+	border-radius: .25rem;
+	&:hover,
+	&:focus {
+		background-color: var(--color__button);
+		border-color: var(--color__button);
+		color: var(--color__button-text)!important;
 	}
 }

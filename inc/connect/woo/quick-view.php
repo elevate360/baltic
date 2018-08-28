@@ -26,7 +26,7 @@ class Quick_View {
 
 		add_action( 'wp_enqueue_scripts', 	array( $this, 'scripts' ) );
 
-		add_action( 'wp_footer', array( $this, 'container' ), 0 );
+		add_action( 'baltic_after', array( $this, 'container' ) );
 		add_action( 'wp_footer', 'woocommerce_photoswipe' );
 
 		// Image

@@ -8,12 +8,15 @@
 $unique_id = esc_attr( uniqid( 'search-form-' ) ); ?>
 
 <?php if ( ! class_exists( 'WooCommerce' ) ) :?>
-<div class="widget header-search-area">
-	<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+<div itemscope itemtype="http://schema.org/WebSite" class="widget header-search-area">
+	<meta itemprop="url" content="<?php echo esc_url( home_url( '/' ) ); ?>"/>
+	<form itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction" role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+		<meta itemprop="target" content="<?php echo esc_url( home_url( '/' ) ); ?>?s={s}"/>
 		<label for="<?php echo esc_attr( $unique_id ); ?>">
 			<span class="screen-reader-text"><?php echo esc_attr_x( 'Search for:', 'label', 'baltic' ); ?></span>
 		</label>
-		<input type="search" id="<?php echo esc_attr( $unique_id ); ?>" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'baltic' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+		<input itemprop="query-input" type="search" id="<?php echo esc_attr( $unique_id ); ?>" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'baltic' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+		<input type="hidden" name="post_type" value="post" />
 		<?php
 		wp_dropdown_categories( array(
 			'name' 				=> 'category',
@@ -32,12 +35,14 @@ $unique_id = esc_attr( uniqid( 'search-form-' ) ); ?>
 	</form>
 </div>
 <?php else : ?>
-<div class="widget header-search-area">
-	<form role="search" method="get" class="woocommerce-product-search search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+<div itemscope itemtype="http://schema.org/WebSite" class="widget header-search-area">
+	<meta itemprop="url" content="<?php echo esc_url( home_url( '/' ) ); ?>"/>
+	<form itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction" role="search" method="get" class="woocommerce-product-search search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+		<meta itemprop="target" content="<?php echo esc_url( home_url( '/' ) ); ?>?s={s}"/>
 		<label for="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>">
 			<span class="screen-reader-text"><?php echo esc_attr_x( 'Search for:', 'label', 'baltic' ); ?></span>
 		</label>
-		<input type="search" id="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>" class="search-field" placeholder="<?php echo esc_attr__( 'Search products&hellip;', 'baltic' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+		<input itemprop="query-input" type="search" id="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>" class="search-field" placeholder="<?php echo esc_attr__( 'Search products&hellip;', 'baltic' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
 		<input type="hidden" name="post_type" value="product" />
 		<?php
 		wp_dropdown_categories( array(

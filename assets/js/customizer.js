@@ -94,6 +94,7 @@
 		'color__header-btn-icon',
 		'color__header-btn-icon-hover',
 		'color__footer-background',
+		'color__footer-title',
 		'color__footer-text',
 		'color__footer-link',
 		'color__footer-link-hover',

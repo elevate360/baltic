@@ -13,9 +13,9 @@
 			control.balticResponsiveInit();
 
 			/**
-			 * Save on change / keyup / pbaltice
+			 * Save on change / keyup / paste
 			 */
-			this.container.on( 'change keyup pbaltice', 'input.baltic-responsive-input, select.baltic-responsive-select', function() {
+			this.container.on( 'change keyup paste', 'input.baltic-responsive-input, select.baltic-responsive-select', function() {
 
 				value = jQuery( this ).val();
 

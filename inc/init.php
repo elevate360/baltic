@@ -67,7 +67,10 @@ class Init {
 		Structure\Content::instance();
 		Structure\Footer::instance();
 
+		Connect\Algolia\Setup::instance();
+		Connect\Jetpack\Setup::instance();
 		Connect\Woo\Setup::instance();
+
 	}
 
 	/**

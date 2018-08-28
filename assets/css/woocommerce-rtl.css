@@ -791,6 +791,7 @@ p.stars {
 
 .product_meta {
 	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
 	border-top: 2px solid rgba(0, 0, 0, 0.1);
 	font-size: 14px;
 	font-size: 0.875rem;
@@ -1896,7 +1897,7 @@ button.woocommerce-widget-layered-nav-dropdown__submit {
 
 .woocommerce-MyAccount-navigation li.is-active a {
 	border-right-color: var(--color__link);
-	background-color: #fff;
+	background-color: var(--color__container);
 }
 
 .woocommerce-MyAccount-content fieldset {

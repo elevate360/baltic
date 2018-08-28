@@ -28,3 +28,10 @@
 	@include font-size(0.875);
 	padding: 1rem 1rem .5rem;
 }
+
+.wp-block-image {
+	img {
+		display: block;
+		vertical-align: middle;
+	}
+}

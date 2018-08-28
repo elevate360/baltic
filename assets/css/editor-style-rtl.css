@@ -623,6 +623,11 @@ svg symbol {
 	text-align: center;
 }
 
+.wp-block-image img {
+	display: block;
+	vertical-align: middle;
+}
+
 
 /*--------------------------------------------------------------
 ## Galleries

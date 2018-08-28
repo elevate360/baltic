@@ -18,7 +18,7 @@ trait Utils {
 	}
 
 	/**
-	 * [is_sticky description]
+	 * Is sticky.
 	 *
 	 * @return boolean [description]
 	 */
@@ -27,7 +27,7 @@ trait Utils {
 	}
 
 	/**
-	 * [is_blog description]
+	 * Is blog.
 	 *
 	 * @return boolean [description]
 	 */
@@ -36,7 +36,7 @@ trait Utils {
 	}
 
 	/**
-	 * [is_woocommerce description]
+	 * Is woocommerce callback.
 	 *
 	 * @return boolean [description]
 	 */
@@ -44,6 +44,25 @@ trait Utils {
 		if ( function_exists( 'is_woocommerce' ) ) {
 			return (bool) is_woocommerce();
 		}
+	}
+
+	/**
+	 * Is shop callback.
+	 *
+	 * @return boolean [description]
+	 */
+	public static function is_shop() {
+
+		if ( self::is_woocommerce() ) {
+			if ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+
 	}
 
 	/**
@@ -55,6 +74,11 @@ trait Utils {
 		return (bool) is_page_template( 'baltic-homepage.php' );
 	}
 
+	/**
+	 * Get list of preloader animation.
+	 *
+	 * @return array
+	 */
 	public static function get_preloader_type() {
 
 		$layout = [
@@ -75,7 +99,7 @@ trait Utils {
 	}
 
 	/**
-	 * Baltic Main layout selector
+	 * Baltic Main layout selector.
 	 *
 	 * @return array available layout
 	 */
@@ -93,7 +117,7 @@ trait Utils {
 	}
 
 	/**
-	 * Baltic Main layout selector
+	 * Baltic Main layout selector.
 	 *
 	 * @return array available layout
 	 */
@@ -213,13 +237,14 @@ trait Utils {
 	}
 
 	/**
-	 * [widget_replace_url description]
+	 * Replace widget text content by title.
+	 *
 	 * @param  string $title   [description]
-	 * @param  [type] $old_url [description]
-	 * @param  [type] $new_url [description]
+	 * @param  [type] $old_value [description]
+	 * @param  [type] $new_value [description]
 	 * @return [type]          [description]
 	 */
-	public static function widget_replace_url( $title = '', $old_url, $new_url ) {
+	public static function widget_replace_content( $title = '', $old_value, $new_value ) {
 
 	    $widgets = get_option( 'widget_text' );
 	    if ( isset( $widgets ) ) {
@@ -227,7 +252,7 @@ trait Utils {
 		        // Compare and ignore case:
 		        if( mb_strtolower( $title ) === mb_strtolower( $widget['title'] ) ) {
 		            // Replace the widget text:
-		            $widgets[$key]['text'] = str_replace( $old_url, $new_url, $widgets[$key]['text'] );
+		            $widgets[$key]['text'] = str_replace( $old_value, $new_value, $widgets[$key]['text'] );
 
 		            // Update database and exit on first found match:
 		            return update_option( 'widget_text', $widgets );

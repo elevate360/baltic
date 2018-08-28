@@ -147,6 +147,9 @@ class Setup {
 		// This theme uses its own gallery styles.
 		add_filter( 'use_default_gallery_style', '__return_false' );
 
+		// Gutenberg
+		//add_theme_support( 'align-wide' );
+
 	}
 
 	/**

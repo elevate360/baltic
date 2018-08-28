@@ -33,6 +33,20 @@
 					}
 				}
 
+			} elseif( is_search() ) {
+
+				$blog_id = get_option( 'page_for_posts' );
+				$image = get_the_post_thumbnail_url( $blog_id, 'full' );
+
+				echo sprintf( '<h1 class="page-header-title">%s</h1>',
+					/* translators: %s: Search query */
+					sprintf( esc_html__( 'Search Results for: %s', 'baltic' ), '<span>' . get_search_query() . '</span>' )
+				);
+
+				if ( has_post_thumbnail( $blog_id ) ) {
+					echo sprintf( '<div class="page-header-thumbnail" style="background-image:url(%s)" ></div>', esc_url( $image ) );
+				}
+
 			} elseif ( get_option( 'page_for_posts' ) && is_home() ) {
 
 				$blog_id = get_option( 'page_for_posts' );
@@ -83,12 +97,6 @@
 				echo sprintf( '<p class="page-header-title">%s</p>',
 					get_the_title( absint( get_the_id() ) )
 				);
-
-				if ( get_the_excerpt() ) {
-					echo sprintf( '<div class="page-header-description">%s</div>',
-						wp_kses_post( wpautop( get_the_excerpt() ) )
-					);
-				}
 
 				if ( has_post_thumbnail( get_the_id() ) ) {
 					echo sprintf( '<div class="page-header-thumbnail" style="background-image:url(%s)" ></div>', esc_url( $image ) );

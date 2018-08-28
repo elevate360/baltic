@@ -217,6 +217,7 @@ p.stars {
 	border-top: 2px solid $color__alpha-dark;
 	@include font-size(0.875);
 	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
 	> span {
 		display: block;
 	}

@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Baltic - Canvas
- * Template Post Type: post, page
+ * Template Post Type: post, page, elementor_library
  *
  * @package Baltic
  */

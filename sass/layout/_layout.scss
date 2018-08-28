@@ -46,9 +46,6 @@
 	padding-left: 1rem;
 	margin-right: auto;
 	margin-left: auto;
-	@include respond-to( desktop ) {
-		max-width: 960px;
-	}
 	@include respond-to( widescreen ) {
 		max-width: 1140px;
 	}
